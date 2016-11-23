@@ -1,0 +1,6 @@
+/build
+/site
+/.sass-cache
+.DS_Store
+npm-debug.log
+Makefile

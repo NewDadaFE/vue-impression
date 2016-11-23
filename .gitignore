@@ -1,0 +1,13 @@
+/node_modules
+/site/build
+/site/node_modules
+/site/.sass-cache
+/site/src/scripts/components/impression
+/site/src/styles/impression
+/build
+/cache
+*.log
+/.idea
+/.sass-cache
+scss-lint-report.xml
+/lib
