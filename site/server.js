@@ -5,7 +5,7 @@ const webpack = require('webpack'),
 
 
 new WebpackDevServer(webpack(config), {
-    contentBase: '.',
+    contentBase: './build',
     publicPath: config.output.publicPath,
     hot: true,
     historyApiFallback: true,

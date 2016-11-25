@@ -4,7 +4,7 @@
   "description": "vue-impression site.",
   "main": "src/main.js",
   "scripts": {
-    "start": "webpack-dashboard -- node server.js"
+    "start": "gulp build && webpack-dashboard -- node server.js"
   },
   "keywords": [
     "vue-impression"
