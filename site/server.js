@@ -15,10 +15,10 @@ new WebpackDevServer(webpack(config), {
     headers: {
         'Access-Control-Allow-Origin': '*',
     },
-}).listen(PORT, 'localhost', function(err) {
+}).listen(PORT, 'localhost', err => {
     if (err) {
         console.log(err);
     }
 
-    console.log('🌎  Server is listening at localhost:' + PORT);
+    console.log(`🌎  Server is listening at localhost:${PORT}`);
 });

@@ -1,6 +1,7 @@
 const path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
+    DashboardPlugin = require('webpack-dashboard/plugin'),
     PORT = 9008;
 
 module.exports = {
@@ -20,8 +21,8 @@ module.exports = {
         extensions: ['', '.js', '.vue'],
         fallback: [path.join(__dirname, 'node_modules')],
         alias: {
-            'vue$': 'vue/dist/vue'
-        }
+            vue$: 'vue/dist/vue',
+        },
     },
     resolveLoader: {
         fallback: [path.join(__dirname, 'node_modules')],
@@ -61,6 +62,7 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
+        new DashboardPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
