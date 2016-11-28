@@ -1,0 +1,11 @@
+.group {
+    margin-top: 1rem;
+    background-image: linear-gradient(top,#d9d9d9,#d9d9d9 50%,transparent 0);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    > .cell:last-child {
+        background-position: 0 100%;
+    }
+}
