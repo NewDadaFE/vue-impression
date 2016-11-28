@@ -1,8 +1,8 @@
 <template>
     <div>
-        <btn disabled theme="primary">primary</btn>
-        <btn disabled theme="secondary">secondary</btn>
-        <btn disabled theme="default">default</btn>
+        <btn block theme="primary">primary</btn>
+        <btn block theme="secondary">secondary</btn>
+        <btn block theme="default">default</btn>
     </div>
 </template>
 

@@ -7,6 +7,7 @@
             'btn-' + size,
             {
                 ['btn-' + theme + '-outline']: outline,
+                'btn-block': block,
             }]"
         :disabled="disabled">
         <slot></slot>
