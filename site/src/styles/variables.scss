@@ -1,0 +1,79 @@
+// Colors
+$brand-primary: #2196F3 !default;
+$brand-secondary: #f86c2e !default;
+$brand-success: #4cb452 !default;
+$brand-info: #2b71b5 !default;
+$brand-warning: #fab83a !default;
+$brand-danger: #f97964 !default;
+$brand-pure: #fff !default;
+
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #999 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f4f4f4 !default;
+
+// Border radius
+$border-radius: 2px !default;
+$border-radius-lg: 4px !default;
+$border-radius-sm: 1px !default;
+
+// Cursor
+$cursor-disabled: not-allowed !default;
+$cursor-pointer: pointer !default;
+
+// Base
+$font-family-base: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$line-height-base: 1.43 !default;
+$body-color: #333 !default;
+$body-bg: #fff !default;
+$text-muted: $gray-light !default;
+
+
+$font-size-root: 12px !default;
+$font-size-base: 1rem !default;
+$font-size-lg: 1.4rem !default;
+$font-size-sm: .875rem !default;
+
+
+// Links
+$link-color: $brand-primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Tables
+$table-bg: $brand-pure !default;
+$table-cell-padding: .75rem !default;
+$table-sm-cell-padding: .3rem !default;
+
+// Buttons
+$btn-opacity-disabled: .65 !default;
+
+$btn-font-size: $font-size-base !default;
+$btn-padding-x: 1.6rem !default;
+$btn-padding-y: .7rem !default;
+$btn-border-radius: $border-radius !default;
+
+$btn-font-size-sm: $font-size-sm !default;
+$btn-padding-x-sm: .6rem !default;
+$btn-padding-y-sm: .2rem !default;
+$btn-border-radius-sm: $border-radius-sm !default;
+
+$btn-font-size-lg: $font-size-lg !default;
+$btn-padding-x-lg: 2rem !default;
+$btn-padding-y-lg: 1rem !default;
+$btn-border-radius-lg: $border-radius-lg !default;
+
+$btn-primary-color: $brand-pure;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $brand-primary !default;
+
+$btn-secondary-color: $brand-pure;
+$btn-secondary-bg: $brand-secondary !default;
+$btn-secondary-border: $brand-secondary !default;
+
+$btn-default-color: $gray;
+$btn-default-bg: #fff !default;
+$btn-default-border: #d9d9d9 !default;
+

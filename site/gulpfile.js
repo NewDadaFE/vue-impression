@@ -49,7 +49,7 @@ gulp.task('sass:impression', function(){
 
 //监听
 gulp.task('watch', function(){
-    gulp.watch('src/styles/**/*.scss', ['sass:index', 'sass:impression']);
+    gulp.watch('src/styles/**/*.scss', ['sass:index']);
 });
 
 

@@ -1,7 +1,13 @@
 <template>
     <button
         :type="type"
-        class="button"
+        class="btn"
+        :class="[
+            'btn-' + theme,
+            'btn-' + size,
+            {
+                ['btn-' + theme + '-outline']: outline,
+            }]"
         :disabled="disabled">
         <slot></slot>
     </button>
@@ -34,7 +40,6 @@
             // 尺寸
             size: {
                 type: String,
-                default: '',
                 validator(value) {
                     return ['sm', 'lg'].indexOf(value) > -1;
                 },

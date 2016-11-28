@@ -1,20 +1,34 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import routesConfig from './routes.json';
 
 Vue.use(VueRouter);
+
+// 提取路由
+const extractRoutes = (config) => {
+    const routes = [];
+
+    config.forEach((group) => {
+        group.children.forEach((item) => {
+            const { path, name } = item;
+
+            routes.push({
+                path,
+                name,
+                component: require(`./views${path}`),
+            });
+        });
+    });
+
+    return routes;
+};
+
+const routes = extractRoutes(routesConfig);
 
 // 创建router对象
 const router = new VueRouter({
     base: __dirname,
-    hashbang: true,
-    history: false,
-    saveScrollPosition: true,
-    transitionOnLoad: true,
-    routes: [{
-        path: '/button',
-        name: 'button',
-        component: require('./views/button.vue'),
-    }],
+    routes,
 });
 
 export default router;

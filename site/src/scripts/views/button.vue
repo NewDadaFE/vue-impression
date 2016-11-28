@@ -1,16 +1,18 @@
 <template>
     <div>
-        <Button>按钮</Button>
+        <btn disabled theme="primary">primary</btn>
+        <btn disabled theme="secondary">secondary</btn>
+        <btn disabled theme="default">default</btn>
     </div>
 </template>
 
 
 <script>
-    import Button from '../components/Button';
+    import Btn from '../components/Button';
 
     export default {
         components: {
-            Button,
+            Btn,
         },
     };
 </script>
