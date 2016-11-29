@@ -5,4 +5,5 @@
     padding: $cell-padding;
     @include border-bottom();
     background-position: $cell-gap-left 100%;
+    background-color: $group-bg-color;
 }

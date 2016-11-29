@@ -26,7 +26,7 @@ $cursor-pointer: pointer !default;
 $font-family-base: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
 $line-height-base: 1.43 !default;
 $body-color: #333 !default;
-$body-bg: #fff !default;
+$body-bg: #f0eff5 !default;
 $text-muted: $gray-light !default;
 
 
@@ -36,7 +36,9 @@ $font-size-lg: 1.4rem !default;
 $font-size-sm: .875rem !default;
 
 // Border
-$border-image: linear-gradient(top,#d9d9d9,#d9d9d9 50%,transparent 0) !default;
+$border-color: #d9d9d9 !default;
+$border-image-top: linear-gradient(top, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-bottom: linear-gradient(bottom, $border-color, $border-color 50%, transparent 0) !default;
 
 
 // Links
@@ -78,11 +80,13 @@ $btn-secondary-border: $brand-secondary !default;
 
 $btn-default-color: $gray;
 $btn-default-bg: #fff !default;
-$btn-default-border: #d9d9d9 !default;
+$btn-default-border: $border-color !default;
 
 // Group/Cell
+$group-bg-color: $brand-pure !default;
 $group-margin: 1rem 0 0 0 !default;
 
+$cell-bg-color: $brand-pure !default;
 $cell-padding: 1rem !default;
 $cell-gap-left: 1rem !default;
 
