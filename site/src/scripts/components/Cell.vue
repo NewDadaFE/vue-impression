@@ -26,6 +26,7 @@
 
 <script>
     export default {
+        name: 'cell',
         props: {
             to: [String, Object],
             click: Function,

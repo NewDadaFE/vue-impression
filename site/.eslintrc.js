@@ -27,6 +27,7 @@ module.exports = {
         }],
         'import/no-dynamic-require': 0,
         'global-require': 0,
+        'arrow-parens': ["error", "as-needed"],
         'no-unused-expressions': ["error", { "allowShortCircuit": true }],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0

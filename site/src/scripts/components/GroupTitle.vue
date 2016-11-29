@@ -6,6 +6,6 @@
 
 <script>
     export default {
-        name: 'GroupTitle',
+        name: 'group-title',
     };
 </script>

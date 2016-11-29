@@ -13,7 +13,7 @@
 
 <script>
     export default {
-        name: 'Icon',
+        name: 'icon',
         props: {
             left: Boolean,
             right: Boolean,

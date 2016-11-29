@@ -17,7 +17,7 @@
 <script>
     // Button
     export default {
-        name: 'Button',
+        name: 'btn',
         props: {
             block: Boolean,
             outline: Boolean,

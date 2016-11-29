@@ -21,19 +21,9 @@
 
 
 <script>
-    import Group from '../components/Group';
-    import GroupTitle from '../components/GroupTitle';
-    import Cell from '../components/Cell';
-    import Icon from '../components/Icon';
     import routesConfig from '../routes.json';
 
     export default {
-        components: {
-            Group,
-            GroupTitle,
-            Cell,
-            Icon,
-        },
         data() {
             return {
                 groups: routesConfig,
