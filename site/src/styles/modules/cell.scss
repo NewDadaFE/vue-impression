@@ -2,9 +2,7 @@
     display: block;
     overflow: hidden;
     text-decoration: none;
-    padding: 1.2rem;
-    background-image: linear-gradient(top,#d9d9d9,#d9d9d9 50%,transparent 0);
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-position: 1.2rem 100%;
+    padding: $cell-padding;
+    @include border-bottom();
+    background-position: $cell-gap-left 100%;
 }

@@ -1,9 +1,6 @@
 .group {
-    margin-top: 1rem;
-    background-image: linear-gradient(top,#d9d9d9,#d9d9d9 50%,transparent 0), linear-gradient(top,#d9d9d9,#d9d9d9 50%,transparent 0);
-    background-size: 100% 1px;
-    background-repeat: no-repeat, no-repeat;
-    background-position: 0 0, 0 100%;
+    margin: $group-margin;
+    @include border-vertical();
 
     > .cell:last-child {
         background-size: 0;
