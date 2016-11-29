@@ -5,6 +5,7 @@ import Impression from './components';
 
 Vue.use(Impression);
 
+
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

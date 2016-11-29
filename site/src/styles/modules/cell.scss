@@ -8,23 +8,22 @@
     @include border-bottom();
     background-position: $cell-gap-left 100%;
     background-color: $cell-bg-color;
+}
 
-    // Link
-    &[href] {
-        &:active,
-        &.active {
-            &:focus {
-                outline: 0;
-                background-image: none;
-            }
-
-            background-color: $cell-bg-color-active;
-        }
-
-        &:hover,
+.cell-link {
+    &:active,
+    &.active {
         &:focus {
-            text-decoration: none;
+            outline: 0;
+            background-image: none;
         }
+
+        background-color: $cell-bg-color-active;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
     }
 }
 

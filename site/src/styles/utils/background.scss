@@ -1,0 +1,17 @@
+// backgrounds
+.bg-inverse {
+    color: $gray-lighter;
+    background-color: $gray-dark;
+}
+
+.bg-faded {
+    background-color: $gray-lightest;
+}
+
+.bg-default {
+    background-color: $gray-lighter;
+}
+
+.bg-pure {
+    background-color: transparent !important;
+}

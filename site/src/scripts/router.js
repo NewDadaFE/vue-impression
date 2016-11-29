@@ -5,11 +5,11 @@ import routesConfig from './routes.json';
 Vue.use(VueRouter);
 
 // 提取路由
-const extractRoutes = (config) => {
+const extractRoutes = config => {
     const routes = [];
 
-    config.forEach((group) => {
-        group.children.forEach((item) => {
+    config.forEach(group => {
+        group.children.forEach(item => {
             const { path, name } = item;
 
             routes.push({

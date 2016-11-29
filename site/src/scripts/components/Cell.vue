@@ -1,5 +1,5 @@
 <template>
-    <router-link v-if="to" :to="to" class="cell">
+    <router-link v-if="to" :to="to" class="cell cell-link">
         <span class="cell-body">
             <slot></slot>
         </span>
@@ -7,21 +7,17 @@
         <i class="fa fa-angle-right cell-arrow"></i>
     </router-link>
 
-    <a v-else-if="href" class="cell" :href="href">
+    <a v-else
+        class="cell"
+        :class="{'cell-link': href || !!click}"
+        :href="href"
+        @click="clickHandle">
         <span class="cell-body">
             <slot></slot>
         </span>
         <slot name="footer"></slot>
-        <i class="fa fa-angle-right cell-arrow"></i>
+        <i v-if="href || !!click" class="fa fa-angle-right cell-arrow"></i>
     </a>
-
-    <div v-else class="cell" :href="!!click" @click="clickHandle">
-        <span class="cell-body">
-            <slot></slot>
-        </span>
-        <slot name="footer"></slot>
-        <i v-if="click" class="fa fa-angle-right cell-arrow"></i>
-    </div>
 </template>
 
 <script>
