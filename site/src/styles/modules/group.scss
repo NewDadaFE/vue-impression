@@ -10,3 +10,12 @@
         background-size: 0;
     }
 }
+
+// title
+.group-title {
+    padding: $group-title-padding;
+
+    + .group {
+        margin: 0;
+    }
+}
