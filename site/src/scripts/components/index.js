@@ -21,8 +21,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-    install,
     version: pkg.version,
+    install,
     Button,
     Group,
     GroupTitle,

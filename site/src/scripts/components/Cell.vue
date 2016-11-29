@@ -15,7 +15,7 @@
         <i class="fa fa-angle-right cell-arrow"></i>
     </a>
 
-    <div v-else class="cell" @click="clickHandle">
+    <div v-else class="cell" :href="!!click" @click="clickHandle">
         <span class="cell-body">
             <slot></slot>
         </span>
