@@ -25,6 +25,12 @@ const extractRoutes = (config) => {
 
 const routes = extractRoutes(routesConfig);
 
+// demo首页
+routes.push({
+    path: '/',
+    component: require('./views/index'),
+});
+
 // 创建router对象
 const router = new VueRouter({
     base: __dirname,
