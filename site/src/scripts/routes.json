@@ -8,5 +8,9 @@
         "path": "/cell",
         "name": "Group && Cell",
         "icon": "list"
+    }, {
+        "path": "/icon",
+        "name": "Icon",
+        "icon": "flag"
     }]
 }]
