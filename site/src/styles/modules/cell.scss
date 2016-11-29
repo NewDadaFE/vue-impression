@@ -1,9 +1,39 @@
 .cell {
-    display: block;
+    color: inherit;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     text-decoration: none;
     padding: $cell-padding;
     @include border-bottom();
     background-position: $cell-gap-left 100%;
-    background-color: $group-bg-color;
+    background-color: $cell-bg-color;
+
+    // Link
+    &[href] {
+        &:active,
+        &.active {
+            &:focus {
+                outline: 0;
+                background-image: none;
+            }
+
+            background-color: $cell-bg-color-active;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+.cell-body {
+    flex: 1;
+    display: block;
+}
+
+.cell-arrow {
+    color: $cell-arrow-color;
+    margin: $cell-arrow-margin;
 }

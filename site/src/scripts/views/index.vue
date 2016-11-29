@@ -3,12 +3,19 @@
         <div v-for="group in groups">
             <group-title v-if="group.title"><strong>{{group.title}}</strong></group-title>
             <group>
-                <cell v-for="cell in group.children">
+                <cell v-for="cell in group.children" :to="{path: cell.path}">
                     <icon size="lg" left :name="cell.icon"></icon>
                     {{cell.name}}
                 </cell>
             </group>
         </div>
+        <group-title ><strong>说明</strong></group-title>
+        <group>
+            <cell :click="clickHandle">
+                impression
+                <span slot="footer">0.1.0</span>
+            </cell>
+        </group>
     </div>
 </template>
 
@@ -31,6 +38,11 @@
             return {
                 groups: routesConfig,
             };
+        },
+        methods: {
+            clickHandle() {
+                alert(1);
+            }
         },
     };
 </script>
