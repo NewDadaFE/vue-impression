@@ -6,13 +6,13 @@
 }
 
 // Button variant
-@mixin button-variant($color, $bgColor, $borderColor) {
-    $active-background: darken($bgColor, 6%);
-    $active-border: darken($borderColor, 6%);
+@mixin button-variant($color, $bg-color, $border-color) {
+    $active-background: darken($bg-color, 6%);
+    $active-border: darken($border-color, 6%);
 
     color: $color;
-    background-color: $bgColor;
-    border-color: $borderColor;
+    background-color: $bg-color;
+    border-color: $border-color;
 
     &:active,
     &.active {
@@ -24,8 +24,8 @@
     &.disabled,
     &:disabled {
         &:hover {
-            background-color: $bgColor;
-            border-color: $borderColor;
+            background-color: $bg-color;
+            border-color: $border-color;
         }
     }
 }
@@ -38,7 +38,7 @@
 
     &:active,
     &.active {
-        color: #fff;
+        color: $brand-pure;
         background-color: $color;
     }
 

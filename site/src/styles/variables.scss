@@ -37,8 +37,8 @@ $font-size-sm: .875rem !default;
 
 // Border
 $border-color: #d9d9d9 !default;
-$border-image-top: linear-gradient(top, $border-color, $border-color 50%, transparent 0) !default;
-$border-image-bottom: linear-gradient(bottom, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-top: linear-gradient(to bottom, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-bottom: linear-gradient(to top, $border-color, $border-color 50%, transparent 0) !default;
 
 
 // Links

@@ -1,5 +1,5 @@
 // 上边框
-@mixin border-top() {
+@mixin border-top {
     background-image: $border-image-top;
     background-size: 100% 1px;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
 }
 
 // 下边框
-@mixin border-bottom() {
+@mixin border-bottom {
     background-image: $border-image-bottom;
     background-size: 100% 1px;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
 }
 
 // 上下边框
-@mixin border-vertical() {
+@mixin border-vertical {
     background-image: $border-image-top, $border-image-bottom;
     background-size: 100% 1px;
     background-repeat: no-repeat, no-repeat;
