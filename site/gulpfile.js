@@ -22,13 +22,19 @@ gulp.task('copy:image', function(){
     .pipe(gulp.dest('build/images'));
 });
 
+//复制字体
+gulp.task('copy:font', function(){
+    return gulp.src('src/styles/font-awesome/fonts/**')
+    .pipe(gulp.dest('build/styles/fonts'));
+});
+
 //复制HTML
 gulp.task('copy:html', function(){
     return gulp.src('index.html')
     .pipe(gulp.dest('build'));
 });
 
-//编译sass
+//项目样式
 gulp.task('sass:index', function(){
     return gulp.src('src/styles/index.scss')
     .pipe(sass().on('error', sass.logError))
@@ -37,10 +43,20 @@ gulp.task('sass:index', function(){
     .pipe(gulp.dest('build/styles'));
 });
 
-//编译impression
+//组件样式
 gulp.task('sass:impression', function(){
     return gulp.src('src/styles/impression/index.scss')
     .pipe(rename('impression.scss'))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({browsers: ['last 30 version', '> 90%']}))
+    .pipe(cssmin())
+    .pipe(gulp.dest('build/styles'));
+});
+
+//font awesome
+gulp.task('sass:font-awesome', function(){
+    return gulp.src('src/styles/font-awesome/font-awesome.scss')
+    .pipe(rename('font-awesome.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({browsers: ['last 30 version', '> 90%']}))
     .pipe(cssmin())
@@ -55,5 +71,5 @@ gulp.task('watch', function(){
 
 //本地启动
 gulp.task('build', function(cb) {
-    sequence('clean', ['copy:html', 'copy:image'], ['sass:index', 'sass:impression'], cb);
+    sequence('clean', ['copy:html', 'copy:image', 'copy:font'], ['sass:index', 'sass:impression', 'sass:font-awesome'], cb);
 });

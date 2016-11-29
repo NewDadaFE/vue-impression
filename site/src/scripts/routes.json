@@ -1,12 +1,12 @@
 [{
-    "title": "Layout",
+    "title": "Base",
     "children": [{
         "path": "/button",
         "name": "Button",
         "icon": "hand-pointer-o"
     }, {
         "path": "/cell",
-        "name": "Cell",
+        "name": "Group && Cell",
         "icon": "list"
     }]
 }]
