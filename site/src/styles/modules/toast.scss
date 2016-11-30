@@ -1,0 +1,38 @@
+.toast {
+    position: fixed;
+    max-width: 80%;
+    text-align: center;
+    color: $toast-color;
+    background: $toast-bg;
+    padding: $toast-padding;
+    font-size: $toast-font-size;
+    border-radius: $toast-border-radius;
+}
+
+.toast-top {
+    left: 50%;
+    top: $toast-position-gap;
+    transform: translate(-50%, 0);
+}
+
+.toast-bottom {
+    left: 50%;
+    bottom: $toast-position-gap;
+    transform: translate(-50%, 0);
+}
+
+.toast-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toast-lg {
+    padding: $toast-padding-lg;
+}
+
+
+.toast-icon {
+    font-size: $toast-icon-font-size;
+    margin-bottom: $toast-icon-margin-bottom;
+}

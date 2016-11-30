@@ -24,4 +24,11 @@
         "name": "Tabbar",
         "icon": "clone"
     }]
+}, {
+    "title": "prompt",
+    "children": [{
+        "path": "/toast",
+        "name": "Toast",
+        "icon": "commenting-o"
+    }]
 }]
