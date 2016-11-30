@@ -1,5 +1,4 @@
 .cell {
-    color: inherit;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -8,6 +7,11 @@
     @include border-bottom();
     background-position: $cell-gap-left 100%;
     background-color: $cell-bg-color;
+
+    &,
+    &:hover {
+        color: $cell-color;
+    }
 }
 
 .cell-link {
