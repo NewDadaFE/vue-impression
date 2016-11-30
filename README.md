@@ -8,6 +8,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] GroupTitle
  - [x] Cell
  - [x] Icon
+ - [x] Navbar
  - [ ] Alert
  - [ ] Toast
  - [ ] Radio

@@ -25,6 +25,7 @@
 
 .navbar-header {
     flex: $navbar-header-flex;
+    padding: $navbar-header-padding;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -32,6 +33,7 @@
 
 .navbar-body {
     flex: $navbar-body-flex;
+    padding: $navbar-body-padding;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -40,6 +42,7 @@
 
 .navbar-footer {
     flex: $navbar-footer-flex;
+    padding: $navbar-footer-padding;
     text-align: right;
     overflow: hidden;
     text-overflow: ellipsis;

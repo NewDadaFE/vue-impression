@@ -104,11 +104,14 @@ $cell-arrow-margin: 0 0 0 $spacer-gap !default;
 // Navbar
 $navbar-height: 44px !default;
 $navbar-line-height: $navbar-height !default;
-$navbar-padding: 0 1rem !default;
+$navbar-padding: 0 !default;
 
 $navbar-header-flex: .5 !default;
+$navbar-header-padding: 0 1rem !default;
 $navbar-body-flex: 1 !default;
+$navbar-body-padding: 0 1rem !default;
 $navbar-footer-flex: .5 !default;
+$navbar-footer-padding: 0 1rem !default;
 
 $navbar-primary-color: $brand-pure !default;
 $navbar-primary-bg-color: $brand-primary !default;

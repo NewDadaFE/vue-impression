@@ -1,12 +1,12 @@
 <template>
     <div class="navbar" :class="'navbar-' + theme">
-        <div class="navbar-header">
+        <div class="navbar-header" v-if="$slots.default">
             <slot></slot>
         </div>
-        <div class="navbar-body">
+        <div class="navbar-body" v-if="$slots.body">
             <slot name="body"></slot>
         </div>
-        <div class="navbar-footer">
+        <div class="navbar-footer" v-if="$slots.footer">
             <slot name="footer"></slot>
         </div>
     </div>
@@ -25,5 +25,8 @@
                 },
             },
         },
+        mounted() {
+            console.log(this);
+        }
     };
 </script>
