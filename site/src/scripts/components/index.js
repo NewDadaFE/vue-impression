@@ -4,6 +4,8 @@ import GroupTitle from './GroupTitle';
 import Cell from './Cell';
 import Icon from './Icon';
 import Navbar from './Navbar';
+import Tabbar from './Tabbar';
+import TabbarItem from './TabbarItem';
 import pkg from '../../../package.json';
 
 const install = Vue => {
@@ -16,6 +18,8 @@ const install = Vue => {
     Vue.component(Icon.name, Icon);
 
     Vue.component(Navbar.name, Navbar);
+    Vue.component(Tabbar.name, Tabbar);
+    Vue.component(TabbarItem.name, TabbarItem);
 };
 
 /* global window:true */

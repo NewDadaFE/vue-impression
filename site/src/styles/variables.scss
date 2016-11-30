@@ -119,3 +119,12 @@ $navbar-primary-bg-color: $brand-primary !default;
 $navbar-default-color: #666 !default;
 $navbar-default-bg-color: $brand-pure !default;
 
+// Tabbar
+$tabbar-bg-color: $brand-pure !default;
+$tabbar-margin-bottom: 1rem !default;
+$tabbar-height: $navbar-height !default;
+$tabbar-line-height: $tabbar-height !default;
+
+$tabbar-item-border-width: 2px !default;
+$tabbar-item-color-active: $brand-primary !default;
+$tabbar-item-border-color-active: $brand-primary !default;

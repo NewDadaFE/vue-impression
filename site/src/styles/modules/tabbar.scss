@@ -1,0 +1,19 @@
+.tabbar {
+    display: flex;
+    margin-bottom: $tabbar-margin-bottom;
+    background-color: $tabbar-bg-color;
+    @include border-bottom();
+}
+
+.tabbar-item {
+    flex: 1;
+    height: $tabbar-height;
+    line-height: $tabbar-line-height;
+    text-align: center;
+    border-bottom: $tabbar-item-border-width solid transparent;
+
+    &.active{
+        color: $tabbar-item-color-active;
+        border-bottom-color: $tabbar-item-border-color-active;
+    }
+}

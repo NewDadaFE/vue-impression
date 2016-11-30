@@ -19,5 +19,9 @@
         "path": "/navbar",
         "name": "Navbar",
         "icon": "window-maximize"
+    }, {
+        "path": "/tabbar",
+        "name": "Tabbar",
+        "icon": "clone"
     }]
 }]
