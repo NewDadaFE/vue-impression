@@ -65,7 +65,7 @@ gulp.task('sass:font-awesome', function(){
 
 //监听
 gulp.task('watch', function(){
-    gulp.watch('src/styles/**/*.scss', ['sass:index']);
+    gulp.watch('src/styles/**/*.scss', ['sass:index', 'sass:font-awesome']);
 });
 
 

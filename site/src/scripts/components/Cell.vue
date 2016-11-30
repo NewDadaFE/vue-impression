@@ -26,6 +26,7 @@
         props: {
             to: [String, Object],
             click: Function,
+            href: String,
         },
         methods: {
             clickHandle() {

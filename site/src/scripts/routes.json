@@ -13,4 +13,11 @@
         "name": "Icon",
         "icon": "flag"
     }]
+}, {
+    "title": "Layout",
+    "children": [{
+        "path": "/navbar",
+        "name": "Navbar",
+        "icon": "window-maximize"
+    }]
 }]

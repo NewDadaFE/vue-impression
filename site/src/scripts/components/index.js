@@ -3,6 +3,7 @@ import Group from './Group';
 import GroupTitle from './GroupTitle';
 import Cell from './Cell';
 import Icon from './Icon';
+import Navbar from './Navbar';
 import pkg from '../../../package.json';
 
 const install = Vue => {
@@ -13,6 +14,8 @@ const install = Vue => {
     Vue.component(GroupTitle.name, GroupTitle);
     Vue.component(Cell.name, Cell);
     Vue.component(Icon.name, Icon);
+
+    Vue.component(Navbar.name, Navbar);
 };
 
 /* global window:true */

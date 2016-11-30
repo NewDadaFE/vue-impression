@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    user-select: none;
+    padding: $navbar-padding;
+    height: $navbar-height;
+    line-height: $navbar-line-height;
+
+    a {
+
+        &:active,
+        &.active {
+            &:focus {
+                outline: 0;
+                background-image: none;
+            }
+
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+.navbar-header {
+    flex: $navbar-header-flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-body {
+    flex: $navbar-body-flex;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-footer {
+    flex: $navbar-footer-flex;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// theme
+.navbar-primary {
+    @include button-variant($navbar-primary-bg-color, $navbar-primary-color, false);
+}
+
+.navbar-default {
+    @include button-variant($navbar-default-bg-color, $navbar-default-color, true);
+}

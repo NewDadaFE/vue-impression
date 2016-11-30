@@ -101,3 +101,18 @@ $cell-gap-left: 1rem !default;
 $cell-arrow-color: #818a91 !default;
 $cell-arrow-margin: 0 0 0 $spacer-gap !default;
 
+// Navbar
+$navbar-height: 44px !default;
+$navbar-line-height: $navbar-height !default;
+$navbar-padding: 0 1rem !default;
+
+$navbar-header-flex: .5 !default;
+$navbar-body-flex: 1 !default;
+$navbar-footer-flex: .5 !default;
+
+$navbar-primary-color: $brand-pure !default;
+$navbar-primary-bg-color: $brand-primary !default;
+
+$navbar-default-color: #666 !default;
+$navbar-default-bg-color: $brand-pure !default;
+
