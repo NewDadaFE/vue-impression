@@ -35,8 +35,13 @@
         ]
     },
     {
-        "title": "Loading",
+        "title": "prompt",
         "children": [
+            {
+                "path": "/toast",
+                "name": "Toast",
+                "icon": "commenting-o"
+            },
             {
                 "path": "/loading",
                 "name": "loading",
@@ -45,12 +50,17 @@
         ]
     },
     {
-        "title": "prompt",
+        "title": "form",
         "children": [
             {
-                "path": "/toast",
-                "name": "Toast",
-                "icon": "commenting-o"
+                "path": "/checkbox",
+                "name": "Checkbox",
+                "icon": "check-square"
+            },
+            {
+                "path": "/radio",
+                "name": "Radio",
+                "icon": "dot-circle-o"
             }
         ]
     }

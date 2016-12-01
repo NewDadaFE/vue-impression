@@ -9,7 +9,6 @@
                 </cell>
             </group>
         </div>
-        <group-title ><strong>说明</strong></group-title>
         <group>
             <cell :click="clickHandle">
                 impression

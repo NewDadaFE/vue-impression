@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
 import Loading from './Loading';
+import Checkbox from './Checkbox';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -23,6 +24,8 @@ const install = Vue => {
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
     Vue.component(Loading.name, Loading);
+
+    Vue.component(Checkbox.name, Checkbox);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

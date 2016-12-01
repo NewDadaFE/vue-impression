@@ -141,3 +141,21 @@ $toast-position-gap: 4rem !default;
 
 $toast-icon-font-size: 4rem !default;
 $toast-icon-margin-bottom: .5rem !default;
+
+// Checkbox
+$checkbox-padding: 3px !default;
+$checkbox-color: $brand-pure !default;
+$checkbox-bg-color: $brand-pure !default;
+$checkbox-border-color: #ddd !default;
+
+$checkbox-bg-color-checked: $brand-primary !default;
+$checkbox-border-color-checked: $brand-primary !default;
+$checkbox-bg-color-disabled: #dfdfdf !default;
+$checkbox-border-color-disabled: $checkbox-border-color !default;
+
+
+$checkbox-addon-font-size: 1.2rem !default;
+
+$checkbox-label-gap: 2px !default;
+
+$checkbox-square-border-radius: $border-radius !default;
