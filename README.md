@@ -11,7 +11,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Navbar
  - [x] Tabbar
  - [x] Loading
- - [ ] Alert
+ - [x] Alert
  - [x] Toast
  - [ ] Radio
  - [ ] Checkbox
