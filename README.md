@@ -13,8 +13,8 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Loading
  - [x] Alert
  - [x] Toast
- - [ ] Radio
- - [ ] Checkbox
+ - [x] Radio
+ - [x] Checkbox
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe
