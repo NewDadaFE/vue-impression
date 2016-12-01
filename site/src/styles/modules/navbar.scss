@@ -51,9 +51,9 @@
 
 // theme
 .navbar-primary {
-    @include button-variant($navbar-primary-bg-color, $navbar-primary-color, false);
+    @include navbar-variant($navbar-primary-bg-color, $navbar-primary-color, false);
 }
 
 .navbar-default {
-    @include button-variant($navbar-default-bg-color, $navbar-default-color, true);
+    @include navbar-variant($navbar-default-bg-color, $navbar-default-color, true);
 }
