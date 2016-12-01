@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
 import Toast from './Toast';
+import Loading from './Loading';
 import pkg from '../../../package.json';
 
 const install = Vue => {
@@ -21,6 +22,7 @@ const install = Vue => {
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
+    Vue.component(Loading.name, Loading);
 
     Vue.$toast = Vue.prototype.$toast = Toast;
 };

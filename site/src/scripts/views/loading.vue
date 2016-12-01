@@ -1,0 +1,3 @@
+<template>
+    <loading></loading>
+</template>
