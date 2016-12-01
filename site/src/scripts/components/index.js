@@ -11,7 +11,7 @@ import Loading from './Loading';
 import pkg from '../../../package.json';
 
 const install = Vue => {
-    if (install.installed) return;
+    if(install.installed) return;
 
     Vue.component(Button.name, Button);
     Vue.component(Group.name, Group);
@@ -28,7 +28,7 @@ const install = Vue => {
 };
 
 /* global window:true */
-if (typeof window !== 'undefined' && window.Vue) {
+if(typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
