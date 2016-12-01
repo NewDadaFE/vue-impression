@@ -1,5 +1,5 @@
 // Navbar variant
-@mixin button-variant($background-color, $color, $has-border) {
+@mixin navbar-variant($background-color, $color, $has-border) {
     background-color: $background-color;
     color: $color;
 

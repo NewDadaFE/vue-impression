@@ -4,11 +4,11 @@
         :class="[
             'toast-' + position,
             {
-                'toast-lg': $slots.icon,
+                'toast-lg': icon,
             }
         ]">
-        <div class="toast-icon" v-if="$slots.icon">
-            <slot name="icon"></slot>
+        <div class="toast-icon" v-if="icon">
+            <icon :name="icon"></icon>
         </div>
         <slot></slot>
     </div>
@@ -25,9 +25,32 @@
                     return ['bottom', 'top', 'center'].indexOf(value) > -1;
                 },
             },
+            type: {
+                type: String,
+                default: 'default',
+                validator(value) {
+                    return ['default', 'success', 'error', 'warning', 'question'].indexOf(value) > -1;
+                },
+            },
             duration: {
                 type: Number,
                 default: 2000,
+            },
+        },
+        computed: {
+            icon() {
+                switch(this.type) {
+                    case 'error':
+                        return 'exclamation-circle';
+                    case 'success':
+                        return 'check';
+                    case 'warning':
+                        return 'exclamation-triangle';
+                    case 'question':
+                        return 'question-circle';
+                    default:
+                        return null;
+                }
             },
         },
     };

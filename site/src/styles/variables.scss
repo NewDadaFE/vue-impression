@@ -133,9 +133,10 @@ $tabbar-item-border-color-active: $brand-primary !default;
 $toast-bg: rgba(0, 0, 0, 0.6) !default;
 $toast-color: $brand-pure !default;
 $toast-font-size: 1.1rem !default;
-$toast-border-radius: 6px !default;
+$toast-border-radius: 4px !default;
+$toast-border-radius-lg: 6px !default;
 $toast-padding: .8rem 1.2rem !default;
-$toast-padding-lg: 1rem 3rem !default;
+$toast-padding-lg: 1rem 3rem 1.5rem !default;
 $toast-position-gap: 5rem !default;
 
 $toast-icon-font-size: 4rem !default;
