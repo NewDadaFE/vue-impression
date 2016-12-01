@@ -21,7 +21,8 @@ const install = Vue => {
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
-    Vue.component(Toast.name, Toast);
+
+    Vue.$toast = Vue.prototype.$toast = Toast;
 };
 
 /* global window:true */

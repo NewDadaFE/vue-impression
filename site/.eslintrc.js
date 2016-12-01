@@ -30,6 +30,7 @@ module.exports = {
         'arrow-parens': ["error", "as-needed"],
         'keyword-spacing': ["error", { "overrides": {"switch": { "after": false }} }],
         'no-unused-expressions': ["error", { "allowShortCircuit": true }],
+        'no-param-reassign': ["error", { "props": false }],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
     }

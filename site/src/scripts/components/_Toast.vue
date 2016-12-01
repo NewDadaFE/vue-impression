@@ -10,7 +10,7 @@
         <div class="toast-icon" v-if="icon">
             <icon :name="icon"></icon>
         </div>
-        <slot></slot>
+        {{message}}
     </div>
 </template>
 
@@ -18,6 +18,7 @@
     export default {
         name: 'toast',
         props: {
+            message: String,
             position: {
                 type: String,
                 default: 'top',
