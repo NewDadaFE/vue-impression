@@ -1,5 +1,6 @@
 <template>
     <div
+        v-show="visible"
         class="toast"
         :class="[
             'toast-' + position,
@@ -21,7 +22,7 @@
             message: String,
             position: {
                 type: String,
-                default: 'top',
+                default: 'bottom',
                 validator(value) {
                     return ['bottom', 'top', 'center'].indexOf(value) > -1;
                 },
@@ -33,10 +34,11 @@
                     return ['default', 'success', 'error', 'warning', 'question'].indexOf(value) > -1;
                 },
             },
-            duration: {
-                type: Number,
-                default: 2000,
-            },
+        },
+        data() {
+            return {
+                visible: false,
+            };
         },
         computed: {
             icon() {

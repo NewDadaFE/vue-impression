@@ -17,9 +17,9 @@
         </group>
         <group-title>Position</group-title>
         <group>
-            <cell>default</cell>
-            <cell>top</cell>
-            <cell>center</cell>
+            <cell @click.native="positionClickHandle('bottom')">bottom</cell>
+            <cell @click.native="positionClickHandle('top')">top</cell>
+            <cell @click.native="positionClickHandle('center')">center</cell>
         </group>
     </div>
 </template>
@@ -34,6 +34,12 @@
                 Vue.$toast({
                     type,
                     message: type,
+                });
+            },
+            positionClickHandle(position) {
+                Vue.$toast({
+                    position,
+                    message: position,
                 });
             },
         },

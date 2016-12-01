@@ -6,8 +6,8 @@ import Icon from './Icon';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
-import Toast from './Toast';
 import Loading from './Loading';
+import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
 const install = Vue => {
@@ -24,7 +24,7 @@ const install = Vue => {
     Vue.component(TabbarItem.name, TabbarItem);
     Vue.component(Loading.name, Loading);
 
-    Vue.$toast = Vue.prototype.$toast = Toast;
+    Vue.$toast = Vue.prototype.$toast = toast;
 };
 
 /* global window:true */
