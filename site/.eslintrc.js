@@ -28,9 +28,12 @@ module.exports = {
         'import/no-dynamic-require': 0,
         'global-require': 0,
         'arrow-parens': ["error", "as-needed"],
-        'keyword-spacing': ["error", { "overrides": {"switch": { "after": false }} }],
+        'keyword-spacing': ["error", { "overrides": {"switch": { "after": false }, "if": { "after": false }} }],
         'no-unused-expressions': ["error", { "allowShortCircuit": true }],
+        'no-param-reassign': ["error", { "props": false }],
+        'space-before-function-paren': ['error', {"anonymous": "never", "named": "never"}],
+        'func-names': ["error", "never"],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
     }
-}
+};

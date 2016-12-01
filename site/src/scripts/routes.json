@@ -40,12 +40,7 @@
             {
                 "path": "/loading",
                 "name": "loading",
-                "icon": "window-maximize"
-            },
-            {
-                "path": "/tabbar",
-                "name": "Tabbar",
-                "icon": "clone"
+                "icon": "spinner"
             }
         ]
     },

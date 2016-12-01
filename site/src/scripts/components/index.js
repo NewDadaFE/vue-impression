@@ -6,12 +6,12 @@ import Icon from './Icon';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
-import Toast from './Toast';
 import Loading from './Loading';
+import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
 const install = Vue => {
-    if (install.installed) return;
+    if(install.installed) return;
 
     Vue.component(Button.name, Button);
     Vue.component(Group.name, Group);
@@ -22,13 +22,13 @@ const install = Vue => {
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
-    Vue.component(Toast.name, Toast);
-
     Vue.component(Loading.name, Loading);
+
+    Vue.$toast = Vue.prototype.$toast = toast;
 };
 
 /* global window:true */
-if (typeof window !== 'undefined' && window.Vue) {
+if(typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 

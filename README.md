@@ -12,7 +12,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Tabbar
  - [x] Loading
  - [ ] Alert
- - [ ] Toast
+ - [x] Toast
  - [ ] Radio
  - [ ] Checkbox
  - [ ] Card
