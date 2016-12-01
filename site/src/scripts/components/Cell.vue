@@ -9,14 +9,13 @@
 
     <a v-else
         class="cell"
-        :class="{'cell-link': href || !!click}"
-        :href="href"
-        @click="clickHandle">
+        :class="{'cell-link': clickable}"
+        :href="href">
         <span class="cell-body">
             <slot></slot>
         </span>
         <slot name="footer"></slot>
-        <i v-if="href || !!click" class="fa fa-angle-right cell-arrow"></i>
+        <i v-if="clickable" class="fa fa-angle-right cell-arrow"></i>
     </a>
 </template>
 
@@ -25,12 +24,11 @@
         name: 'cell',
         props: {
             to: [String, Object],
-            click: Function,
             href: String,
         },
-        methods: {
-            clickHandle() {
-                this.click && this.click();
+        computed: {
+            clickable() {
+                return this.href || (this.$vnode.data.on && this.$vnode.data.on.click);
             },
         },
     };
