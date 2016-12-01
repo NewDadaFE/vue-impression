@@ -1,9 +1,7 @@
 <template>
     <label
         class="checkbox"
-        :class="[{
-            'checkbox-checked': checked,
-        }, 'checkbox-' + type]">
+        :class="'checkbox-' + type">
         <input
             type="checkbox"
             class="checkbox-input"
@@ -34,7 +32,7 @@
         },
         data() {
             return {
-                checked: this.value,
+                checked: !!this.value,
             };
         },
     };

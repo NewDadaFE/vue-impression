@@ -8,6 +8,7 @@ import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
 import Loading from './Loading';
 import Checkbox from './Checkbox';
+import Radio from './Radio';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -26,6 +27,7 @@ const install = Vue => {
     Vue.component(Loading.name, Loading);
 
     Vue.component(Checkbox.name, Checkbox);
+    Vue.component(Radio.name, Radio);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };
