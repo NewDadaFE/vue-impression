@@ -10,11 +10,11 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Icon
  - [x] Navbar
  - [x] Tabbar
+ - [x] Loading
  - [ ] Alert
  - [ ] Toast
  - [ ] Radio
  - [ ] Checkbox
- - [ ] Loading
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe
