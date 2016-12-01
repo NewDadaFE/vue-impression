@@ -1,34 +1,62 @@
-[{
-    "title": "Base",
-    "children": [{
-        "path": "/button",
-        "name": "Button",
-        "icon": "hand-pointer-o"
-    }, {
-        "path": "/cell",
-        "name": "Group && Cell",
-        "icon": "list"
-    }, {
-        "path": "/icon",
-        "name": "Icon",
-        "icon": "flag"
-    }]
-}, {
-    "title": "Layout",
-    "children": [{
-        "path": "/navbar",
-        "name": "Navbar",
-        "icon": "window-maximize"
-    }, {
-        "path": "/tabbar",
-        "name": "Tabbar",
-        "icon": "clone"
-    }]
-}, {
-    "title": "prompt",
-    "children": [{
-        "path": "/toast",
-        "name": "Toast",
-        "icon": "commenting-o"
-    }]
-}]
+[
+    {
+        "title": "Base",
+        "children": [
+            {
+                "path": "/button",
+                "name": "Button",
+                "icon": "hand-pointer-o"
+            },
+            {
+                "path": "/cell",
+                "name": "Group && Cell",
+                "icon": "list"
+            },
+            {
+                "path": "/icon",
+                "name": "Icon",
+                "icon": "flag"
+            }
+        ]
+    },
+    {
+        "title": "Layout",
+        "children": [
+            {
+                "path": "/navbar",
+                "name": "Navbar",
+                "icon": "window-maximize"
+            },
+            {
+                "path": "/tabbar",
+                "name": "Tabbar",
+                "icon": "clone"
+            }
+        ]
+    },
+    {
+        "title": "Loading",
+        "children": [
+            {
+                "path": "/loading",
+                "name": "loading",
+                "icon": "window-maximize"
+            },
+            {
+                "path": "/tabbar",
+                "name": "Tabbar",
+                "icon": "clone"
+            }
+        ]
+    },
+    {
+        "title": "prompt",
+        "children": [
+            {
+                "path": "/toast",
+                "name": "Toast",
+                "icon": "commenting-o"
+            }
+        ]
+    }
+]
