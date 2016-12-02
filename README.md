@@ -1,7 +1,7 @@
 # vue-impression
 A Vue.js 2.0 UI elements for mobile.
 
-### components
+### Components
 
  - [x] Button
  - [x] Group
@@ -16,6 +16,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Radio
  - [x] Checkbox
  - [x] Toggle(Switch)
+ - [x] Number
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe
