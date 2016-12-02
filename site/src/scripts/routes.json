@@ -66,6 +66,11 @@
                 "path": "/toggle",
                 "name": "Toggle",
                 "icon": "toggle-on"
+            },
+            {
+                "path": "/number",
+                "name": "Number",
+                "icon": "plus-circle"
             }
         ]
     }

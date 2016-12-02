@@ -10,6 +10,7 @@ import Loading from './Loading';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Toggle from './Toggle';
+import InputNumber from './InputNumber';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -30,6 +31,7 @@ const install = Vue => {
     Vue.component(Checkbox.name, Checkbox);
     Vue.component(Radio.name, Radio);
     Vue.component(Toggle.name, Toggle);
+    Vue.component(InputNumber.name, InputNumber);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

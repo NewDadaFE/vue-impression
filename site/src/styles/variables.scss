@@ -171,3 +171,24 @@ $toggle-width: 46px !default;
 $toggle-padding: 3px !default;
 $toggle-border-radius: $toggle-addon-size !default;
 
+// Number
+$number-border-color: $brand-primary !default;
+
+$number-btn-size: 22px !default;
+$number-btn-line-height: $number-btn-size - 2 !default;
+
+$number-plus-color: $brand-pure !default;
+$number-plus-bg-color: $brand-primary !default;
+$number-plus-bg-color-active: darken($number-plus-bg-color, 6%) !default;
+
+$number-minus-color: $brand-primary !default;
+$number-minus-bg-color: $brand-pure !default;
+$number-minus-color-active: $brand-pure !default;
+$number-minus-bg-color-active: $brand-primary !default;
+
+$number-input-bg-color: $brand-pure !default;
+$number-input-border-color: #d9d9d9 !default;
+$number-input-padding: 0.3rem 0.8rem !default;
+$number-input-margin: 0 2px !default;
+$number-input-bg-color-disabled: #eee !default;
+
