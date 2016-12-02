@@ -61,6 +61,11 @@
                 "path": "/radio",
                 "name": "Radio",
                 "icon": "dot-circle-o"
+            },
+            {
+                "path": "/toggle",
+                "name": "Toggle",
+                "icon": "toggle-on"
             }
         ]
     }

@@ -15,7 +15,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Toast
  - [x] Radio
  - [x] Checkbox
- - [x] Switch
+ - [x] Toggle(Switch)
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe

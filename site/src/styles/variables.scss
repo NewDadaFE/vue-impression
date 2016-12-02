@@ -159,3 +159,15 @@ $checkbox-addon-font-size: 1.2rem !default;
 $checkbox-label-gap: 2px !default;
 
 $checkbox-square-border-radius: $border-radius !default;
+
+// Toggle
+$toggle-addon-size: 16px !default;
+$toggle-addon-bg-color: $brand-pure !default;
+$toggle-addon-bg-color-checked: $brand-primary !default;
+$toggle-addon-opacity-disabled: .6 !default;
+
+$toggle-bg-color: #e7eaec !default;
+$toggle-width: 46px !default;
+$toggle-padding: 3px !default;
+$toggle-border-radius: $toggle-addon-size !default;
+
