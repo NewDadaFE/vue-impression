@@ -12,6 +12,7 @@ import Radio from './Radio';
 import Toggle from './Toggle';
 import InputNumber from './InputNumber';
 import InputText from './InputText';
+import InputTextarea from './InputTextarea';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -34,6 +35,7 @@ const install = Vue => {
     Vue.component(Toggle.name, Toggle);
     Vue.component(InputNumber.name, InputNumber);
     Vue.component(InputText.name, InputText);
+    Vue.component(InputTextarea.name, InputTextarea);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

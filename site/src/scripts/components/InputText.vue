@@ -32,9 +32,6 @@
             type: {
                 type: String,
                 default: 'text',
-                validator(value) {
-                    return ['text', 'textarea', 'number'].indexOf(value) > -1;
-                },
             },
             state: {
                 type: String,
@@ -47,7 +44,7 @@
         data() {
             return {
                 focus: false,
-                currentValue: this.value,
+                currentValue: this.value || '',
                 currentDisabled: this.disabled || this.$parent.disabled,
             };
         },

@@ -68,14 +68,19 @@
                 "icon": "toggle-on"
             },
             {
-                "path": "/text",
+                "path": "/input-text",
                 "name": "InputText",
                 "icon": "font"
             },
             {
-                "path": "/number",
+                "path": "/input-number",
                 "name": "InputNumber",
                 "icon": "plus-circle"
+            },
+            {
+                "path": "/input-textarea",
+                "name": "InputTextarea",
+                "icon": "file-text-o"
             }
         ]
     }

@@ -191,10 +191,17 @@ $number-minus-bg-color-active: $brand-primary !default;
 
 $number-input-bg-color: $brand-pure !default;
 $number-input-border-color: #d9d9d9 !default;
-$number-input-padding: 0.3rem 0.8rem !default;
+$number-input-padding: .3rem .8rem !default;
 $number-input-margin: 0 2px !default;
 $number-input-bg-color-disabled: #eee !default;
 
 // InputText
 $input-text-icon-gap: 1rem !default;
+
+// InputTeaxtarea
+$textarea-padding: .6rem !default;
+
+$textarea-counter-scale: .8 !default;
+$textarea-counter-color: $text-muted !default;
+$textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale 0.2rem 0 !default;
 
