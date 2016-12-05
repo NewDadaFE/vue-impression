@@ -31,6 +31,10 @@
     }
 }
 
+.cell-disabled {
+    background-color: $cell-bg-color-disabled;
+}
+
 .cell-header {
     padding-right: $cell-children-gap;
 }

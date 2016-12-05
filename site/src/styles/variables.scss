@@ -94,10 +94,12 @@ $group-title-padding: .5rem 1rem !default;
 
 $cell-color: $body-color !default;
 $cell-bg-color: $brand-pure !default;
-$cell-bg-color-active: $gray-lightest !default;
 $cell-padding: 1rem !default;
 $cell-gap-left: 1rem !default;
 $cell-children-gap: 1rem !default;
+
+$cell-bg-color-active: $gray-lightest !default;
+$cell-bg-color-disabled: $border-color !default;
 
 $cell-arrow-color: #818a91 !default;
 $cell-arrow-margin: 0 0 0 $spacer-gap !default;
@@ -192,4 +194,7 @@ $number-input-border-color: #d9d9d9 !default;
 $number-input-padding: 0.3rem 0.8rem !default;
 $number-input-margin: 0 2px !default;
 $number-input-bg-color-disabled: #eee !default;
+
+// InputText
+$input-text-icon-gap: 1rem !default;
 

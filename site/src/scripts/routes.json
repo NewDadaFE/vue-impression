@@ -68,8 +68,13 @@
                 "icon": "toggle-on"
             },
             {
+                "path": "/text",
+                "name": "InputText",
+                "icon": "font"
+            },
+            {
                 "path": "/number",
-                "name": "Number",
+                "name": "InputNumber",
                 "icon": "plus-circle"
             }
         ]

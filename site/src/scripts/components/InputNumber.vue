@@ -1,12 +1,12 @@
 <template>
-    <div class="number" :class="{'number-disabled': disabled}">
+    <div class="input-number" :class="{'input-number-disabled': disabled}">
         <a
-            class="number-minus"
+            class="input-number-minus"
             :class="{'disabled': currentValue <= min}"
             @click="minusHandle">-</a>
-        <span class="number-input">{{currentValue}}</span>
+        <span class="input-number-input">{{currentValue}}</span>
         <a
-            class="number-plus"
+            class="input-number-plus"
             :class="{'disabled': currentValue >= max}"
             @click="plusHandle">
             +

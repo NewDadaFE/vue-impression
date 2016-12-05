@@ -1,22 +1,34 @@
 <template>
-    <router-link v-if="to" :to="to" class="cell cell-link">
-        <slot name="header"></slot>
+    <router-link
+        v-if="to"
+        :to="to"
+        class="cell cell-link"
+        :class="{'cell-disabled': disabled}">
+        <div class="cell-header" v-if="$slots.header">
+            <slot name="header"></slot>
+        </div>
         <span class="cell-body">
             <slot></slot>
         </span>
-        <slot name="footer"></slot>
+        <div class="cell-footer" v-if="$slots.footer">
+            <slot name="footer"></slot>
+        </div>
         <i class="fa fa-angle-right cell-arrow"></i>
     </router-link>
 
     <a v-else
         class="cell"
-        :class="{'cell-link': clickable}"
+        :class="{'cell-link': clickable, 'cell-disabled': disabled}"
         :href="href">
-        <slot name="header"></slot>
+        <div class="cell-header" v-if="$slots.header">
+            <slot name="header"></slot>
+        </div>
         <span class="cell-body">
             <slot></slot>
         </span>
-        <slot name="footer"></slot>
+        <div class="cell-footer" v-if="$slots.footer">
+            <slot name="footer"></slot>
+        </div>
         <i v-if="clickable" class="fa fa-angle-right cell-arrow"></i>
     </a>
 </template>
@@ -27,6 +39,7 @@
         props: {
             to: [String, Object],
             href: String,
+            disabled: Boolean,
         },
         computed: {
             clickable() {
