@@ -81,6 +81,11 @@
                 "path": "/input-textarea",
                 "name": "InputTextarea",
                 "icon": "file-text-o"
+            },
+            {
+                "path": "/selector",
+                "name": "Selector",
+                "icon": "angle-double-down"
             }
         ]
     }

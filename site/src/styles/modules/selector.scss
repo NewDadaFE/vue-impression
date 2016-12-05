@@ -1,0 +1,13 @@
+.selector-option {
+    &.active {
+        color: $selector-color-active;
+
+        .selector-icon {
+            display: block;
+        }
+    }
+}
+
+i.selector-icon {
+    display: none;
+}

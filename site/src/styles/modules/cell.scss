@@ -32,7 +32,8 @@
 }
 
 .cell-disabled {
-    background-color: $cell-bg-color-disabled;
+    opacity: .6;
+    // background-color: $cell-bg-color-disabled;
 }
 
 .cell-header {
