@@ -18,6 +18,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Toggle(Switch)
  - [x] InputNumber
  - [x] InputText
+ - [x] InputArea
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe
