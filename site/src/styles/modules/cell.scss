@@ -31,9 +31,17 @@
     }
 }
 
+.cell-header {
+    padding-right: $cell-children-gap;
+}
+
 .cell-body {
     flex: 1;
     display: block;
+}
+
+.cell-footer {
+    padding-left: $cell-children-gap;
 }
 
 .cell-arrow {

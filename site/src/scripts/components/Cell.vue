@@ -1,5 +1,6 @@
 <template>
     <router-link v-if="to" :to="to" class="cell cell-link">
+        <slot name="header"></slot>
         <span class="cell-body">
             <slot></slot>
         </span>
@@ -11,6 +12,7 @@
         class="cell"
         :class="{'cell-link': clickable}"
         :href="href">
+        <slot name="header"></slot>
         <span class="cell-body">
             <slot></slot>
         </span>
