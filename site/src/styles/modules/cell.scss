@@ -31,9 +31,22 @@
     }
 }
 
+.cell-disabled {
+    opacity: .6;
+    // background-color: $cell-bg-color-disabled;
+}
+
+.cell-header {
+    padding-right: $cell-children-gap;
+}
+
 .cell-body {
     flex: 1;
     display: block;
+}
+
+.cell-footer {
+    padding-left: $cell-children-gap;
 }
 
 .cell-arrow {

@@ -11,6 +11,10 @@ import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Toggle from './Toggle';
 import InputNumber from './InputNumber';
+import InputText from './InputText';
+import InputTextarea from './InputTextarea';
+import Selector from './Selector';
+import SelectorOption from './SelectorOption';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -32,6 +36,10 @@ const install = Vue => {
     Vue.component(Radio.name, Radio);
     Vue.component(Toggle.name, Toggle);
     Vue.component(InputNumber.name, InputNumber);
+    Vue.component(InputText.name, InputText);
+    Vue.component(InputTextarea.name, InputTextarea);
+    Vue.component(Selector.name, Selector);
+    Vue.component(SelectorOption.name, SelectorOption);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

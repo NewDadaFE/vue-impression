@@ -1,17 +1,17 @@
-.number {
+.input-number {
     display: inline-block;
 }
 
-.number-disabled {
+.input-number-disabled {
     opacity: .6;
 
-    .number-input {
+    .input-number-input {
         background-color: $number-input-bg-color-disabled;
     }
 }
 
-.number-minus,
-.number-plus {
+.input-number-minus,
+.input-number-plus {
     text-align: center;
     display: inline-block;
     border-radius: 50%;
@@ -48,7 +48,7 @@
     }
 }
 
-.number-plus:not([href]) {
+.input-number-plus:not([href]) {
     &,
     &:active,
     &:focus,
@@ -62,7 +62,7 @@
     }
 }
 
-.number-minus:not([href]) {
+.input-number-minus:not([href]) {
     &,
     &:focus,
     &:hover {
@@ -76,7 +76,7 @@
     }
 }
 
-.number-input {
+.input-number-input {
     vertical-align: middle;
     padding: $number-input-padding;
     margin: $number-input-margin;
