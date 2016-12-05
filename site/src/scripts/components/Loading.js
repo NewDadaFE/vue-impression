@@ -28,7 +28,7 @@ export default {
          <circle class="path" cx="50" cy="50" r="20" fill="none"/>
        </svg>
        <p class="loading-text">{this.text}</p>
-       {hasTimer ? <p class="interval">{this.second}秒</p> : ""}
+       {this.hasTimer ? <p class="interval">{this.second}秒</p> : ""}
      </div>
     )
   }

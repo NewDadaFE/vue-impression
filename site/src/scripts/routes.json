@@ -46,6 +46,11 @@
                 "path": "/loading",
                 "name": "loading",
                 "icon": "spinner"
+            },
+            {
+                "path": "/alert",
+                "name": "alert",
+                "icon": "commenting-o"
             }
         ]
     },
