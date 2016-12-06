@@ -17,6 +17,8 @@ import Selector from './Selector';
 import SelectorOption from './SelectorOption';
 import InlineSelector from './InlineSelector';
 import InlineSelectorOption from './InlineSelectorOption';
+import Navigation from './Navigation';
+import NavigationItem from './NavigationItem';
 import Tag from './Tag';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
@@ -35,6 +37,8 @@ const install = Vue => {
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
     Vue.component(Loading.name, Loading);
+    Vue.component(Navigation.name, Navigation);
+    Vue.component(NavigationItem.name, NavigationItem);
 
     Vue.component(Checkbox.name, Checkbox);
     Vue.component(Radio.name, Radio);
@@ -46,7 +50,6 @@ const install = Vue => {
     Vue.component(SelectorOption.name, SelectorOption);
     Vue.component(InlineSelector.name, InlineSelector);
     Vue.component(InlineSelectorOption.name, InlineSelectorOption);
-    Vue.component(Tag.name, Tag);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

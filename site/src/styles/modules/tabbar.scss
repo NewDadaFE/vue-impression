@@ -12,7 +12,7 @@
     text-align: center;
     border-bottom: $tabbar-item-border-width solid transparent;
 
-    &.active{
+    &.active {
         color: $tabbar-item-color-active;
         border-bottom-color: $tabbar-item-border-color-active;
     }

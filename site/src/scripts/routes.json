@@ -36,6 +36,11 @@
                 "path": "/tabbar",
                 "name": "Tabbar",
                 "icon": "clone"
+            },
+            {
+                "path": "/navigation",
+                "name": "Navigation",
+                "icon": "tablet"
             }
         ]
     },
