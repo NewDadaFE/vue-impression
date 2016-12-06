@@ -1,4 +1,4 @@
-$color: #f00;
+$loading-color: #f00;
 
 .loading-spinner {
     top: 50%;
@@ -18,7 +18,7 @@ $color: #f00;
         stroke-dasharray: 1,100;
         stroke-dashoffset: 0;
         stroke-width: 1;
-        stroke: $color;
+        stroke: $loading-color;
         stroke-linecap: round;
     }
 

@@ -120,7 +120,6 @@ var showNextMsg = function() {
 };
 
 var MessageBox = function(options, callback) {
-    debugger
   if (typeof options === 'string') {
     options = {
       title: options
@@ -155,13 +154,12 @@ var MessageBox = function(options, callback) {
     showNextMsg();
   }
 };
-
+//
 MessageBox.setDefaults = function(defaults) {
   MessageBox.defaults = defaults;
 };
 
 MessageBox.alert = function(message, title, options) {
-    debugger
   if (typeof title === 'object') {
     options = title;
     title = '';
