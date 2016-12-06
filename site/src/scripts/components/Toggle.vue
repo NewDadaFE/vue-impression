@@ -4,7 +4,7 @@
             type="checkbox"
             class="toggle-input"
             :disabled="disabled"
-            v-model="checked">
+            v-model="currentValue">
         <span class="toggle-addon">
             <i />
         </span>
@@ -12,16 +12,13 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'toggle',
+        mixins: [Sync],
         props: {
-            value: {},
             disabled: Boolean,
-        },
-        data() {
-            return {
-                checked: this.value,
-            };
         },
     };
 </script>

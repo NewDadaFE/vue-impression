@@ -4,7 +4,7 @@
             type="radio"
             class="radio-input"
             :disabled="disabled"
-            :checked="checked">
+            :checked="currentValue">
         <span class="radio-addon">
             <i></i>
         </span>
@@ -15,16 +15,13 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'radio',
+        mixins: [Sync],
         props: {
-            value: {},
             disabled: Boolean,
-        },
-        data() {
-            return {
-                checked: this.value,
-            };
         },
     };
 </script>

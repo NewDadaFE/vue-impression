@@ -6,7 +6,7 @@
             type="checkbox"
             class="checkbox-input"
             :disabled="disabled"
-            v-model="checked">
+            v-model="currentValue">
         <span class="checkbox-addon">
             <i class="fa fa-check" />
         </span>
@@ -17,10 +17,12 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'checkbox',
+        mixins: [Sync],
         props: {
-            value: {},
             disabled: Boolean,
             type: {
                 type: String,
@@ -29,11 +31,6 @@
                     return ['square', 'circle'].indexOf(value) > -1;
                 },
             },
-        },
-        data() {
-            return {
-                checked: !!this.value,
-            };
         },
     };
 </script>
