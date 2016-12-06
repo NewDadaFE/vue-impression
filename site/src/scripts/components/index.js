@@ -20,6 +20,7 @@ import InlineSelectorOption from './InlineSelectorOption';
 import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
 import Tag from './Tag';
+import Tip from './Tip';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -32,6 +33,7 @@ const install = Vue => {
     Vue.component(Cell.name, Cell);
     Vue.component(Icon.name, Icon);
     Vue.component(Tag.name, Tag);
+    Vue.component(Tip.name, Tip);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);

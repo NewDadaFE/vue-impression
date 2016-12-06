@@ -1,0 +1,19 @@
+.tip {
+    display: flex;
+    align-items: center;
+    padding: $tip-padding;
+
+    &::before,
+    &::after {
+        content: ' ';
+        flex: 1;
+        display: block;
+        height: $tip-line-height;
+        @include border-bottom;
+    }
+}
+
+.tip-label {
+    color: $tip-label-color;
+    padding: $tip-label-padding;
+}

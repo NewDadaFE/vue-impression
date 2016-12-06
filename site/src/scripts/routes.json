@@ -21,6 +21,11 @@
                 "path": "/tag",
                 "name": "Tag",
                 "icon": "tag"
+            },
+            {
+                "path": "/tip",
+                "name": "Tip",
+                "icon": "paperclip"
             }
         ]
     },
