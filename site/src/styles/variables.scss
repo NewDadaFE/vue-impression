@@ -203,7 +203,19 @@ $textarea-padding: .6rem !default;
 
 $textarea-counter-scale: .8 !default;
 $textarea-counter-color: $text-muted !default;
-$textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale 0.2rem 0 !default;
+$textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale .2rem 0 !default;
 
 // Selector
 $selector-color-active: $brand-primary !default;
+
+// Tag
+$tag-padding: .2em .6em !default;
+$tag-color: $brand-pure !default;
+$tag-border-radius: $border-radius !default;
+
+$tag-primary-bg: $brand-primary !default;
+$tag-success-bg: $brand-success !default;
+$tag-warning-bg: $brand-warning !default;
+$tag-danger-bg: $brand-danger !default;
+$tag-default-bg: #ccc !default;
+$tag-default-color: #999 !default;

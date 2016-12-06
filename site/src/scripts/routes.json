@@ -16,6 +16,11 @@
                 "path": "/icon",
                 "name": "Icon",
                 "icon": "flag"
+            },
+            {
+                "path": "/tag",
+                "name": "Tag",
+                "icon": "tag"
             }
         ]
     },

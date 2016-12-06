@@ -15,6 +15,7 @@ import InputText from './InputText';
 import InputTextarea from './InputTextarea';
 import Selector from './Selector';
 import SelectorOption from './SelectorOption';
+import Tag from './Tag';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -26,6 +27,7 @@ const install = Vue => {
     Vue.component(GroupTitle.name, GroupTitle);
     Vue.component(Cell.name, Cell);
     Vue.component(Icon.name, Icon);
+    Vue.component(Tag.name, Tag);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
@@ -40,6 +42,7 @@ const install = Vue => {
     Vue.component(InputTextarea.name, InputTextarea);
     Vue.component(Selector.name, Selector);
     Vue.component(SelectorOption.name, SelectorOption);
+    Vue.component(Tag.name, Tag);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };
