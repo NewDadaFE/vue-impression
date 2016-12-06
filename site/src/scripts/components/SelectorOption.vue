@@ -18,11 +18,10 @@
 </template>
 
 <script>
-    import Emitter from '../mixins/emitter';
     import SelectOption from '../mixins/selectOption';
 
     export default {
         name: 'selector-option',
-        mixins: [Emitter, SelectOption],
+        mixins: [SelectOption],
     };
 </script>

@@ -3,6 +3,8 @@
     width: 100%;
     resize: none;
     display: block;
+    appearance: none;
+    user-select: auto;
     padding: $textarea-padding;
 
     &:focus {

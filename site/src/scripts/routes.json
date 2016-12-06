@@ -96,6 +96,11 @@
                 "path": "/selector",
                 "name": "Selector",
                 "icon": "angle-double-down"
+            },
+            {
+                "path": "/inline-selecor",
+                "name": "InlineSelector",
+                "icon": "th"
             }
         ]
     }

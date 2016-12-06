@@ -9,8 +9,8 @@
           <div class="alert-message" v-html="message"></div>
         </div>
         <div class="alert-btns">
-            <a class="alert-btn btn-cancel" v-show="showCancelButton" @click.native="handleAction('cancel')">{{cancelButtonText}}</a>
-            <a class="alert-btn btn-confirm" v-show="showConfirmButton" @click.native="handleAction('confirm')">{{confirmButtonText}}</a>
+            <a class="alert-btn btn-cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{cancelButtonText}}</a>
+            <a class="alert-btn btn-confirm" v-show="showConfirmButton" @click="handleAction('confirm')">{{confirmButtonText}}</a>
         </div>
       </div>
   </div>

@@ -5,7 +5,7 @@ export default {
     },
     methods: {
         optionClickHandle(option) {
-            if(this.disabled) return;
+            if(this.disabled || this.currentValue === option.value) return;
 
             if(this.multiple) {
                 let index = this.currentValue.indexOf(option.value);
@@ -16,10 +16,12 @@ export default {
                     this.currentValue.splice(index, 1);
                 }
 
+                this.$emit('change', this.currentValue);
                 return;
             }
 
             this.currentValue = option.value;
+            this.$emit('change', this.currentValue);
         },
     },
     created() {
