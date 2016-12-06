@@ -15,6 +15,8 @@ import InputText from './InputText';
 import InputTextarea from './InputTextarea';
 import Selector from './Selector';
 import SelectorOption from './SelectorOption';
+import InlineSelector from './InlineSelector';
+import InlineSelectorOption from './InlineSelectorOption';
 import Tag from './Tag';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
@@ -42,6 +44,8 @@ const install = Vue => {
     Vue.component(InputTextarea.name, InputTextarea);
     Vue.component(Selector.name, Selector);
     Vue.component(SelectorOption.name, SelectorOption);
+    Vue.component(InlineSelector.name, InlineSelector);
+    Vue.component(InlineSelectorOption.name, InlineSelectorOption);
     Vue.component(Tag.name, Tag);
 
     Vue.$toast = Vue.prototype.$toast = toast;

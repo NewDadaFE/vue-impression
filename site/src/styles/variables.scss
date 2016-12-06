@@ -208,6 +208,9 @@ $textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale .2rem 0
 // Selector
 $selector-color-active: $brand-primary !default;
 
+// InlineSelector
+$inline-selector-option-min-width: 55px !default;
+
 // Tag
 $tag-padding: .2em .6em !default;
 $tag-color: $brand-pure !default;
@@ -220,4 +223,5 @@ $tag-success-bg: $brand-success !default;
 $tag-warning-bg: $brand-warning !default;
 $tag-danger-bg: $brand-danger !default;
 $tag-default-bg: #ccc !default;
-$tag-default-color: #999 !default;
+$tag-default-color: #666 !default;
+

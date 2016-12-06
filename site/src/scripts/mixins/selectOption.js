@@ -8,7 +8,7 @@ export default {
     },
     methods: {
         clickHandle() {
-            this.dispatch('selector', 'optionClick', this);
+            this.$parent.$emit.apply(this.$parent, ['optionClick'].concat(this));
         },
         isActive() {
             if(this.$parent.multiple) {
