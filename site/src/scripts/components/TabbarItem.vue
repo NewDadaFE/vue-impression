@@ -1,15 +1,17 @@
 <template>
     <div
         class="tabbar-item"
-        :class="{'active': $parent.value === value}"
-        @click="$parent.$emit('input', value)">
+        :class="{'active': $parent.currentActiveKey === currentEventKey}"
+        @click="$parent.$emit('itemClick', currentEventKey)">
         <slot></slot>
     </div>
 </template>
 
 <script>
+    import TabItem from '../mixins/tabItem';
+
     export default {
         name: 'tabbar-item',
-        props: ['value'],
+        mixins: [TabItem],
     };
 </script>

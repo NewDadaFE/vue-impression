@@ -5,10 +5,10 @@
 </template>
 
 <script>
+    import Tab from '../mixins/tab';
+
     export default {
         name: 'tabbar',
-        props: {
-            value: {},
-        },
+        mixins: [Tab],
     };
 </script>
