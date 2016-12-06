@@ -8,6 +8,8 @@ export default {
     },
     methods: {
         clickHandle() {
+            if(this.disabled) return;
+
             this.$parent.$emit.apply(this.$parent, ['optionClick'].concat(this));
         },
         isActive() {

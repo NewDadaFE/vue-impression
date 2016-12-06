@@ -4,4 +4,8 @@
 
 .inline-selector-option {
     min-width: $inline-selector-option-min-width;
+
+    &.disabled {
+        border-style: dashed;
+    }
 }

@@ -40,7 +40,7 @@
                     <inline-selector-option value="xxl">XXL</inline-selector-option>
                     <inline-selector-option value="m">M</inline-selector-option>
                     <inline-selector-option value="s">S</inline-selector-option>
-                    <inline-selector-option value="l">L</inline-selector-option>
+                    <inline-selector-option disabled value="l">L</inline-selector-option>
                     <inline-selector-option value="xl">XL</inline-selector-option>
                 </inline-selector>
             </cell>

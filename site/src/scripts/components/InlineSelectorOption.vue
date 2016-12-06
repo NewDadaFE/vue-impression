@@ -1,6 +1,9 @@
 <template>
     <tag
         class="inline-selector-option"
+        :class="{
+            disabled,
+        }"
         outline
         size="sm"
         @click.native="clickHandle"
@@ -15,5 +18,8 @@
     export default {
         name: 'inline-selector-option',
         mixins: [SelectOption],
+        props: {
+            disabled: Boolean,
+        },
     };
 </script>
