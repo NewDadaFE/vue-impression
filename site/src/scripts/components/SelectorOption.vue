@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import Emitter from '../utils/emitter';
+    import Emitter from '../mixins/emitter';
 
     export default {
         name: 'selector-option',

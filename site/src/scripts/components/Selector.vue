@@ -5,27 +5,14 @@
 </template>
 
 <script>
-    import * as typeUtils from '../utils/type';
+    import Sync from '../mixins/sync';
 
     export default {
         name: 'selector',
+        mixins: [Sync],
         props: {
             disabled: Boolean,
             multiple: Boolean,
-            value: {},
-        },
-        data() {
-            return {
-                currentValue: this.value,
-            };
-        },
-        watch: {
-            value(val) {
-                this.currentValue = val;
-            },
-            currentValue(val) {
-                this.$emit('input', val);
-            },
         },
         methods: {
             optionClickHandle(option) {
