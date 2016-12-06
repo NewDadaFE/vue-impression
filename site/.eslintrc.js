@@ -37,6 +37,7 @@ module.exports = {
         'prefer-spread': 0,
         'no-underscore-dangle': 0,
         'prefer-const': 0,
+        'import/prefer-default-export': 0,
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
     }

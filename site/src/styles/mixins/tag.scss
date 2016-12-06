@@ -1,0 +1,8 @@
+@mixin tag-variant($background-color) {
+    background-color: $background-color;
+}
+
+@mixin tag-outline-variant($border-color, $color:$border-color) {
+    border-color: $border-color;
+    color: $color;
+}

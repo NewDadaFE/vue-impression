@@ -20,6 +20,8 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] InputText
  - [x] InputArea
  - [x] Selector
+ - [x] Tag
+ - [x] InlineSelector
  - [ ] Card
  - [ ] Picker
  - [ ] Swipe

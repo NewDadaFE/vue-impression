@@ -18,29 +18,11 @@
 </template>
 
 <script>
-    import Emitter from '../utils/emitter';
+    import Emitter from '../mixins/emitter';
+    import SelectOption from '../mixins/selectOption';
 
     export default {
         name: 'selector-option',
-        mixins: [Emitter],
-        props: {
-            checkedIcon: {
-                type: String,
-                default: 'check',
-            },
-            value: {},
-        },
-        methods: {
-            clickHandle() {
-                this.dispatch('selector', 'optionClick', this);
-            },
-            isActive() {
-                if(this.$parent.multiple) {
-                    return this.$parent.currentValue.indexOf(this.value) !== -1;
-                }
-
-                return this.$parent.currentValue === this.value;
-            },
-        },
+        mixins: [Emitter, SelectOption],
     };
 </script>
