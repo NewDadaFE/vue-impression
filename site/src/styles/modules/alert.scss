@@ -1,3 +1,12 @@
+.alert-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $toast-bg;
+}
+
 .alert {
     position: fixed;
     top: 50%;
@@ -11,15 +20,6 @@
     backface-visibility: hidden;
     transition: .2s;
     z-index: 1000;
-
-    .alert-mask{
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $toast-bg;
-    }
 
     .alert-header {
         padding: 15px 0 0;
@@ -50,23 +50,26 @@
         height: 40px;
         line-height: 40px;
 
-        .btn {
-            line-height: 35px;
+        .alert-btn {
             display: block;
             background-color: $brand-pure;
+            text-align: center;
             flex: 1;
             margin: 0;
             border: 0;
             padding: 0;
             font-size: 16px;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
 
-            &:focus {
-                outline: none;
-            }
-
-            &:active {
-                background-color: $brand-pure;
-            }
+        .btn-confirm{
+            color: $brand-primary;
+            width: 50%;
+        }
+        .btn-cancel{
+            border-right: 1px solid $border-color;
         }
     }
 

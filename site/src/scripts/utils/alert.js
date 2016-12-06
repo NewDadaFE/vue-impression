@@ -5,21 +5,8 @@ var defaults = {
   title: '提示',
   message: '',
   type: '',
-  showInput: false,
-  showClose: true,
-  modalFade: false,
-  lockScroll: false,
-  closeOnClickModal: true,
-  inputValue: null,
-  inputPlaceholder: '',
-  inputPattern: null,
-  inputValidator: null,
-  inputErrorMessage: '',
   showConfirmButton: true,
   showCancelButton: false,
-  confirmButtonPosition: 'right',
-  confirmButtonHighlight: false,
-  cancelButtonHighlight: false,
   confirmButtonText: CONFIRM_TEXT,
   cancelButtonText: CANCEL_TEXT,
   confirmButtonClass: '',
@@ -45,7 +32,7 @@ var merge = function(target) {
   return target;
 };
 
-var MessageBoxConstructor = Vue.extend(Alert);
+var AlertConstructor = Vue.extend(Alert);
 
 var currentMsg, instance;
 var msgQueue = [];
@@ -54,45 +41,32 @@ const defaultCallback = action => {
   if (currentMsg) {
     var callback = currentMsg.callback;
     if (typeof callback === 'function') {
-      if (instance.showInput) {
-        callback(instance.inputValue, action);
-      } else {
         callback(action);
-      }
     }
     if (currentMsg.resolve) {
-      var $type = currentMsg.options.$type;
-      if ($type === 'confirm' || $type === 'prompt') {
         if (action === 'confirm') {
-          if (instance.showInput) {
-            currentMsg.resolve({ value: instance.inputValue, action });
-          } else {
             currentMsg.resolve(action);
-          }
         } else if (action === 'cancel' && currentMsg.reject) {
           currentMsg.reject(action);
         }
-      } else {
-        currentMsg.resolve(action);
-      }
     }
   }
 };
 
 var initInstance = function() {
-  instance = new MessageBoxConstructor({
-    el: document.createElement('div')
-  });
+    instance = new AlertConstructor({
+        el: document.createElement('div')
+    });
 
-  instance.callback = defaultCallback;
+    instance.callback = defaultCallback;
 };
 
 var showNextMsg = function() {
-  if (!instance) {
-    initInstance();
-  }
+    if (!instance) {
+      initInstance();
+    }
 
-  if (!instance.value || instance.closeTimer) {
+  if (!instance.value) {
     if (msgQueue.length > 0) {
       currentMsg = msgQueue.shift();
 
@@ -102,24 +76,20 @@ var showNextMsg = function() {
           instance[prop] = options[prop];
         }
       }
-      if (options.callback === undefined) {
+    if (options.callback === undefined) {
         instance.callback = defaultCallback;
-      }
-      ['modal', 'showClose', 'closeOnClickModal', 'closeOnPressEscape'].forEach(prop => {
-        if (instance[prop] === undefined) {
-          instance[prop] = true;
-        }
-      });
-      document.body.appendChild(instance.$el);
+    }
 
-      Vue.nextTick(() => {
+    document.body.appendChild(instance.$el);
+
+    Vue.nextTick(() => {
         instance.value = true;
-      });
+    });
     }
   }
 };
 
-var MessageBox = function(options, callback) {
+var alertUtil = function(options, callback) {
   if (typeof options === 'string') {
     options = {
       title: options
@@ -137,7 +107,7 @@ var MessageBox = function(options, callback) {
   if (typeof Promise !== 'undefined') {
     return new Promise(function(resolve, reject) { // eslint-disable-line
       msgQueue.push({
-        options: merge({}, defaults, MessageBox.defaults || {}, options),
+        options: merge({}, defaults, alertUtil.defaults || {}, options),
         callback: callback,
         resolve: resolve,
         reject: reject
@@ -147,7 +117,7 @@ var MessageBox = function(options, callback) {
     });
   } else {
     msgQueue.push({
-      options: merge({}, defaults, MessageBox.defaults || {}, options),
+      options: merge({}, defaults, alertUtil.defaults || {}, options),
       callback: callback
     });
 
@@ -155,16 +125,16 @@ var MessageBox = function(options, callback) {
   }
 };
 //
-MessageBox.setDefaults = function(defaults) {
-  MessageBox.defaults = defaults;
+alertUtil.setDefaults = function(defaults) {
+  alertUtil.defaults = defaults;
 };
 
-MessageBox.alert = function(message, title, options) {
+alertUtil.msg = function(message, title, options) {
   if (typeof title === 'object') {
     options = title;
     title = '';
   }
-  return MessageBox(merge({
+  return alertUtil(merge({
     title: title,
     message: message,
     $type: 'alert',
@@ -173,12 +143,12 @@ MessageBox.alert = function(message, title, options) {
   }, options));
 };
 
-MessageBox.confirm = function(message, title, options) {
+alertUtil.confirm = function(message, title, options) {
   if (typeof title === 'object') {
     options = title;
     title = '';
   }
-  return MessageBox(merge({
+  return alertUtil(merge({
     title: title,
     message: message,
     $type: 'confirm',
@@ -186,25 +156,5 @@ MessageBox.confirm = function(message, title, options) {
   }, options));
 };
 
-MessageBox.prompt = function(message, title, options) {
-  if (typeof title === 'object') {
-    options = title;
-    title = '';
-  }
-  return MessageBox(merge({
-    title: title,
-    message: message,
-    showCancelButton: true,
-    showInput: true,
-    $type: 'prompt'
-  }, options));
-};
-
-MessageBox.close = function() {
-  instance.value = false;
-  msgQueue = [];
-  currentMsg = null;
-};
-
-export default MessageBox;
-export { MessageBox };
+export default alertUtil;
+export { alertUtil };
