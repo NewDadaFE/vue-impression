@@ -1,0 +1,104 @@
+.alert-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $toast-bg;
+}
+
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: $brand-pure;
+    width: 85%;
+    border-radius: 3px;
+    font-size: 16px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transition: .2s;
+    z-index: 1000;
+
+    .alert-header {
+        padding: 15px 0 0;
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: $body-color;
+    }
+
+    .alert-content {
+        padding: 10px 20px 15px;
+        border-bottom: 1px solid $border-color;
+        min-height: 36px;
+        position: relative;
+    }
+
+    .alert-message {
+        color: $gray-light;
+        margin: 0;
+        text-align: center;
+        line-height: 36px;
+    }
+
+    .alert-btns {
+        display: flex;
+        height: 40px;
+        line-height: 40px;
+
+        .alert-btn {
+            display: block;
+            background-color: $brand-pure;
+            text-align: center;
+            flex: 1;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            font-size: 16px;
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+
+        .btn-confirm{
+            color: $brand-primary;
+            width: 50%;
+        }
+        .btn-cancel{
+            border-right: 1px solid $border-color;
+        }
+    }
+
+
+    .alert-cancel {
+        width: 50%;
+        border-right: 1px solid $border-color;
+
+        &:active {
+            color: $gray-dark;
+        }
+    }
+
+    .alert-confirm {
+        color: $brand-primary;
+        width: 50%;
+
+        &:active {
+            color: $brand-primary;
+        }
+    }
+}
+
+.alert-bounce-enter {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(.7);
+}
+
+.alert-bounce-leave-active {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(.9);
+}
