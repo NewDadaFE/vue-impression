@@ -23,6 +23,29 @@
                 <tag slot="footer" theme="default">default</tag>
             </cell>
         </group>
+        <group-title>sm</group-title>
+        <group>
+            <cell>
+                primary
+                <tag size="sm" slot="footer">primary</tag>
+            </cell>
+            <cell>
+                success
+                <tag size="sm" slot="footer" theme="success">success</tag>
+            </cell>
+            <cell>
+                warning
+                <tag size="sm" slot="footer" theme="warning">warning</tag>
+            </cell>
+            <cell>
+                danger
+                <tag size="sm" slot="footer" theme="danger">danger</tag>
+            </cell>
+            <cell>
+                default
+                <tag size="sm" slot="footer" theme="default">default</tag>
+            </cell>
+        </group>
         <group-title>outline</group-title>
         <group>
             <cell>

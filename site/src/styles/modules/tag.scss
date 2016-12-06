@@ -8,6 +8,10 @@
     border-radius: $tag-border-radius;
 }
 
+.tag-sm {
+    transform: scale($tag-scale-sm);
+}
+
 .tag-primary { @include tag-variant($tag-primary-bg); }
 .tag-success { @include tag-variant($tag-success-bg); }
 .tag-warning { @include tag-variant($tag-warning-bg); }

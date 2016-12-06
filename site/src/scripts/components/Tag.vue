@@ -2,6 +2,7 @@
     <span class="tag" :class="{
         ['tag-' + theme]: !outline,
         ['tag-outline-' + theme]: outline,
+        ['tag-' + size]: size,
     }">
         <slot></slot>
     </span>
@@ -12,6 +13,12 @@
         name: 'tag',
         props: {
             outline: Boolean,
+            size: {
+                type: String,
+                validator(value) {
+                    return ['sm'].indexOf(value) > -1;
+                },
+            },
             theme: {
                 type: String,
                 default: 'primary',
