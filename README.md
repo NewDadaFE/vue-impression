@@ -24,6 +24,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] InputArea
  - [x] Selector
  - [x] Tag
+ - [x] Badge
  - [x] Tip
  - [x] HRule(Hr)
  - [x] InlineSelector
