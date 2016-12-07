@@ -38,20 +38,18 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-
     export default {
 
         methods: {
             baseClickHandle(type) {
-                Vue.$toast({
+                this.$toast({
                     type,
                     message: type,
                     position: 'bottom',
                 });
             },
             positionClickHandle(position) {
-                Vue.$toast({
+                this.$toast({
                     position,
                     message: position,
                 });

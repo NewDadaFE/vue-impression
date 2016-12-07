@@ -38,8 +38,8 @@ Toast.prototype.hide = function() {
 const toastUtil = (options = {}) => {
     if(toastCache.active) return;
 
-    const duration = options.duration || 3000;
-    const instance = toastCache.pop();
+    let duration = options.duration || 3000,
+        instance = toastCache.pop();
 
     instance.message = typeof options === 'string' ? options : options.message;
     options.type && (instance.type = options.type);
