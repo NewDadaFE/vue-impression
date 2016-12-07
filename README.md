@@ -25,13 +25,14 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Selector
  - [x] Tag
  - [x] Tip
+ - [x] HRule(Hr)
  - [x] InlineSelector
  - [x] Swipe
  - [ ] Card
  - [ ] Picker
  - [ ] DateTimePicker
  - [ ] Search
- - [ ] BackToTop
+ - [x] BackToTop
  - [ ] Pull down
  - [ ] Pull up
  - [ ] Sideslip
