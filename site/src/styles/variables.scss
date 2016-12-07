@@ -245,3 +245,15 @@ $tip-line-height: 1px !default;
 
 $tip-label-padding: 0 1rem !default;
 $tip-label-color: #888 !default;
+
+// BackToTop
+$top-z-index: 1000 !default;
+$top-right: 30px !default;
+$top-bottom: 30px !default;
+$top-color: $brand-pure !default;
+$top-width: 40px !default;
+$top-height: 40px !default;
+$top-line-height: 40px !default;
+$top-font-size: 20px !default;
+$top-bg-color: rgba(0, 0, 0, .3) !default;
+$top-transition: all .6s ease-in-out !default;

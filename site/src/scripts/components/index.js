@@ -22,6 +22,7 @@ import NavigationItem from './NavigationItem';
 import Tag from './Tag';
 import Tip from './Tip';
 import HRule from './HRule';
+import BackToTop from './BackToTop';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -40,9 +41,11 @@ const install = Vue => {
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
     Vue.component(TabbarItem.name, TabbarItem);
-    Vue.component(Loading.name, Loading);
     Vue.component(Navigation.name, Navigation);
     Vue.component(NavigationItem.name, NavigationItem);
+
+    Vue.component(Loading.name, Loading);
+    Vue.component(BackToTop.name, BackToTop);
 
     Vue.component(Checkbox.name, Checkbox);
     Vue.component(Radio.name, Radio);

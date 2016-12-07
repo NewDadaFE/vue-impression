@@ -32,11 +32,11 @@
         </group>
         <group-title>
             disabled
-            <span class="pull-right">size: {{multiple}}</span>
+            <span class="pull-right">size: {{disabled}}</span>
         </group-title>
         <group>
             <cell>
-                <inline-selector v-model="multiple" multiple @change="changeHandle">
+                <inline-selector v-model="disabled" @change="changeHandle">
                     <inline-selector-option value="xxl">XXL</inline-selector-option>
                     <inline-selector-option disabled value="m">M</inline-selector-option>
                     <inline-selector-option value="s">S</inline-selector-option>
@@ -70,6 +70,7 @@
                 size: 'l',
                 multiple: [],
                 theme: 'm',
+                disabled: null,
             };
         },
         methods: {
