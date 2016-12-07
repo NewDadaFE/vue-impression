@@ -15,7 +15,9 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Alert
  - [x] Toast
  - [x] Radio
+ - [x] RadioGroup
  - [x] Checkbox
+ - [x] CheckboxGroup
  - [x] Toggle(Switch)
  - [x] InputNumber
  - [x] InputText
