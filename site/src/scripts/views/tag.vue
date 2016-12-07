@@ -69,5 +69,28 @@
                 <tag outline slot="footer" theme="default">default</tag>
             </cell>
         </group>
+        <group-title>sm outline</group-title>
+        <group>
+            <cell>
+                primary
+                <tag size="sm" outline slot="footer">primary</tag>
+            </cell>
+            <cell>
+                success
+                <tag size="sm" outline slot="footer" theme="success">success</tag>
+            </cell>
+            <cell>
+                warning
+                <tag size="sm" outline slot="footer" theme="warning">warning</tag>
+            </cell>
+            <cell>
+                danger
+                <tag size="sm" outline slot="footer" theme="danger">danger</tag>
+            </cell>
+            <cell>
+                default
+                <tag size="sm" outline slot="footer" theme="default">default</tag>
+            </cell>
+        </group>
     </div>
 </template>
