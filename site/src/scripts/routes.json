@@ -26,6 +26,11 @@
                 "path": "/tip",
                 "name": "Tip",
                 "icon": "paperclip"
+            },
+            {
+                "path": "/hrule",
+                "name": "HRule",
+                "icon": "minus"
             }
         ]
     },

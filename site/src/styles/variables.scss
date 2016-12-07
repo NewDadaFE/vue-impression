@@ -1,5 +1,5 @@
 // Colors
-$brand-primary: #2196F3 !default;
+$brand-primary: #2196f3 !default;
 $brand-secondary: #f86c2e !default;
 $brand-success: #4cb452 !default;
 $brand-info: #2b71b5 !default;
@@ -44,6 +44,9 @@ $border-color: #d9d9d9 !default;
 $border-image-top: linear-gradient(to bottom, $border-color, $border-color 50%, transparent 0) !default;
 $border-image-bottom: linear-gradient(to top, $border-color, $border-color 50%, transparent 0) !default;
 
+// Hr
+$hr-color: $border-color !default;
+$hr-margin: 1rem 0 !default;
 
 // Links
 $link-color: $brand-primary !default;

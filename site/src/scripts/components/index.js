@@ -21,6 +21,7 @@ import Navigation from './Navigation';
 import NavigationItem from './NavigationItem';
 import Tag from './Tag';
 import Tip from './Tip';
+import HRule from './HRule';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -34,6 +35,7 @@ const install = Vue => {
     Vue.component(Icon.name, Icon);
     Vue.component(Tag.name, Tag);
     Vue.component(Tip.name, Tip);
+    Vue.component(HRule.name, HRule);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
