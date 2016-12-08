@@ -10,5 +10,10 @@
     export default {
         name: 'tabbar',
         mixins: [Tab],
+        props: {
+            activeKey: {
+                default: 0,
+            },
+        },
     };
 </script>
