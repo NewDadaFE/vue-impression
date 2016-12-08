@@ -10,6 +10,11 @@
     export default {
         name: 'radio-group',
         mixins: [Sync],
+        data() {
+            return {
+                currentValue: this.value || '',
+            };
+        },
         methods: {
             optionCheckedHandle(option) {
                 if(this.currentValue !== option) {

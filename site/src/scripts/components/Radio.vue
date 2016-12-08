@@ -28,7 +28,7 @@
             let currentValue;
 
             if(this.isGroupChildComponent) {
-                currentValue = this.$parent.value === this.value;
+                currentValue = this.$parent.currentValue === this.value;
             } else {
                 currentValue = this.value;
             }
@@ -37,7 +37,7 @@
         },
         computed: {
             isChecked() {
-                return this.$parent.value === this.value;
+                return this.$parent.currentValue === this.value;
             },
         },
         methods: {
