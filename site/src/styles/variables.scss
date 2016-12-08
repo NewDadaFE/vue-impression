@@ -258,3 +258,13 @@ $top-line-height: 40px !default;
 $top-font-size: 20px !default;
 $top-bg-color: rgba(0, 0, 0, .3) !default;
 $top-transition: all .6s ease-in-out !default;
+
+// Badge
+$badge-color: $brand-pure !default;
+$badge-padding: 3px !default;
+$badge-min-width: 8px !default;
+$badge-min-width-not-empty: $font-size-root + $badge-padding * 2 !default;
+$badge-min-height: 8px !default;
+$badge-margin-right: $badge-min-width-not-empty / 2 !default;
+$badge-scale: .8 !default;
+$badge-box-shadow: 0 0 0 1px #fff !default;

@@ -23,6 +23,11 @@
                 "icon": "tag"
             },
             {
+                "path": "/badge",
+                "name": "Badge",
+                "icon": "bell-o"
+            },
+            {
                 "path": "/tip",
                 "name": "Tip",
                 "icon": "paperclip"

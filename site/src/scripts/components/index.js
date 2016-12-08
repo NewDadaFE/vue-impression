@@ -23,6 +23,7 @@ import Tag from './Tag';
 import Tip from './Tip';
 import HRule from './HRule';
 import BackToTop from './BackToTop';
+import Badge from './Badge';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -37,6 +38,7 @@ const install = Vue => {
     Vue.component(Tag.name, Tag);
     Vue.component(Tip.name, Tip);
     Vue.component(HRule.name, HRule);
+    Vue.component(Badge.name, Badge);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
