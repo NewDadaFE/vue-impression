@@ -1,5 +1,6 @@
 .toast {
     position: fixed;
+    z-index: $z-index-toast;
     max-width: 80%;
     text-align: center;
     color: $toast-color;

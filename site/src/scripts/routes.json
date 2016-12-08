@@ -61,6 +61,11 @@
                 "path": "/drawer",
                 "name": "Drawer",
                 "icon": "caret-square-o-down"
+            },
+            {
+                "path": "/slide-up",
+                "name": "SlideUp",
+                "icon": "angle-double-up"
             }
         ]
     },

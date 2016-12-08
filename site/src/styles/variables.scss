@@ -22,6 +22,14 @@ $border-radius-sm: 1px !default;
 $cursor-disabled: not-allowed !default;
 $cursor-pointer: pointer !default;
 
+// z-index
+$z-index-top: 1000 !default;
+$z-index-mask: 1010 !default;
+$z-index-slide: 1020 !default;
+$z-index-toast: 1030 !default;
+
+// animation
+
 // Base
 $font-family-base: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
 $line-height-base: 1.43 !default;
@@ -250,7 +258,6 @@ $tip-label-padding: 0 1rem !default;
 $tip-label-color: #888 !default;
 
 // BackToTop
-$top-z-index: 1000 !default;
 $top-right: 30px !default;
 $top-bottom: 30px !default;
 $top-color: $brand-pure !default;
@@ -280,3 +287,15 @@ $drawer-color-active: $brand-primary !default;
 
 $drawer-icon-color: #999 !default;
 $drawer-icon-margin-right: 2px !default;
+
+// mask
+$mask-bg-color: rgba(0, 0, 0, .3) !default;
+
+// Slide
+$slide-bg-color: $brand-pure !default;
+$slide-min-height: 5rem !default;
+$slide-max-height: 60% !default;
+
+$slide-header-padding: 1rem !default;
+
+$slide-body-padding: 1rem !default;

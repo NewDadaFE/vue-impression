@@ -27,6 +27,7 @@ import BackToTop from './BackToTop';
 import Badge from './Badge';
 import Drawer from './Drawer';
 import DrawerItem from './DrawerItem';
+import SlideUp from './SlideUp';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -50,6 +51,7 @@ const install = Vue => {
     Vue.component(NavigationItem.name, NavigationItem);
     Vue.component(Drawer.name, Drawer);
     Vue.component(DrawerItem.name, DrawerItem);
+    Vue.component(SlideUp.name, SlideUp);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);
