@@ -1,3 +1,5 @@
+import { isArray } from '../utils/type';
+
 export default {
     props: {
         value: {},
@@ -12,6 +14,10 @@ export default {
             this.currentValue = val;
         },
         currentValue(val) {
+            if(isArray(val) && val.length === 0) {
+                val = undefined;
+            }
+
             this.$emit('input', val);
         },
     },
