@@ -10,6 +10,7 @@ import Loading from './Loading';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 import Radio from './Radio';
+import RadioGroup from './RadioGroup';
 import Toggle from './Toggle';
 import InputNumber from './InputNumber';
 import InputText from './InputText';
@@ -57,6 +58,7 @@ const install = Vue => {
     Vue.component(Checkbox.name, Checkbox);
     Vue.component(CheckboxGroup.name, CheckboxGroup);
     Vue.component(Radio.name, Radio);
+    Vue.component(RadioGroup.name, RadioGroup);
     Vue.component(Toggle.name, Toggle);
     Vue.component(InputNumber.name, InputNumber);
     Vue.component(InputText.name, InputText);
