@@ -3,9 +3,9 @@
         <input
             type="radio"
             class="radio-input"
-            @change="changeHandle"
             :disabled="disabled"
-            :checked="currentValue">
+            :checked="isGroupChildComponent ? isChecked : currentValue"
+            @change="changeHandle">
         <span class="radio-addon">
             <i></i>
         </span>
@@ -24,10 +24,33 @@
         props: {
             disabled: Boolean,
         },
+        data() {
+            let currentValue;
+
+            if(this.isGroupChildComponent) {
+                currentValue = this.$parent.value === this.value;
+            } else {
+                currentValue = this.value;
+            }
+
+            return { currentValue };
+        },
+        computed: {
+            isChecked() {
+                return this.$parent.value === this.value;
+            },
+        },
         methods: {
             changeHandle(event) {
+                if(this.isGroupChildComponent) {
+                    this.$parent.$emit('optionChecked', this.value);
+                }
+
                 this.$emit('change', event);
             },
+        },
+        beforeCreate() {
+            this.isGroupChildComponent = this.$parent.$options._componentTag === 'radio-group';
         },
     };
 </script>

@@ -14,6 +14,19 @@
                 <radio disabled slot="footer" :value="checked" @change="changeHandle">checked</radio>
             </cell>
         </group>
+        <group-title>
+            RadioGroup
+            <span class="pull-right">selected: {{ group }}</span>
+        </group-title>
+        <group>
+            <cell>
+                <radio-group v-model="group">
+                    <radio value="red">red</radio>
+                    <radio value="green">green</radio>
+                    <radio value="yellow">yellow</radio>
+                </radio-group>
+            </cell>
+        </group>
     </div>
 </template>
 
@@ -24,6 +37,7 @@
         data() {
             return {
                 checked: true,
+                group: 'red',
             };
         },
         methods: {
