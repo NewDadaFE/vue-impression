@@ -10,5 +10,10 @@
     export default {
         name: 'navigation',
         mixins: [Tab],
+        props: {
+            activeKey: {
+                default: 0,
+            },
+        },
     };
 </script>

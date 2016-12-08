@@ -5,7 +5,7 @@
                 <div class="slide-up-header" v-if="$slots.header">
                     <slot name="header"></slot>
                 </div>
-                <div class="slide-up-body">
+                <div class="slide-up-body" :class="{'no-padding': noPadding}">
                     <slot></slot>
                 </div>
             </div>
@@ -18,18 +18,13 @@
     export default {
         name: 'slide-up',
         props: {
-            onClick: {},
             value: {},
+            noPadding: Boolean,
         },
         data() {
             return {
                 currentValue: false,
             };
-        },
-        methods: {
-            maskClickHandle() {
-                this.onClick && this.onClick();
-            },
         },
         watch: {
             value(val) {

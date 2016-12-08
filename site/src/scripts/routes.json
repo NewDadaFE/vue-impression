@@ -130,7 +130,7 @@
             {
                 "path": "/selector",
                 "name": "Selector",
-                "icon": "angle-double-down"
+                "icon": "check"
             },
             {
                 "path": "/inline-selecor",
