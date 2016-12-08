@@ -15,7 +15,7 @@
             </cell>
         </group>
         <group-title>
-            Group
+            RadioGroup
             <span class="pull-right">selected: {{ group }}</span>
         </group-title>
         <group>

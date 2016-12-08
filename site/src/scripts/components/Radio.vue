@@ -4,7 +4,7 @@
             type="radio"
             class="radio-input"
             :disabled="disabled"
-            :checked="isGroup ? checked : currentValue"
+            :checked="isGroupChildComponent ? isChecked : currentValue"
             @change="changeHandle">
         <span class="radio-addon">
             <i></i>
@@ -27,7 +27,7 @@
         data() {
             let currentValue;
 
-            if(this.isGroup) {
+            if(this.isGroupChildComponent) {
                 currentValue = this.$parent.value === this.value;
             } else {
                 currentValue = this.value;
@@ -36,19 +36,19 @@
             return { currentValue };
         },
         computed: {
-            isGroup() {
-                return this.$parent.$options._componentTag === 'radio-group';
-            },
-            checked() {
+            isChecked() {
                 return this.$parent.value === this.value;
             },
         },
         methods: {
             changeHandle() {
-                if(this.isGroup) {
+                if(this.isGroupChildComponent) {
                     this.$parent.$emit('optionChecked', this.value);
                 }
             },
+        },
+        beforeCreate() {
+            this.isGroupChildComponent = this.$parent.$options._componentTag === 'radio-group';
         },
     };
 </script>
