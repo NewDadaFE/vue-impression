@@ -1,6 +1,7 @@
 <template>
     <button
         :type="type"
+        @click="clickHandle"
         class="btn"
         :class="[
             'btn-' + theme,
@@ -44,6 +45,11 @@
                 validator(value) {
                     return ['sm', 'lg'].indexOf(value) > -1;
                 },
+            },
+        },
+        methods: {
+            clickHandle(event) {
+                this.$emit('click', event);
             },
         },
     };

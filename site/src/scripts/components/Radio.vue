@@ -3,6 +3,7 @@
         <input
             type="radio"
             class="radio-input"
+            @change="changeHandle"
             :disabled="disabled"
             :checked="currentValue">
         <span class="radio-addon">
@@ -22,6 +23,11 @@
         mixins: [Sync],
         props: {
             disabled: Boolean,
+        },
+        methods: {
+            changeHandle(event) {
+                this.$emit('change', event);
+            },
         },
     };
 </script>

@@ -3,15 +3,15 @@
         <group-title>Base</group-title>
         <group>
             <cell>
-                <toggle @change.native="changeHandle">default</toggle>
-                <toggle slot="footer" v-model="checked" @change.native="changeHandle">checked</toggle>
+                <toggle @change="changeHandle">default</toggle>
+                <toggle slot="footer" v-model="checked" @change="changeHandle">checked</toggle>
             </cell>
         </group>
         <group-title>Disabled</group-title>
         <group>
             <cell>
-                <toggle disabled @change.native="changeHandle">default</toggle>
-                <toggle disabled slot="footer" v-model="checked" @change.native="changeHandle">checked</toggle>
+                <toggle disabled @change="changeHandle">default</toggle>
+                <toggle disabled slot="footer" v-model="checked" @change="changeHandle">checked</toggle>
             </cell>
         </group>
     </div>

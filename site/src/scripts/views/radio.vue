@@ -3,15 +3,15 @@
         <group-title>Base</group-title>
         <group>
             <cell>
-                <radio @change.native="changeHandle">default</radio>
-                <radio slot="footer" :value="checked" @change.native="changeHandle">checked</radio>
+                <radio @change="changeHandle">default</radio>
+                <radio slot="footer" :value="checked" @change="changeHandle">checked</radio>
             </cell>
         </group>
         <group-title>Disabled</group-title>
         <group>
             <cell>
-                <radio disabled @change.native="changeHandle">default</radio>
-                <radio disabled slot="footer" :value="checked" @change.native="changeHandle">checked</radio>
+                <radio disabled @change="changeHandle">default</radio>
+                <radio disabled slot="footer" :value="checked" @change="changeHandle">checked</radio>
             </cell>
         </group>
     </div>

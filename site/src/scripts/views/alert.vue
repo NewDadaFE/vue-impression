@@ -1,10 +1,10 @@
 <template>
   <div class="">
-      <cell @click.native="openMsg()">
+      <cell @click="openMsg()">
           <icon class="fa-fw text-muted" name="commenting-o" left size="lg"></icon>
           alert
       </cell>
-      <cell @click.native="openConfirm()">
+      <cell @click="openConfirm()">
           <icon class="fa-fw text-success" name="check" left size="lg"></icon>
           confirm
       </cell>

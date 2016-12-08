@@ -1,10 +1,10 @@
 <template>
     <div class="">
-        <cell @click.native="onLoading()">
+        <cell @click="onLoading()">
             <icon class="fa-fw text-muted" name="commenting-o" left size="lg"></icon>
             loading start
         </cell>
-        <cell @click.native="onLoaded()">
+        <cell @click="onLoaded()">
             <icon class="fa-fw text-success" name="check" left size="lg"></icon>
             loaded end
         </cell>

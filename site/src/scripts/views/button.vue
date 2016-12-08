@@ -3,7 +3,7 @@
         <group-title>theme</group-title>
         <group>
             <cell>
-                <btn theme="primary" @click.native="clickHandle('vue 2.0')">primary</btn>
+                <btn theme="primary" @click="clickHandle('vue 2.0')">primary</btn>
                 <btn theme="secondary">secondary</btn>
                 <btn theme="default">default</btn>
             </cell>
