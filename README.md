@@ -30,6 +30,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] HRule(Hr)
  - [x] InlineSelector
  - [x] Swipe
+ - [x] SlideUp
  - [ ] Card
  - [ ] Picker
  - [ ] DateTimePicker
