@@ -24,6 +24,8 @@ import Tip from './Tip';
 import HRule from './HRule';
 import BackToTop from './BackToTop';
 import Badge from './Badge';
+import Drawer from './Drawer';
+import DrawerItem from './DrawerItem';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -45,6 +47,8 @@ const install = Vue => {
     Vue.component(TabbarItem.name, TabbarItem);
     Vue.component(Navigation.name, Navigation);
     Vue.component(NavigationItem.name, NavigationItem);
+    Vue.component(Drawer.name, Drawer);
+    Vue.component(DrawerItem.name, DrawerItem);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);

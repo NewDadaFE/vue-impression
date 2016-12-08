@@ -7,15 +7,15 @@
     border-radius: 50%;
     color: $top-color;
     background-color: $top-bg-color;
-}
 
-.back-to-top-show {
-    bottom: $top-bottom;
-    transition: $top-transition;
-
-    .back-to-top-icon {
-        transform: rotate(0deg);
+    &.active {
+        bottom: $top-bottom;
         transition: $top-transition;
+
+        .back-to-top-icon {
+            transform: rotate(0deg);
+            transition: $top-transition;
+        }
     }
 }
 

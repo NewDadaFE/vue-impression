@@ -56,6 +56,11 @@
                 "path": "/navigation",
                 "name": "Navigation",
                 "icon": "tablet"
+            },
+            {
+                "path": "/drawer",
+                "name": "Drawer",
+                "icon": "caret-square-o-down"
             }
         ]
     },

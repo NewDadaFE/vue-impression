@@ -21,3 +21,10 @@
     background-repeat: no-repeat, no-repeat;
     background-position: left top, left bottom;
 }
+
+@mixin border-left {
+    background-image: $border-image-left;
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}

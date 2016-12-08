@@ -43,6 +43,7 @@ $spacer-gap: $spacer / 2 !default;
 $border-color: #d9d9d9 !default;
 $border-image-top: linear-gradient(to bottom, $border-color, $border-color 50%, transparent 0) !default;
 $border-image-bottom: linear-gradient(to top, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-left: linear-gradient(to right, $border-color, $border-color 50%, transparent 0) !default;
 
 // Hr
 $hr-color: $border-color !default;
@@ -51,8 +52,7 @@ $hr-margin: 1rem 0 !default;
 // Links
 $link-color: $brand-primary !default;
 $link-decoration: none !default;
-$link-hover-color: darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
+$link-active-color: darken($link-color, 15%) !default;
 
 // Tables
 $table-bg: $brand-pure !default;
@@ -267,4 +267,14 @@ $badge-min-width-not-empty: $font-size-root + $badge-padding * 2 !default;
 $badge-min-height: 8px !default;
 $badge-margin-right: $badge-min-width-not-empty / 2 !default;
 $badge-scale: .8 !default;
-$badge-box-shadow: 0 0 0 1px #fff !default;
+$badge-box-shadow: 0 0 0 1px $brand-pure !default;
+
+// Drawer
+$drawer-color: #666 !default;
+$drawer-bg-color: $tabbar-bg-color !default;
+$drawer-padding: ($navbar-height - $line-height-base * $font-size-root) / 2 0 !default;
+$drawer-transition: all .2s ease-in-out !default;
+$drawer-color-active: $brand-primary !default;
+
+$drawer-icon-color: #999 !default;
+$drawer-icon-margin-right: 2px !default;

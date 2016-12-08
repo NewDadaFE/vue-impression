@@ -142,11 +142,16 @@ a {
     color: $link-color;
     text-decoration: $link-decoration;
 
-    &:hover {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
+    &:active,
+    &:focus,
+    &:visited {
+        color: $link-color;
+        text-decoration: none;
     }
 
+    &:active {
+        color: $link-active-color;
+    }
 }
 
 // And undo these styles for placeholder links/named anchors (without href).

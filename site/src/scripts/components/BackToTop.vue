@@ -1,7 +1,7 @@
 <template>
     <div
         class="back-to-top"
-        :class="{'back-to-top-show': show}"
+        :class="{'active': active}"
         @click="scrollToTopHandle">
         <icon class="back-to-top-icon" name="arrow-up" />
     </div>
@@ -23,7 +23,7 @@
         },
         data() {
             return {
-                show: false,
+                active: false,
             };
         },
         methods: {
@@ -95,10 +95,10 @@
 
                 // 显示
                 if(scrollTop < this._offsetY && scrollTop > 60) {
-                    this.show = true;
+                    this.active = true;
                 } else {
                     // 隐藏
-                    this.show = false;
+                    this.active = false;
                 }
 
                 this._offsetY = scrollTop;
