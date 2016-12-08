@@ -10,6 +10,11 @@
     export default {
         name: 'checkbox-group',
         mixins: [Sync],
+        data() {
+            return {
+                currentValue: this.value || [],
+            };
+        },
         methods: {
             optionCheckedHandle(option) {
                 const index = this.currentValue.indexOf(option);

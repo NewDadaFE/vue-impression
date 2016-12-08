@@ -37,7 +37,8 @@
             let currentValue;
 
             if(this.isGroupChildComponent) {
-                currentValue = this.$parent.currentValue.indexOf(this.value) > -1;
+                currentValue = this.$parent.currentValue
+                    && this.$parent.currentValue.indexOf(this.value) > -1;
             } else {
                 currentValue = this.value;
             }
