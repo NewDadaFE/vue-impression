@@ -3,6 +3,12 @@
         <group-title>base</group-title>
         <group>
             <cell>
+                <badge content="3" theme="primary" />
+                <badge content="3" theme="secondary" />
+                <badge content="3" theme="success" />
+                <badge content="3" theme="warning" />
+            </cell>
+            <cell>
                 <badge content="3" theme="primary">
                     <div class="bg-default" :style="{width: '50px', height: '50px'}"></div>
                 </badge>
