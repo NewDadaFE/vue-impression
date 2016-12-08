@@ -8,6 +8,7 @@ import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
 import Loading from './Loading';
 import Checkbox from './Checkbox';
+import CheckboxGroup from './CheckboxGroup';
 import Radio from './Radio';
 import Toggle from './Toggle';
 import InputNumber from './InputNumber';
@@ -54,6 +55,7 @@ const install = Vue => {
     Vue.component(BackToTop.name, BackToTop);
 
     Vue.component(Checkbox.name, Checkbox);
+    Vue.component(CheckboxGroup.name, CheckboxGroup);
     Vue.component(Radio.name, Radio);
     Vue.component(Toggle.name, Toggle);
     Vue.component(InputNumber.name, InputNumber);
