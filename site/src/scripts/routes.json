@@ -23,6 +23,11 @@
                 "icon": "tag"
             },
             {
+                "path": "/badge",
+                "name": "Badge",
+                "icon": "bell-o"
+            },
+            {
                 "path": "/tip",
                 "name": "Tip",
                 "icon": "paperclip"
@@ -71,6 +76,11 @@
                 "path": "/alert",
                 "name": "alert",
                 "icon": "commenting-o"
+            },
+            {
+                "path": "/back-to-top",
+                "name": "BackToTop",
+                "icon": "arrow-circle-up"
             }
         ]
     },

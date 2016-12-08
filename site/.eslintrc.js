@@ -33,10 +33,12 @@ module.exports = {
         'no-param-reassign': ["error", { "props": false }],
         'space-before-function-paren': ['error', {"anonymous": "never", "named": "never"}],
         'func-names': ["error", "never"],
-        'one-var': ["error", "always"],
+        'one-var': 0,
+        'no-param-reassign': 0,
         'prefer-spread': 0,
         'no-underscore-dangle': 0,
         'prefer-const': 0,
+        'no-mixed-operators': ['error', {'allowSamePrecedence': true}],
         'import/prefer-default-export': 0,
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
