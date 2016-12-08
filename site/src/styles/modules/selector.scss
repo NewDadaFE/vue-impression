@@ -1,3 +1,9 @@
+.selector {
+    > .selector-option:last-child {
+        background-size: 0;
+    }
+}
+
 .selector-option {
     &.active {
         color: $selector-color-active;
