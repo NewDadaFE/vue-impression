@@ -32,5 +32,25 @@
                 },
             },
         },
+        data() {
+            let currentValue;
+
+            if(this.$parent.$options._componentTag === 'checkbox-group') {
+                currentValue = this.$parent.currentValue.indexOf(this.value) > -1;
+            } else {
+                currentValue = this.value;
+            }
+
+            return { currentValue };
+        },
+        watch: {
+            currentValue(val) {
+                if(this.$parent.$options._componentTag === 'checkbox-group') {
+                    this.$parent.$emit('optionChecked', this.value);
+                }
+
+                this.$emit('input', val);
+            },
+        },
     };
 </script>

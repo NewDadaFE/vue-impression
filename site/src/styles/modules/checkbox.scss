@@ -84,3 +84,8 @@
     display: inline-block;
     margin-left: $checkbox-label-gap;
 }
+
+// group
+.checkbox-group > .checkbox {
+    margin-right: $checkbox-group-gap;
+}

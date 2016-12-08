@@ -25,6 +25,19 @@
                 <checkbox type="circle" slot="footer" v-model="checked" disabled @change.native="changeHandle">checked</checkbox>
             </cell>
         </group>
+        <group-title>
+            Group
+            <span class="pull-right">selected: {{ group }}</span>
+        </group-title>
+        <group>
+            <cell>
+                <checkbox-group v-model="group">
+                    <checkbox value="red">red</checkbox>
+                    <checkbox value="green">green</checkbox>
+                    <checkbox value="blue">blue</checkbox>
+                </checkbox-group>
+            </cell>
+        </group>
     </div>
 </template>
 
@@ -35,6 +48,7 @@
         data() {
             return {
                 checked: true,
+                group: ['red'],
             };
         },
         methods: {
