@@ -34,7 +34,7 @@
             },
             {
                 "path": "/hrule",
-                "name": "HRule",
+                "name": "HRule(Hr)",
                 "icon": "minus"
             }
         ]
@@ -104,7 +104,7 @@
             },
             {
                 "path": "/toggle",
-                "name": "Toggle",
+                "name": "Toggle(Switch)",
                 "icon": "toggle-on"
             },
             {

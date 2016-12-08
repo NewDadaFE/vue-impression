@@ -26,7 +26,7 @@
             </cell>
         </group>
         <group-title>
-            Group
+            CheckboxGroup
             <span class="pull-right">selected: {{ group }}</span>
         </group-title>
         <group>

@@ -35,7 +35,7 @@
         data() {
             let currentValue;
 
-            if(this.$parent.$options._componentTag === 'checkbox-group') {
+            if(this.isGroupChildComponent) {
                 currentValue = this.$parent.currentValue.indexOf(this.value) > -1;
             } else {
                 currentValue = this.value;
@@ -45,12 +45,16 @@
         },
         watch: {
             currentValue(val) {
-                if(this.$parent.$options._componentTag === 'checkbox-group') {
+                if(this.isGroupChildComponent) {
                     this.$parent.$emit('optionChecked', this.value);
                 }
 
                 this.$emit('input', val);
             },
+        },
+        beforeCreate() {
+            // 是否CheckboxGroup下的子组件
+            this.isGroupChildComponent = this.$parent.$options._componentTag === 'checkbox-group';
         },
     };
 </script>
