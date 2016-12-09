@@ -85,8 +85,7 @@
     margin-left: $checkbox-label-gap;
 }
 
-// group
-.checkbox-group > .checkbox,
-.radio-group > .radio {
-    margin-right: $checkbox-group-gap;
+.checkbox + .checkbox,
+.radio + .radio {
+    margin-left: $checkbox-gap;
 }
