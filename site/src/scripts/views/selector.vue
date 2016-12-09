@@ -24,10 +24,9 @@
         </group>
         <group-title>
             disabled
-            <span class="pull-right">已选择：{{disabled}}</span>
         </group-title>
         <group>
-            <selector v-model="disabled" disabled>
+            <selector disabled>
                 <selector-option :value="1">选项一</selector-option>
                 <selector-option :value="2">选项二</selector-option>
                 <selector-option :value="3">选项三</selector-option>
@@ -39,7 +38,7 @@
         </group-title>
         <group>
             <selector v-model="disabled">
-                <selector-option :value="1" disabled>选项一</selector-option>
+                <selector-option :value="1" disabled>disabled</selector-option>
                 <selector-option :value="2">选项二</selector-option>
                 <selector-option :value="3">选项三</selector-option>
             </selector>

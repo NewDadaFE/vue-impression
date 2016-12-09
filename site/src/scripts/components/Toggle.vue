@@ -2,7 +2,6 @@
     <label class="toggle">
         <input
             type="checkbox"
-            @change="changeHandle"
             class="toggle-input"
             :disabled="disabled"
             v-model="currentValue">
@@ -18,13 +17,5 @@
     export default {
         name: 'toggle',
         mixins: [Sync],
-        props: {
-            disabled: Boolean,
-        },
-        methods: {
-            changeHandle(event) {
-                this.$emit('change', event);
-            },
-        },
     };
 </script>
