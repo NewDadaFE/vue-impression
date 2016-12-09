@@ -3,6 +3,7 @@ import { isArray } from '../utils/type';
 export default {
     props: {
         value: {},
+        disabled: Boolean,
     },
     data() {
         return {

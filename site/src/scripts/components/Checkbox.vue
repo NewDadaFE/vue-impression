@@ -23,7 +23,6 @@
         name: 'checkbox',
         mixins: [Sync],
         props: {
-            disabled: Boolean,
             type: {
                 type: String,
                 default: 'square',

@@ -21,9 +21,6 @@
     export default {
         name: 'radio',
         mixins: [Sync],
-        props: {
-            disabled: Boolean,
-        },
         data() {
             let currentValue;
 
