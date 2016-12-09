@@ -14,9 +14,18 @@
                 请选择送货地点：
             </div>
             <selector @change="showBase = false">
-                <selector-option :value="1">北京市</selector-option>
-                <selector-option :value="2">上海市</selector-option>
-                <selector-option :value="3">广州市</selector-option>
+                <selector-option :value="1">北京</selector-option>
+                <selector-option :value="2">上海</selector-option>
+                <selector-option :value="3">广州</selector-option>
+                <selector-option :value="4">成都</selector-option>
+                <selector-option :value="5">南京</selector-option>
+                <selector-option :value="6">杭州</selector-option>
+                <selector-option :value="7">深圳</selector-option>
+                <selector-option :value="8">厦门</selector-option>
+                <selector-option :value="9">福州</selector-option>
+                <selector-option :value="10">佛山</selector-option>
+                <selector-option :value="11">嘉兴</selector-option>
+                <selector-option :value="12">宁波</selector-option>
             </selector>
         </slide-up>
         <slide-up v-model="showEvent" @close="closeHandle">
