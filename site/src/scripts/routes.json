@@ -63,6 +63,11 @@
                 "icon": "caret-square-o-down"
             },
             {
+                "path": "/segmented-control",
+                "name": "SegmentedControl",
+                "icon": "columns"
+            },
+            {
                 "path": "/slide-up",
                 "name": "SlideUp",
                 "icon": "angle-double-up"
