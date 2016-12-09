@@ -5,7 +5,7 @@
         <input
             type="checkbox"
             class="checkbox-input"
-            :disabled="disabled"
+            :disabled="disabled || $parent.disabled"
             v-model="currentValue">
         <span class="checkbox-addon">
             <i class="fa fa-check" />

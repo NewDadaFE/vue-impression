@@ -38,6 +38,31 @@
                 </checkbox-group>
             </cell>
         </group>
+        <group-title>
+            CheckboxGroup disabled
+        </group-title>
+        <group>
+            <cell>
+                <checkbox-group disabled>
+                    <checkbox value="red">red</checkbox>
+                    <checkbox value="green">green</checkbox>
+                    <checkbox value="blue">blue</checkbox>
+                </checkbox-group>
+            </cell>
+        </group>
+        <group-title>
+            Child Checkbox disabled
+            <span class="pull-right">selected: {{ groupDisabled }}</span>
+        </group-title>
+        <group>
+            <cell>
+                <checkbox-group v-model="groupDisabled">
+                    <checkbox value="red" disabled>red</checkbox>
+                    <checkbox value="green">green</checkbox>
+                    <checkbox value="blue">blue</checkbox>
+                </checkbox-group>
+            </cell>
+        </group>
     </div>
 </template>
 
@@ -49,6 +74,7 @@
             return {
                 checked: true,
                 group: ['red'],
+                groupDisabled: [],
             };
         },
         methods: {

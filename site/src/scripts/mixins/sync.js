@@ -15,6 +15,8 @@ export default {
             this.currentValue = val;
         },
         currentValue(val) {
+            if(this.disabled) return;
+
             if(isArray(val) && val.length === 0) {
                 this.currentValue = undefined;
                 return;
