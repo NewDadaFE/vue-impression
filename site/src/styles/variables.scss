@@ -26,6 +26,7 @@ $cursor-pointer: pointer !default;
 $z-index-top: 1000 !default;
 $z-index-mask: 1010 !default;
 $z-index-slide: 1020 !default;
+$z-index-sidelip: 1020 !default;
 $z-index-toast: 1030 !default;
 
 // animation
@@ -271,9 +272,9 @@ $top-transition: all .6s ease-in-out !default;
 // Badge
 $badge-color: $brand-pure !default;
 $badge-padding: 3px !default;
-$badge-min-width: 8px !default;
+$badge-min-width: 6px !default;
 $badge-min-width-not-empty: $font-size-root + $badge-padding * 2 !default;
-$badge-min-height: 8px !default;
+$badge-min-height: 6px !default;
 $badge-margin-right: $badge-min-width-not-empty / 2 !default;
 $badge-scale: .8 !default;
 $badge-box-shadow: 0 0 0 1px $brand-pure !default;
@@ -294,11 +295,15 @@ $mask-bg-color: rgba(0, 0, 0, .3) !default;
 // Slide
 $slide-bg-color: $brand-pure !default;
 $slide-min-height: 5rem !default;
-$slide-max-height: 60% !default;
+$slide-max-height: 50% !default;
 
 $slide-header-padding: 1rem !default;
 
 $slide-body-padding: 1rem !default;
+
+// Sidelip
+$sidelip-width: 60% !default;
+$sidelip-bg-color: $brand-pure !default;
 
 // SegmentedControl
 $segmented-control-color: $brand-primary !default;

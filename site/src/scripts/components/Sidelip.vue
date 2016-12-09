@@ -1,13 +1,8 @@
 <template>
     <div>
-        <transition :name="transitionName">
-            <div v-show="currentValue" class="slide-up">
-                <div class="slide-up-header" v-if="$slots.header">
-                    <slot name="header"></slot>
-                </div>
-                <div class="slide-up-body" :class="{'no-padding': noPadding}">
-                    <slot></slot>
-                </div>
+        <transition name="slide-left">
+            <div v-show="currentValue" class="sidelip">
+                <slot></slot>
             </div>
         </transition>
         <transition name="fade">
@@ -18,14 +13,9 @@
 
 <script>
     export default {
-        name: 'slide-up',
+        name: 'sidelip',
         props: {
             value: {},
-            noPadding: Boolean,
-            transitionName: {
-                type: String,
-                default: 'slide-up',
-            },
         },
         data() {
             return {

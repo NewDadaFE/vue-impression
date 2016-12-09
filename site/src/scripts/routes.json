@@ -71,6 +71,11 @@
                 "path": "/slide-up",
                 "name": "SlideUp",
                 "icon": "angle-double-up"
+            },
+            {
+                "path": "/sideslip",
+                "name": "Sideslip",
+                "icon": "window-restore"
             }
         ]
     },

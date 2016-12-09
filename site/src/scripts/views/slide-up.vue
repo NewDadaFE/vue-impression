@@ -2,30 +2,32 @@
     <div>
         <group-title>base</group-title>
         <group>
-            <cell @click="showBase = true">选择地点</cell>
+            <cell @click="showBase = true">{{city || '选择地点'}}</cell>
         </group>
-        <group-title>event</group-title>
+        <group-title>event:close</group-title>
         <group>
-            <cell @click="showEvent = true">close</cell>
+            <cell @click="showEvent = true">
+                {{(color || size) ? `已选择：${color}、${size}` : '请选择型号'}}
+            </cell>
         </group>
         <slide-up v-model="showBase" noPadding>
             <div slot="header" class="text-secondary">
                 <icon name="map-marker"></icon>
                 请选择送货地点：
             </div>
-            <selector @change="showBase = false">
-                <selector-option :value="1">北京</selector-option>
-                <selector-option :value="2">上海</selector-option>
-                <selector-option :value="3">广州</selector-option>
-                <selector-option :value="4">成都</selector-option>
-                <selector-option :value="5">南京</selector-option>
-                <selector-option :value="6">杭州</selector-option>
-                <selector-option :value="7">深圳</selector-option>
-                <selector-option :value="8">厦门</selector-option>
-                <selector-option :value="9">福州</selector-option>
-                <selector-option :value="10">佛山</selector-option>
-                <selector-option :value="11">嘉兴</selector-option>
-                <selector-option :value="12">宁波</selector-option>
+            <selector v-model="city" @change="showBase = false">
+                <selector-option value="北京">北京</selector-option>
+                <selector-option value="上海">上海</selector-option>
+                <selector-option value="广州">广州</selector-option>
+                <selector-option value="成都">成都</selector-option>
+                <selector-option value="南京">南京</selector-option>
+                <selector-option value="杭州">杭州</selector-option>
+                <selector-option value="深圳">深圳</selector-option>
+                <selector-option value="厦门">厦门</selector-option>
+                <selector-option value="福州">福州</selector-option>
+                <selector-option value="佛山">佛山</selector-option>
+                <selector-option value="嘉兴">嘉兴</selector-option>
+                <selector-option value="宁波">宁波</selector-option>
             </selector>
         </slide-up>
         <slide-up v-model="showEvent" @close="closeHandle">
@@ -34,16 +36,16 @@
                 商品：
             </div>
             <p class="text-muted">颜色</p>
-            <inline-selector>
-                <inline-selector-option value="1">黑咖色</inline-selector-option>
-                <inline-selector-option value="2" disabled>香槟金</inline-selector-option>
-                <inline-selector-option value="3">紫罗兰</inline-selector-option>
-                <inline-selector-option value="4">香槟色</inline-selector-option>
-                <inline-selector-option value="5" disabled>孔雀蓝</inline-selector-option>
+            <inline-selector v-model="color">
+                <inline-selector-option value="黑咖色">黑咖色</inline-selector-option>
+                <inline-selector-option value="香槟金" disabled>香槟金</inline-selector-option>
+                <inline-selector-option value="紫罗兰">紫罗兰</inline-selector-option>
+                <inline-selector-option value="香槟色">香槟色</inline-selector-option>
+                <inline-selector-option value="孔雀蓝" disabled>孔雀蓝</inline-selector-option>
             </inline-selector>
             <p></p>
             <p class="text-muted">尺码</p>
-            <inline-selector>
+            <inline-selector v-model="size">
                 <inline-selector-option value="xxl">XXL</inline-selector-option>
                 <inline-selector-option value="m">M</inline-selector-option>
                 <inline-selector-option value="s" disabled>S</inline-selector-option>
@@ -60,6 +62,9 @@
             return {
                 showBase: false,
                 showEvent: false,
+                city: null,
+                color: '',
+                size: '',
             };
         },
         methods: {

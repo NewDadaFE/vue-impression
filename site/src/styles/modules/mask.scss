@@ -1,0 +1,18 @@
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $mask-bg-color;
+    z-index: $z-index-mask;
+}
+
+
+.fade-enter-active {
+    animation: fadeIn .3s ease;
+}
+
+.fade-leave-active {
+    animation: fadeOut .2s ease-in-out;
+}

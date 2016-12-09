@@ -1,13 +1,3 @@
-.mask {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $mask-bg-color;
-    z-index: $z-index-mask;
-}
-
 .slide-up {
     position: fixed;
     left: 0;
@@ -32,10 +22,10 @@
     padding: $slide-body-padding;
 }
 
-.slide-enter-active {
-    animation: slideInUp .2s ease-in-out;
+.slide-up-enter-active {
+    animation: slideInUp .3s ease-in-out;
 }
 
-.slide-leave-active {
+.slide-up-leave-active {
     animation: slideOutDown .2s ease-in-out;
 }

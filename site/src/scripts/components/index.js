@@ -31,6 +31,7 @@ import DrawerItem from './DrawerItem';
 import SlideUp from './SlideUp';
 import SegmentedControl from './SegmentedControl';
 import SegmentedControlItem from './SegmentedControlItem';
+import Sidelip from './Sidelip';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -57,6 +58,7 @@ const install = Vue => {
     Vue.component(SegmentedControl.name, SegmentedControl);
     Vue.component(SegmentedControlItem.name, SegmentedControlItem);
     Vue.component(SlideUp.name, SlideUp);
+    Vue.component(Sidelip.name, Sidelip);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);
@@ -85,9 +87,4 @@ if(typeof window !== 'undefined' && window.Vue) {
 export default {
     version: pkg.version,
     install,
-    Button,
-    Group,
-    GroupTitle,
-    Cell,
-    Icon,
 };
