@@ -1,7 +1,18 @@
 <template>
     <div>
         <group-title>
-            RadioGroup
+            Radio
+            <span class="pull-right">selected: {{ single }}</span>
+        </group-title>
+        <group>
+            <cell>
+                <radio v-model="single" val="red">red</radio>
+                <radio v-model="single" val="green">green</radio>
+                <radio v-model="single" val="yellow">yellow</radio>
+            </cell>
+        </group>
+        <group-title>
+            RadioGroup(<span class="text-danger">推荐</span>)
             <span class="pull-right">selected: {{ group }}</span>
         </group-title>
         <group>
@@ -20,6 +31,7 @@
     export default {
         data() {
             return {
+                single: 'green',
                 group: 'red',
             };
         },

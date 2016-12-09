@@ -4,7 +4,7 @@
             type="radio"
             class="radio-input"
             v-model="model"
-            :value="value"
+            :value="isGroupChildComponent ? value : val"
             :disabled="disabled">
         <span class="radio-addon">
             <i></i>
@@ -16,11 +16,12 @@
 </template>
 
 <script>
-    import Sync from '../mixins/sync';
-
     export default {
         name: 'radio',
-        mixins: [Sync],
+        props: {
+            value: {},
+            val: {},
+        },
         computed: {
             model: {
                 get() {
