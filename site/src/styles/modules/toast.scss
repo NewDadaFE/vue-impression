@@ -38,3 +38,11 @@
     font-size: $toast-icon-font-size;
     margin-bottom: $toast-icon-margin-bottom;
 }
+
+.toast-fade-enter-active {
+    animation: fadeIn .6s ease-in;
+}
+
+.toast-fade-leave-active {
+    animation: fadeOut .3s ease;
+}

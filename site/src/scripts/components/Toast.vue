@@ -1,18 +1,20 @@
 <template>
-    <div
-        v-show="visible"
-        class="toast"
-        :class="[
-            'toast-' + position,
-            {
-                'toast-lg': icon,
-            }
-        ]">
-        <div class="toast-icon" v-if="icon">
-            <icon :name="icon"></icon>
+    <transition name="toast-fade">
+        <div
+            v-show="visible"
+            class="toast"
+            :class="[
+                'toast-' + position,
+                {
+                    'toast-lg': icon,
+                }
+            ]">
+            <div class="toast-icon" v-if="icon">
+                <icon :name="icon"></icon>
+            </div>
+            {{message}}
         </div>
-        {{message}}
-    </div>
+    </transition>
 </template>
 
 <script>
