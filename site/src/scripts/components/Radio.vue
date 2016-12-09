@@ -3,9 +3,9 @@
         <input
             type="radio"
             class="radio-input"
-            :disabled="disabled"
-            :checked="isGroupChildComponent ? isChecked : currentValue"
-            @change="changeHandle">
+            v-model="model"
+            :value="value"
+            :disabled="disabled">
         <span class="radio-addon">
             <i></i>
         </span>
@@ -21,29 +21,18 @@
     export default {
         name: 'radio',
         mixins: [Sync],
-        data() {
-            let currentValue;
-
-            if(this.isGroupChildComponent) {
-                currentValue = this.$parent.currentValue === this.value;
-            } else {
-                currentValue = this.value;
-            }
-
-            return { currentValue };
-        },
         computed: {
-            isChecked() {
-                return this.$parent.currentValue === this.value;
-            },
-        },
-        methods: {
-            changeHandle(event) {
-                if(this.isGroupChildComponent) {
-                    this.$parent.$emit('optionChecked', this.value);
-                }
-
-                this.$emit('change', event);
+            model: {
+                get() {
+                    return this.isGroupChildComponent ? this.$parent.value : this.value;
+                },
+                set(val) {
+                    if(this.isGroupChildComponent) {
+                        this.$parent.$emit('input', val);
+                    } else {
+                        this.$emit('input', val);
+                    }
+                },
             },
         },
         beforeCreate() {

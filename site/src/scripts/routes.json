@@ -135,7 +135,7 @@
             {
                 "path": "/inline-selecor",
                 "name": "InlineSelector",
-                "icon": "th"
+                "icon": "th-large"
             }
         ]
     }

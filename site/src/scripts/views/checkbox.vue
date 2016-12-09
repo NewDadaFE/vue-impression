@@ -67,8 +67,6 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-
     export default {
         data() {
             return {
@@ -79,10 +77,10 @@
         },
         methods: {
             changeHandle(val) {
-                Vue.$toast(`选中：${val}`);
+                this.$toast(`选中：${val}`);
             },
             groupChangeHandle(val) {
-                Vue.$toast(`选中：${val}`);
+                this.$toast(`选中：${val}`);
             },
         },
     };
