@@ -33,6 +33,17 @@
                 <selector-option :value="3">选项三</selector-option>
             </selector>
         </group>
+        <group-title>
+            selector-option disabled
+            <span class="pull-right">已选择：{{disabled}}</span>
+        </group-title>
+        <group>
+            <selector v-model="disabled">
+                <selector-option :value="1" disabled>选项一</selector-option>
+                <selector-option :value="2">选项二</selector-option>
+                <selector-option :value="3">选项三</selector-option>
+            </selector>
+        </group>
     </div>
 </template>
 

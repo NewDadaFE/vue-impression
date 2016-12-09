@@ -1,10 +1,11 @@
 export default {
     props: {
+        value: {},
         checkedIcon: {
             type: String,
             default: 'check',
         },
-        value: {},
+        disabled: Boolean,
     },
     methods: {
         clickHandle() {
