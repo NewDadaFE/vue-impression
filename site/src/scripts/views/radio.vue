@@ -41,8 +41,8 @@
             };
         },
         methods: {
-            changeHandle(event) {
-                Vue.$toast(`选中：${event.target.checked}`);
+            changeHandle(val) {
+                Vue.$toast(`选中：${val}`);
             },
         },
     };

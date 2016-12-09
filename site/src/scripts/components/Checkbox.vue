@@ -6,7 +6,6 @@
             type="checkbox"
             class="checkbox-input"
             :disabled="disabled"
-            @change="changeHandle"
             v-model="currentValue">
         <span class="checkbox-addon">
             <i class="fa fa-check" />
@@ -52,11 +51,6 @@
                 }
 
                 this.$emit('input', val);
-            },
-        },
-        methods: {
-            changeHandle(event) {
-                this.$emit('change', event);
             },
         },
         beforeCreate() {

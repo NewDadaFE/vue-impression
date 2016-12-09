@@ -15,10 +15,12 @@ export default {
         },
         currentValue(val) {
             if(isArray(val) && val.length === 0) {
-                val = undefined;
+                this.currentValue = undefined;
+                return;
             }
 
             this.$emit('input', val);
+            this.$emit('change', val);
         },
     },
 };

@@ -31,7 +31,7 @@
         </group-title>
         <group>
             <cell>
-                <checkbox-group v-model="group">
+                <checkbox-group v-model="group" @change="groupChangeHandle">
                     <checkbox value="red">red</checkbox>
                     <checkbox value="green">green</checkbox>
                     <checkbox value="blue">blue</checkbox>
@@ -52,8 +52,11 @@
             };
         },
         methods: {
-            changeHandle(event) {
-                Vue.$toast(`选中：${event.target.checked}`);
+            changeHandle(val) {
+                Vue.$toast(`选中：${val}`);
+            },
+            groupChangeHandle(val) {
+                Vue.$toast(`选中：${val}`);
             },
         },
     };

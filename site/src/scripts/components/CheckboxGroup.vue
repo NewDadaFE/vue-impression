@@ -17,6 +17,7 @@
         },
         methods: {
             optionCheckedHandle(option) {
+                this.currentValue = this.currentValue || [];
                 const index = this.currentValue.indexOf(option);
 
                 if(index === -1) {
