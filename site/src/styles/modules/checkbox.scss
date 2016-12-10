@@ -67,15 +67,15 @@
 
 .radio-addon {
     border-radius: 50%;
-    padding: 5px;
-    line-height: 8px;
+    padding: $radio-addon-padding;
+    line-height: 1px;
 
     i {
-        width: 10px;
-        height: 10px;
+        display: inline-block;
+        width: $radio-addon-width;
+        height: $radio-addon-height;
         background: $checkbox-color;
         border-radius: 50%;
-        display: inline-block;
         transform: scale(0);
         transform-origin: 50% 50%;
         transition: $checkbox-transition;

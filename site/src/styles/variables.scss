@@ -162,7 +162,7 @@ $checkbox-padding: 3px !default;
 $checkbox-color: $brand-pure !default;
 $checkbox-bg-color: $brand-pure !default;
 $checkbox-border-color: #ddd !default;
-$checkbox-transition: all .2s ease-in !default
+$checkbox-transition: all .2s ease-in !default;
 
 $checkbox-bg-color-checked: $brand-primary !default;
 $checkbox-border-color-checked: $brand-primary !default;
@@ -171,6 +171,9 @@ $checkbox-border-color-disabled: $checkbox-border-color !default;
 
 
 $checkbox-addon-font-size: 1.2rem !default;
+$radio-addon-width: 10px !default;
+$radio-addon-height: $radio-addon-width !default;
+$radio-addon-padding: 5px !default;
 
 $checkbox-label-gap: 2px !default;
 
@@ -188,6 +191,7 @@ $toggle-bg-color: #e7eaec !default;
 $toggle-width: 46px !default;
 $toggle-padding: 3px !default;
 $toggle-border-radius: $toggle-addon-size !default;
+$toggle-transition: all .2s ease !default;
 
 // Number
 $number-border-color: $brand-primary !default;
@@ -226,6 +230,7 @@ $selector-icon-color: $brand-primary !default;
 $selector-color-transition: all .2s ease-in-out !default;
 
 // InlineSelector
+$inline-selector-transition: all .2s ease-in !default;
 $inline-selector-option-min-width: 55px !default;
 
 // Tag
@@ -313,6 +318,7 @@ $segmented-control-color: $brand-primary !default;
 $segmented-control-bg-color: $brand-pure !default;
 $segmented-control-border-color: $brand-primary !default;
 $segmented-control-border-radius: $border-radius-lg !default;
+$segmented-control-transition: all .3s ease-in-out !default;
 
 $segmented-control-color-active: $brand-pure !default;
 $segmented-control-bg-color-active: $brand-primary !default;

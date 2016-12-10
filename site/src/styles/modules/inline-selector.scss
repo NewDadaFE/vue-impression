@@ -3,7 +3,7 @@
 }
 
 .inline-selector-option {
-    transition: all .2s ease-in;
+    transition: $inline-selector-transition;
     min-width: $inline-selector-option-min-width;
 
     &.disabled {
