@@ -162,6 +162,7 @@ $checkbox-padding: 3px !default;
 $checkbox-color: $brand-pure !default;
 $checkbox-bg-color: $brand-pure !default;
 $checkbox-border-color: #ddd !default;
+$checkbox-transition: all .2s ease-in !default
 
 $checkbox-bg-color-checked: $brand-primary !default;
 $checkbox-border-color-checked: $brand-primary !default;
@@ -221,6 +222,8 @@ $textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale .2rem 0
 
 // Selector
 $selector-color-active: $brand-primary !default;
+$selector-icon-color: $brand-primary !default;
+$selector-color-transition: all .2s ease-in-out !default;
 
 // InlineSelector
 $inline-selector-option-min-width: 55px !default;

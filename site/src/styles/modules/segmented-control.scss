@@ -10,6 +10,7 @@
     display: inline-block;
     color: $segmented-control-color;
     padding: $segmented-control-item-padding;
+    transition: all .3s ease-in-out;
 
     &.active {
         color: $segmented-control-color-active;

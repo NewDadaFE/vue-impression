@@ -1,8 +1,9 @@
 .inline-selector {
-
+    display: block;
 }
 
 .inline-selector-option {
+    transition: all .2s ease-in;
     min-width: $inline-selector-option-min-width;
 
     &.disabled {

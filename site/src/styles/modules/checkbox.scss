@@ -30,7 +30,7 @@
         background-color: $checkbox-bg-color-checked;
 
         i {
-            visibility: visible;
+            transform: scale(1);
         }
     }
 
@@ -49,14 +49,16 @@
     padding: $checkbox-padding;
     background-color: $checkbox-bg-color;
     border: 1px solid $checkbox-border-color;
-    transition: all .3s ease;
+    transition: $checkbox-transition;
 }
 
 .checkbox-addon {
     line-height: 1;
 
     i {
-        visibility: hidden;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
         font-size: $checkbox-addon-font-size;
         width: $checkbox-addon-font-size;
         height: $checkbox-addon-font-size;
@@ -74,7 +76,9 @@
         background: $checkbox-color;
         border-radius: 50%;
         display: inline-block;
-        visibility: hidden;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
     }
 }
 
