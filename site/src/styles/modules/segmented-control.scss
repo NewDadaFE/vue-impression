@@ -1,5 +1,5 @@
 .segmented-control {
-    overflow: hidden;
+    font-size: 0;
     display: inline-block;
     border: 1px solid $segmented-control-border-color;
     border-radius: $segmented-control-border-radius;
@@ -9,6 +9,7 @@
 .segmented-control-item {
     display: inline-block;
     color: $segmented-control-color;
+    font-size: $segmented-control-item-font-size;
     padding: $segmented-control-item-padding;
     transition: $segmented-control-transition;
 
