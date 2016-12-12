@@ -81,7 +81,7 @@
         bottom: 0;
         overflow: auto;
         padding-bottom: 0.5rem;
-        background-color: rgba(255, 0, 0, 0.4);
+        background-color: rgba(0, 0, 255, 0.4);
     }
     .prod-container {
         padding-top: 0.4rem;
