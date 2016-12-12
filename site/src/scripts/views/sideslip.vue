@@ -5,11 +5,16 @@
             <cell @click="toggleHandle">sidelip</cell>
         </group>
         <sidelip v-model="show">
-            <div class="bg-primary" :style="{height: '8rem', padding: '2rem 0 0 1rem'}">
-                <h3>
-                    <icon name="user-circle-o" size="3x"></icon>
-                    <span :style="{marginLeft: '1rem'}">Impression</span>
-                </h3>
+            <div class="bg-primary" :style="{height: '8rem', padding: '2rem 1rem'}">
+                <media class="bg-pure" align="center">
+                    <media-object>
+                        <img class="img-circle" :style="{width: '60px', height: '60px'}" src="/images/avatar.jpg">
+                    </media-object>
+                    <media-body>
+                        <h3>Impression</h3>
+                        <a class="text-pure" href="https://github.com/NewDadaFE/vue-impression">NewDadaFE©️所有</a>
+                    </media-body>
+                </media>
             </div>
             <group class="text-muted no-margin">
                 <cell>
