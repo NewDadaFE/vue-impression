@@ -32,7 +32,8 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Swipe
  - [x] SlideUp
  - [x] SegmentedControl
- - [ ] Card
+ - [x] Media
+ - [x] Card
  - [ ] Picker
  - [ ] DateTimePicker
  - [ ] Search
