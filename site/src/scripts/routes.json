@@ -36,6 +36,11 @@
                 "path": "/hrule",
                 "name": "HRule(Hr)",
                 "icon": "minus"
+            },
+            {
+                "path": "/media",
+                "name": "Media",
+                "icon": "picture-o"
             }
         ]
     },

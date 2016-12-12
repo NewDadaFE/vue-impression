@@ -32,6 +32,9 @@ import SlideUp from './SlideUp';
 import SegmentedControl from './SegmentedControl';
 import SegmentedControlItem from './SegmentedControlItem';
 import Sidelip from './Sidelip';
+import Media from './Media';
+import MediaObject from './MediaObject';
+import MediaBody from './MediaBody';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -47,6 +50,9 @@ const install = Vue => {
     Vue.component(Tip.name, Tip);
     Vue.component(HRule.name, HRule);
     Vue.component(Badge.name, Badge);
+    Vue.component(Media.name, Media);
+    Vue.component(MediaObject.name, MediaObject);
+    Vue.component(MediaBody.name, MediaBody);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);
