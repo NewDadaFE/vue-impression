@@ -35,6 +35,8 @@ import Sidelip from './Sidelip';
 import Media from './Media';
 import MediaObject from './MediaObject';
 import MediaBody from './MediaBody';
+import Card from './Card';
+import CardBody from './CardBody';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -53,6 +55,8 @@ const install = Vue => {
     Vue.component(Media.name, Media);
     Vue.component(MediaObject.name, MediaObject);
     Vue.component(MediaBody.name, MediaBody);
+    Vue.component(Card.name, Card);
+    Vue.component(CardBody.name, CardBody);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);

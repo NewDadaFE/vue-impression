@@ -38,9 +38,14 @@
                 "icon": "minus"
             },
             {
+                "path": "/card",
+                "name": "Card",
+                "icon": "file-image-o"
+            },
+            {
                 "path": "/media",
                 "name": "Media",
-                "icon": "picture-o"
+                "icon": "id-card-o"
             }
         ]
     },
