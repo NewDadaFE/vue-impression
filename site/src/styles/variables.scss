@@ -334,3 +334,17 @@ $media-object-gap: 1rem !default;
 // Card
 $card-bg-color: $brand-pure !default;
 $card-body-padding: .6rem 1rem !default;
+
+//  Searchbar
+$searchbar-padding: .5rem !default;
+$searchbar-border-color: $border-color !default;
+$searchbar-border-radius: $border-radius !default;
+$searchbar-transition: all .3s ease !default;
+
+$searchbar-placeholder-opacity: .2 !default;
+$searchbar-placeholder-width: 1rem + .5rem !default;
+
+$searchbar-clear-padding: 0 0 0 .5rem !default;
+$searchbar-clear-opacity: .2 !default;
+
+$searchbar-btn-padding: 0 .5rem !default;

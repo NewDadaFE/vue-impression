@@ -37,6 +37,8 @@ import MediaObject from './MediaObject';
 import MediaBody from './MediaBody';
 import Card from './Card';
 import CardBody from './CardBody';
+import DatePicker from './DatePicker';
+import Searchbar from './Searchbar';
 import toast from '../utils/toast';
 import pkg from '../../../package.json';
 
@@ -69,6 +71,7 @@ const install = Vue => {
     Vue.component(SegmentedControlItem.name, SegmentedControlItem);
     Vue.component(SlideUp.name, SlideUp);
     Vue.component(Sidelip.name, Sidelip);
+    Vue.component(Searchbar.name, Searchbar);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);
@@ -85,6 +88,7 @@ const install = Vue => {
     Vue.component(SelectorOption.name, SelectorOption);
     Vue.component(InlineSelector.name, InlineSelector);
     Vue.component(InlineSelectorOption.name, InlineSelectorOption);
+    Vue.component(DatePicker.name, DatePicker);
 
     Vue.$toast = Vue.prototype.$toast = toast;
 };

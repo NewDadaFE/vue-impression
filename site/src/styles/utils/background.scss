@@ -12,8 +12,12 @@
     background-color: $gray-lighter;
 }
 
-.bg-pure {
+.bg-transparent {
     background-color: transparent !important;
+}
+
+.bg-pure {
+    background-color: $brand-pure !important;
 }
 
 .bg-primary {

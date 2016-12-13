@@ -36,7 +36,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Card
  - [ ] Picker
  - [x] DatePicker
- - [ ] Search
+ - [x] Search
  - [x] BackToTop
  - [ ] Pull down
  - [ ] Pull up

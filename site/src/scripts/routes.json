@@ -86,6 +86,11 @@
                 "path": "/sideslip",
                 "name": "Sideslip",
                 "icon": "window-restore"
+            },
+            {
+                "path": "/searchbar",
+                "name": "Searchbar",
+                "icon": "search"
             }
         ]
     },
@@ -156,6 +161,11 @@
                 "path": "/inline-selecor",
                 "name": "InlineSelector",
                 "icon": "th-large"
+            },
+            {
+                "path": "/datepicker",
+                "name": "DatePicker",
+                "icon": "calendar"
             }
         ]
     }
