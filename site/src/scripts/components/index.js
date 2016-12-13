@@ -6,6 +6,7 @@ import Icon from './Icon';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
+// import Loading from './Loading';
 import Loading from './Loading';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';

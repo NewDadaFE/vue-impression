@@ -6,12 +6,13 @@
             :class="[
                 'toast-' + position,
                 {
-                    'toast-lg': icon,
+                    'toast-lg': type,
                 }
             ]">
             <div class="toast-icon" v-if="icon">
                 <icon :name="icon"></icon>
             </div>
+            <loading v-else-if="type === 'loading'" />
             {{message}}
         </div>
     </transition>
@@ -31,9 +32,8 @@
             },
             type: {
                 type: String,
-                default: 'default',
                 validator(value) {
-                    return ['default', 'success', 'error', 'warning', 'question'].indexOf(value) > -1;
+                    return ['success', 'error', 'warning', 'loading'].indexOf(value) > -1;
                 },
             },
         },
@@ -51,8 +51,6 @@
                         return 'check';
                     case 'warning':
                         return 'exclamation-triangle';
-                    case 'question':
-                        return 'question-circle';
                     default:
                         return null;
                 }

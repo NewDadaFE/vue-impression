@@ -2,7 +2,7 @@
     <div>
         <group-title>Base</group-title>
         <group>
-            <cell @click="baseClickHandle('default')">
+            <cell @click="baseClickHandle('')">
                 <icon class="fa-fw text-muted" name="commenting-o" left size="lg"></icon>
                 default
             </cell>
@@ -17,6 +17,10 @@
             <cell @click="baseClickHandle('warning')">
                 <icon class="fa-fw text-warning" name="exclamation-triangle" left size="lg"></icon>
                 warning
+            </cell>
+            <cell @click="baseClickHandle('loading')">
+                <icon class="fa-spinner text-muted" name="exclamation-triangle" left size="lg"></icon>
+                loading
             </cell>
         </group>
         <group-title>Position</group-title>
@@ -44,7 +48,7 @@
             baseClickHandle(type) {
                 this.$toast({
                     type,
-                    message: type,
+                    message: type || 'default',
                     position: 'bottom',
                 });
             },

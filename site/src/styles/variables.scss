@@ -349,3 +349,14 @@ $searchbar-clear-padding: 0 0 0 .5rem !default;
 $searchbar-clear-opacity: .2 !default;
 
 $searchbar-btn-padding: 0 .5rem !default;
+
+// Loading
+$loading-width: 4rem !default;
+$loading-margin: 1rem 0 !default;
+$loading-animation-duration: 2s !default;
+
+$loading-path-stroke: $border-color !default;
+$loading-path-stroke-width: 2 !default;
+$loading-path-animation-duration: 1.5s !default;
+
+$toast-loading-path-stroke: $brand-pure !default;
