@@ -10,8 +10,9 @@
                 ['btn-' + theme + '-outline']: outline,
                 'btn-block': block,
             }]"
-        :disabled="disabled">
+        :disabled="disabled || isLoading">
         <slot></slot>
+        <loading v-if="isLoading" />
     </button>
 </template>
 
@@ -23,6 +24,7 @@
             block: Boolean,
             outline: Boolean,
             disabled: Boolean,
+            isLoading: Boolean,
             // 类型
             type: {
                 type: String,

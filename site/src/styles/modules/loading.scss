@@ -22,6 +22,15 @@
     }
 }
 
+.btn {
+    .loading {
+        width: $btn-loading-width;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: $btn-loading-margin;
+    }
+}
+
 @keyframes rotate {
     100% {
         transform: rotate(1turn);
