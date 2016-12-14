@@ -13,8 +13,7 @@
     @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
 
     &,
-    &:active,
-    &.active {
+    &:active {
         &:focus {
             outline: 0;
             background-image: none;
@@ -26,10 +25,18 @@
         text-decoration: none;
     }
 
-    &.disabled,
     &:disabled {
-        cursor: $cursor-disabled;
-        opacity: $btn-opacity-disabled;
+        opacity: $btn-loading-opacity-disabled;
+
+        &:not(.btn-loading) {
+            opacity: $btn-opacity-disabled;
+        }
+    }
+
+    .loading {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: $btn-loading-gap;
     }
 }
 

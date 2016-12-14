@@ -12,24 +12,23 @@
     animation: dash $loading-path-animation-duration ease-in-out infinite;
 }
 
-.toast {
-    .loading {
-        margin: $loading-margin;
-    }
-
+.loading-primary {
     .loading-path {
-        stroke: $toast-loading-path-stroke;
+        stroke: $loading-path-stroke-primary;
     }
 }
 
-.btn {
-    .loading {
-        width: $btn-loading-width;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: $btn-loading-margin;
+.loading-secondary {
+    .loading-path {
+        stroke: $loading-path-stroke-secondary;
     }
 }
+
+.loading-sm {
+    width: $loading-width-sm;
+}
+
+
 
 @keyframes rotate {
     100% {

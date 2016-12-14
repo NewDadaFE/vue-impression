@@ -70,6 +70,7 @@ $table-sm-cell-padding: .3rem !default;
 
 // Buttons
 $btn-opacity-disabled: .65 !default;
+$btn-loading-opacity-disabled: .9 !default;
 
 $btn-font-size: $font-size-base !default;
 $btn-padding-x: 1.6rem !default;
@@ -97,6 +98,8 @@ $btn-secondary-border: $brand-secondary !default;
 $btn-default-color: $gray;
 $btn-default-bg: #fff !default;
 $btn-default-border: $border-color !default;
+
+$btn-loading-gap: 3px !default;
 
 // Group/Cell
 $group-bg-color: $brand-pure !default;
@@ -156,6 +159,8 @@ $toast-position-gap: 4rem !default;
 
 $toast-icon-font-size: 4rem !default;
 $toast-icon-margin-bottom: .5rem !default;
+
+$toast-loading-margin: 1rem 0 !default;
 
 // Checkbox
 $checkbox-padding: 3px !default;
@@ -352,14 +357,13 @@ $searchbar-btn-padding: 0 .5rem !default;
 
 // Loading
 $loading-width: 4rem !default;
-$loading-margin: 1rem 0 !default;
 $loading-animation-duration: 2s !default;
 
 $loading-path-stroke: $border-color !default;
-$loading-path-stroke-width: 2 !default;
+$loading-path-stroke-width: 3 !default;
 $loading-path-animation-duration: 1.5s !default;
 
-$toast-loading-path-stroke: $brand-pure !default;
+$loading-path-stroke-primary: $brand-primary !default;
+$loading-path-stroke-secondary: $brand-secondary !default;
 
-$btn-loading-width: 1rem !default;
-$btn-loading-margin: 0 0 0 5px !default;
+$loading-width-sm: 1rem !default;

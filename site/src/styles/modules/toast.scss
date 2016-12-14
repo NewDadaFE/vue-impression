@@ -8,6 +8,10 @@
     padding: $toast-padding;
     font-size: $toast-font-size;
     border-radius: $toast-border-radius;
+
+    .loading {
+        margin: $toast-loading-margin;
+    }
 }
 
 .toast-top {

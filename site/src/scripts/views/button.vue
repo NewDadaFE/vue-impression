@@ -16,11 +16,11 @@
                 <btn outline theme="default">default</btn>
             </cell>
         </group>
-        <group-title>loading</group-title>
+        <group-title>isLoading</group-title>
         <group>
             <cell>
-                <btn theme="primary" isLoading>primary</btn>
-                <btn theme="secondary" isLoading>secondary</btn>
+                <btn theme="primary" isLoading>loading</btn>
+                <btn theme="default" isLoading>保存中</btn>
             </cell>
         </group>
         <group-title>disabled</group-title>
