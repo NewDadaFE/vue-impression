@@ -1,8 +1,10 @@
 import Button from './Button';
+import Icon from './Icon';
 import Group from './Group';
 import GroupTitle from './GroupTitle';
 import Cell from './Cell';
-import Icon from './Icon';
+import Flex from './Flex';
+import FlexItem from './FlexItem';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
@@ -50,6 +52,8 @@ const install = Vue => {
     Vue.component(Group.name, Group);
     Vue.component(GroupTitle.name, GroupTitle);
     Vue.component(Cell.name, Cell);
+    Vue.component(Flex.name, Flex);
+    Vue.component(FlexItem.name, FlexItem);
     Vue.component(Icon.name, Icon);
     Vue.component(Tag.name, Tag);
     Vue.component(Tip.name, Tip);

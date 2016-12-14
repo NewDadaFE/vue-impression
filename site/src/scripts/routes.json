@@ -8,14 +8,19 @@
                 "icon": "hand-pointer-o"
             },
             {
+                "path": "/icon",
+                "name": "Icon",
+                "icon": "flag"
+            },
+            {
                 "path": "/cell",
                 "name": "Group && Cell",
                 "icon": "list"
             },
             {
-                "path": "/icon",
-                "name": "Icon",
-                "icon": "flag"
+                "path": "/flex",
+                "name": "Flex && FlexItem",
+                "icon": "th"
             },
             {
                 "path": "/tag",
