@@ -1,4 +1,5 @@
 .loading {
+    width: $loading-width;
     animation: rotate $loading-animation-duration linear infinite;
 }
 
@@ -13,7 +14,6 @@
 
 .toast {
     .loading {
-        width: $loading-width;
         margin: $loading-margin;
     }
 

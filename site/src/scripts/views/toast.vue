@@ -18,10 +18,6 @@
                 <icon class="fa-fw text-warning" name="exclamation-triangle" left size="lg"></icon>
                 warning
             </cell>
-            <cell @click="baseClickHandle('loading')">
-                <icon class="fa-spinner text-muted" name="exclamation-triangle" left size="lg"></icon>
-                loading
-            </cell>
         </group>
         <group-title>Position</group-title>
         <group>

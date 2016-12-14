@@ -6,7 +6,6 @@ import Icon from './Icon';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
-// import Loading from './Loading';
 import Loading from './Loading';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
@@ -41,6 +40,7 @@ import CardBody from './CardBody';
 import DatePicker from './DatePicker';
 import Searchbar from './Searchbar';
 import toast from '../utils/toast';
+import loading from '../utils/loading';
 import pkg from '../../../package.json';
 
 const install = Vue => {
@@ -92,6 +92,7 @@ const install = Vue => {
     Vue.component(DatePicker.name, DatePicker);
 
     Vue.$toast = Vue.prototype.$toast = toast;
+    Vue.$loading = Vue.prototype.$loading = loading;
 };
 
 /* global window:true */

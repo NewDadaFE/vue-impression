@@ -4,7 +4,7 @@
         <group>
             <cell @click="showLoadingHandle">
                 <icon class="text-muted" name="spinner" left size="lg" />
-                show
+                toggle
             </cell>
         </group>
     </div>
@@ -13,7 +13,7 @@
     export default{
         methods: {
             showLoadingHandle() {
-                this.$toast('aaa');
+                this.$loading.toggle();
             },
         },
     };
