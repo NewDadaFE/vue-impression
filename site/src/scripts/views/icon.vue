@@ -1,22 +1,7 @@
 <template>
     <div>
         <group>
-            <cell>cell one</cell>
-            <cell>cell two</cell>
-            <cell>cell three</cell>
+            <cell href="http://fontawesome.io/icons/">Fontawesome</cell>
         </group>
     </div>
 </template>
-
-
-<script>
-    import Group from '../components/Group';
-    import Cell from '../components/Cell';
-
-    export default {
-        components: {
-            Group,
-            Cell,
-        },
-    };
-</script>
