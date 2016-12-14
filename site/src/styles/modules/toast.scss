@@ -39,6 +39,10 @@
     margin-bottom: $toast-icon-margin-bottom;
 }
 
+.toast-message {
+    line-height: 1;
+}
+
 .toast-fade-enter-active {
     animation: fadeIn .6s ease-in;
 }

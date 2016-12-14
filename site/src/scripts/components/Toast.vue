@@ -13,7 +13,9 @@
                 <icon :name="icon"></icon>
             </div>
             <loading v-else-if="type === 'loading'" />
-            {{message}}
+            <div class="loading-message">
+                {{message}}
+            </div>
         </div>
     </transition>
 </template>
