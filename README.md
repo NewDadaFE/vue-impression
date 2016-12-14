@@ -7,6 +7,8 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] Group
  - [x] GroupTitle
  - [x] Cell
+ - [x] Flex
+ - [x] FlexItem
  - [x] Icon
  - [x] Navbar
  - [x] Navigation
@@ -34,7 +36,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] SegmentedControl
  - [x] Media
  - [x] Card
- - [ ] Picker
+ - [x] Picker
  - [x] DatePicker
  - [x] Search
  - [x] BackToTop
