@@ -41,6 +41,7 @@ import Card from './Card';
 import CardBody from './CardBody';
 import DatePicker from './DatePicker';
 import Searchbar from './Searchbar';
+import Loadmore from './Loadmore';
 import toast from '../utils/toast';
 import loading from '../utils/loading';
 import pkg from '../../../package.json';
@@ -77,6 +78,7 @@ const install = Vue => {
     Vue.component(SlideUp.name, SlideUp);
     Vue.component(Sidelip.name, Sidelip);
     Vue.component(Searchbar.name, Searchbar);
+    Vue.component(Loadmore.name, Loadmore);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);

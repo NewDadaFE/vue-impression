@@ -96,6 +96,16 @@
                 "path": "/searchbar",
                 "name": "Searchbar",
                 "icon": "search"
+            },
+            {
+                "path": "/pull-down",
+                "name": "Pull down",
+                "icon": "long-arrow-down"
+            },
+            {
+                "path": "/pull-up",
+                "name": "Pull up",
+                "icon": "long-arrow-up"
             }
         ]
     },
