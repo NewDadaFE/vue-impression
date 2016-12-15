@@ -40,7 +40,7 @@ A Vue.js 2.0 UI elements for mobile.
  - [x] DatePicker
  - [x] Search
  - [x] BackToTop
- - [ ] Pull down
- - [ ] Pull up
+ - [x] Pull down
+ - [x] Pull up
  - [x] Sideslip
  - [ ] Sticky
