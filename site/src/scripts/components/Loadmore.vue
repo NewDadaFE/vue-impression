@@ -130,7 +130,8 @@
                     overflowY = '';
 
                 while (
-                    currentNode && currentNode.tagName !== 'HTML'
+                    currentNode
+                    && currentNode.tagName !== 'HTML'
                     && currentNode.tagName !== 'BODY'
                     && currentNode.nodeType === 1
                 ) {
@@ -224,11 +225,11 @@
                     this.topDropped = true;
 
                     if(this.topStatus === 'drop') {
-                        this.translate = '50';
+                        this.translate = 50;
                         this.topStatus = 'loading';
                         this.topMethod(this.uuid);
                     } else {
-                        this.translate = '0';
+                        this.translate = 0;
                         this.topStatus = 'pull';
                     }
                 }
@@ -244,11 +245,11 @@
                     this.bottomReached = false;
 
                     if(this.bottomStatus === 'drop') {
-                        this.translate = '-50';
+                        this.translate = -50;
                         this.bottomStatus = 'loading';
                         this.bottomMethod(this.uuid);
                     } else {
-                        this.translate = '0';
+                        this.translate = 0;
                         this.bottomStatus = 'pull';
                     }
                 }
@@ -278,9 +279,9 @@
                 }
             },
             onBottomLoaded(id) {
-                this.bottomStatus = 'pull';
-                this.bottomDropped = false;
                 if(id === this.uuid) {
+                    this.bottomStatus = 'pull';
+                    this.bottomDropped = false;
                     this.$nextTick(() => {
                         if(this.scrollElement === window) {
                             document.body.scrollTop += 50;
