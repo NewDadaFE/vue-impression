@@ -308,5 +308,15 @@
                 this.$el.addEventListener('touchend', this.handleTouchEnd);
             }
         },
+        beforeDestroy() {
+            if(
+                typeof this.topMethod === 'function'
+                || typeof this.bottomMethod === 'function'
+            ) {
+                this.$el.removeEventListener('touchstart', this.handleTouchStart);
+                this.$el.removeEventListener('touchmove', this.handleTouchMove);
+                this.$el.removeEventListener('touchend', this.handleTouchEnd);
+            }
+        },
     };
 </script>
