@@ -66,6 +66,10 @@
                 }, 1500);
             },
         },
+        beforeCreate() {
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        },
         created() {
             for (let i = 1; i <= 20; i += 1) {
                 this.list.push(i);
