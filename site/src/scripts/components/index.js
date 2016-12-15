@@ -43,6 +43,7 @@ import DatePicker from './DatePicker';
 import Searchbar from './Searchbar';
 import Picker from './Picker';
 import PickerOption from './PickerOption';
+import Loadmore from './Loadmore';
 import toast from '../utils/toast';
 import loading from '../utils/loading';
 import pkg from '../../../package.json';
@@ -81,6 +82,7 @@ const install = Vue => {
     Vue.component(Searchbar.name, Searchbar);
     Vue.component(Picker.name, Picker);
     Vue.component(PickerOption.name, PickerOption);
+    Vue.component(Loadmore.name, Loadmore);
 
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);
