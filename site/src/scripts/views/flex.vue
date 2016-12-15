@@ -43,6 +43,10 @@
         margin-bottom: 1rem;
     }
 
+    .item {
+        padding: .5rem 0;
+    }
+
     .item:not(:last-child) {
         margin-right: 0.5rem;
     }

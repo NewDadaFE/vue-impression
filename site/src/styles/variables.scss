@@ -367,3 +367,31 @@ $loading-path-stroke-primary: $brand-primary !default;
 $loading-path-stroke-secondary: $brand-secondary !default;
 
 $loading-width-sm: 1rem !default;
+
+// Picker
+$picker-bg-color: $brand-pure !default;
+$picker-items-count: 5 !default;
+$picker-items-count-sm: 3 !default;
+$picker-items-count-lg: 7 !default;
+
+$picker-item-font-size: 1.2rem !default;
+$picker-item-height: 3rem !default;
+$picker-item-line-height: $picker-item-height !default;
+$picker-item-padding: 0 1rem !default;
+$picker-item-transition: all .3s ease !default;
+
+$picker-item-font-size-active: 1.3rem !default;
+$picker-item-font-weight-active: bold !default;
+
+$picker-mask-bg-size: 100% $picker-item-height * 2 !default;
+$picker-mask-leve-1: hsla(0, 0%, 100%, .95) !default;
+$picker-mask-leve-2: hsla(0, 0%, 100%, .6) !default;
+$picker-mask-leve-3: hsla(0, 0%, 100%, .3) !default;
+$picker-mask-bg-image: linear-gradient(180deg, $picker-mask-leve-1, $picker-mask-leve-2), linear-gradient(0deg, $picker-mask-leve-1, $picker-mask-leve-2) !default;
+$picker-mask-bg-image-sm: linear-gradient(180deg, $picker-mask-leve-3), linear-gradient(0deg, $picker-mask-leve-3) !default;
+$picker-mask-bg-image-lg: linear-gradient(180deg, $picker-mask-leve-1, $picker-mask-leve-2, $picker-mask-leve-3), linear-gradient(0deg, $picker-mask-leve-1, $picker-mask-leve-2, $picker-mask-leve-3) !default;
+
+$picker-tap-height: $picker-item-height !default;
+
+$picker-list-transition: all .3s ease-out !default;
+

@@ -1,0 +1,88 @@
+.picker {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: $picker-bg-color;
+    height: $picker-items-count * $picker-item-height;
+}
+
+.picker-sm {
+    height: $picker-items-count-sm * $picker-item-height;
+
+    .picker-list {
+        padding-top: ($picker-items-count-sm - 1) / 2 * $picker-item-height;
+    }
+
+    .picker-mask {
+        background-image: $picker-mask-bg-image-sm;
+        background-size: 100% $picker-item-height * ($picker-items-count-sm - 1) / 2;
+    }
+}
+
+.picker-lg {
+    height: $picker-items-count-lg * $picker-item-height;
+
+    .picker-list {
+        padding-top: ($picker-items-count-lg - 1) / 2 * $picker-item-height;
+    }
+
+    .picker-mask {
+        background-image: $picker-mask-bg-image-lg;
+        background-size: 100% $picker-item-height * ($picker-items-count-lg - 1) / 2;
+    }
+}
+
+.picker-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-image: $picker-mask-bg-image;
+    background-size: 100% $picker-item-height * ($picker-items-count - 1) / 2;
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+}
+
+.picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: $picker-tap-height;
+    transform: translateY(-50%);
+    @include border-vertical;
+}
+
+.picker-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: ($picker-items-count - 1) / 2 * $picker-item-height;
+    transition: $picker-list-transition;
+
+    &.active {
+        transition-duration: 0s;
+    }
+}
+
+.picker-list-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    backface-visibility: hidden;
+    height: $picker-item-height;
+    line-height: $picker-item-line-height;
+    font-size: $picker-item-font-size;
+    padding: $picker-item-padding;
+    transition: $picker-item-transition;
+
+    &.active {
+        font-size: $picker-item-font-size-active;
+        font-weight: $picker-item-font-weight-active;
+    }
+}
