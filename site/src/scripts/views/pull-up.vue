@@ -5,8 +5,8 @@
             <cell>
                 <div class="loadmore-wrapper">
                     <loadmore
-                        :topMethod="loadTop"
-                        :topAllLoaded="topAllLoaded"
+                        :bottomMethod="loadBottom"
+                        :bottomAllLoaded="bottomAllLoaded"
                         ref="loadmore">
                         <ul class="loadmore-list">
                             <li v-for="item in list" class="loadmore-item">{{ item }}</li>
@@ -46,24 +46,23 @@
         data() {
             return {
                 list: [],
-                topAllLoaded: false,
                 bottomAllLoaded: false,
             };
         },
         methods: {
-            loadTop(id) {
+            loadBottom(id) {
                 setTimeout(() => {
-                    let firstValue = this.list[0];
+                    let lastValue = this.list[this.list.length - 1];
 
-                    if(firstValue >= -20) {
+                    if(lastValue < 40) {
                         for (let i = 1; i <= 10; i += 1) {
-                            this.list.unshift(firstValue - i);
+                            this.list.push(lastValue + i);
                         }
                     }
 
-                    if(this.list[0] === -19) this.topAllLoaded = true;
+                    if(this.list[this.list.length - 1] === 40) this.bottomAllLoaded = true;
 
-                    this.$refs.loadmore.onTopLoaded(id);
+                    this.$refs.loadmore.onBottomLoaded(id);
                 }, 1500);
             },
         },
