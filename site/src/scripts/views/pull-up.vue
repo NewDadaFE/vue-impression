@@ -1,26 +1,27 @@
 <template>
     <div>
-        <group-title>Pull up</group-title>
-        <group>
-            <cell>
-                <div class="loadmore-wrapper">
-                    <loadmore
-                        :bottomMethod="loadBottom"
-                        :bottomAllLoaded="bottomAllLoaded"
-                        ref="loadmore">
-                        <ul class="loadmore-list">
-                            <li v-for="item in list" class="loadmore-item">{{ item }}</li>
-                        </ul>
-                    </loadmore>
-                </div>
-            </cell>
-        </group>
+        <group-title>
+            Pull up
+            <span class="pull-right">status: {{ bottomAllLoaded ? 'all loaded' : bottomStatus }}</span>
+        </group-title>
+        <div class="loadmore-wrapper">
+            <loadmore
+                :bottomMethod="loadBottom"
+                :bottomAllLoaded="bottomAllLoaded"
+                @bottomStatusChanged="statusChangeHandle"
+                ref="loadmore">
+                <ul class="loadmore-list">
+                    <li v-for="item in list" class="loadmore-item">{{ item }}</li>
+                </ul>
+            </loadmore>
+        </div>
     </div>
 </template>
 
 <style>
     .loadmore-wrapper {
         overflow: scroll;
+        background-color: white;
     }
 
     .loadmore-list {
@@ -46,11 +47,12 @@
         data() {
             return {
                 list: [],
+                bottomStatus: '',
                 bottomAllLoaded: false,
             };
         },
         methods: {
-            loadBottom(id) {
+            loadBottom() {
                 setTimeout(() => {
                     let lastValue = this.list[this.list.length - 1];
 
@@ -62,8 +64,11 @@
 
                     if(this.list[this.list.length - 1] === 40) this.bottomAllLoaded = true;
 
-                    this.$refs.loadmore.onBottomLoaded(id);
+                    this.$refs.loadmore.onBottomLoaded();
                 }, 1500);
+            },
+            statusChangeHandle(status) {
+                this.bottomStatus = status;
             },
         },
         beforeCreate() {

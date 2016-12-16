@@ -1,26 +1,27 @@
 <template>
     <div>
-        <group-title>Pull down</group-title>
-        <group>
-            <cell>
-                <div class="loadmore-wrapper">
-                    <loadmore
-                        :topMethod="loadTop"
-                        :topAllLoaded="topAllLoaded"
-                        ref="loadmore">
-                        <ul class="loadmore-list">
-                            <li v-for="item in list" class="loadmore-item">{{ item }}</li>
-                        </ul>
-                    </loadmore>
-                </div>
-            </cell>
-        </group>
+        <group-title>
+            Pull down
+            <span class="pull-right">status: {{ topAllLoaded ? 'all loaded' : topStatus }}</span>
+        </group-title>
+        <div class="loadmore-wrapper">
+            <loadmore
+                :topMethod="loadTop"
+                :topAllLoaded="topAllLoaded"
+                @topStatusChanged="statusChangeHandle"
+                ref="loadmore">
+                <ul class="loadmore-list">
+                    <li v-for="item in list" class="loadmore-item">{{ item }}</li>
+                </ul>
+            </loadmore>
+        </div>
     </div>
 </template>
 
 <style>
     .loadmore-wrapper {
         overflow: scroll;
+        background-color: white;
     }
 
     .loadmore-list {
@@ -46,11 +47,12 @@
         data() {
             return {
                 list: [],
+                topStatus: '',
                 topAllLoaded: false,
             };
         },
         methods: {
-            loadTop(id) {
+            loadTop() {
                 setTimeout(() => {
                     let firstValue = this.list[0];
 
@@ -62,8 +64,11 @@
 
                     if(this.list[0] === -19) this.topAllLoaded = true;
 
-                    this.$refs.loadmore.onTopLoaded(id);
+                    this.$refs.loadmore.onTopLoaded();
                 }, 1500);
+            },
+            statusChangeHandle(status) {
+                this.topStatus = status;
             },
         },
         beforeCreate() {
