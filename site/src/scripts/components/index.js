@@ -46,8 +46,7 @@ import PickerOption from './PickerOption';
 import Loadmore from './Loadmore';
 import Alert from './Alert';
 import toast from '../utils/toast';
-import alert from '../utils/alert';
-import confirm from '../utils/confirm';
+import { alert, confirm } from '../utils/alert';
 import loading from '../utils/loading';
 import pkg from '../../../package.json';
 

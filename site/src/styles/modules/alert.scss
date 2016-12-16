@@ -37,4 +37,12 @@
     color: $alert-btn-color;
     font-size: $alert-btn-font-size;
     padding: $alert-btn-padding;
+
+    &:not(:first-child) {
+        @include border-left;
+    }
+}
+
+.alert-btn-secondary {
+    color: $alert-btn-secondary-color;
 }

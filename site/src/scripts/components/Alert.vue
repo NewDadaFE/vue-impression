@@ -10,7 +10,22 @@
                     {{message}}
                 </div>
                 <div class="alert-footer">
-                    <div class="alert-btn" @click="clickHandle">{{btnText}}</div>
+                    <template v-if="inverse">
+                        <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
+                            {{cancelText}}
+                        </div>
+                        <div class="alert-btn" @click="okClickHandle">
+                            {{okText}}
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="alert-btn" @click="okClickHandle">
+                            {{okText}}
+                        </div>
+                        <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
+                            {{cancelText}}
+                        </div>
+                    </template>
                 </div>
             </div>
         </transition>
@@ -23,16 +38,29 @@
     export default {
         name: 'alert',
         props: {
+            type: {
+                type: String,
+                default: 'confirm',
+                validator(value) {
+                    return ['alert', 'confirm'].indexOf(value) > -1;
+                },
+            },
+            inverse: Boolean,
             title: {
                 type: String,
-                default: '提示',
+                default: '确认',
             },
             message: String,
-            btnText: {
+            okText: {
                 type: String,
-                default: '关闭',
+                default: '确定',
             },
-            onClose: Function,
+            cancelText: {
+                type: String,
+                default: '取消',
+            },
+            onOkClick: Function,
+            onCancelClick: Function,
         },
         data() {
             return {
@@ -45,9 +73,14 @@
                 this.visible = true;
             },
             // 关闭
-            clickHandle() {
+            okClickHandle() {
                 this.visible = false;
-                this.onClose && this.onClose();
+                this.onOkClick && this.onOkClick();
+            },
+            // 取消
+            cancelClickHandle() {
+                this.visible = false;
+                this.onCancelClick && this.onCancelClick();
             },
             // 移除dom
             /* global document:true */

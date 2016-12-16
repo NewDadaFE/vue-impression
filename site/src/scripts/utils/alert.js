@@ -4,7 +4,8 @@ import OriginAlert from '../components/Alert';
 const Alert = Vue.extend(OriginAlert);
 let _active = false;
 
-const alert = ({ title, message, btnText, onClose }) => {
+// 确认选择框
+export const confirm = option => {
     if(_active) return;
 
     /* global document:true */
@@ -14,14 +15,18 @@ const alert = ({ title, message, btnText, onClose }) => {
 
     document.body.appendChild(alertInstance.$el);
 
-    title && (alertInstance.title = title);
-    message && (alertInstance.message = message);
-    btnText && (alertInstance.btnText = btnText);
-    onClose && (alertInstance.onClose = onClose);
+    Object.assign(alertInstance, option);
 
     Vue.nextTick(() => {
         alertInstance.show();
     });
 };
 
-export default alert;
+// Alert框
+export const alert = option => {
+    option.title = option.title || '提示';
+    option.type = 'alert';
+    option.onClose && (option.onOkClick = option.onClose);
+
+    confirm(option);
+};

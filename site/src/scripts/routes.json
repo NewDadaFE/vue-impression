@@ -123,14 +123,19 @@
                 "icon": "commenting-o"
             },
             {
+                "path": "/alert",
+                "name": "Alert",
+                "icon": "bullhorn"
+            },
+            {
+                "path": "/confirm",
+                "name": "Confirm",
+                "icon": "question-circle-o"
+            },
+            {
                 "path": "/loading",
                 "name": "loading",
                 "icon": "spinner"
-            },
-            {
-                "path": "/alert",
-                "name": "alert",
-                "icon": "bullhorn"
             },
             {
                 "path": "/back-to-top",

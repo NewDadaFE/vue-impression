@@ -1,10 +1,13 @@
 <template>
-  <div class="">
-        <cell @click="showHandle">
-            <icon class="fa-fw text-muted" name="commenting-o" left size="lg" />
-            alert
-        </cell>
-  </div>
+    <div>
+        <group-title>alert</group-title>
+        <group>
+            <cell @click="showHandle">
+                <icon class="fa-fw text-muted" name="commenting-o" left size="lg" />
+                alert
+            </cell>
+        </group>
+    </div>
 </template>
 
 <script>
