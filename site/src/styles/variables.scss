@@ -28,6 +28,7 @@ $z-index-mask: 1010 !default;
 $z-index-slide: 1020 !default;
 $z-index-sidelip: 1020 !default;
 $z-index-toast: 1030 !default;
+$z-index-alert: 1030 !default;
 
 // animation
 
@@ -162,6 +163,26 @@ $toast-icon-font-size: 4rem !default;
 $toast-icon-margin-bottom: .5rem !default;
 
 $toast-loading-margin: 1rem 0 !default;
+
+// Alert
+$alert-width: 20rem !default;
+$alert-padding: 1.5rem 0 0 0 !default;
+$alert-bg-color: $brand-pure !default;
+$alert-border-radius: $border-radius-lg !default;
+
+$alert-title-font-size: 16px !default;
+$alert-title-font-weight: bold !default;
+
+$alert-message-color: $gray-light !default;
+$alert-message-font-size: 14px !default;
+$alert-message-padding: 1rem 1.5rem 1.5rem !default;
+$alert-message-line-height: 2 !default;
+
+$alert-btn-color: $brand-primary !default;
+$alert-btn-font-size: 14px !default;
+$alert-btn-padding: 1rem 0 !default;
+
+
 
 // Checkbox
 $checkbox-padding: 3px !default;

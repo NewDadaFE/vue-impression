@@ -44,7 +44,10 @@ import Searchbar from './Searchbar';
 import Picker from './Picker';
 import PickerOption from './PickerOption';
 import Loadmore from './Loadmore';
+import Alert from './Alert';
 import toast from '../utils/toast';
+import alert from '../utils/alert';
+import confirm from '../utils/confirm';
 import loading from '../utils/loading';
 import pkg from '../../../package.json';
 
@@ -84,6 +87,7 @@ const install = Vue => {
     Vue.component(PickerOption.name, PickerOption);
     Vue.component(Loadmore.name, Loadmore);
 
+    Vue.component(Alert.name, Alert);
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);
 
@@ -102,6 +106,8 @@ const install = Vue => {
     Vue.component(DatePicker.name, DatePicker);
 
     Vue.$toast = Vue.prototype.$toast = toast;
+    Vue.$alert = Vue.prototype.$alert = alert;
+    Vue.$confirm = Vue.prototype.$confirm = confirm;
     Vue.$loading = Vue.prototype.$loading = loading;
 };
 

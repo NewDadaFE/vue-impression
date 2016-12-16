@@ -130,7 +130,7 @@
             {
                 "path": "/alert",
                 "name": "alert",
-                "icon": "commenting-o"
+                "icon": "bullhorn"
             },
             {
                 "path": "/back-to-top",
