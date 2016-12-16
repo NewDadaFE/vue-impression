@@ -3,17 +3,21 @@ import OriginToast from '../components/Toast';
 
 const Toast = Vue.extend(OriginToast);
 
-let active = false,
-    instance = new Toast({
-        el: document.createElement('div'),
-    });
-
-/* global document:true */
-document.body.appendChild(instance.$el);
+let instance,
+    active = false;
 
 export default {
     show(message = '加载中') {
         if(active) return;
+
+        /* global document:true */
+        if(!instance) {
+            instance = new Toast({
+                el: document.createElement('div'),
+            });
+
+            document.body.appendChild(instance.$el);
+        }
 
         active = true;
         instance.message = message;
