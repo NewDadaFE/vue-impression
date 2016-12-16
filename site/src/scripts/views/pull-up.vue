@@ -50,7 +50,7 @@
             };
         },
         methods: {
-            loadBottom(id) {
+            loadBottom() {
                 setTimeout(() => {
                     let lastValue = this.list[this.list.length - 1];
 
@@ -62,7 +62,7 @@
 
                     if(this.list[this.list.length - 1] === 40) this.bottomAllLoaded = true;
 
-                    this.$refs.loadmore.onBottomLoaded(id);
+                    this.$refs.loadmore.onBottomLoaded();
                 }, 1500);
             },
         },

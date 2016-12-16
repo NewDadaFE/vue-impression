@@ -2,8 +2,8 @@
     <div class="loadmore">
         <div
             class="loadmore-content"
-            :class="{ 'dropped': topDropped || bottomDropped }"
-            :style="{ 'transform': 'translate(0, ' + translate + 'px)' }">
+            :class="{ dropped: topDropped || bottomDropped }"
+            :style="{ transform: `translate3d(0, ${translate}px, 0)` }">
             <slot name="top">
                 <div class="loadmore-hint loadmore-hint-top" v-if="topMethod">
                     <loading v-if="topStatus === 'loading'"></loading>
@@ -74,7 +74,6 @@
         },
         data() {
             return {
-                uuid: '',
                 topStatus: '',
                 topText: '',
                 topDropped: false,
@@ -227,7 +226,7 @@
                     if(this.topStatus === 'drop') {
                         this.translate = 50;
                         this.topStatus = 'loading';
-                        this.topMethod(this.uuid);
+                        this.topMethod();
                     } else {
                         this.translate = 0;
                         this.topStatus = 'pull';
@@ -247,7 +246,7 @@
                     if(this.bottomStatus === 'drop') {
                         this.translate = -50;
                         this.bottomStatus = 'loading';
-                        this.bottomMethod(this.uuid);
+                        this.bottomMethod();
                     } else {
                         this.translate = 0;
                         this.bottomStatus = 'pull';
@@ -270,31 +269,26 @@
                     >= this.$el.getBoundingClientRect().bottom
                 );
             },
-            onTopLoaded(id) {
-                if(id === this.uuid) {
-                    this.translate = 0;
-                    setTimeout(() => {
-                        this.topStatus = 'pull';
-                    }, 200);
-                }
+            onTopLoaded() {
+                this.translate = 0;
+                setTimeout(() => {
+                    this.topStatus = 'pull';
+                }, 200);
             },
-            onBottomLoaded(id) {
-                if(id === this.uuid) {
-                    this.bottomStatus = 'pull';
-                    this.bottomDropped = false;
-                    this.$nextTick(() => {
-                        if(this.scrollElement === window) {
-                            document.body.scrollTop += 50;
-                        } else {
-                            this.scrollElement.scrollTop += 50;
-                        }
-                        this.translate = 0;
-                    });
-                }
+            onBottomLoaded() {
+                this.bottomStatus = 'pull';
+                this.bottomDropped = false;
+                this.$nextTick(() => {
+                    if(this.scrollElement === window) {
+                        document.body.scrollTop += 50;
+                    } else {
+                        this.scrollElement.scrollTop += 50;
+                    }
+                    this.translate = 0;
+                });
             },
         },
         mounted() {
-            this.uuid = Math.random().toString(36).slice(3, 8);
             this.topText = this.topPullText;
             this.topStatus = 'pull';
             this.bottomStatus = 'pull';

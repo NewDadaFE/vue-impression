@@ -50,7 +50,7 @@
             };
         },
         methods: {
-            loadTop(id) {
+            loadTop() {
                 setTimeout(() => {
                     let firstValue = this.list[0];
 
@@ -62,7 +62,7 @@
 
                     if(this.list[0] === -19) this.topAllLoaded = true;
 
-                    this.$refs.loadmore.onTopLoaded(id);
+                    this.$refs.loadmore.onTopLoaded();
                 }, 1500);
             },
         },
