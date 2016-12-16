@@ -17,5 +17,5 @@ export default {
     },
     created() {
         this.$on('itemClick', this.itemClickHandle);
-    }
+    },
 };

@@ -6,10 +6,11 @@ export default {
     data() {
         return {
             currentEventKey: this.eventKey,
+            index: 0,
         };
     },
     mounted() {
-        this.eventKey === undefined
-            && (this.currentEventKey = this.$parent.$children.indexOf(this));
+        this.index = this.$parent.$children.indexOf(this);
+        this.eventKey === undefined && (this.currentEventKey = this.index);
     },
 };

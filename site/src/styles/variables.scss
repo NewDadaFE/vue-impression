@@ -142,6 +142,7 @@ $tabbar-bg-color: $brand-pure !default;
 $tabbar-margin-bottom: 1rem !default;
 $tabbar-height: $navbar-height !default;
 $tabbar-line-height: $tabbar-height !default;
+$tabbar-transition: all .3s cubic-bezier(.86, 0, .07, 1) !default;
 
 $tabbar-item-border-width: 2px !default;
 $tabbar-item-color-active: $brand-primary !default;

@@ -1,5 +1,7 @@
 .tabbar {
+    position: relative;
     display: flex;
+    height: $tabbar-height;
     margin-bottom: $tabbar-margin-bottom;
     background-color: $tabbar-bg-color;
     @include border-bottom();
@@ -10,10 +12,21 @@
     height: $tabbar-height;
     line-height: $tabbar-line-height;
     text-align: center;
-    border-bottom: $tabbar-item-border-width solid transparent;
+    transition: $tabbar-transition;
+
 
     &.active {
         color: $tabbar-item-color-active;
         border-bottom-color: $tabbar-item-border-color-active;
     }
+}
+
+.tabbar-indicator {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $brand-primary;
+    height: $tabbar-item-border-width;
+    transition: $tabbar-transition;
 }
