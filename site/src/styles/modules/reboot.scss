@@ -20,6 +20,7 @@
 // Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
 html {
+    height: 100%;
     box-sizing: border-box;
     font-size: $font-size-root;
     -ms-overflow-style: scrollbar;
@@ -54,6 +55,7 @@ html {
 
 
 body {
+    height: 100%;
     font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: $line-height-base;
