@@ -169,6 +169,9 @@ $alert-width: 20rem !default;
 $alert-padding: 1.5rem 0 0 0 !default;
 $alert-bg-color: $brand-pure !default;
 $alert-border-radius: $border-radius-lg !default;
+$alert-animation-duration: .2s !default;
+$alert-animation-enter-function: cubic-bezier(.08, .82, .17, 1) !default;
+$alert-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
 
 $alert-title-font-size: 16px !default;
 $alert-title-font-weight: bold !default;

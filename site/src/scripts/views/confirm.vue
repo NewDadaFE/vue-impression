@@ -3,11 +3,11 @@
         <group-title>confirm</group-title>
         <group>
             <cell @click="showHandle(false)">
-                <icon class="fa-fw text-muted" name="question-circle-o" left size="lg" />
+                <icon class="text-muted" name="question-circle-o" left size="lg" />
                 confirm
             </cell>
             <cell @click="showHandle(true)">
-                <icon class="fa-fw text-muted" name="question-circle-o" left size="lg" />
+                <icon class="text-muted" name="question-circle-o" left size="lg" />
                 inverse
             </cell>
         </group>

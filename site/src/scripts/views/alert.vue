@@ -3,7 +3,7 @@
         <group-title>alert</group-title>
         <group>
             <cell @click="showHandle">
-                <icon class="fa-fw text-muted" name="commenting-o" left size="lg" />
+                <icon class="text-muted" name="commenting-o" left size="lg" />
                 alert
             </cell>
         </group>

@@ -1,31 +1,33 @@
 <template>
     <div>
-        <transition name="fade"
+        <transition name="zoom"
             @after-leave="afterLeave">
             <div class="alert" v-show="visible">
-                <div class="alert-title">
-                    {{title}}
-                </div>
-                <div class="alert-message">
-                    {{message}}
-                </div>
-                <div class="alert-footer">
-                    <template v-if="inverse">
-                        <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
-                            {{cancelText}}
-                        </div>
-                        <div class="alert-btn" @click="okClickHandle">
-                            {{okText}}
-                        </div>
-                    </template>
-                    <template v-else>
-                        <div class="alert-btn" @click="okClickHandle">
-                            {{okText}}
-                        </div>
-                        <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
-                            {{cancelText}}
-                        </div>
-                    </template>
+                <div class="alert-modal">
+                    <div class="alert-title">
+                        {{title}}
+                    </div>
+                    <div class="alert-message">
+                        {{message}}
+                    </div>
+                    <div class="alert-footer">
+                        <template v-if="inverse">
+                            <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
+                                {{cancelText}}
+                            </div>
+                            <div class="alert-btn" @click="okClickHandle">
+                                {{okText}}
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="alert-btn" @click="okClickHandle">
+                                {{okText}}
+                            </div>
+                            <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
+                                {{cancelText}}
+                            </div>
+                        </template>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -64,7 +66,7 @@
         },
         data() {
             return {
-                visible: true,
+                visible: false,
             };
         },
         methods: {
