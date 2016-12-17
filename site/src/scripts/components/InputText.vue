@@ -22,8 +22,11 @@
 </template>
 
 <script>
+    import Blur from '../mixins/blur';
+
     export default {
         name: 'input-text',
+        mixins: [Blur],
         props: {
             disabled: Boolean,
             clearable: Boolean,

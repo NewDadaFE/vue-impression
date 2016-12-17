@@ -1,5 +1,5 @@
 <template>
-    <div class="searchbar" :class="{active}">
+    <div class="searchbar" :class="{active: focus}">
         <div
             @click="clickHandle"
             class="searchbar-input"
@@ -15,7 +15,6 @@
                 type="text"
                 class="searchbar-input-field"
                 v-model="currentValue"
-                @blur="active = false"
                 ref="input">
             <icon
                 v-show="clearable && !!currentValue"
@@ -32,10 +31,11 @@
 
 <script>
     import Sync from '../mixins/sync';
+    import Blur from '../mixins/blur';
 
     export default {
         name: 'searchbar',
-        mixins: [Sync],
+        mixins: [Sync, Blur],
         props: {
             clearable: {
                 type: Boolean,
@@ -50,12 +50,12 @@
         },
         data() {
             return {
-                active: false,
+                focus: false,
             };
         },
         methods: {
             clickHandle() {
-                this.active = true;
+                this.focus = true;
                 setTimeout(() => {
                     this.$refs.input.focus();
                 }, 300);
