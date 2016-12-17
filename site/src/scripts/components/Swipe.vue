@@ -72,6 +72,13 @@
                 let currentItem = this.$children[currentIndex],
                     nextItem = this.$children[val];
 
+                // 重置
+                this.$children.forEach((child, index) => {
+                    if(index !== currentIndex) {
+                        child.reset();
+                    }
+                });
+
                 currentItem.swipeToLeft();
                 nextItem.swipeToLeft();
             },
