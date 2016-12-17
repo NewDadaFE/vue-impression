@@ -10,9 +10,9 @@
 
 
 .fade-enter-active {
-    animation: fadeIn .3s ease;
+    animation: fadeIn $mask-animation-enter-duration $mask-animation-enter-function;
 }
 
 .fade-leave-active {
-    animation: fadeOut .2s ease;
+    animation: fadeOut $mask-animation-leave-duration $mask-animation-leave-function;
 }

@@ -1,9 +1,9 @@
 .toast {
     position: fixed;
-    z-index: $z-index-toast;
-    max-width: 80%;
     text-align: center;
     color: $toast-color;
+    z-index: $z-index-toast;
+    max-width: $toast-max-width;
     background: $toast-bg;
     padding: $toast-padding;
     font-size: $toast-font-size;
@@ -48,9 +48,9 @@
 }
 
 .toast-fade-enter-active {
-    animation: fadeIn .6s ease-in;
+    animation: fadeIn $toast-animation-enter-duration $toast-animation-enter-function;
 }
 
 .toast-fade-leave-active {
-    animation: fadeOut .3s ease;
+    animation: fadeOut $toast-animation-leave-duration $toast-animation-leave-function;
 }

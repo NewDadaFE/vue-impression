@@ -45,6 +45,8 @@ import Picker from './Picker';
 import PickerOption from './PickerOption';
 import Loadmore from './Loadmore';
 import Alert from './Alert';
+import Swipe from './Swipe';
+import SwipeItem from './SwipeItem';
 import toast from '../utils/toast';
 import { alert, confirm } from '../utils/alert';
 import loading from '../utils/loading';
@@ -69,6 +71,8 @@ const install = Vue => {
     Vue.component(MediaBody.name, MediaBody);
     Vue.component(Card.name, Card);
     Vue.component(CardBody.name, CardBody);
+    Vue.component(Swipe.name, Swipe);
+    Vue.component(SwipeItem.name, SwipeItem);
 
     Vue.component(Navbar.name, Navbar);
     Vue.component(Tabbar.name, Tabbar);

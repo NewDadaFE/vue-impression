@@ -31,7 +31,7 @@ export const cancelTranslate = el => {
 export const setTranslate = (el, x, y) => {
     if(!el) return;
     if(x === null && y === null) return;
-    if(!el.style.transform && !x && !y) return;
+    // if(!el.style.transform && !x && !y) return;
 
     let translate = getTranslate(el);
 

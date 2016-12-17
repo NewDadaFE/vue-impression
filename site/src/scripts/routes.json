@@ -51,6 +51,11 @@
                 "path": "/media",
                 "name": "Media",
                 "icon": "id-card-o"
+            },
+            {
+                "path": "/swipe",
+                "name": "Swipe",
+                "icon": "newspaper-o"
             }
         ]
     },
