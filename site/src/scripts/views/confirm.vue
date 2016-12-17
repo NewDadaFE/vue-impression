@@ -7,7 +7,7 @@
                 confirm
             </cell>
             <cell @click="showHandle(true)">
-                <icon class="text-muted" name="question-circle-o" left size="lg" />
+                <icon class="text-muted" name="exchange" left size="lg" />
                 inverse
             </cell>
         </group>
