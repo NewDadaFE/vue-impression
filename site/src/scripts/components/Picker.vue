@@ -77,43 +77,25 @@
             },
             // 事件初始化
             initEvents() {
-                let { picker, pickerList } = this.$refs,
-                    dragState = {};
-
-                let velocityTranslate,
-                    prevTranslateY;
+                let { picker, pickerList } = this.$refs;
 
                 draggable(picker, {
-                    onDragStart: event => {
-                        dragState = {
-                            start: new Date(),
-                            pageX: event.pageX,
-                            pageY: event.pageY,
-                            translateY: getTranslate(pickerList).y,
-                        };
+                    effectEl: pickerList,
+                    onDrag: ({ dragging, effectEl, translateY }) => {
+                        this.dragging = dragging;
+
+                        setTranslate(effectEl, null, translateY);
                     },
-                    onDrag: event => {
-                        this.dragging = true;
-
-                        let deltaY = event.pageY - dragState.pageY;
-
-                        let translateY = dragState.translateY + deltaY;
-
-                        setTranslate(pickerList, null, translateY);
-
-                        velocityTranslate = translateY - prevTranslateY || translateY;
-                        prevTranslateY = translateY;
-                    },
-                    onDragEnd: () => {
-                        this.dragging = false;
+                    onDragEnd: ({ dragging, startTimestamp, velocityTranslateY }) => {
+                        this.dragging = dragging;
                         let momentumRatio = 10,
                             itemHeight = this.getOptionHeight(),
                             translateY = getTranslate(pickerList).y,
-                            duration = new Date() - dragState.start;
+                            duration = new Date() - startTimestamp;
 
                         let momentumTranslate;
                         if(duration < 300) {
-                            momentumTranslate = translateY + (velocityTranslate * momentumRatio);
+                            momentumTranslate = translateY + (velocityTranslateY * momentumRatio);
                         }
 
                         this.$nextTick(() => {
@@ -130,8 +112,6 @@
 
                             this.pickedIndex = Math.abs(translate / itemHeight);
                         });
-
-                        dragState = {};
                     },
                 });
             },
