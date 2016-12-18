@@ -4,7 +4,7 @@
             <slot></slot>
         </div>
         <div class="swipe-indicators" v-if="showIndicator">
-            <div class="swipe-indicator" :class="{active: n -1 === activeIndex}" v-for="n in length"></div>
+            <div class="swipe-indicator" :class="{active: n - 1 === activeIndex}" v-for="n in length"></div>
         </div>
     </div>
 </template>
@@ -34,7 +34,7 @@
             },
             speed: {
                 type: Number,
-                default: 1000,
+                default: 300,
             },
             transitionFuntion: {
                 type: String,
@@ -46,6 +46,7 @@
                 length: 0,
                 dragging: false,
                 transitioning: false,
+                negative: false,
                 activeIndex: this.defaultIndex,
             };
         },
@@ -53,6 +54,19 @@
             init() {
                 this.length = this.$children.length;
             },
+            // 获取前一个索引
+            getPrevIndex(val) {
+                let prevIndex = (val !== undefined ? val : this.activeIndex) - 1;
+
+                return prevIndex < 0 ? this.length + prevIndex : prevIndex;
+            },
+            // 获取后一个索引
+            getNextIndex() {
+                let nextIndex = this.activeIndex + 1;
+
+                return nextIndex > this.length - 1 ? nextIndex % this.length : nextIndex;
+            },
+            // 初始化拖拽
             initDrag() {
                 let { swipe } = this.$refs,
                     newIndex;
@@ -69,22 +83,21 @@
 
                         // 往左
                         if(translateX <= 0) {
-                            let nextIndex = this.activeIndex + 1;
-                            nextIndex > this.length - 1 && (nextIndex %= this.length);
+                            let nextIndex = this.getNextIndex();
 
                             this.$children[this.activeIndex].swipeToLeft(translateX);
                             this.$children[nextIndex].swipeToLeft(translateX);
 
+                            this.negative = false;
                             newIndex = nextIndex;
                         } else {
-                            return;
                             // 往右
-                            let prevIndex = this.activeIndex - 1;
-                            prevIndex < 0 && (prevIndex += this.length);
+                            let prevIndex = this.getPrevIndex();
 
-                            this.$children[this.activeIndex].swipeToLeft(translateX);
-                            this.$children[prevIndex].swipeToLeft(translateX);
+                            this.$children[this.activeIndex].swipeToRight(translateX);
+                            this.$children[prevIndex].swipeToRight(translateX);
 
+                            this.negative = true;
                             newIndex = prevIndex;
                         }
                     },
@@ -108,31 +121,33 @@
                         return;
                     }
 
-                    let activeIndex = this.activeIndex + 1;
-
-                    this.activeIndex = activeIndex > this.length - 1 ? activeIndex % this.length : activeIndex;
+                    this.activeIndex = this.getNextIndex();
                 }, this.interval);
             },
         },
         watch: {
             activeIndex(val) {
                 this.transitioning = true;
-                let currentIndex = val - 1;
 
-                currentIndex = currentIndex < 0 ? this.length + currentIndex : currentIndex;
-
-                let currentItem = this.$children[currentIndex],
-                    nextItem = this.$children[val];
+                let nextItem = this.$children[val],
+                    currentIndex = this.negative ? this.getNextIndex(val) : this.getPrevIndex(val),
+                    currentItem = this.$children[currentIndex];
 
                 // 重置
                 this.$children.forEach((child, activeIndex) => {
                     if(activeIndex !== currentIndex) {
-                        child.reset();
+                        child.reset(this.negative);
                     }
                 });
 
-                currentItem.swipeToLeft();
-                nextItem.swipeToLeft();
+                if(!this.negative) {
+                    currentItem.swipeToLeft();
+                    nextItem.swipeToLeft();
+                } else {
+                    currentItem.swipeToRight();
+                    nextItem.swipeToRight();
+                    this.negative = false;
+                }
             },
         },
         mounted() {
