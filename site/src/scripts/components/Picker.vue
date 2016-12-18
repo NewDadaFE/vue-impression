@@ -76,7 +76,7 @@
                 this.pickedIndex = Math.abs(pickIndex);
             },
             // 事件初始化
-            initEvents() {
+            initDrag() {
                 let { picker, pickerList } = this.$refs;
 
                 draggable(picker, {
@@ -123,7 +123,7 @@
         },
         mounted() {
             this.init();
-            this.initEvents();
+            this.initDrag();
         },
     };
 </script>

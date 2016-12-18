@@ -11,6 +11,12 @@
             <swipe-item>
                 <div class="page-swipe-item bg-success">3</div>
             </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-warning">4</div>
+            </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-danger">5</div>
+            </swipe-item>
         </swipe>
         <group-title>defaultIndex</group-title>
         <swipe :defaultIndex="1">
