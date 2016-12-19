@@ -7,10 +7,10 @@
             <tabbar-item>Science</tabbar-item>
             <tabbar-item>Military</tabbar-item>
         </tabbar>
-        <group-title>activeKey="3"</group-title>
+        <group-title>activeKey="Science"</group-title>
         <tabbar class="no-margin" activeKey="Science" @change="changeHandle">
             <tabbar-item eventKey="Sports">Sports</tabbar-item>
-            <tabbar-item eventKey="Finance">Finance</tabbar-item>
+            <tabbar-item eventKey="Finance" disabled>Disabled</tabbar-item>
             <tabbar-item eventKey="Science">Science</tabbar-item>
             <tabbar-item eventKey="Military">Military</tabbar-item>
         </tabbar>

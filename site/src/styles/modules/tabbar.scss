@@ -14,10 +14,13 @@
     text-align: center;
     transition: $tabbar-transition;
 
-
     &.active {
         color: $tabbar-item-color-active;
         border-bottom-color: $tabbar-item-border-color-active;
+    }
+
+    &.disabled {
+        opacity: $tabbar-item-opacity-disabled;
     }
 }
 

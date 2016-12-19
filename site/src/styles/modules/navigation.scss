@@ -1,5 +1,6 @@
 .navigation {
     display: flex;
+    align-items: center;
     @include border-top();
     height: $navigation-height;
     padding: $navigation-padding;

@@ -20,8 +20,10 @@ $border-radius-sm: 1px !default;
 $border-radius-circle: 10rem !default;
 
 // Cursor
-$cursor-disabled: not-allowed !default;
 $cursor-pointer: pointer !default;
+
+// Opacity
+$opacity-disabled: .65 !default;
 
 // z-index
 $z-index-top: 1000 !default;
@@ -71,7 +73,7 @@ $table-cell-padding: .75rem !default;
 $table-sm-cell-padding: .3rem !default;
 
 // Buttons
-$btn-opacity-disabled: .65 !default;
+$btn-opacity-disabled: $opacity-disabled !default;
 $btn-loading-opacity-disabled: .9 !default;
 
 $btn-font-size: $font-size-base !default;
@@ -149,6 +151,7 @@ $tabbar-transition: all .3s cubic-bezier(.86, 0, .07, 1) !default;
 $tabbar-item-border-width: 2px !default;
 $tabbar-item-color-active: $brand-primary !default;
 $tabbar-item-border-color-active: $brand-primary !default;
+$tabbar-item-opacity-disabled: $opacity-disabled !default;
 
 // Toast
 $toast-bg: rgba(0, 0, 0, .6) !default;
@@ -221,7 +224,7 @@ $checkbox-gap: 1rem !default;
 $toggle-addon-size: 16px !default;
 $toggle-addon-bg-color: $brand-pure !default;
 $toggle-addon-bg-color-checked: $brand-primary !default;
-$toggle-addon-opacity-disabled: .6 !default;
+$toggle-addon-opacity-disabled: $opacity-disabled !default;
 
 $toggle-bg-color: #e7eaec !default;
 $toggle-width: 46px !default;

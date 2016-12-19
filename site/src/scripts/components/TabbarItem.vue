@@ -1,8 +1,11 @@
 <template>
     <div
         class="tabbar-item"
-        :class="{'active': $parent.currentActiveKey === currentEventKey}"
-        @click="$parent.$emit('itemClick', currentEventKey, index)">
+        :class="{
+            'active': $parent.currentActiveKey === currentEventKey,
+            disabled,
+        }"
+        @click="clickHandle">
         <slot></slot>
     </div>
 </template>

@@ -13,4 +13,9 @@ export default {
         this.index = this.$parent.$children.indexOf(this);
         this.eventKey === undefined && (this.currentEventKey = this.index);
     },
+    methods: {
+        clickHandle() {
+            !this.disabled && (this.$parent.$emit('itemClick', this.currentEventKey, this.index));
+        },
+    },
 };
