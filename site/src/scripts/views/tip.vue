@@ -2,8 +2,21 @@
     <div>
         <group-title>base</group-title>
         <group>
-            <tip>查看图文详情</tip>
+            <cell>
+                <tip>查看图文详情</tip>
+            </cell>
         </group>
-        <tip><span class="text-primary">查看图文详情</span></tip>
+        <group-title>type</group-title>
+        <group>
+            <cell>
+                <tip type="dotted">查看图文详情</tip>
+            </cell>
+        </group>
+        <group-title>theme</group-title>
+        <group>
+            <cell>
+                <tip theme="primary">查看图文详情</tip>
+            </cell>
+        </group>
     </div>
 </template>

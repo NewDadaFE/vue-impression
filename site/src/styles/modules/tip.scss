@@ -3,13 +3,8 @@
     align-items: center;
     padding: $tip-padding;
 
-    &::before,
-    &::after {
-        content: ' ';
+    .hr {
         flex: 1;
-        display: block;
-        height: $tip-line-height;
-        @include border-bottom;
     }
 }
 

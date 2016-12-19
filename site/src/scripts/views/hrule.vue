@@ -18,5 +18,14 @@
                 <hrule type="dotted" />
             </cell>
         </group>
+        <group-title>theme</group-title>
+        <group>
+            <cell>
+                <hrule theme="primary" type="dotted" />
+            </cell>
+            <cell>
+                <hrule theme="secondary" type="dotted" />
+            </cell>
+        </group>
     </div>
 </template>

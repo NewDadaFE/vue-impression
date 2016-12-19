@@ -33,14 +33,14 @@
                 "icon": "bell-o"
             },
             {
-                "path": "/tip",
-                "name": "Tip",
-                "icon": "paperclip"
-            },
-            {
                 "path": "/hrule",
                 "name": "HRule(Hr)",
                 "icon": "minus"
+            },
+            {
+                "path": "/tip",
+                "name": "Tip",
+                "icon": "paperclip"
             },
             {
                 "path": "/card",
