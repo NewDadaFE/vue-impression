@@ -1,6 +1,7 @@
 export default {
     props: {
         activeKey: {},
+        disabled: Boolean,
     },
     data() {
         return {

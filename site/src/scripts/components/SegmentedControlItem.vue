@@ -1,8 +1,11 @@
 <template>
     <div
         class="segmented-control-item"
-        :class="{'active': $parent.currentActiveKey === currentEventKey}"
-        @click="$parent.$emit('itemClick', currentEventKey)">
+        :class="{
+            'active': $parent.currentActiveKey === currentEventKey,
+            disabled,
+        }"
+        @click="clickHandle">
         <slot></slot>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="tabbar">
+    <div class="tabbar" :class="{disabled}">
         <slot></slot>
         <div class="tabbar-indicator" ref="indicator"></div>
     </div>

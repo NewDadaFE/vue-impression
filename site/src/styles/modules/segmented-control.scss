@@ -4,6 +4,10 @@
     border: 1px solid $segmented-control-border-color;
     border-radius: $segmented-control-border-radius;
     background-color: $segmented-control-bg-color;
+
+    &.disabled {
+        opacity: $segmented-control-opacity-disabled;
+    }
 }
 
 .segmented-control-item {
@@ -16,6 +20,10 @@
     &.active {
         color: $segmented-control-color-active;
         background-color: $segmented-control-bg-color-active;
+    }
+
+    &.disabled {
+        opacity: $segmented-control-opacity-disabled;
     }
 }
 

@@ -15,7 +15,9 @@ export default {
     },
     methods: {
         clickHandle() {
-            !this.disabled && (this.$parent.$emit('itemClick', this.currentEventKey, this.index));
+            if(this.disabled || this.$parent.disabled) return;
+
+            this.$parent.$emit('itemClick', this.currentEventKey, this.index);
         },
     },
 };

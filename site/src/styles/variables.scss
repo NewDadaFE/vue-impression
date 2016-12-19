@@ -147,11 +147,11 @@ $tabbar-margin-bottom: 1rem !default;
 $tabbar-height: $navbar-height !default;
 $tabbar-line-height: $tabbar-height !default;
 $tabbar-transition: all .3s cubic-bezier(.86, 0, .07, 1) !default;
+$tabbar-opacity-disabled: $opacity-disabled !default;
 
 $tabbar-item-border-width: 2px !default;
 $tabbar-item-color-active: $brand-primary !default;
 $tabbar-item-border-color-active: $brand-primary !default;
-$tabbar-item-opacity-disabled: $opacity-disabled !default;
 
 // Toast
 $toast-bg: rgba(0, 0, 0, .6) !default;
@@ -364,6 +364,8 @@ $segmented-control-bg-color: $brand-pure !default;
 $segmented-control-border-color: $brand-primary !default;
 $segmented-control-border-radius: $border-radius-lg !default;
 $segmented-control-transition: all .3s ease-in-out !default;
+
+$segmented-control-opacity-disabled: $opacity-disabled !default;
 
 $segmented-control-color-active: $brand-pure !default;
 $segmented-control-bg-color-active: $brand-primary !default;

@@ -1,5 +1,5 @@
 <template>
-    <div class="segmented-control">
+    <div class="segmented-control" :class="{disabled}">
         <slot></slot>
     </div>
 </template>
