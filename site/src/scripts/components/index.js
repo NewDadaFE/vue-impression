@@ -31,6 +31,8 @@ import Badge from './Badge';
 import Drawer from './Drawer';
 import DrawerItem from './DrawerItem';
 import SlideUp from './SlideUp';
+import SlideUpHeader from './SlideUpHeader';
+import SlideUpBody from './SlideUpBody';
 import SegmentedControl from './SegmentedControl';
 import SegmentedControlItem from './SegmentedControlItem';
 import Sidelip from './Sidelip';
@@ -84,6 +86,8 @@ const install = Vue => {
     Vue.component(SegmentedControl.name, SegmentedControl);
     Vue.component(SegmentedControlItem.name, SegmentedControlItem);
     Vue.component(SlideUp.name, SlideUp);
+    Vue.component(SlideUpHeader.name, SlideUpHeader);
+    Vue.component(SlideUpBody.name, SlideUpBody);
     Vue.component(Sidelip.name, Sidelip);
     Vue.component(Searchbar.name, Searchbar);
     Vue.component(Picker.name, Picker);

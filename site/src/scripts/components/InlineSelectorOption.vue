@@ -4,7 +4,7 @@
         :class="{
             disabled: disabled || $parent.disabled,
         }"
-        outline
+        hollow
         size="sm"
         @click.native="clickHandle"
         :theme="isActive() ? $parent.theme : 'default'">

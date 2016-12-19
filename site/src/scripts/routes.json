@@ -88,7 +88,7 @@
                 "icon": "columns"
             },
             {
-                "path": "/slide-up",
+                "path": "/slideup",
                 "name": "SlideUp",
                 "icon": "angle-double-up"
             },

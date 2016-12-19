@@ -1,4 +1,4 @@
-.slide-up {
+.slideup {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -11,12 +11,12 @@
     z-index: $z-index-slide;
 }
 
-.slide-up-header {
+.slideup-header {
     padding: $slide-header-padding;
     @include border-bottom;
 }
 
-.slide-up-body {
+.slideup-body {
     flex: 1;
     overflow-y: scroll;
     padding: $slide-body-padding;
