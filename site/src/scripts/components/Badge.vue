@@ -1,5 +1,5 @@
 <template>
-    <div class="badge">
+    <div class="badge" :class="{'badge-gap': $slots.default}">
         <div class="badge-addon" :class="'bg-' + theme">{{content}}</div>
         <slot></slot>
     </div>
@@ -9,7 +9,9 @@
     export default {
         name: 'badge',
         props: {
+            // 内容
             content: {},
+            // 主题
             theme: {
                 type: String,
                 default: 'primary',

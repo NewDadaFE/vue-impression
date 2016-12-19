@@ -12,10 +12,10 @@
                 <badge content="3" theme="primary">
                     <div class="bg-default" :style="{width: '50px', height: '50px'}"></div>
                 </badge>
-                <badge content="3" theme="secondary">
+                <badge content="99+" theme="secondary">
                     <div class="bg-default" :style="{width: '50px', height: '50px'}"></div>
                 </badge>
-                <badge content="3" theme="success">
+                <badge content="99+" theme="success">
                     <div class="bg-default" :style="{width: '50px', height: '50px'}"></div>
                 </badge>
                 <badge content="3" theme="warning">

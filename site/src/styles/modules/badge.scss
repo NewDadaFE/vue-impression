@@ -2,7 +2,14 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
+}
+
+.badge-gap {
     margin-right: $badge-margin-right;
+
+    .badge-addon {
+        box-shadow: $badge-box-shadow;
+    }
 }
 
 .badge-addon {
@@ -11,12 +18,11 @@
     top: 0;
     line-height: 1;
     text-align: center;
-    border-radius: 50%;
+    border-radius: $border-radius-circle;
     color: $badge-color;
     padding: $badge-padding;
     min-width: $badge-min-width;
     min-height: $badge-min-height;
-    box-shadow: $badge-box-shadow;
     transform: translateX(100%) translateY(-50%);
 
     &:not(:empty) {
