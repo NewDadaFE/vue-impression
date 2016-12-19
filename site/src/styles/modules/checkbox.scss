@@ -30,7 +30,7 @@
         background-color: $checkbox-bg-color-checked;
 
         i {
-            visibility: visible;
+            transform: scale(1);
         }
     }
 
@@ -49,14 +49,16 @@
     padding: $checkbox-padding;
     background-color: $checkbox-bg-color;
     border: 1px solid $checkbox-border-color;
-    transition: all .3s ease;
+    transition: $checkbox-transition;
 }
 
 .checkbox-addon {
     line-height: 1;
 
     i {
-        visibility: hidden;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
         font-size: $checkbox-addon-font-size;
         width: $checkbox-addon-font-size;
         height: $checkbox-addon-font-size;
@@ -65,16 +67,18 @@
 
 .radio-addon {
     border-radius: 50%;
-    padding: 5px;
-    line-height: 8px;
+    padding: $radio-addon-padding;
+    line-height: 1px;
 
     i {
-        width: 10px;
-        height: 10px;
+        display: inline-block;
+        width: $radio-addon-width;
+        height: $radio-addon-height;
         background: $checkbox-color;
         border-radius: 50%;
-        display: inline-block;
-        visibility: hidden;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
     }
 }
 
@@ -83,4 +87,9 @@
 .radios-label {
     display: inline-block;
     margin-left: $checkbox-label-gap;
+}
+
+.checkbox + .checkbox,
+.radio + .radio {
+    margin-left: $checkbox-gap;
 }

@@ -1,6 +1,5 @@
 export default {
     props: {
-        disabled: Boolean,
         multiple: Boolean,
     },
     methods: {
@@ -8,6 +7,7 @@ export default {
             if(this.disabled || this.currentValue === option.value) return;
 
             if(this.multiple) {
+                this.currentValue = this.currentValue || [];
                 let index = this.currentValue.indexOf(option.value);
 
                 if(index === -1) {

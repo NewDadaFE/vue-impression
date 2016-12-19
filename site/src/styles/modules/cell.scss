@@ -3,31 +3,22 @@
     align-items: center;
     overflow: hidden;
     text-decoration: none;
+    color: $cell-color;
     padding: $cell-padding;
     @include border-bottom();
     background-position: $cell-gap-left 100%;
     background-color: $cell-bg-color;
-
-    &,
-    &:hover {
-        color: $cell-color;
-    }
 }
 
 .cell-link {
-    &:active,
-    &.active {
-        &:focus {
-            outline: 0;
-            background-image: none;
-        }
-
-        background-color: $cell-bg-color-active;
+    &:focus {
+        outline: 0;
+        background-image: none;
+        color: $cell-color;
     }
 
-    &:hover,
-    &:focus {
-        text-decoration: none;
+    &:active {
+        background-color: $cell-bg-color-active;
     }
 }
 

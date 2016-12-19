@@ -3,7 +3,7 @@
         <group-title>theme</group-title>
         <group>
             <cell>
-                <btn theme="primary" @click.native="clickHandle('vue 2.0')">primary</btn>
+                <btn theme="primary" @click="clickHandle('vue 2.0')">primary</btn>
                 <btn theme="secondary">secondary</btn>
                 <btn theme="default">default</btn>
             </cell>
@@ -14,6 +14,13 @@
                 <btn outline theme="primary">primary</btn>
                 <btn outline theme="secondary">secondary</btn>
                 <btn outline theme="default">default</btn>
+            </cell>
+        </group>
+        <group-title>isLoading</group-title>
+        <group>
+            <cell>
+                <btn theme="primary" isLoading>loading</btn>
+                <btn theme="default" isLoading>保存中</btn>
             </cell>
         </group>
         <group-title>disabled</group-title>

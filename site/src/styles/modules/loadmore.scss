@@ -1,0 +1,31 @@
+.loadmore {
+    overflow: hidden;
+}
+
+.loadmore-content {
+    &.dropped {
+        transition: $loadmore-dropped-transition;
+    }
+}
+
+.loadmore-hint {
+    text-align: center;
+    height: $loadmore-hint-height;
+    line-height: $loadmore-hint-height;
+
+    .loading {
+        vertical-align: middle;
+    }
+}
+
+.loadmore-hint-top {
+    margin-top: $loadmore-hint-margin;
+}
+
+.loadmore-hint-bottom {
+    margin-bottom: $loadmore-hint-margin;
+}
+
+.loadmore-text {
+    vertical-align: middle;
+}

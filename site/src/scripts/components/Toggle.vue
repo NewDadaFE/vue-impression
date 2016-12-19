@@ -17,8 +17,5 @@
     export default {
         name: 'toggle',
         mixins: [Sync],
-        props: {
-            disabled: Boolean,
-        },
     };
 </script>

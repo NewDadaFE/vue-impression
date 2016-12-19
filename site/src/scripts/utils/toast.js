@@ -38,12 +38,12 @@ Toast.prototype.hide = function() {
 const toastUtil = (options = {}) => {
     if(toastCache.active) return;
 
-    const duration = options.duration || 3000;
-    const instance = toastCache.pop();
+    let duration = options.duration || 2000,
+        instance = toastCache.pop();
 
     instance.message = typeof options === 'string' ? options : options.message;
-    options.type && (instance.type = options.type);
-    options.position && (instance.position = options.position);
+    instance.type = options.type || '';
+    instance.position = options.position || 'bottom';
 
     document.body.appendChild(instance.$el);
 

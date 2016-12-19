@@ -77,9 +77,12 @@
 }
 
 .input-number-input {
+    text-align: center;
     vertical-align: middle;
+    width: $number-input-width;
     padding: $number-input-padding;
     margin: $number-input-margin;
     background: $number-input-bg-color;
+    outline: none;
     border: 1px solid $number-input-border-color;
 }

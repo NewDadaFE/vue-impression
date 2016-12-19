@@ -12,6 +12,31 @@
     background-color: $gray-lighter;
 }
 
-.bg-pure {
+.bg-transparent {
     background-color: transparent !important;
+}
+
+.bg-pure {
+    background-color: $brand-pure !important;
+}
+
+.bg-primary {
+    color: $brand-pure;
+    background-color: $brand-primary !important;
+}
+
+.bg-secondary {
+    background-color: $brand-secondary !important;
+}
+
+.bg-danger {
+    background-color: $brand-danger !important;
+}
+
+.bg-warning {
+    background-color: $brand-warning !important;
+}
+
+.bg-success {
+    background-color: $brand-success !important;
 }

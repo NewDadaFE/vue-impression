@@ -1,18 +1,23 @@
 <template>
-    <div
-        v-show="visible"
-        class="toast"
-        :class="[
-            'toast-' + position,
-            {
-                'toast-lg': icon,
-            }
-        ]">
-        <div class="toast-icon" v-if="icon">
-            <icon :name="icon"></icon>
+    <transition name="toast-fade">
+        <div
+            v-show="visible"
+            class="toast"
+            :class="[
+                'toast-' + position,
+                {
+                    'toast-lg': type,
+                }
+            ]">
+            <div class="toast-icon" v-if="icon">
+                <icon :name="icon"></icon>
+            </div>
+            <loading v-else-if="type === 'loading'" />
+            <div class="loading-message">
+                {{message}}
+            </div>
         </div>
-        {{message}}
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -29,9 +34,8 @@
             },
             type: {
                 type: String,
-                default: 'default',
                 validator(value) {
-                    return ['default', 'success', 'error', 'warning', 'question'].indexOf(value) > -1;
+                    return ['success', 'error', 'warning', 'loading'].indexOf(value) > -1;
                 },
             },
         },
@@ -49,8 +53,6 @@
                         return 'check';
                     case 'warning':
                         return 'exclamation-triangle';
-                    case 'question':
-                        return 'question-circle';
                     default:
                         return null;
                 }

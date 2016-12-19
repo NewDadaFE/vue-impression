@@ -2,7 +2,7 @@
     <div
         class="tabbar-item"
         :class="{'active': $parent.currentActiveKey === currentEventKey}"
-        @click="$parent.$emit('itemClick', currentEventKey)">
+        @click="$parent.$emit('itemClick', currentEventKey, index)">
         <slot></slot>
     </div>
 </template>

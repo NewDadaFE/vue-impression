@@ -1,8 +1,6 @@
 export default {
     props: {
-        activeKey: {
-            default: 0,
-        },
+        activeKey: {},
     },
     data() {
         return {
@@ -19,8 +17,5 @@ export default {
     },
     created() {
         this.$on('itemClick', this.itemClickHandle);
-    },
-    mounted() {
-        this.activeKey === undefined && (this.currentActiveKey = 0);
     },
 };

@@ -1,34 +1,43 @@
 <template>
     <div>
-        <group-title>Base</group-title>
+        <group-title>
+            Radio
+            <span class="pull-right">selected: {{ single }}</span>
+        </group-title>
         <group>
             <cell>
-                <radio @change.native="changeHandle">default</radio>
-                <radio slot="footer" :value="checked" @change.native="changeHandle">checked</radio>
+                <radio v-model="single" val="red">red</radio>
+                <radio v-model="single" val="green">green</radio>
+                <radio v-model="single" val="yellow">yellow</radio>
             </cell>
         </group>
-        <group-title>Disabled</group-title>
+        <group-title>
+            RadioGroup(<span class="text-danger">推荐</span>)
+            <span class="pull-right">selected: {{ group }}</span>
+        </group-title>
         <group>
             <cell>
-                <radio disabled @change.native="changeHandle">default</radio>
-                <radio disabled slot="footer" :value="checked" @change.native="changeHandle">checked</radio>
+                <radio-group v-model="group" @change="changeHandle">
+                    <radio value="red">red</radio>
+                    <radio value="green">green</radio>
+                    <radio value="yellow">yellow</radio>
+                </radio-group>
             </cell>
         </group>
     </div>
 </template>
 
 <script>
-    import Vue from 'vue';
-
     export default {
         data() {
             return {
-                checked: true,
+                single: 'green',
+                group: 'red',
             };
         },
         methods: {
-            changeHandle(event) {
-                Vue.$toast(`选中：${event.target.checked}`);
+            changeHandle(val) {
+                this.$toast(`选中：${val}`);
             },
         },
     };

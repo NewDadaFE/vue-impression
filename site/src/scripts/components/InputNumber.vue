@@ -4,7 +4,7 @@
             class="input-number-minus"
             :class="{'disabled': currentValue <= min}"
             @click="minusHandle">-</a>
-        <span class="input-number-input">{{currentValue}}</span>
+        <input type="number" v-model="currentValue" class="input-number-input">
         <a
             class="input-number-plus"
             :class="{'disabled': currentValue >= max}"

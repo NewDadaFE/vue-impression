@@ -5,7 +5,7 @@
         <input
             type="checkbox"
             class="checkbox-input"
-            :disabled="disabled"
+            :disabled="disabled || $parent.disabled"
             v-model="currentValue">
         <span class="checkbox-addon">
             <i class="fa fa-check" />
@@ -23,7 +23,6 @@
         name: 'checkbox',
         mixins: [Sync],
         props: {
-            disabled: Boolean,
             type: {
                 type: String,
                 default: 'square',
@@ -31,6 +30,31 @@
                     return ['square', 'circle'].indexOf(value) > -1;
                 },
             },
+        },
+        data() {
+            let currentValue;
+
+            if(this.isGroupChildComponent) {
+                currentValue = this.$parent.currentValue
+                    && this.$parent.currentValue.indexOf(this.value) > -1;
+            } else {
+                currentValue = this.value;
+            }
+
+            return { currentValue };
+        },
+        watch: {
+            currentValue(val) {
+                if(this.isGroupChildComponent) {
+                    this.$parent.$emit('optionChecked', this.value);
+                }
+
+                this.$emit('input', val);
+            },
+        },
+        beforeCreate() {
+            // 是否CheckboxGroup下的子组件
+            this.isGroupChildComponent = this.$parent.$options._componentTag === 'checkbox-group';
         },
     };
 </script>

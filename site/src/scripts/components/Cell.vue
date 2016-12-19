@@ -16,10 +16,12 @@
         <i class="fa fa-angle-right cell-arrow"></i>
     </router-link>
 
-    <a v-else
+    <a
+        v-else
+        :href="href"
+        @click="clickHandle"
         class="cell"
-        :class="{'cell-link': clickable, 'cell-disabled': disabled}"
-        :href="href">
+        :class="{'cell-link': clickable, 'cell-disabled': disabled}" >
         <div class="cell-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -43,7 +45,12 @@
         },
         computed: {
             clickable() {
-                return this.href || (this.$vnode.data.on && this.$vnode.data.on.click);
+                return this.href || (this._events.click);
+            },
+        },
+        methods: {
+            clickHandle(event) {
+                this.$emit('click', event);
             },
         },
     };

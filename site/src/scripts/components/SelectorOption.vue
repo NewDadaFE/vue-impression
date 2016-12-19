@@ -3,7 +3,7 @@
         class="cell selector-option"
         :class="{
             'active': isActive(),
-            'cell-disabled': $parent.disabled }"
+            'cell-disabled': disabled || $parent.disabled }"
         @click="clickHandle">
         <span slot="header">
         </span>

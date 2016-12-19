@@ -1,13 +1,24 @@
+.selector {
+    > .selector-option:last-child {
+        background-size: 0;
+    }
+}
+
 .selector-option {
+    transition: $selector-color-transition;
+
     &.active {
         color: $selector-color-active;
 
         .selector-icon {
-            display: block;
+            transform: scale(1);
         }
     }
 }
 
 i.selector-icon {
-    display: none;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    color: $selector-icon-color;
+    transition: $selector-color-transition;
 }

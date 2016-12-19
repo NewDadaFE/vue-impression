@@ -41,5 +41,14 @@
                 this.$toast(`选择了:${val}`);
             },
         },
+        mounted() {
+            setTimeout(() => {
+                this.tabs = [{
+                    name: 'Sports',
+                }, {
+                    name: 'Science',
+                }];
+            }, 1000);
+        },
     };
 </script>

@@ -8,14 +8,19 @@
                 "icon": "hand-pointer-o"
             },
             {
+                "path": "/icon",
+                "name": "Icon",
+                "icon": "flag"
+            },
+            {
                 "path": "/cell",
                 "name": "Group && Cell",
                 "icon": "list"
             },
             {
-                "path": "/icon",
-                "name": "Icon",
-                "icon": "flag"
+                "path": "/flex",
+                "name": "Flex && FlexItem",
+                "icon": "th"
             },
             {
                 "path": "/tag",
@@ -23,9 +28,34 @@
                 "icon": "tag"
             },
             {
+                "path": "/badge",
+                "name": "Badge",
+                "icon": "bell-o"
+            },
+            {
                 "path": "/tip",
                 "name": "Tip",
                 "icon": "paperclip"
+            },
+            {
+                "path": "/hrule",
+                "name": "HRule(Hr)",
+                "icon": "minus"
+            },
+            {
+                "path": "/card",
+                "name": "Card",
+                "icon": "file-image-o"
+            },
+            {
+                "path": "/media",
+                "name": "Media",
+                "icon": "id-card-o"
+            },
+            {
+                "path": "/swipe",
+                "name": "Swipe",
+                "icon": "newspaper-o"
             }
         ]
     },
@@ -46,6 +76,46 @@
                 "path": "/navigation",
                 "name": "Navigation",
                 "icon": "tablet"
+            },
+            {
+                "path": "/drawer",
+                "name": "Drawer",
+                "icon": "caret-square-o-down"
+            },
+            {
+                "path": "/segmented-control",
+                "name": "SegmentedControl",
+                "icon": "columns"
+            },
+            {
+                "path": "/slide-up",
+                "name": "SlideUp",
+                "icon": "angle-double-up"
+            },
+            {
+                "path": "/sideslip",
+                "name": "Sideslip",
+                "icon": "window-restore"
+            },
+            {
+                "path": "/searchbar",
+                "name": "Searchbar",
+                "icon": "search"
+            },
+            {
+                "path": "/picker",
+                "name": "Picker",
+                "icon": "building-o"
+            },
+            {
+                "path": "/pull-down",
+                "name": "Pull down",
+                "icon": "long-arrow-down"
+            },
+            {
+                "path": "/pull-up",
+                "name": "Pull up",
+                "icon": "long-arrow-up"
             }
         ]
     },
@@ -58,14 +128,24 @@
                 "icon": "commenting-o"
             },
             {
+                "path": "/alert",
+                "name": "Alert",
+                "icon": "bullhorn"
+            },
+            {
+                "path": "/confirm",
+                "name": "Confirm",
+                "icon": "question-circle-o"
+            },
+            {
                 "path": "/loading",
                 "name": "loading",
                 "icon": "spinner"
             },
             {
-                "path": "/alert",
-                "name": "alert",
-                "icon": "commenting-o"
+                "path": "/back-to-top",
+                "name": "BackToTop",
+                "icon": "arrow-circle-up"
             }
         ]
     },
@@ -84,7 +164,7 @@
             },
             {
                 "path": "/toggle",
-                "name": "Toggle",
+                "name": "Toggle(Switch)",
                 "icon": "toggle-on"
             },
             {
@@ -105,12 +185,17 @@
             {
                 "path": "/selector",
                 "name": "Selector",
-                "icon": "angle-double-down"
+                "icon": "check"
             },
             {
                 "path": "/inline-selecor",
                 "name": "InlineSelector",
-                "icon": "th"
+                "icon": "th-large"
+            },
+            {
+                "path": "/datepicker",
+                "name": "DatePicker",
+                "icon": "calendar"
             }
         ]
     }

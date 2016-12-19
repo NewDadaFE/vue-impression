@@ -1,16 +1,21 @@
 <template>
     <button
         :type="type"
+        @click="clickHandle"
         class="btn"
-        :class="[
-            'btn-' + theme,
-            'btn-' + size,
-            {
-                ['btn-' + theme + '-outline']: outline,
-                'btn-block': block,
-            }]"
-        :disabled="disabled">
+        :class="{
+            [`btn-${theme}`]: theme,
+            [`btn-${size}`]: size,
+            [`btn-${theme}-outline`]: outline,
+            ['btn-block']: block,
+            ['btn-loading']: isLoading,
+        }"
+        :disabled="disabled || isLoading">
         <slot></slot>
+        <loading
+            size="sm"
+            v-if="isLoading"
+            :theme="theme === 'default' ? 'primary' : null" />
     </button>
 </template>
 
@@ -22,6 +27,7 @@
             block: Boolean,
             outline: Boolean,
             disabled: Boolean,
+            isLoading: Boolean,
             // 类型
             type: {
                 type: String,
@@ -44,6 +50,11 @@
                 validator(value) {
                     return ['sm', 'lg'].indexOf(value) > -1;
                 },
+            },
+        },
+        methods: {
+            clickHandle(event) {
+                this.$emit('click', event);
             },
         },
     };

@@ -3,8 +3,9 @@
         <input
             type="radio"
             class="radio-input"
-            :disabled="disabled"
-            :checked="currentValue">
+            v-model="model"
+            :value="isGroupChildComponent ? value : val"
+            :disabled="disabled">
         <span class="radio-addon">
             <i></i>
         </span>
@@ -15,13 +16,28 @@
 </template>
 
 <script>
-    import Sync from '../mixins/sync';
-
     export default {
         name: 'radio',
-        mixins: [Sync],
         props: {
-            disabled: Boolean,
+            value: {},
+            val: {},
+        },
+        computed: {
+            model: {
+                get() {
+                    return this.isGroupChildComponent ? this.$parent.value : this.value;
+                },
+                set(val) {
+                    if(this.isGroupChildComponent) {
+                        this.$parent.$emit('input', val);
+                    } else {
+                        this.$emit('input', val);
+                    }
+                },
+            },
+        },
+        beforeCreate() {
+            this.isGroupChildComponent = this.$parent.$options._componentTag === 'radio-group';
         },
     };
 </script>

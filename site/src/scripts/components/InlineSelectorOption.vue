@@ -2,7 +2,7 @@
     <tag
         class="inline-selector-option"
         :class="{
-            disabled,
+            disabled: disabled || $parent.disabled,
         }"
         outline
         size="sm"
@@ -18,8 +18,5 @@
     export default {
         name: 'inline-selector-option',
         mixins: [SelectOption],
-        props: {
-            disabled: Boolean,
-        },
     };
 </script>

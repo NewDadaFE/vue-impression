@@ -1,26 +1,27 @@
 <template>
-    <div class="">
-        <cell @click.native="onLoading()">
-            <icon class="fa-fw text-muted" name="commenting-o" left size="lg"></icon>
-            loading start
-        </cell>
-        <cell @click.native="onLoaded()">
-            <icon class="fa-fw text-success" name="check" left size="lg"></icon>
-            loaded end
-        </cell>
-        <loading v-show="loading"></loading>
+    <div>
+        <group-title>loading</group-title>
+        <group>
+            <cell @click="showLoadingHandle">
+                <icon class="text-muted" name="spinner" left size="lg" />
+                toggle
+            </cell>
+            <cell @click="showLoadingMsgHandle('初始化中')">
+                <icon class="text-muted" name="pencil" left size="lg" />
+                message
+            </cell>
+        </group>
     </div>
 </template>
 <script>
     export default{
-        data: () => ({loading: false}),
         methods: {
-            onLoading() {
-                this.loading = true;
+            showLoadingHandle() {
+                this.$loading.toggle();
             },
-            onLoaded() {
-                this.loading = false;
-            }
-        }
-    }
+            showLoadingMsgHandle(message) {
+                this.$loading.toggle(message);
+            },
+        },
+    };
 </script>
