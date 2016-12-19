@@ -23,6 +23,52 @@
                 <tag slot="footer" theme="default">default</tag>
             </cell>
         </group>
+        <group-title>hollow</group-title>
+        <group>
+            <cell>
+                primary
+                <tag hollow slot="footer">primary</tag>
+            </cell>
+            <cell>
+                success
+                <tag hollow slot="footer" theme="success">success</tag>
+            </cell>
+            <cell>
+                warning
+                <tag hollow slot="footer" theme="warning">warning</tag>
+            </cell>
+            <cell>
+                danger
+                <tag hollow slot="footer" theme="danger">danger</tag>
+            </cell>
+            <cell>
+                default
+                <tag hollow slot="footer" theme="default">default</tag>
+            </cell>
+        </group>
+        <group-title>shape="pill"</group-title>
+        <group>
+            <cell>
+                primary
+                <tag shape="pill" hollow slot="footer">primary</tag>
+            </cell>
+            <cell>
+                success
+                <tag shape="pill" hollow slot="footer" theme="success">success</tag>
+            </cell>
+            <cell>
+                warning
+                <tag shape="pill" hollow slot="footer" theme="warning">warning</tag>
+            </cell>
+            <cell>
+                danger
+                <tag shape="pill" hollow slot="footer" theme="danger">danger</tag>
+            </cell>
+            <cell>
+                default
+                <tag shape="pill" hollow slot="footer" theme="default">default</tag>
+            </cell>
+        </group>
         <group-title>sm</group-title>
         <group>
             <cell>
@@ -46,50 +92,27 @@
                 <tag size="sm" slot="footer" theme="default">default</tag>
             </cell>
         </group>
-        <group-title>outline</group-title>
+        <group-title>sm hollow</group-title>
         <group>
             <cell>
                 primary
-                <tag outline slot="footer">primary</tag>
+                <tag size="sm" hollow slot="footer">primary</tag>
             </cell>
             <cell>
                 success
-                <tag outline slot="footer" theme="success">success</tag>
+                <tag size="sm" hollow slot="footer" theme="success">success</tag>
             </cell>
             <cell>
                 warning
-                <tag outline slot="footer" theme="warning">warning</tag>
+                <tag size="sm" hollow slot="footer" theme="warning">warning</tag>
             </cell>
             <cell>
                 danger
-                <tag outline slot="footer" theme="danger">danger</tag>
+                <tag size="sm" hollow slot="footer" theme="danger">danger</tag>
             </cell>
             <cell>
                 default
-                <tag outline slot="footer" theme="default">default</tag>
-            </cell>
-        </group>
-        <group-title>sm outline</group-title>
-        <group>
-            <cell>
-                primary
-                <tag size="sm" outline slot="footer">primary</tag>
-            </cell>
-            <cell>
-                success
-                <tag size="sm" outline slot="footer" theme="success">success</tag>
-            </cell>
-            <cell>
-                warning
-                <tag size="sm" outline slot="footer" theme="warning">warning</tag>
-            </cell>
-            <cell>
-                danger
-                <tag size="sm" outline slot="footer" theme="danger">danger</tag>
-            </cell>
-            <cell>
-                default
-                <tag size="sm" outline slot="footer" theme="default">default</tag>
+                <tag size="sm" hollow slot="footer" theme="default">default</tag>
             </cell>
         </group>
     </div>

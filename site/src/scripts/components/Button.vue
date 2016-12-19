@@ -6,7 +6,7 @@
         :class="{
             [`btn-${theme}`]: theme,
             [`btn-${size}`]: size,
-            [`btn-${theme}-outline`]: outline,
+            [`btn-${theme}-outline`]: hollow,
             ['btn-block']: block,
             ['btn-loading']: loading,
             [`border-${shape}`]: shape === 'pill',
@@ -26,7 +26,7 @@
         name: 'btn',
         props: {
             block: Boolean,
-            outline: Boolean,
+            hollow: Boolean,
             disabled: Boolean,
             // 加载中
             loading: Boolean,

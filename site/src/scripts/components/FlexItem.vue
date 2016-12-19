@@ -1,7 +1,5 @@
 <template>
-    <div
-        class="flex-item"
-        :style="{flex}">
+    <div class="flex-item" :style="{flex}">
         <slot></slot>
     </div>
 </template>

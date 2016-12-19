@@ -8,12 +8,12 @@
                 <btn theme="default">default</btn>
             </cell>
         </group>
-        <group-title>outline</group-title>
+        <group-title>hollow</group-title>
         <group>
             <cell class="bg-inverse">
-                <btn outline theme="primary">primary</btn>
-                <btn outline theme="secondary">secondary</btn>
-                <btn outline theme="default">default</btn>
+                <btn hollow theme="primary">primary</btn>
+                <btn hollow theme="secondary">secondary</btn>
+                <btn hollow theme="default">default</btn>
             </cell>
         </group>
         <group-title>shape="pill"</group-title>
@@ -42,7 +42,7 @@
         <group-title>size</group-title>
         <group>
             <cell>
-                <btn size="sm" outline theme="primary">small</btn>
+                <btn size="sm" hollow theme="primary">small</btn>
                 <btn theme="primary">normal</btn>
                 <btn size="lg" theme="primary">large</btn>
             </cell>
