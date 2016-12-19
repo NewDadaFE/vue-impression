@@ -2,7 +2,7 @@
     <div>
         <transition name="zoom"
             @after-leave="afterLeave">
-            <div class="alert" v-show="visible">
+            <div class="alert" v-show="currentValue">
                 <div class="alert-modal">
                     <div class="alert-title">
                         {{title}}
@@ -31,9 +31,7 @@
                 </div>
             </div>
         </transition>
-        <transition name="fade">
-            <div class="mask" v-show="visible"></div>
-        </transition>
+        <mask-layer :clickable="false" />
     </div>
 </template>
 <script>
@@ -66,22 +64,22 @@
         },
         data() {
             return {
-                visible: false,
+                currentValue: false,
             };
         },
         methods: {
             // 显示
             show() {
-                this.visible = true;
+                this.currentValue = true;
             },
             // 关闭
             okClickHandle() {
-                this.visible = false;
+                this.currentValue = false;
                 this.onOkClick && this.onOkClick();
             },
             // 取消
             cancelClickHandle() {
-                this.visible = false;
+                this.currentValue = false;
                 this.onCancelClick && this.onCancelClick();
             },
             // 移除dom

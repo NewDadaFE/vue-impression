@@ -8,6 +8,7 @@ import FlexItem from './FlexItem';
 import Navbar from './Navbar';
 import Tabbar from './Tabbar';
 import TabbarItem from './TabbarItem';
+import Mask from './Mask';
 import Loading from './Loading';
 import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
@@ -94,6 +95,7 @@ const install = Vue => {
     Vue.component(PickerOption.name, PickerOption);
     Vue.component(Loadmore.name, Loadmore);
 
+    Vue.component(Mask.name, Mask);
     Vue.component(Alert.name, Alert);
     Vue.component(Loading.name, Loading);
     Vue.component(BackToTop.name, BackToTop);

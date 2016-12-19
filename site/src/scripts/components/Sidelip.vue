@@ -5,9 +5,7 @@
                 <slot></slot>
             </div>
         </transition>
-        <transition name="fade">
-            <div class="mask" v-show="currentValue" @click="currentValue = false"></div>
-        </transition>
+        <mask-layer />
     </div>
 </template>
 
