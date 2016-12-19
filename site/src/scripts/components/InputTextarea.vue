@@ -11,10 +11,12 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'input-textarea',
+        mixins: [Sync],
         props: {
-            disabled: Boolean,
             placeholder: String,
             countable: Boolean,
             maxLength: {
@@ -25,24 +27,17 @@
                 type: Number,
                 default: 4,
             },
-            value: {},
         },
         data() {
             return {
                 stage: 0,
-                currentValue: this.value || '',
             };
         },
         watch: {
-            value(val) {
-                this.currentValue = val;
-            },
             currentValue(val) {
-                if(this.countable && val.length > this.maxLength) {
+                if(val.length > this.maxLength) {
                     this.currentValue = val.substring(0, this.maxLength);
                 }
-
-                this.$emit('input', this.currentValue);
             },
         },
     };
