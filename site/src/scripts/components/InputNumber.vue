@@ -4,7 +4,11 @@
             class="input-number-minus"
             :class="{'disabled': currentValue <= min}"
             @click="minusHandle">-</a>
-        <input type="number" v-model="currentValue" class="input-number-input">
+        <input
+            type="number"
+            v-model="currentValue"
+            :disabled="disabled"
+            class="input-number-input">
         <a
             class="input-number-plus"
             :class="{'disabled': currentValue >= max}"
@@ -15,10 +19,12 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'input-number',
+        mixins: [Sync],
         props: {
-            disabled: Boolean,
             value: {
                 type: Number,
                 default: 0,
@@ -36,33 +42,18 @@
                 default: 1,
             },
         },
-        data() {
-            return {
-                currentValue: this.value,
-            };
-        },
-        watch: {
-            value(val) {
-                this.currentValue = val;
-            },
-            currentValue(val) {
-                this.$emit('input', val);
-            },
-        },
         methods: {
             // 减
             minusHandle() {
                 if(this.disabled || this.currentValue <= this.min) return;
 
                 this.currentValue -= this.step;
-                this.$emit('change', this.currentValue);
             },
             // 加
             plusHandle() {
                 if(this.disabled || this.currentValue >= this.max) return;
 
                 this.currentValue += this.step;
-                this.$emit('change', this.currentValue);
             },
         },
     };
