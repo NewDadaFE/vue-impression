@@ -3,9 +3,10 @@
         class="flex"
         :class="[
             getAlignClass(),
-            getJustifyClass(),{
-            'flex-vertical': direction === 'column',
-        }]">
+            getJustifyClass(),
+            {
+                'flex-vertical': direction === 'column',
+            }]">
         <slot></slot>
     </div>
 </template>
@@ -14,12 +15,14 @@
     export default {
         name: 'flex',
         props: {
+            // 方向
             direction: {
                 type: String,
                 validator(value) {
                     return ['row', 'column'].indexOf(value) > -1;
                 },
             },
+            // 排版
             justify: {
                 type: String,
                 default: 'start',
@@ -27,6 +30,7 @@
                     return ['start', 'end', 'center', 'between', 'around'].indexOf(value) > -1;
                 },
             },
+            // 对齐
             align: {
                 type: String,
                 default: 'center',
@@ -36,6 +40,7 @@
             },
         },
         methods: {
+            // 对齐方式
             getAlignClass() {
                 return {
                     top: 'flex-align-top',
@@ -43,6 +48,7 @@
                     bottom: 'flex-align-bottom',
                 }[this.align];
             },
+            // 内容排版
             getJustifyClass() {
                 return {
                     start: 'flex-justify-start',
