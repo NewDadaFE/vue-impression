@@ -3,8 +3,8 @@
         <div class="swipe-items">
             <slot></slot>
         </div>
-        <div class="swipe-indicators" v-if="showIndicator">
-            <div class="swipe-indicator" :class="{active: n - 1 === activeIndex}" v-for="n in length"></div>
+        <div class="swipe-indicators" v-if="dots">
+            <div class="swipe-indicator" :class="{active: index - 1 === activeIndex}" v-for="index in length"></div>
         </div>
     </div>
 </template>
@@ -15,7 +15,6 @@
     export default {
         name: 'swipe',
         props: {
-            vertical: Boolean,
             // 自动播放
             autoplay: {
                 type: Boolean,
@@ -27,7 +26,7 @@
                 default: 0,
             },
             // 是否显示指示器
-            showIndicator: {
+            dots: {
                 type: Boolean,
                 default: true,
             },
@@ -42,7 +41,7 @@
                 default: 300,
             },
             // 过渡效果
-            transitionFuntion: {
+            easing: {
                 type: String,
                 default: 'ease-in-out',
             },

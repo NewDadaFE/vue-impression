@@ -66,7 +66,7 @@
             swipeToLeft(translateX) {
                 // 轮播
                 if(!translateX) {
-                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.transitionFuntion}`;
+                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.easing}`;
 
                     let translate = -this.width;
 
@@ -96,7 +96,7 @@
             swipeToRight(translateX) {
                 // 轮播
                 if(!translateX) {
-                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.transitionFuntion}`;
+                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.easing}`;
 
                     let translate = this.width;
 
