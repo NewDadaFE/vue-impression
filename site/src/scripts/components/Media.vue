@@ -1,11 +1,7 @@
 <template>
     <div
         class="media"
-        :class="{
-            'flex-align-top': align === 'flex-start',
-            'flex-align-middle': align === 'center',
-            'flex-align-bottom': align === 'flex-end',
-        }">
+        :class="[getAlignClass()]">
         <slot></slot>
     </div>
 </template>
@@ -14,12 +10,22 @@
     export default {
         name: 'media',
         props: {
+            // 对齐
             align: {
                 type: String,
-                default: 'center',
+                default: 'top',
                 validator(value) {
-                    return ['center', 'flex-start', 'flex-end'].indexOf(value) > -1;
+                    return ['top', 'bottom', 'center'].indexOf(value) > -1;
                 },
+            },
+        },
+        methods: {
+            getAlignClass() {
+                return {
+                    top: 'flex-align-top',
+                    center: 'flex-align-middle',
+                    bottom: 'flex-align-bottom',
+                }[this.align];
             },
         },
     };

@@ -5,7 +5,7 @@
             <cell>
                 <media>
                     <media-object>
-                        <img :style="{width: '60px', height: '60px'}" src="/images/avatar.jpg">
+                        <img class="border-circle" :style="{width: '60px', height: '60px'}" src="/images/avatar.jpg">
                     </media-object>
                     <media-body>
                         <h3>vue-impression</h3>
