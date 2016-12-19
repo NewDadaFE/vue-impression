@@ -1,5 +1,5 @@
 <template>
-    <div class="drawer">
+    <div class="drawer" :class="{disabled}">
         <slot></slot>
     </div>
 </template>

@@ -1,8 +1,11 @@
 <template>
     <div
         class="drawer-item"
-        :class="{'active': $parent.currentActiveKey !== undefined && $parent.currentActiveKey === currentEventKey}"
-        @click="$parent.$emit('itemClick', currentEventKey)">
+        :class="{
+            'active': $parent.currentActiveKey !== undefined && $parent.currentActiveKey === currentEventKey,
+            disabled,
+        }"
+        @click="clickHandle">
         <slot></slot>
         <icon name="caret-down" class="drawer-item-icon"></icon>
     </div>

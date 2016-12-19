@@ -3,7 +3,7 @@
         <group-title>base</group-title>
         <drawer @change="changeHandle">
             <drawer-item eventKey="分类">分类</drawer-item>
-            <drawer-item eventKey="排序">排序</drawer-item>
+            <drawer-item eventKey="排序" disabled>disabled</drawer-item>
             <drawer-item eventKey="筛选">筛选</drawer-item>
         </drawer>
         <group-title>

@@ -4,6 +4,10 @@
     background-color: $drawer-bg-color;
     padding: $drawer-padding;
     @include border-bottom();
+
+    &.disabled {
+        opacity: $drawer-opacity-disabled;
+    }
 }
 
 .drawer-item {
@@ -23,6 +27,10 @@
             transform-origin: 50% 50%;
             transform: rotate(180deg);
         }
+    }
+
+    &.disabled {
+        opacity: $drawer-opacity-disabled;
     }
 }
 
