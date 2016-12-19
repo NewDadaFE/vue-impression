@@ -8,7 +8,7 @@
             </cell>
             <cell @click="showHandle(true)">
                 <icon class="text-muted" name="exchange" left size="lg" />
-                inverse
+                inverseBtn
             </cell>
         </group>
     </div>
@@ -17,9 +17,9 @@
 <script>
     export default {
         methods: {
-            showHandle(inverse) {
+            showHandle(inverseBtn) {
                 this.$confirm({
-                    inverse,
+                    inverseBtn,
                     message: '这是Vue 2.0组件库！',
                 });
             },

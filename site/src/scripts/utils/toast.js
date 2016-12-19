@@ -25,11 +25,11 @@ const toastCache = {
 };
 
 Toast.prototype.show = function() {
-    this.visible = true;
+    this.currentValue = true;
     toastCache.toggle();
 };
 Toast.prototype.hide = function() {
-    this.visible = false;
+    this.currentValue = false;
     toastCache.toggle();
 };
 

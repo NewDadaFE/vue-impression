@@ -4,7 +4,7 @@
         <group>
             <cell @click="showLoadingHandle">
                 <icon class="text-muted" name="spinner" left size="lg" />
-                toggle
+                show
             </cell>
             <cell @click="showLoadingMsgHandle('初始化中')">
                 <icon class="text-muted" name="pencil" left size="lg" />
@@ -18,9 +18,16 @@
         methods: {
             showLoadingHandle() {
                 this.$loading.toggle();
+                setTimeout(() => {
+                    this.$loading.toggle();
+                }, 3000);
             },
             showLoadingMsgHandle(message) {
                 this.$loading.toggle(message);
+
+                setTimeout(() => {
+                    this.$loading.toggle();
+                }, 3000);
             },
         },
     };

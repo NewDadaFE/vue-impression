@@ -1,23 +1,26 @@
 <template>
-    <transition name="toast-fade">
-        <div
-            v-show="visible"
-            class="toast"
-            :class="[
-                'toast-' + position,
-                {
-                    'toast-lg': type,
-                }
-            ]">
-            <div class="toast-icon" v-if="icon">
-                <icon :name="icon"></icon>
+    <div>
+        <transition name="toast-fade">
+            <div
+                v-show="currentValue"
+                class="toast"
+                :class="[
+                    'toast-' + position,
+                    {
+                        'toast-lg': type,
+                    }
+                ]">
+                <div class="toast-icon" v-if="icon">
+                    <icon :name="icon"></icon>
+                </div>
+                <loading v-else-if="type === 'loading'" />
+                <div class="loading-message">
+                    {{message}}
+                </div>
             </div>
-            <loading v-else-if="type === 'loading'" />
-            <div class="loading-message">
-                {{message}}
-            </div>
-        </div>
-    </transition>
+        </transition>
+        <mask-layer :clickable="false" class="bg-transparent" v-show="type === 'loading'"/>
+    </div>
 </template>
 
 <script>
@@ -41,7 +44,7 @@
         },
         data() {
             return {
-                visible: false,
+                currentValue: false,
             };
         },
         computed: {

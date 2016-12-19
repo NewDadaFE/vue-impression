@@ -11,7 +11,7 @@
                         {{message}}
                     </div>
                     <div class="alert-footer">
-                        <template v-if="inverse">
+                        <template v-if="inverseBtn">
                             <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">
                                 {{cancelText}}
                             </div>
@@ -45,7 +45,7 @@
                     return ['alert', 'confirm'].indexOf(value) > -1;
                 },
             },
-            inverse: Boolean,
+            inverseBtn: Boolean,
             title: {
                 type: String,
                 default: '确认',
