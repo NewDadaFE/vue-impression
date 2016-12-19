@@ -24,15 +24,10 @@ const toastCache = {
     },
 };
 
-Toast.prototype.show = function() {
-    this.currentValue = true;
+Toast.prototype.show = Toast.prototype.hide = function() {
+    this.currentValue = !this.currentValue;
     toastCache.toggle();
 };
-Toast.prototype.hide = function() {
-    this.currentValue = false;
-    toastCache.toggle();
-};
-
 
 /* global document:true */
 const toastUtil = (options = {}) => {

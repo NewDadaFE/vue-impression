@@ -19,7 +19,7 @@
                 </div>
             </div>
         </transition>
-        <mask-layer :clickable="false" class="bg-transparent" v-show="type === 'loading'"/>
+        <mask-layer :clickable="false" class="bg-transparent"/>
     </div>
 </template>
 
