@@ -1,6 +1,6 @@
 <template>
     <div>
-        <transition name="slide-left">
+        <transition :name="transition">
             <div v-show="currentValue" class="sidelip">
                 <slot></slot>
             </div>
@@ -10,22 +10,19 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
+
     export default {
         name: 'sidelip',
+        mixins: [Sync],
         props: {
-            value: {},
-        },
-        data() {
-            return {
-                currentValue: false,
-            };
+            transition: {
+                type: String,
+                default: 'slide-left',
+            },
         },
         watch: {
-            value(val) {
-                this.currentValue = val;
-            },
             currentValue(val) {
-                this.$emit('input', val);
                 !val && (this.$emit('close'));
             },
         },
