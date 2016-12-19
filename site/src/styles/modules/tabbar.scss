@@ -5,10 +5,6 @@
     margin-bottom: $tabbar-margin-bottom;
     background-color: $tabbar-bg-color;
     @include border-bottom();
-
-    &.disabled {
-        opacity: $tabbar-opacity-disabled;
-    }
 }
 
 .tabbar-item {

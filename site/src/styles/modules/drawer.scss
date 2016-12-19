@@ -4,10 +4,6 @@
     background-color: $drawer-bg-color;
     padding: $drawer-padding;
     @include border-bottom();
-
-    &.disabled {
-        opacity: $drawer-opacity-disabled;
-    }
 }
 
 .drawer-item {

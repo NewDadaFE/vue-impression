@@ -3,7 +3,7 @@
         class="drawer-item"
         :class="{
             'active': $parent.currentActiveKey !== undefined && $parent.currentActiveKey === currentEventKey,
-            disabled,
+            disabled: disabled || $parent.disabled,
         }"
         @click="clickHandle">
         <slot></slot>

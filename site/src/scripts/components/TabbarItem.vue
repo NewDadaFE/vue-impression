@@ -3,7 +3,7 @@
         class="tabbar-item"
         :class="{
             'active': $parent.currentActiveKey === currentEventKey,
-            disabled,
+            disabled: disabled || $parent.disabled,
         }"
         @click="clickHandle">
         <slot></slot>
