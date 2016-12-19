@@ -1,6 +1,10 @@
 <template>
     <transition :name="transition">
-        <div class="mask" v-show="$parent.currentValue && $parent.type && $parent.type === 'loading'" @click="clickable && ($parent.currentValue = false)"></div>
+        <div
+            class="mask"
+            v-show="$parent.currentValue && $parent.type && $parent.type === 'loading'"
+            @click="clickable && ($parent.currentValue = false)">
+        </div>
     </transition>
 </template>
 

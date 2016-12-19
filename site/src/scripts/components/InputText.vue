@@ -2,6 +2,7 @@
     <div class="input-text">
         <input
             type="text"
+            ref="input"
             v-model="currentValue"
             :disabled="currentDisabled"
             :placeholder="placeholder"
@@ -22,16 +23,15 @@
 </template>
 
 <script>
+    import Sync from '../mixins/sync';
     import Blur from '../mixins/blur';
 
     export default {
         name: 'input-text',
-        mixins: [Blur],
+        mixins: [Sync, Blur],
         props: {
-            disabled: Boolean,
             clearable: Boolean,
             placeholder: String,
-            value: {},
             type: {
                 type: String,
                 default: 'text',
@@ -47,13 +47,15 @@
         data() {
             return {
                 focus: false,
-                currentValue: this.value || '',
                 currentDisabled: this.disabled || this.$parent.disabled,
             };
         },
         methods: {
             clearHandle() {
-                if(!this.currentDisabled) this.currentValue = '';
+                if(!this.currentDisabled) {
+                    this.currentValue = '';
+                    this.$refs.input.focus();
+                }
             },
             getStateClass() {
                 return {
