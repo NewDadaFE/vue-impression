@@ -1,11 +1,7 @@
 <template>
     <div class="tabbar">
         <slot></slot>
-        <div
-            class="tabbar-indicator"
-            ref="indicator"></div>
-        <div>
-        </div>
+        <div class="tabbar-indicator" ref="indicator"></div>
     </div>
 </template>
 
@@ -21,24 +17,18 @@
                 default: 0,
             },
         },
-        data() {
-            return {
-                _indicatorWidth: 0,
-            };
-        },
         methods: {
             // 设置指示器宽度
             setIndicatorWidth() {
-                let indicatorWidth = this.$el.offsetWidth / this.$children.length;
-                this._indicatorWidth = indicatorWidth;
-                this.$refs.indicator.style.width = `${indicatorWidth}px`;
+                this.indicatorWidth = this.$el.offsetWidth / this.$children.length;
+                this.$refs.indicator.style.width = `${this.indicatorWidth}px`;
             },
             // 初始化指示器位置
             initSelectedIndicator() {
                 this.$children.forEach((child, index) => {
                     if(this.currentActiveKey === child.currentEventKey) {
                         let $indicator = this.$refs.indicator,
-                            translateX = index * this._indicatorWidth;
+                            translateX = index * this.indicatorWidth;
 
                         setTranslate($indicator, translateX, 0);
                     }

@@ -17,6 +17,9 @@
             <cell>
                 <tip theme="primary">查看图文详情</tip>
             </cell>
+            <cell>
+                <tip theme="secondary" type="dotted">查看图文详情</tip>
+            </cell>
         </group>
     </div>
 </template>
