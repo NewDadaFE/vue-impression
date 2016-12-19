@@ -6,7 +6,7 @@
         }"
         hollow
         size="sm"
-        @click.native="clickHandle"
+        @click="clickHandle"
         :theme="isActive() ? $parent.theme : 'default'">
         <slot></slot>
     </tag>

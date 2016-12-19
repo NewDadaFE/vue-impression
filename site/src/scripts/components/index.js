@@ -44,6 +44,8 @@ import Card from './Card';
 import CardBody from './CardBody';
 import DatePicker from './DatePicker';
 import Searchbar from './Searchbar';
+import SearchbarBtn from './SearchbarBtn';
+import SearchbarPlaceholder from './SearchbarPlaceholder';
 import Picker from './Picker';
 import PickerOption from './PickerOption';
 import Loadmore from './Loadmore';
@@ -91,6 +93,8 @@ const install = Vue => {
     Vue.component(SlideUpBody.name, SlideUpBody);
     Vue.component(Sidelip.name, Sidelip);
     Vue.component(Searchbar.name, Searchbar);
+    Vue.component(SearchbarBtn.name, SearchbarBtn);
+    Vue.component(SearchbarPlaceholder.name, SearchbarPlaceholder);
     Vue.component(Picker.name, Picker);
     Vue.component(PickerOption.name, PickerOption);
     Vue.component(Loadmore.name, Loadmore);

@@ -1,5 +1,6 @@
 <template>
     <span
+        @click="$emit('click')"
         class="tag"
         :class="{
             ['tag-' + theme]: !hollow,

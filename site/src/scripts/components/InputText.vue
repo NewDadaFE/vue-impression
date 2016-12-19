@@ -11,7 +11,7 @@
             v-show="clearable && focus && !!currentValue"
             class="input-text-clear"
             name="times-circle"
-            @click.native="clearHandle"
+            @click="clearHandle"
             size="lg" />
         <icon
             v-if="state"

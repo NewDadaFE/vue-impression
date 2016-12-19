@@ -4,10 +4,12 @@
         <group>
             <cell>
                 <searchbar>
-                    <div slot="placeholder">
+                    <searchbar-placeholder>
                         <icon name="search" left size="lg"></icon>搜索
-                    </div>
-                    <span class="text-primary">搜索</span>
+                    </searchbar-placeholder>
+                    <searchbar-btn>
+                        <span class="text-primary">搜索</span>
+                    </searchbar-btn>
                 </searchbar>
             </cell>
         </group>
@@ -15,10 +17,12 @@
         <group>
             <cell>
                 <searchbar shape="circle">
-                    <div slot="placeholder">
+                    <searchbar-placeholder>
                         <icon name="search" left size="lg"></icon>搜索
-                    </div>
-                    <span class="text-primary">搜索</span>
+                    </searchbar-placeholder>
+                    <searchbar-btn>
+                        <span class="text-primary">搜索</span>
+                    </searchbar-btn>
                 </searchbar>
             </cell>
         </group>

@@ -1,5 +1,6 @@
 <template>
     <i
+        @click="$emit('click')"
         class="fa"
         :class="[
             'fa-' + name,
