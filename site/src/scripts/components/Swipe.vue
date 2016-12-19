@@ -16,26 +16,32 @@
         name: 'swipe',
         props: {
             vertical: Boolean,
+            // 自动播放
             autoplay: {
                 type: Boolean,
                 default: true,
             },
+            // 默认起始项
             defaultIndex: {
                 type: Number,
                 default: 0,
             },
+            // 是否显示指示器
             showIndicator: {
                 type: Boolean,
                 default: true,
             },
+            // 轮播间隔时间
             interval: {
                 type: Number,
                 default: 3000,
             },
+            // 轮播速度
             speed: {
                 type: Number,
                 default: 300,
             },
+            // 过渡效果
             transitionFuntion: {
                 type: String,
                 default: 'ease-in-out',
@@ -55,8 +61,8 @@
                 this.length = this.$children.length;
             },
             // 获取前一个索引
-            getPrevIndex(val) {
-                let prevIndex = (val !== undefined ? val : this.activeIndex) - 1;
+            getPrevIndex() {
+                let prevIndex = this.activeIndex - 1;
 
                 return prevIndex < 0 ? this.length + prevIndex : prevIndex;
             },
@@ -115,22 +121,22 @@
             },
             // 自动播放
             play() {
+                if(!this.autoplay) return;
+
                 clearInterval(this.swipeInterval);
                 this.swipeInterval = setInterval(() => {
-                    if(this.dragging) {
-                        return;
-                    }
+                    if(this.dragging) return;
 
                     this.activeIndex = this.getNextIndex();
                 }, this.interval);
             },
         },
         watch: {
-            activeIndex(val) {
+            activeIndex() {
                 this.transitioning = true;
 
-                let nextItem = this.$children[val],
-                    currentIndex = this.negative ? this.getNextIndex(val) : this.getPrevIndex(val),
+                let nextItem = this.$children[this.activeIndex],
+                    currentIndex = this.negative ? this.getNextIndex() : this.getPrevIndex(),
                     currentItem = this.$children[currentIndex];
 
                 // 重置
@@ -153,12 +159,15 @@
         mounted() {
             this.init();
             this.initDrag();
-            this.autoplay && this.play();
+            this.play();
         },
         updated() {
             setTimeout(() => {
                 this.transitioning = false;
             }, this.speed);
+        },
+        beforeDestroy() {
+            clearInterval(this.swipeInterval);
         },
     };
 </script>

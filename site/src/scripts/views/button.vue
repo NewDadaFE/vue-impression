@@ -3,7 +3,7 @@
         <group-title>theme</group-title>
         <group>
             <cell>
-                <btn theme="primary" @click="clickHandle('vue 2.0')">primary</btn>
+                <btn theme="primary" @click="clickHandle('Vue 2.0')">primary</btn>
                 <btn theme="secondary">secondary</btn>
                 <btn theme="default">default</btn>
             </cell>
@@ -16,11 +16,19 @@
                 <btn outline theme="default">default</btn>
             </cell>
         </group>
-        <group-title>isLoading</group-title>
+        <group-title>shape="pill"</group-title>
         <group>
             <cell>
-                <btn theme="primary" isLoading>loading</btn>
-                <btn theme="default" isLoading>保存中</btn>
+                <btn shape="pill" theme="primary">primary</btn>
+                <btn shape="pill" theme="secondary">secondary</btn>
+                <btn shape="pill" theme="default">default</btn>
+            </cell>
+        </group>
+        <group-title>loading</group-title>
+        <group>
+            <cell>
+                <btn theme="primary" loading>loading</btn>
+                <btn theme="default" loading>保存中</btn>
             </cell>
         </group>
         <group-title>disabled</group-title>
@@ -58,7 +66,7 @@
     export default {
         methods: {
             clickHandle(message) {
-                console.log(`hello ${message}`);
+                this.$toast(`hello ${message}`);
             },
         },
     };

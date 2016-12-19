@@ -8,13 +8,14 @@
             [`btn-${size}`]: size,
             [`btn-${theme}-outline`]: outline,
             ['btn-block']: block,
-            ['btn-loading']: isLoading,
+            ['btn-loading']: loading,
+            [`border-${shape}`]: shape === 'pill',
         }"
-        :disabled="disabled || isLoading">
+        :disabled="disabled || loading">
         <slot></slot>
         <loading
             size="sm"
-            v-if="isLoading"
+            v-if="loading"
             :theme="theme === 'default' ? 'primary' : null" />
     </button>
 </template>
@@ -27,7 +28,8 @@
             block: Boolean,
             outline: Boolean,
             disabled: Boolean,
-            isLoading: Boolean,
+            // 加载中
+            loading: Boolean,
             // 类型
             type: {
                 type: String,
@@ -49,6 +51,13 @@
                 type: String,
                 validator(value) {
                     return ['sm', 'lg'].indexOf(value) > -1;
+                },
+            },
+            // 形状
+            shape: {
+                type: String,
+                validator(value) {
+                    return ['pill'].indexOf(value) > -1;
                 },
             },
         },
