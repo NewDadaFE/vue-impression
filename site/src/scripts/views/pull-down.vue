@@ -18,30 +18,6 @@
     </div>
 </template>
 
-<style>
-    .loadmore-wrapper {
-        overflow: scroll;
-        background-color: white;
-    }
-
-    .loadmore-list {
-        padding: 4px 4px 0;
-        list-style: none;
-    }
-
-    .loadmore-item {
-        margin-bottom: 4px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 2px;
-        text-align: center;
-    }
-
-    .loadmore-item:last-child {
-        margin-bottom: 0;
-    }
-</style>
-
 <script>
     export default {
         data() {
@@ -82,3 +58,27 @@
         },
     };
 </script>
+
+<style>
+    .loadmore-wrapper {
+        overflow: scroll;
+        background-color: white;
+    }
+
+    .loadmore-list {
+        padding: 4px 4px 0;
+        list-style: none;
+    }
+
+    .loadmore-item {
+        margin-bottom: 4px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 2px;
+        text-align: center;
+    }
+
+    .loadmore-item:last-child {
+        margin-bottom: 0;
+    }
+</style>

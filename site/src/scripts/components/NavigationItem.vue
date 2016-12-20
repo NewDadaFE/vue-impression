@@ -3,9 +3,7 @@
         class="navigation-item"
         :class="{'active': $parent.currentActiveKey === currentEventKey}"
         @click="$parent.$emit('itemClick', currentEventKey)">
-        <div class="navigation-item-icon" v-if="$slots.default">
-            <slot></slot>
-        </div>
+        <slot></slot>
         <div class="navigation-item-label">
             {{label}}
         </div>

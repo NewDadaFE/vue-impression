@@ -3,15 +3,16 @@
     align-items: center;
     @include border-top();
     height: $navigation-height;
-    padding: $navigation-padding;
     background-color: $navigation-bg-color;
 }
 
 .navigation-item {
     flex: 1;
-    text-align: center;
     display: flex;
+    height: 100%;
+    text-align: center;
     color: $navigation-color;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
 
@@ -20,13 +21,9 @@
     }
 }
 
-.navigation-item-icon {
-    text-align: center;
-}
-
 .navigation-item-label {
     &:not(:first-child) {
-        margin-top: $navigation-margin;
+        margin: $navigation-margin;
         transform: scale($navigation-label-scale);
     }
 }
