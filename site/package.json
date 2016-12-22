@@ -5,6 +5,7 @@
     "main": "src/main.js",
     "scripts": {
         "start": "gulp build && webpack-dashboard -- node server.js",
+        "dev": "gulp build && node server.js",
         "eslint": "eslint ./src/scripts/**/*.js && eslint ./src/scripts/**/*.vue",
         "scsslint": "scss-lint src/styles/**/*.scss"
     },
