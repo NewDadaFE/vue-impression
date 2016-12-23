@@ -1,6 +1,24 @@
 # vue-impression
 A Vue.js 2.0 UI elements for mobile.
 
+## Installation
+```shell
+    npm i vue-impression -save
+```
+
+## Usage
+```javascript
+    import Vue from 'vue'
+    import Impression from 'vue-impression';
+
+    Vue.use(Impression);
+```
+
+## Example
+```html
+    <btn theme="primary" size="sm" @click="doSomething">按钮</btn>
+```
+
 ### Components
 
  - [x] Button
