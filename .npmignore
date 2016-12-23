@@ -4,3 +4,11 @@
 .DS_Store
 npm-debug.log
 Makefile
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.scss-lint.yml
+index.todo
+/src
+

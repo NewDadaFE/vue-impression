@@ -12,3 +12,4 @@
 scss-lint-report.xml
 /lib
 .DS_Store
+/dist

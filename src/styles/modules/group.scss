@@ -1,0 +1,21 @@
+.group {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: $group-margin;
+    @include border-vertical();
+    background-color: $cell-bg-color;
+
+
+    > .cell:last-child {
+        background-size: 0;
+    }
+}
+
+// title
+.group-title {
+    padding: $group-title-padding;
+
+    + .group {
+        margin: 0;
+    }
+}

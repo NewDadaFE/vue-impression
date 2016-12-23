@@ -1,0 +1,29 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    @include border-top();
+    height: $navigation-height;
+    background-color: $navigation-bg-color;
+}
+
+.navigation-item {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    text-align: center;
+    color: $navigation-color;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &.active {
+        color: $navigation-color-active;
+    }
+}
+
+.navigation-item-label {
+    &:not(:first-child) {
+        margin: $navigation-margin;
+        transform: scale($navigation-label-scale);
+    }
+}

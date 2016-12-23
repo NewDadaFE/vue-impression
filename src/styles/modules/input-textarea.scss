@@ -1,0 +1,21 @@
+.textarea-input {
+    border: 0;
+    width: 100%;
+    resize: none;
+    display: block;
+    appearance: none;
+    user-select: auto;
+    padding: $textarea-padding;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.textarea-counter {
+    text-align: right;
+    transform-origin: right bottom;
+    transform: scale($textarea-counter-scale);
+    color: $textarea-counter-color;
+    padding: $textarea-counter-padding;
+}

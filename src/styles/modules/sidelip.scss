@@ -1,0 +1,19 @@
+.sidelip {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: $sidelip-width;
+    z-index: $z-index-sidelip;
+    background-color: $sidelip-bg-color;
+}
+
+
+.slide-left-enter-active {
+    animation: slideInLeft .3s ease;
+}
+
+.slide-left-leave-active {
+    animation: slideOutLeft .2s ease-in-out;
+}

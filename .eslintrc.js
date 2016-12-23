@@ -1,31 +1,24 @@
 module.exports = {
-    root: true,
-    parser: 'babel-eslint',
-    parserOptions: {
-        sourceType: 'module'
-    },
-    extends: 'airbnb-base',
-    // required to lint *.vue files
-    plugins: [
-        'html'
-    ],
-    // check if imports actually resolve
-    'settings': {
-        'import/resolver': {
-            'webpack': {
-                'config': 'build/webpack.base.conf.js'
-            }
-        }
-    },
-    // add your custom rules here
-    'rules': {
-        indent: [2, 4, { SwitchCase: 1}],
-        // don't require .vue extension when importing
-        'import/extensions': ['error', 'always', {
-            'js': 'never',
-            'vue': 'never'
+    extends: 'vue-impression',
+    rules: {
+        'keyword-spacing': ['error', {
+            before: true,
+            after: true,
+            overrides: {
+                if: { after: false },
+                while: { after: false },
+                return: { after: true },
+                throw: { after: true },
+                case: { after: true },
+            },
         }],
-        // allow debugger during development
-        'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+        'operator-linebreak': ['error', 'after', {
+            'overrides': {
+                '?': 'before',
+                ':': 'before'
+            },
+        }],
+        'one-var': ['warn', 'always'],
+        'one-var-declaration-per-line': ['error', 'always'],
     }
-}
+};

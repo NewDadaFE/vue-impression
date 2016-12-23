@@ -1,0 +1,37 @@
+.badge {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.badge-gap {
+    margin-right: $badge-margin-right;
+
+    .badge-addon {
+        box-shadow: $badge-box-shadow;
+    }
+}
+
+.badge-addon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 1;
+    text-align: center;
+    border-radius: $border-radius-circle;
+    color: $badge-color;
+    padding: $badge-padding;
+    min-width: $badge-min-width;
+    min-height: $badge-min-height;
+    transform: translateX(100%) translateY(-50%);
+
+    &:not(:empty) {
+        min-width: $badge-min-width-not-empty;
+        transform: translateX(50%) translateY(-50%) scale($badge-scale);
+    }
+
+    &:last-child {
+        position: static;
+        transform: none;
+    }
+}

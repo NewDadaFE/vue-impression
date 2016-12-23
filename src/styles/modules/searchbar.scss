@@ -1,0 +1,76 @@
+.searchbar {
+    display: flex;
+    align-items: center;
+
+    &.active {
+        .searchbar-input-field {
+            width: auto;
+            flex: 1;
+        }
+
+        .searchbar-input-placeholder {
+            flex: initial;
+            width: $searchbar-placeholder-width;
+        }
+
+        .searchbar-btn {
+            width: auto;
+            padding: $searchbar-btn-padding;
+        }
+
+        .searchbar-input-clear {
+            width: auto;
+            overflow: visible;
+            padding-left: $searchbar-clear-padding;
+        }
+    }
+}
+
+.searchbar-input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: $searchbar-padding;
+    border: 1px solid $searchbar-border-color;
+    border-radius: $searchbar-border-radius;
+}
+
+.searchbar-input-field {
+    height: 100%;
+    outline: none;
+    border: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+    transition: $searchbar-transition;
+
+}
+
+.searchbar-input-placeholder {
+    flex: 1;
+    text-align: center;
+    overflow: visible;
+    white-space: nowrap;
+    opacity: $searchbar-placeholder-opacity;
+    transition: $searchbar-transition;
+
+
+    i {
+        vertical-align: middle;
+    }
+}
+
+.searchbar-input-clear {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: $searchbar-clear-opacity;
+}
+
+.searchbar-btn {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: $searchbar-transition;
+}
