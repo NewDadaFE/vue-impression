@@ -7,7 +7,7 @@ A Vue.js 2.0 UI elements for mobile.
 ```
 
 ## Usage
-components:
+scripts:
 ```javascript
     import Vue from 'vue'
     import Impression from 'vue-impression';
@@ -15,7 +15,7 @@ components:
     Vue.use(Impression);
 ```
 
-scss:
+styles:
 ```scss
     @import '../../node_modules/vue-impression/dist/styles/index';
     @import 'myProjectCss';
