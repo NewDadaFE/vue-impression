@@ -117,8 +117,8 @@ const impression = {
 const install = Vue => {
     if(install.installed) return;
 
-    Object.keys(impression).forEach((key) => {
-        Vue.component(key, impression[key]);
+    Object.keys(impression).forEach(key => {
+        Vue.component(impression[key].name, impression[key]);
     });
 
     Vue.$toast = Vue.prototype.$toast = toast;

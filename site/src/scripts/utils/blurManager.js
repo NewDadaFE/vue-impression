@@ -11,8 +11,8 @@ const init = () => {
         popLayers.forEach(component => {
             const componentDom = component.$el;
 
-            if((event.path && event.path.indexOf(componentDom) === -1)
-                || !isDescendentNode(componentDom, event.target)) {
+            if((event.path && event.path.indexOf(componentDom) === -1) ||
+                !isDescendentNode(componentDom, event.target)) {
                 component.focus = false;
                 component.blurHandle && component.blurHandle();
             }

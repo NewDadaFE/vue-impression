@@ -15,8 +15,8 @@ export default {
         },
         isActive() {
             if(this.$parent.multiple) {
-                return this.$parent.currentValue
-                    && this.$parent.currentValue.indexOf(this.value) !== -1;
+                return this.$parent.currentValue &&
+                this.$parent.currentValue.indexOf(this.value) !== -1;
             }
 
             return this.$parent.currentValue === this.value;

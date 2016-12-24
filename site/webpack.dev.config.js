@@ -5,7 +5,7 @@ const path = require('path'),
     PORT = 9008;
 
 module.exports = {
-    devtool: '#eval-source-map',
+    devtool: 'eval-source-map',
     entry: {
         app: [
             `webpack-dev-server/client?http://localhost:${PORT}`,
@@ -28,17 +28,17 @@ module.exports = {
         fallback: [path.join(__dirname, 'node_modules')],
     },
     module: {
-        // preLoaders:[{
-        //     test: /\.vue$/,
-        //     loader: 'eslint',
-        //     include: path.join(__dirname, 'src'),
-        //     exclude: /node_modules/,
-        // }, {
-        //     test: /\.js$/,
-        //     loader: 'eslint',
-        //     include: path.join(__dirname, 'src'),
-        //     exclude: /node_modules/,
-        // }],
+        preLoaders: [{
+            test: /\.vue$/,
+            loader: 'eslint',
+            include: path.join(__dirname, 'src'),
+            exclude: /node_modules/,
+        }, {
+            test: /\.js$/,
+            loader: 'eslint',
+            include: path.join(__dirname, 'src'),
+            exclude: /node_modules/,
+        }],
         loaders: [{
             test: /\.vue$/,
             loader: 'vue',

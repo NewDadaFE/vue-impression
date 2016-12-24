@@ -57,66 +57,69 @@ import { alert, confirm } from '../utils/alert';
 import loading from '../utils/loading';
 import pkg from '../../../package.json';
 
+const impression = {
+    Button,
+    Group,
+    GroupTitle,
+    Cell,
+    Flex,
+    FlexItem,
+    Icon,
+    Tag,
+    Tip,
+    HRule,
+    Badge,
+    Media,
+    MediaObject,
+    MediaBody,
+    Card,
+    CardBody,
+    Swipe,
+    SwipeItem,
+    Navbar,
+    Tabbar,
+    TabbarItem,
+    Navigation,
+    NavigationItem,
+    Drawer,
+    DrawerItem,
+    SegmentedControl,
+    SegmentedControlItem,
+    SlideUp,
+    SlideUpHeader,
+    SlideUpBody,
+    Sidelip,
+    Searchbar,
+    SearchbarBtn,
+    SearchbarPlaceholder,
+    Picker,
+    PickerOption,
+    Loadmore,
+    Mask,
+    Alert,
+    Loading,
+    BackToTop,
+    Checkbox,
+    CheckboxGroup,
+    Radio,
+    RadioGroup,
+    Toggle,
+    InputNumber,
+    InputText,
+    InputTextarea,
+    Selector,
+    SelectorOption,
+    InlineSelector,
+    InlineSelectorOption,
+    DatePicker,
+};
+
 const install = Vue => {
     if(install.installed) return;
 
-    Vue.component(Button.name, Button);
-    Vue.component(Group.name, Group);
-    Vue.component(GroupTitle.name, GroupTitle);
-    Vue.component(Cell.name, Cell);
-    Vue.component(Flex.name, Flex);
-    Vue.component(FlexItem.name, FlexItem);
-    Vue.component(Icon.name, Icon);
-    Vue.component(Tag.name, Tag);
-    Vue.component(Tip.name, Tip);
-    Vue.component(HRule.name, HRule);
-    Vue.component(Badge.name, Badge);
-    Vue.component(Media.name, Media);
-    Vue.component(MediaObject.name, MediaObject);
-    Vue.component(MediaBody.name, MediaBody);
-    Vue.component(Card.name, Card);
-    Vue.component(CardBody.name, CardBody);
-    Vue.component(Swipe.name, Swipe);
-    Vue.component(SwipeItem.name, SwipeItem);
-
-    Vue.component(Navbar.name, Navbar);
-    Vue.component(Tabbar.name, Tabbar);
-    Vue.component(TabbarItem.name, TabbarItem);
-    Vue.component(Navigation.name, Navigation);
-    Vue.component(NavigationItem.name, NavigationItem);
-    Vue.component(Drawer.name, Drawer);
-    Vue.component(DrawerItem.name, DrawerItem);
-    Vue.component(SegmentedControl.name, SegmentedControl);
-    Vue.component(SegmentedControlItem.name, SegmentedControlItem);
-    Vue.component(SlideUp.name, SlideUp);
-    Vue.component(SlideUpHeader.name, SlideUpHeader);
-    Vue.component(SlideUpBody.name, SlideUpBody);
-    Vue.component(Sidelip.name, Sidelip);
-    Vue.component(Searchbar.name, Searchbar);
-    Vue.component(SearchbarBtn.name, SearchbarBtn);
-    Vue.component(SearchbarPlaceholder.name, SearchbarPlaceholder);
-    Vue.component(Picker.name, Picker);
-    Vue.component(PickerOption.name, PickerOption);
-    Vue.component(Loadmore.name, Loadmore);
-
-    Vue.component(Mask.name, Mask);
-    Vue.component(Alert.name, Alert);
-    Vue.component(Loading.name, Loading);
-    Vue.component(BackToTop.name, BackToTop);
-
-    Vue.component(Checkbox.name, Checkbox);
-    Vue.component(CheckboxGroup.name, CheckboxGroup);
-    Vue.component(Radio.name, Radio);
-    Vue.component(RadioGroup.name, RadioGroup);
-    Vue.component(Toggle.name, Toggle);
-    Vue.component(InputNumber.name, InputNumber);
-    Vue.component(InputText.name, InputText);
-    Vue.component(InputTextarea.name, InputTextarea);
-    Vue.component(Selector.name, Selector);
-    Vue.component(SelectorOption.name, SelectorOption);
-    Vue.component(InlineSelector.name, InlineSelector);
-    Vue.component(InlineSelectorOption.name, InlineSelectorOption);
-    Vue.component(DatePicker.name, DatePicker);
+    Object.keys(impression).forEach(key => {
+        Vue.component(impression[key].name, impression[key]);
+    });
 
     Vue.$toast = Vue.prototype.$toast = toast;
     Vue.$alert = Vue.prototype.$alert = alert;
@@ -132,4 +135,5 @@ if(typeof window !== 'undefined' && window.Vue) {
 export default {
     version: pkg.version,
     install,
+    ...impression,
 };

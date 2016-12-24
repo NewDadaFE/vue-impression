@@ -128,11 +128,11 @@
                 let currentNode = element,
                     overflowY = '';
 
-                while (
-                    currentNode
-                    && currentNode.tagName !== 'HTML'
-                    && currentNode.tagName !== 'BODY'
-                    && currentNode.nodeType === 1
+                while(
+                    currentNode &&
+                    currentNode.tagName !== 'HTML' &&
+                    currentNode.tagName !== 'BODY' &&
+                    currentNode.nodeType === 1
                 ) {
                     overflowY = document.defaultView.getComputedStyle(currentNode).overflowY;
                     if(overflowY === 'scroll' || overflowY === 'auto') return currentNode;
@@ -180,11 +180,11 @@
 
                 // pull down
                 if(
-                    typeof this.topMethod === 'function'
-                    && this.topStatus !== 'loading'
-                    && this.direction === 'down'
-                    && this.getScrollTop(this.scrollElement) === 0
-                    && !this.topAllLoaded
+                    typeof this.topMethod === 'function' &&
+                    this.topStatus !== 'loading' &&
+                    this.direction === 'down' &&
+                    this.getScrollTop(this.scrollElement) === 0 &&
+                    !this.topAllLoaded
                 ) {
                     event.preventDefault();
                     event.stopPropagation();
@@ -199,11 +199,11 @@
                 }
 
                 if(
-                    typeof this.bottomMethod === 'function'
-                    && this.bottomStatus !== 'loading'
-                    && this.direction === 'up'
-                    && this.bottomReached
-                    && !this.bottomAllLoaded
+                    typeof this.bottomMethod === 'function' &&
+                    this.bottomStatus !== 'loading' &&
+                    this.direction === 'up' &&
+                    this.bottomReached &&
+                    !this.bottomAllLoaded
                 ) {
                     event.preventDefault();
                     event.stopPropagation();
@@ -216,10 +216,9 @@
             },
             handleTouchEnd() {
                 // pull down
-                if(
-                    this.direction === 'down'
-                    && this.getScrollTop(this.scrollElement) === 0
-                    && this.translate > 0
+                if(this.direction === 'down' &&
+                    this.getScrollTop(this.scrollElement) === 0 &&
+                    this.translate > 0
                 ) {
                     this.topDropped = true;
 
@@ -235,9 +234,9 @@
 
                 // pull up
                 if(
-                    this.direction === 'up'
-                    && this.bottomReached
-                    && this.translate < 0
+                    this.direction === 'up' &&
+                    this.bottomReached &&
+                    this.translate < 0
                 ) {
                     this.bottomDropped = true;
                     // reset after pull up takes effect
@@ -295,8 +294,8 @@
             this.scrollElement = this.getScrollElement(this.$el);
 
             if(
-                typeof this.topMethod === 'function'
-                || typeof this.bottomMethod === 'function'
+                typeof this.topMethod === 'function' ||
+                typeof this.bottomMethod === 'function'
             ) {
                 this.$el.addEventListener('touchstart', this.handleTouchStart);
                 this.$el.addEventListener('touchmove', this.handleTouchMove);
@@ -305,8 +304,8 @@
         },
         beforeDestroy() {
             if(
-                typeof this.topMethod === 'function'
-                || typeof this.bottomMethod === 'function'
+                typeof this.topMethod === 'function' ||
+                typeof this.bottomMethod === 'function'
             ) {
                 this.$el.removeEventListener('touchstart', this.handleTouchStart);
                 this.$el.removeEventListener('touchmove', this.handleTouchMove);
