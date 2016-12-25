@@ -2,7 +2,7 @@
     <transition :name="transition">
         <div
             class="mask"
-            v-show="$parent.currentValue && $parent.type && $parent.type === 'loading'"
+            v-show="$parent.currentValue && (!$parent.type ? true : $parent.type === 'loading')"
             @click="clickable && ($parent.currentValue = false)">
         </div>
     </transition>
