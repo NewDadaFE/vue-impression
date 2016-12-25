@@ -41,15 +41,17 @@
         methods: {
             // 对齐方式
             getAlignClass() {
+                let align = this.align;
+
                 if(this.direction === 'row') {
-                    !this.align && (this.align = 'center');
+                    !align && (align = 'center');
                 }
 
                 return {
                     top: 'flex-align-top',
                     center: 'flex-align-middle',
                     bottom: 'flex-align-bottom',
-                }[this.align];
+                }[align];
             },
             // 内容排版
             getJustifyClass() {
