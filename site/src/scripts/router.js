@@ -6,13 +6,20 @@ Vue.use(VueRouter);
 
 // 提取路由
 const extractRoutes = config => {
-    const routes = [];
+    const routes = [],
+        children = [];
+
+    routes.push({
+        path: '/',
+        component: require('./containers/layout'),
+        children,
+    });
 
     config.forEach(group => {
         group.children.forEach(item => {
             const { path, name } = item;
 
-            routes.push({
+            children.push({
                 path,
                 name,
                 component: require(`./views${path}`),
@@ -24,12 +31,6 @@ const extractRoutes = config => {
 };
 
 const routes = extractRoutes(routesConfig);
-
-// demo首页
-routes.push({
-    path: '/',
-    component: require('./views/index'),
-});
 
 // 创建router对象
 const router = new VueRouter({
