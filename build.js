@@ -54,6 +54,7 @@ var getConfig = function () {
                 }
             }),
             new webpack.optimize.UglifyJsPlugin({
+                minimize: true,
                 compress: {
                     warnings: false
                 }

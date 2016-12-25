@@ -58,9 +58,9 @@ module.exports = {
             loader: 'json',
         }],
     },
-    // eslint: {
-    //     formatter: require('eslint-friendly-formatter')
-    // },
+    eslint: {
+        formatter: require('eslint-friendly-formatter'),
+    },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
@@ -72,4 +72,16 @@ module.exports = {
             inject: true,
         }),
     ],
+    devServer: {
+        contentBase: './build',
+        publicPath: '/',
+        hot: true,
+        historyApiFallback: true,
+        stats: {
+            colors: true,
+        },
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
+    },
 };
