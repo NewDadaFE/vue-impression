@@ -74,14 +74,9 @@
 
 <style>
     .container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
         overflow: auto;
         padding-bottom: 0.5rem;
-        background-color: rgba(0, 0, 255, 0.4);
+        background-color: #ccc;
     }
     .prod-container {
         padding-top: 0.4rem;

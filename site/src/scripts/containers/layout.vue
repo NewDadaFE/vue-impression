@@ -2,7 +2,7 @@
     <flex direction="column">
         <navbar theme="default">
             <icon name="bars" size="lg" @click="showMenubar = true" />
-            <h5 slot="body">{{$route.name}}</h5>
+            <h5 slot="body">{{$route.name || 'Impression'}}</h5>
         </navbar>
         <flex-item>
             <router-view></router-view>

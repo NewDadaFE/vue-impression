@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp build && webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --colors --port 9008",
     "eslint": "eslint ./src/scripts/**/*.js && eslint ./src/scripts/**/*.vue",
-    "scsslint": "scss-lint src/styles/**/*.scss"
+    "scsslint": "scss-lint src/styles/**/*.scss",
+    "build": "gulp build && webpack -p --config webpack.prod.config.js"
   },
   "keywords": [
     "vue-impression"

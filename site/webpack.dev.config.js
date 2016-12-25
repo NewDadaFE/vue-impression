@@ -1,21 +1,19 @@
 const path = require('path'),
     webpack = require('webpack'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    DashboardPlugin = require('webpack-dashboard/plugin'),
-    PORT = 9008;
+    DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
     entry: {
         app: [
-            `webpack-dev-server/client?http://localhost:${PORT}`,
+            `webpack-dev-server/client?http://localhost:9008`,
             'webpack/hot/dev-server',
             './src/scripts/index.js'],
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        publicPath: '/',
+        path: path.join(__dirname, 'dist'),
+        filename: 'app.js',
+        publicPath: '/scripts',
     },
     resolve: {
         extensions: ['', '.js', '.vue'],
@@ -66,15 +64,10 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new DashboardPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true,
-        }),
     ],
     devServer: {
         contentBase: './build',
-        publicPath: '/',
+        publicPath: '/scripts',
         hot: true,
         historyApiFallback: true,
         stats: {

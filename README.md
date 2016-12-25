@@ -26,6 +26,11 @@ styles:
     <btn theme="primary" size="sm" @click="doSomething">按钮</btn>
 ```
 
+
+## Demo
+
+https://newdadafe.github.io/impression_vue/#/button
+
 ### Components
 
  - [x] Button
