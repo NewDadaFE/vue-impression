@@ -31,7 +31,7 @@
     "css-loader": "^0.26.0",
     "eslint": "^3.10.2",
     "eslint-config-airbnb-base": "^10.0.1",
-    "eslint-config-vue-impression": "^1.0.5",
+    "eslint-config-vue-impression": "^1.1.0",
     "eslint-friendly-formatter": "^2.0.6",
     "eslint-import-resolver-webpack": "^0.7.0",
     "eslint-loader": "^1.6.1",

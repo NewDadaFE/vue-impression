@@ -10,7 +10,7 @@
             </group>
         </div>
         <group>
-            <cell :click="clickHandle">
+            <cell>
                 impression
                 <span slot="footer">0.1.0</span>
             </cell>
@@ -27,11 +27,6 @@
             return {
                 groups: routesConfig,
             };
-        },
-        methods: {
-            clickHandle() {
-                console.log(1);
-            },
         },
     };
 </script>
