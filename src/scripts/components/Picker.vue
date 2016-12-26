@@ -81,7 +81,8 @@
 
                 draggable(picker, {
                     effectEl: pickerList,
-                    onDrag: ({ dragging, effectEl, translateY }) => {
+                    onDrag: ({ dragging, effectEl, translateY }, event) => {
+                        event.preventDefault();
                         this.dragging = dragging;
 
                         setTranslate(effectEl, null, translateY);

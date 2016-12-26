@@ -10,7 +10,7 @@
                 {{(color || size) ? `已选择：${color}、${size}` : '请选择型号'}}
             </cell>
         </group>
-        <slideup v-model="showBase" noPadding>
+        <slideup v-model="showBase">
             <slideup-header class="text-danger">
                 <icon name="map-marker"></icon>
                 请选择送货地点：
