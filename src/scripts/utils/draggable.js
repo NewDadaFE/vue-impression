@@ -26,10 +26,7 @@ const draggable = (el, options) => {
         document.onselectstart = () => false;
         document.ondragstart = () => false;
 
-        if(options.onDragStart) {
-            sourceEvent.preventDefault();
-            options.onDragStart(dragState);
-        }
+        if(options.onDragStart) options.onDragStart(dragState, sourceEvent);
     };
 
     // move
@@ -50,20 +47,18 @@ const draggable = (el, options) => {
         });
 
         if(options.onDrag) {
-            sourceEvent.preventDefault();
-
             options.onDrag({
                 ...dragState,
                 deltaX,
                 deltaY,
                 translateX,
                 translateY,
-            });
+            }, sourceEvent);
         }
     };
 
     // end
-    const onTouchEndHandle = () => {
+    const onTouchEndHandle = (event, sourceEvent) => {
         Object.assign(dragState, {
             dragging: false,
         });
@@ -71,7 +66,7 @@ const draggable = (el, options) => {
         document.onselectstart = null;
         document.ondragstart = null;
 
-        options.onDragEnd && options.onDragEnd(dragState);
+        if(options.onDragEnd) options.onDragEnd(dragState, sourceEvent);
 
         // reset
         dragState = {

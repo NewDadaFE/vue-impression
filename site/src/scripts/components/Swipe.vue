@@ -40,6 +40,14 @@
                 type: Number,
                 default: 300,
             },
+            dragThreshold: {
+                type: Number,
+                default: 1 / 2,
+            },
+            dragRate: {
+                type: Number,
+                default: 0.2,
+            },
             // 过渡效果
             easing: {
                 type: String,
@@ -74,20 +82,26 @@
             // 初始化拖拽
             initDrag() {
                 let { swipe } = this.$refs,
-                    newIndex;
+                    translateX,
+                    newIndex,
+                    dragStartTime;
 
                 draggable(swipe, {
                     onDragStart: () => {
                         if(this.transitioning) return;
 
+                        dragStartTime = new Date();
                         this.dragging = true;
                         clearInterval(this.swipeInterval);
                     },
-                    onDrag: ({ translateX }) => {
+                    onDrag: option => {
                         if(this.transitioning) return;
 
+                        translateX = option.translateX;
+
+                        if(translateX === 0) return;
                         // 往左
-                        if(translateX <= 0) {
+                        if(translateX < 0) {
                             let nextIndex = this.getNextIndex();
 
                             this.$children[this.activeIndex].swipeToLeft(translateX);
@@ -111,7 +125,26 @@
 
                         this.dragging = false;
 
-                        this.activeIndex = newIndex;
+                        let threshold = this.$children[this.activeIndex].width * this.dragThreshold,
+                            rate = Math.abs(translateX) / (new Date() - dragStartTime);
+
+                        if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
+                            this.activeIndex = newIndex;
+                        } else {
+                            if(this.negative) {
+                                let prevIndex = this.getPrevIndex();
+
+                                this.$children[this.activeIndex].swipeToLeft(0);
+                                this.$children[prevIndex].swipeToLeft(0);
+                            } else {
+                                // 往左
+                                let nextIndex = this.getNextIndex();
+
+                                this.$children[this.activeIndex].swipeToRight(0);
+                                this.$children[nextIndex].swipeToRight(0);
+                            }
+                        }
+
                         setTimeout(() => {
                             this.play();
                         }, this.interval);
