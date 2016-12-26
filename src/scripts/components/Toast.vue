@@ -19,7 +19,7 @@
                 </div>
             </div>
         </transition>
-        <mask-layer :clickable="false" class="bg-transparent"/>
+        <mask-layer :clickable="false" class="bg-transparent" v-if="!!type"/>
     </div>
 </template>
 
