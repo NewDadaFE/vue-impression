@@ -24,13 +24,19 @@ const toastCache = {
     },
 };
 
-Toast.prototype.show = Toast.prototype.hide = function() {
-    this.currentValue = !this.currentValue;
-    toastCache.toggle();
+Toast.prototype.show = function() {
+    this.currentValue = true;
+    toastCache.active = true;
+};
+
+Toast.prototype.hide = function() {
+    this.currentValue = false;
+    toastCache.active = false;
 };
 
 /* global document:true */
 const toastUtil = (options = {}) => {
+    console.log('toast');
     if(toastCache.active) return;
 
     let duration = options.duration || 2000,

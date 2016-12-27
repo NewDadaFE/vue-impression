@@ -16,12 +16,10 @@ export default {
                     this.currentValue.splice(index, 1);
                 }
 
-                this.$emit('change', this.currentValue);
                 return;
             }
 
             this.currentValue = option.value;
-            this.$emit('change', this.currentValue);
         },
     },
     created() {

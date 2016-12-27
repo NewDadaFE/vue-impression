@@ -47,6 +47,10 @@
     line-height: 1;
 }
 
+.toast-fade-enter {
+    opacity: 0;
+}
+
 .toast-fade-enter-active {
     animation: fadeIn $toast-animation-enter-duration $toast-animation-enter-function;
 }
