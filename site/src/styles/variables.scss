@@ -209,7 +209,7 @@ $checkbox-bg-color-disabled: #dfdfdf !default;
 $checkbox-border-color-disabled: $checkbox-border-color !default;
 
 
-$checkbox-addon-font-size: 1.2rem !default;
+$checkbox-addon-font-size: 1.3rem !default;
 $radio-addon-width: 10px !default;
 $radio-addon-height: $radio-addon-width !default;
 $radio-addon-padding: 5px !default;
@@ -289,7 +289,7 @@ $tag-default-bg: #ccc !default;
 $tag-default-color: #666 !default;
 
 // Navigation
-$navigation-height: $tabbar-height !default;
+$navigation-height: 49px !default;
 $navigation-color: #888 !default;
 $navigation-color-active: $brand-primary !default;
 $navigation-bg-color: $tabbar-bg-color !default;
