@@ -10,7 +10,7 @@ var getConfig = function () {
     var config = {
         entry: {},
         output: {
-            path: path.resolve(__dirname, 'dist/scripts/components'),
+            path: path.resolve(__dirname, 'dist/scripts/components/'),
             filename: "[name].js"
         },
         resolve: {
@@ -18,6 +18,7 @@ var getConfig = function () {
         },
         resolveLoader: {
             fallback: [path.join(__dirname, 'node_modules')],
+            root: path.join(__dirname, 'node_modules'),
         },
         module: {
             loaders: [{
@@ -86,10 +87,10 @@ function build (name, _path) {
     let _config = getConfig();
 
     let _name = name.replace('.vue', '');
-    let file = `./src/scripts/components/${name}`;
+    let file = `./src/scripts/components/${_name}`;
     let _start = new Date().getTime();
     _config.output.libraryTarget = 'umd';
-    _config.entry[_name] = [file];
+    _config.entry[_name] = path.resolve(__dirname, file);
     _config.output.library = _name;
 
     webpack(_config, function (err, stats) {
