@@ -4,7 +4,7 @@
         <div class="prod-container clearfix">
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe8.jpg" alt="kobe 8">
+                    <img class="img-fluid" src="../../images/kobe8.jpg" alt="kobe 8">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe8 ZK8 科比八代低帮篮球鞋  全配色合集 745334-005科八蓝色 42
@@ -15,7 +15,7 @@
             </div>
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe8.jpg" alt="kobe 8">
+                    <img class="img-fluid" src="../../images/kobe8.jpg" alt="kobe 8">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe8 ZK8 科比八代低帮篮球鞋  全配色合集 745334-005科八蓝色 42
@@ -26,7 +26,7 @@
             </div>
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe9.jpg" alt="kobe 10">
+                    <img class="img-fluid" src="../../images/kobe9.jpg" alt="kobe 10">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe9 ZK9 科比九代低帮篮球鞋  全配色合集 745334-005科九蓝色 42
@@ -37,7 +37,7 @@
             </div>
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe9.jpg" alt="kobe 10">
+                    <img class="img-fluid" src="../../images/kobe9.jpg" alt="kobe 10">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe9 ZK9 科比九代低帮篮球鞋  全配色合集 745334-005科九蓝色 42
@@ -48,7 +48,7 @@
             </div>
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe10.jpg" alt="kobe 10">
+                    <img class="img-fluid" src="../../images/kobe10.jpg" alt="kobe 10">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe10 ZK10 科比十代低帮篮球鞋  全配色合集 745334-005科十紫色 42
@@ -59,7 +59,7 @@
             </div>
             <div class="prod-item">
                 <card>
-                    <img class="img-fluid" src="/images/kobe10.jpg" alt="kobe 10">
+                    <img class="img-fluid" src="../../images/kobe10.jpg" alt="kobe 10">
                     <card-body>
                         <p class="prod-info">
                             Nike耐克 Kobe10 ZK10 科比十代低帮篮球鞋  全配色合集 745334-005科十紫色 42
