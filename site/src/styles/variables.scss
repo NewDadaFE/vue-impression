@@ -272,13 +272,14 @@ $selector-color-transition: all .2s ease-in-out !default;
 // InlineSelector
 $inline-selector-transition: all .2s ease-in !default;
 $inline-selector-option-min-width: 55px !default;
+$inline-selector-option-padding: .6rem .2rem !default;
 
 // Tag
-$tag-padding: .2em .6em !default;
+$tag-padding: .4em .6em !default;
 $tag-color: $brand-pure !default;
 $tag-border-radius: $border-radius !default;
 
-$tag-padding-sm: .2em .2em !default;
+$tag-padding-sm: .2em .4em !default;
 $tag-scale-sm: .85 !default;
 
 $tag-primary-bg: $brand-primary !default;
