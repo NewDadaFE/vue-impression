@@ -34,7 +34,6 @@ Toast.prototype.hide = function() {
     toastCache.active = false;
 };
 
-
 /* global document:true */
 const toastUtil = (options = {}) => {
     if(toastCache.active) return;
