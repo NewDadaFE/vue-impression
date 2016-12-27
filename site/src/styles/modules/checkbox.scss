@@ -55,6 +55,8 @@
     line-height: 1;
 
     i {
+        text-align: center;
+        vertical-align: middle;
         transform: scale(0);
         transform-origin: 50% 50%;
         transition: $checkbox-transition;
@@ -62,6 +64,7 @@
         width: $checkbox-addon-font-size;
         height: $checkbox-addon-font-size;
         line-height: $checkbox-addon-font-size;
+        padding-top: $checkbox-addon-padding-top;
     }
 }
 

@@ -71,6 +71,8 @@
     line-height: 1px;
 
     i {
+        text-align: center;
+        vertical-align: middle;
         display: inline-block;
         width: $radio-addon-width;
         height: $radio-addon-height;
@@ -79,6 +81,7 @@
         transform: scale(0);
         transform-origin: 50% 50%;
         transition: $checkbox-transition;
+        padding-top: $checkbox-addon-padding-top;
     }
 }
 
