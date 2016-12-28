@@ -10,6 +10,9 @@
     background-color: $sidelip-bg-color;
 }
 
+.slide-left-enter {
+    transform: translate3d(-100%, 0, 0);
+}
 
 .slide-left-enter-active {
     animation: slideInLeft .3s ease;
