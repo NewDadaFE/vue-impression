@@ -22,6 +22,10 @@
     padding: $slide-body-padding;
 }
 
+.slide-up-enter {
+    transform: translate3d(0, 100%, 0);
+}
+
 .slide-up-enter-active {
     animation: slideInUp .3s ease-in-out;
 }
