@@ -2,6 +2,11 @@ export default {
     props: {
         multiple: Boolean,
     },
+    data() {
+        return {
+            currentText: {},
+        };
+    },
     methods: {
         optionClickHandle(option) {
             if(this.disabled || this.currentValue === option.value) return;
@@ -19,6 +24,7 @@ export default {
                 return;
             }
 
+            this.currentText = option.$el.innerText.trim();
             this.currentValue = option.value;
         },
     },

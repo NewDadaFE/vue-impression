@@ -88,8 +88,8 @@
             };
         },
         methods: {
-            changeHandle(val) {
-                this.$toast(`选中：${val}`);
+            changeHandle(value, text) {
+                this.$toast(`${text}: ${value}`);
             },
         },
     };

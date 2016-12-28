@@ -23,7 +23,7 @@ export default {
             }
 
             this.$emit('input', val);
-            this.$emit('change', val);
+            this.$emit('change', val, this.currentText);
         },
     },
 };

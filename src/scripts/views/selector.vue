@@ -5,7 +5,7 @@
             <span class="pull-right">selected:{{single}}</span>
         </group-title>
         <group>
-            <selector v-model="single">
+            <selector v-model="single" @change="changeHandle">
                 <selector-option value="Apple">Apple</selector-option>
                 <selector-option value="Orange">Orange</selector-option>
                 <selector-option value="Banana">Banana</selector-option>
@@ -54,6 +54,11 @@
                 multiple: [],
                 disabled: 'Orange',
             };
+        },
+        methods: {
+            changeHandle(value, text) {
+                this.$toast(`${value}: ${text}`);
+            },
         },
     };
 </script>
