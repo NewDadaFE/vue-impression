@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="$emit('click')">
         <transition :name="transition">
             <div v-show="currentValue" class="sidelip">
                 <slot></slot>

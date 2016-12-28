@@ -19,7 +19,7 @@
     <a
         v-else
         :href="href"
-        @click="clickHandle"
+        @click="$emit('click')"
         class="cell"
         :class="{'cell-link': clickable, 'cell-disabled': disabled}" >
         <div class="cell-header" v-if="$slots.header">
@@ -46,11 +46,6 @@
         computed: {
             clickable() {
                 return this.href || (this._events.click);
-            },
-        },
-        methods: {
-            clickHandle(event) {
-                this.$emit('click', event);
             },
         },
     };

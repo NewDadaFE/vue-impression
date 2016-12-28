@@ -1,7 +1,10 @@
 <template>
-    <div class="flex-item" :style="{
-        flex: flex !== 1 ? flex : null,
-    }">
+    <div
+        @click="$emit('click')"
+        class="flex-item"
+        :style="{
+            flex: flex !== 1 ? flex : null,
+        }">
         <slot></slot>
     </div>
 </template>

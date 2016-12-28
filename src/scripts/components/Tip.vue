@@ -1,5 +1,5 @@
 <template>
-    <div class="tip">
+    <div class="tip" @click="$emit('click')">
         <hrule :type="type" :theme="theme" />
         <span class="tip-label" :class="{[`text-${theme}`]: theme}">
             <slot></slot>

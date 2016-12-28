@@ -1,5 +1,6 @@
 <template>
     <div
+        @click="$emit('click')"
         class="media"
         :class="[getAlignClass()]">
         <slot></slot>

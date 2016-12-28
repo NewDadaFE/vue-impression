@@ -1,5 +1,5 @@
 <template>
-    <div class="card-body">
+    <div class="card-body" @click="$emit('click')">
         <slot></slot>
     </div>
 </template>
