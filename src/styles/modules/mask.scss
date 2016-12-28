@@ -9,6 +9,10 @@
 }
 
 
+.fade-enter {
+    opacity: 0;
+}
+
 .fade-enter-active {
     animation: fadeIn $mask-animation-enter-duration $mask-animation-enter-function;
 }

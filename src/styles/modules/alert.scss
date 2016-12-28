@@ -52,6 +52,9 @@
     color: $alert-btn-secondary-color;
 }
 
+.zoom-enter {
+    opacity: .5;
+}
 
 .zoom-enter-active {
     animation: lightZoomIn $alert-animation-duration $alert-animation-enter-function;
