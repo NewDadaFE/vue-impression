@@ -55,6 +55,7 @@
     line-height: 1;
 
     i {
+        vertical-align: middle;
         transform: scale(0);
         transform-origin: 50% 50%;
         transition: $checkbox-transition;
@@ -62,13 +63,14 @@
         width: $checkbox-addon-font-size;
         height: $checkbox-addon-font-size;
         line-height: $checkbox-addon-font-size;
+        padding-top: $checkbox-addon-padding-top;
     }
 }
 
 .radio-addon {
     border-radius: 50%;
     padding: $radio-addon-padding;
-    line-height: 1px;
+    line-height: 1;
 
     i {
         text-align: center;
@@ -81,7 +83,6 @@
         transform: scale(0);
         transform-origin: 50% 50%;
         transition: $checkbox-transition;
-        padding-top: $checkbox-addon-padding-top;
     }
 }
 
