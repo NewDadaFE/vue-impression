@@ -5,7 +5,7 @@
             class="radio-input"
             v-model="model"
             :value="isGroupChildComponent ? value : val"
-            :disabled="disabled">
+            :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
             <i></i>
         </span>
@@ -21,6 +21,7 @@
         props: {
             value: {},
             val: {},
+            disabled: Boolean,
         },
         computed: {
             model: {

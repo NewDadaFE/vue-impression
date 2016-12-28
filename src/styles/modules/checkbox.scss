@@ -43,6 +43,8 @@
 // addon
 .checkbox-addon,
 .radio-addon {
+    font-size: 0;
+    vertical-align: middle;
     display: inline-block;
     color: $checkbox-color;
     padding: $checkbox-padding;
