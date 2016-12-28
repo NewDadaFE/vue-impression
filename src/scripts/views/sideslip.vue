@@ -8,7 +8,7 @@
             <div class="bg-primary" :style="{height: '8rem', padding: '2rem 1rem'}">
                 <media class="bg-transparent" align="center">
                     <media-object>
-                        <img class="img-circle" :style="{width: '60px', height: '60px'}" src="/images/avatar.jpg">
+                        <img class="img-circle" :style="{width: '60px', height: '60px'}" src="../../images/avatar.jpg">
                     </media-object>
                     <media-body>
                         <h3>Impression</h3>

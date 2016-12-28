@@ -54,6 +54,7 @@
 
 .zoom-enter {
     opacity: .5;
+    transform: scale(.5, .5);
 }
 
 .zoom-enter-active {
