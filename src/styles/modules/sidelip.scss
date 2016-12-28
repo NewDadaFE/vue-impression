@@ -15,9 +15,9 @@
 }
 
 .slide-left-enter-active {
-    animation: slideInLeft .3s ease;
+    animation: slideInLeft $sidelip-animation-enter-duration $sidelip-animation-enter-function;
 }
 
 .slide-left-leave-active {
-    animation: slideOutLeft .2s ease-in-out;
+    animation: slideOutLeft $sidelip-animation-leave-duration $sidelip-animation-leave-function;
 }

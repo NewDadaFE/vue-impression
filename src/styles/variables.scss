@@ -353,6 +353,10 @@ $mask-animation-leave-function: ease !default;
 $slide-bg-color: $brand-pure !default;
 $slide-min-height: 5rem !default;
 $slide-max-height: 50% !default;
+$slide-animation-enter-duration: .3s !default;
+$slide-animation-enter-function: ease-in-out !default;
+$slide-animation-leave-duration: .2s !default;
+$slide-animation-leave-function: ease-in-out !default;
 
 $slide-header-padding: 1rem !default;
 
@@ -361,6 +365,10 @@ $slide-body-padding: 1rem !default;
 // Sidelip
 $sidelip-width: 65% !default;
 $sidelip-bg-color: $brand-pure !default;
+$sidelip-animation-enter-duration: .3s !default;
+$sidelip-animation-enter-function: ease !default;
+$sidelip-animation-leave-duration: .2s !default;
+$sidelip-animation-leave-function: ease-in-out !default;
 
 // SegmentedControl
 $segmented-control-color: $brand-primary !default;

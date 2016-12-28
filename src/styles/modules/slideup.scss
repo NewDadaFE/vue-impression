@@ -27,9 +27,9 @@
 }
 
 .slide-up-enter-active {
-    animation: slideInUp .3s ease-in-out;
+    animation: slideInUp $slide-animation-enter-duration $slide-animation-enter-function;
 }
 
 .slide-up-leave-active {
-    animation: slideOutDown .2s ease-in-out;
+    animation: slideOutDown $slide-animation-leave-duration $slide-animation-leave-function;
 }
