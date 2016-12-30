@@ -3,7 +3,7 @@ A Vue.js 2.0 UI elements for mobile.[Demo](https://newdadafe.github.io/impressio
 
 ## Installation
 ```shell
-    npm i vue-impression -save
+    npm i vue-impression -S
 ```
 
 ## Usage

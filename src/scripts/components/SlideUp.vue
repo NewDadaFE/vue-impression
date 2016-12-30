@@ -23,7 +23,7 @@
         },
         watch: {
             currentValue(val) {
-                !val && (this.$emit('close'));
+                val ? this.$emit('show') : this.$emit('close');
             },
         },
     };
