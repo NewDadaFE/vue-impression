@@ -19,6 +19,7 @@ export default {
 
             if(isArray(val) && val.length === 0) {
                 this.currentValue = undefined;
+
                 return;
             }
 

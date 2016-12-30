@@ -1,11 +1,11 @@
 // easeInOut
 export const easeInOutCubic = (time, offset, end, duration) => {
-    const cc = end - offset;
-    time /= duration / 2;
+    let cc = end - offset,
+        tempTime = time / (duration / 2);
 
-    if(time < 1) {
-        return (cc / 2 * time * time * time) + offset;
+    if(tempTime < 1) {
+        return (cc / 2 * tempTime * tempTime * tempTime) + offset;
     }
 
-    return (cc / 2 * (((time -= 2) * time * time) + 2)) + offset;
+    return (cc / 2 * (((tempTime -= 2) * tempTime * tempTime) + 2)) + offset;
 };

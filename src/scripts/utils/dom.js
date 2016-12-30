@@ -13,5 +13,6 @@ export const isDescendentNode = (ancestor, descendent) => {
         }
         parentNode = parentNode.parentNode;
     }
+
     return false;
 };

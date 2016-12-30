@@ -130,19 +130,17 @@
 
                         if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
                             this.activeIndex = newIndex;
+                        } else if(this.negative) {
+                            let prevIndex = this.getPrevIndex();
+
+                            this.$children[this.activeIndex].swipeToLeft(0);
+                            this.$children[prevIndex].swipeToLeft(0);
                         } else {
-                            if(this.negative) {
-                                let prevIndex = this.getPrevIndex();
+                            // 往左
+                            let nextIndex = this.getNextIndex();
 
-                                this.$children[this.activeIndex].swipeToLeft(0);
-                                this.$children[prevIndex].swipeToLeft(0);
-                            } else {
-                                // 往左
-                                let nextIndex = this.getNextIndex();
-
-                                this.$children[this.activeIndex].swipeToRight(0);
-                                this.$children[nextIndex].swipeToRight(0);
-                            }
+                            this.$children[this.activeIndex].swipeToRight(0);
+                            this.$children[nextIndex].swipeToRight(0);
                         }
 
                         setTimeout(() => {

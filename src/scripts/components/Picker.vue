@@ -95,6 +95,7 @@
                             duration = new Date() - startTimestamp;
 
                         let momentumTranslate;
+
                         if(duration < 300) {
                             momentumTranslate = translateY + (velocityTranslateY * momentumRatio);
                         }
@@ -102,6 +103,7 @@
                         this.$nextTick(() => {
                             let translate;
                             let dragRange = this.getDragRange();
+
                             if(momentumTranslate) {
                                 translate = Math.round(momentumTranslate / itemHeight) * itemHeight;
                             } else {

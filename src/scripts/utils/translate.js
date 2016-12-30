@@ -22,6 +22,7 @@ export const cancelTranslate = el => {
     if(el === null || el.style === null) return;
 
     let transform = el.style.transform;
+
     if(transform) {
         transform = transform.replace(/translate\(\s*(-?\d+(\.?\d+?)?)px,\s*(-?\d+(\.\d+)?)px\)\s*(translateZ\(0px\))?/g, '');
         el.style.transform = transform;
@@ -33,13 +34,15 @@ export const setTranslate = (el, x, y) => {
     if(x === null && y === null) return;
     // if(!el.style.transform && !x && !y) return;
 
-    let translate = getTranslate(el);
+    let translate = getTranslate(el),
+        currentX = x,
+        currentY = y;
 
-    if(x === null) x = translate.x;
-    if(y === null) y = translate.y;
+    if(x === null) currentX = translate.x;
+    if(y === null) currentY = translate.y;
 
     cancelTranslate(el);
 
-    el.style.transform += ` translate(${x ? `${x}px` : '0px'}, ${y ? `${y}px` : '0px'})`;
+    el.style.transform += ` translate(${currentX ? `${currentX}px` : '0px'}, ${currentY ? `${currentY}px` : '0px'})`;
 };
 

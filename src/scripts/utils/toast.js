@@ -8,9 +8,7 @@ const toastCache = {
     cache: [],
     active: false,
     pop() {
-        if(this.cache.length) {
-            return this.cache.splice(0, 1)[0];
-        }
+        if(this.cache.length) return this.cache.splice(0, 1)[0];
 
         return new Toast({
             el: document.createElement('div'),
