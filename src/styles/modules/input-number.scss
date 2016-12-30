@@ -81,7 +81,10 @@
     padding: $number-input-padding;
     margin: $number-input-margin;
     background: $number-input-bg-color;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
     outline: none;
     line-height: 1;
+    background-image: none;
     border: 1px solid $number-input-border-color;
 }
