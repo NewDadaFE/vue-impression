@@ -19,6 +19,7 @@
 .slideup-body {
     flex: 1;
     overflow-y: scroll;
+    -webkit-overflow-scrolling : touch;
     padding: $slide-body-padding;
 }
 
