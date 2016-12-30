@@ -3,11 +3,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     background-color: $slide-bg-color;
-    min-height: $slide-min-height;
-    max-height: $slide-max-height;
     z-index: $z-index-slide;
 }
 
@@ -17,10 +13,11 @@
 }
 
 .slideup-body {
-    flex: 1;
     overflow-y: scroll;
     -webkit-overflow-scrolling : touch;
     padding: $slide-body-padding;
+    min-height: $slide-min-height;
+    max-height: $slide-max-height;
 }
 
 .slide-up-enter {

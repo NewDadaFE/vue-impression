@@ -352,7 +352,7 @@ $mask-animation-leave-function: ease !default;
 // Slide
 $slide-bg-color: $brand-pure !default;
 $slide-min-height: 5rem !default;
-$slide-max-height: 50% !default;
+$slide-max-height: 300px !default;
 $slide-animation-enter-duration: .3s !default;
 $slide-animation-enter-function: ease-in-out !default;
 $slide-animation-leave-duration: .2s !default;
