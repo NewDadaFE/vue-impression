@@ -81,13 +81,18 @@
 
                 draggable(picker, {
                     effectEl: pickerList,
+                    onDragStart: (dragState, event) => {
+                        event.preventDefault();
+                    },
                     onDrag: ({ dragging, effectEl, translateY }, event) => {
                         event.preventDefault();
                         this.dragging = dragging;
 
                         setTranslate(effectEl, null, translateY);
                     },
-                    onDragEnd: ({ dragging, startTimestamp, velocityTranslateY }) => {
+                    onDragEnd: ({ dragging, startTimestamp, velocityTranslateY }, event) => {
+                        event.preventDefault();
+
                         this.dragging = dragging;
                         let momentumRatio = 10,
                             itemHeight = this.getOptionHeight(),
