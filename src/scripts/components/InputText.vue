@@ -1,5 +1,5 @@
 <template>
-    <div class="input-text">
+    <div class="input-text" v-disfavor="blur">
         <input
             type="text"
             ref="input"
@@ -24,11 +24,10 @@
 
 <script>
     import Sync from '../mixins/sync';
-    import Blur from '../mixins/blur';
 
     export default {
         name: 'input-text',
-        mixins: [Sync, Blur],
+        mixins: [Sync],
         props: {
             clearable: Boolean,
             placeholder: String,
@@ -42,7 +41,6 @@
                     return ['success', 'warning', 'error'].indexOf(value) > -1;
                 },
             },
-
         },
         data() {
             return {
@@ -51,6 +49,9 @@
             };
         },
         methods: {
+            blur() {
+                this.focus = false;
+            },
             clearHandle() {
                 if(!this.currentDisabled) {
                     this.currentValue = '';

@@ -1,16 +1,15 @@
 <template>
-    <div class="searchbar" :class="{active: focus}">
+    <div class="searchbar" :class="{active: focus}" v-disfavor="blur">
         <slot></slot>
     </div>
 </template>
 
 <script>
     import Sync from '../mixins/sync';
-    import Blur from '../mixins/blur';
 
     export default {
         name: 'searchbar',
-        mixins: [Sync, Blur],
+        mixins: [Sync],
         props: {
             clearable: {
                 type: Boolean,
@@ -27,6 +26,11 @@
             return {
                 focus: false,
             };
+        },
+        methods: {
+            blur() {
+                this.focus = false;
+            },
         },
     };
 </script>

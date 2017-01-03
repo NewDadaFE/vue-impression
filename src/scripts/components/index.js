@@ -52,9 +52,13 @@ import Loadmore from './Loadmore';
 import Alert from './Alert';
 import Swipe from './Swipe';
 import SwipeItem from './SwipeItem';
+// global utils
 import toast from '../utils/toast';
 import { alert, confirm } from '../utils/alert';
 import loading from '../utils/loading';
+// directives
+import disfavor from '../directives/disfavor';
+// config
 import pkg from '../../../package.json';
 
 const impression = {
@@ -117,6 +121,7 @@ const impression = {
 const install = Vue => {
     if(install.installed) return;
 
+    // components
     Object.keys(impression).forEach(key => {
         Vue.component(impression[key].name, impression[key]);
     });
@@ -125,6 +130,9 @@ const install = Vue => {
     Vue.$alert = Vue.prototype.$alert = alert;
     Vue.$confirm = Vue.prototype.$confirm = confirm;
     Vue.$loading = Vue.prototype.$loading = loading;
+
+    // directives
+    Vue.directive('disfavor', disfavor);
 };
 
 /* global window:true */
