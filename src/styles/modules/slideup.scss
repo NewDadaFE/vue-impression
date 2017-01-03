@@ -13,7 +13,7 @@
 }
 
 .slideup-body {
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling : touch;
     padding: $slide-body-padding;
     min-height: $slide-min-height;
