@@ -13,6 +13,8 @@ export default {
     watch: {
         value(val) {
             this.currentValue = val;
+
+            this.$emit('change', val, this.currentText);
         },
         currentValue(val) {
             if(this.disabled) return;
@@ -24,7 +26,6 @@ export default {
             }
 
             this.$emit('input', val);
-            this.$emit('change', val, this.currentText);
         },
     },
 };
