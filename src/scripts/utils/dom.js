@@ -24,3 +24,31 @@ export const contains = (ancestor, descendent) => {
 
     return false;
 };
+
+/**
+ * 判断元素是否有滚动条.
+ * @param  {[Element]} el [元素]
+ * @return {[Boolean]}    [是否有滚动条]
+ */
+export const hasScrollbar = el => {
+    if(!el) return false;
+
+    return el.scrollHeight > el.offsetHeight;
+};
+
+/**
+ * 返回具有滚动条的祖先元素.
+ * @param  {[Element]} el [Dom元素]
+ * @return {[Element]}    [祖先元素]
+ */
+export const getScrollContainer = el => {
+    let tmpEl = el;
+
+    while(tmpEl !== document) {
+        tmpEl = tmpEl.parentNode;
+
+        if(hasScrollbar(tmpEl)) return tmpEl;
+    }
+
+    return document;
+};

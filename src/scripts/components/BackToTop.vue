@@ -2,25 +2,17 @@
     <div
         class="back-to-top"
         :class="{'active': active}"
-        @click="scrollToTopHandle">
+        @click.prevent.stop="scrollToTopHandle">
         <icon class="back-to-top-icon" name="arrow-up" />
     </div>
 </template>
 
 <script>
     import { easeInOutCubic } from '../utils/easing';
+    import { getScrollContainer } from '../utils/dom';
 
     export default {
         name: 'back-to-top',
-        props: {
-            scope: {
-                type: String,
-                default: 'window',
-                validator(value) {
-                    return ['window', 'component', 'element'].indexOf(value) > -1;
-                },
-            },
-        },
         data() {
             return {
                 active: false,
@@ -43,60 +35,34 @@
                 };
 
                 requestAnimationFrame(frameFunc);
+                this.active = false;
             },
             getScrollTop() {
-                switch(this.scope) {
-                    case 'component':
-                        return this.$parent ? this.$parent.$el.scrollTop : 0;
-                    case 'element':
-                        return this.$el.parentNode ? this.$el.parentNode.scrollTop : 0;
-                    default:
-                        return window.pageYOffset;
-                }
+                return this.scrollTargetEl === document
+                ? window.pageYOffset : this.scrollTargetEl.scrollTop;
             },
             setScrollTop(val) {
-                switch(this.scope) {
-                    case 'component':
-                        this.$parent && (this.$parent.$el.scrollTop = val);
-                        break;
-                    case 'element':
-                        this.$el.parentNode && (this.$el.parentNode.scrollTop = val);
-                        break;
-                    default:
-                        document.body.scrollTop = val;
-                        document.documentElement.scrollTop = val;
+                if(this.scrollTargetEl === document) {
+                    document.body.scrollTop = val;
+                    document.documentElement.scrollTop = val;
+
+                    return;
                 }
+
+                this.scrollTargetEl.scrollTop = val;
             },
             touchStartHandle() {
-                switch(this.scope) {
-                    case 'component':
-                        this._offsetY = this.$parent.$el.scrollTop;
-                        break;
-                    case 'element':
-                        this._offsetY = this.$el.parentNode.scrollTop;
-                        break;
-                    default:
-                        this._offsetY = window.pageYOffset;
-                }
+                this._offsetY = this.scrollTargetEl === document
+                ? window.pageYOffset : this.scrollTargetEl.scrollTop;
             },
             touchEndHandle() {
-                let scrollTop;
-
-                switch(this.scope) {
-                    case 'component':
-                        scrollTop = this.$parent.$el.scrollTop;
-                        break;
-                    case 'element':
-                        scrollTop = this.$el.parentNode.scrollTop;
-                        break;
-                    default:
-                        scrollTop = window.pageYOffset;
-                }
+                let scrollTop = this.scrollTargetEl === document
+                ? window.pageYOffset : this.scrollTargetEl.scrollTop;
 
                 // 显示
-                if(scrollTop < this._offsetY && scrollTop > 60) {
+                if(scrollTop < this._offsetY && (this._offsetY - scrollTop > 60)) {
                     this.active = true;
-                } else {
+                } else if(Math.abs(this._offsetY - scrollTop) > 60) {
                     // 隐藏
                     this.active = false;
                 }
@@ -105,13 +71,10 @@
             },
         },
         mounted() {
-            switch(this.scope) {
-                case 'component':
-                case 'element':
-                default:
-                    document.addEventListener('touchstart', this.touchStartHandle);
-                    document.addEventListener('touchend', this.touchEndHandle);
-            }
+            this.scrollTargetEl = getScrollContainer(this.$el);
+
+            this.scrollTargetEl.addEventListener('touchstart', this.touchStartHandle);
+            this.scrollTargetEl.addEventListener('touchend', this.touchEndHandle);
         },
     };
 </script>
