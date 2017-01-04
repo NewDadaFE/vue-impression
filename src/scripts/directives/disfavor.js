@@ -2,7 +2,7 @@ import { contains } from '../utils/dom';
 
 const disfavorContext = '@@disfavor';
 
-// 失宠
+// 失去焦点
 export default {
     bind(el, binding, vnode) {
         const clickHandle = event => {

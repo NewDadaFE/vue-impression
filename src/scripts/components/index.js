@@ -126,6 +126,7 @@ const install = Vue => {
         Vue.component(impression[key].name, impression[key]);
     });
 
+    // global component utils
     Vue.$toast = Vue.prototype.$toast = toast;
     Vue.$alert = Vue.prototype.$alert = alert;
     Vue.$confirm = Vue.prototype.$confirm = confirm;
@@ -135,7 +136,6 @@ const install = Vue => {
     Vue.directive('disfavor', disfavor);
 };
 
-/* global window:true */
 if(typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }

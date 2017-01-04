@@ -1,7 +1,7 @@
 <template>
     <div class="input-text" v-disfavor="blur">
         <input
-            type="text"
+            :type="type"
             ref="input"
             v-model="currentValue"
             :disabled="currentDisabled"
