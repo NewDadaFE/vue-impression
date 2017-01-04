@@ -1,7 +1,17 @@
 <template>
     <div class="input-text" v-disfavor="blur">
         <input
-            :type="type"
+            type="tel"
+            v-if="type === 'tel'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="text"
+            v-else
             ref="input"
             v-model="currentValue"
             :disabled="currentDisabled"
@@ -34,6 +44,9 @@
             type: {
                 type: String,
                 default: 'text',
+                validator(value) {
+                    return ['text', 'tel'].indexOf(value) > -1;
+                },
             },
             state: {
                 type: String,

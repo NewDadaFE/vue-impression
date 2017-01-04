@@ -2,13 +2,9 @@ import Vue from 'vue';
 import OriginAlert from '../components/Alert';
 
 const Alert = Vue.extend(OriginAlert);
-let _active = false;
 
-// 确认选择框
+// Confirm框
 export const confirm = option => {
-    if(_active) return;
-
-    /* global document:true */
     let alertInstance = new Alert({
         el: document.createElement('div'),
     });
