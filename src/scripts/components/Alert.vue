@@ -7,9 +7,7 @@
                     <div class="alert-title">
                         {{title}}
                     </div>
-                    <div class="alert-message">
-                        {{message}}
-                    </div>
+                    <div class="alert-message" v-html="message"></div>
                     <div class="alert-footer">
                         <template v-if="inverseBtn">
                             <div v-if="type === 'confirm'" class="alert-btn alert-btn-secondary" @click="cancelClickHandle">

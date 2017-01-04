@@ -14,9 +14,7 @@
                     <icon :name="icon"></icon>
                 </div>
                 <loading v-else-if="type === 'loading'" />
-                <div class="toast-message">
-                    {{message}}
-                </div>
+                <div class="toast-message" v-html="message"></div>
             </div>
         </transition>
         <mask-layer :clickable="false" class="bg-transparent" v-if="!!type"/>
