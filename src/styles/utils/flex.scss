@@ -11,7 +11,7 @@
 
 .flex-item {
     flex: 1;
-    overflow: auto;
+    overflow-y: auto;
     -webkit-overflow-scrolling : touch;
 }
 
