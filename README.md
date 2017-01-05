@@ -31,7 +31,7 @@ styles:
 
 https://newdadafe.github.io/impression_vue/#/button
 
-### Components
+## Components
 
  - [x] Button
  - [x] Group
@@ -74,3 +74,7 @@ https://newdadafe.github.io/impression_vue/#/button
  - [x] Pull up
  - [x] Sideslip
  - [ ] Sticky
+
+## Quickly build web app
+
+[yeoman generator](https://github.com/NewDadaFE/generator-vue-impression)

@@ -17,7 +17,7 @@
                 <div class="toast-message" v-html="message"></div>
             </div>
         </transition>
-        <mask-layer :clickable="false" class="bg-transparent" v-if="!!type"/>
+        <mask-layer :clickable="closeOnClickMask" class="bg-transparent" v-if="!!type"/>
     </div>
 </template>
 
@@ -38,6 +38,10 @@
                 validator(value) {
                     return ['success', 'error', 'warning', 'loading'].indexOf(value) > -1;
                 },
+            },
+            closeOnClickMask: {
+                type: Boolean,
+                default: false,
             },
         },
         data() {

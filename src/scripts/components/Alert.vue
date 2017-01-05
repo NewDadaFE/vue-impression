@@ -29,7 +29,7 @@
                 </div>
             </div>
         </transition>
-        <mask-layer :clickable="false" />
+        <mask-layer :clickable="closeOnClickMask" />
     </div>
 </template>
 <script>
@@ -59,6 +59,10 @@
             },
             onOkClick: Function,
             onCancelClick: Function,
+            closeOnClickMask: {
+                type: Boolean,
+                default: false,
+            },
         },
         data() {
             return {

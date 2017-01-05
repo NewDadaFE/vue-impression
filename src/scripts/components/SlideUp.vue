@@ -5,7 +5,7 @@
                 <slot></slot>
             </div>
         </transition>
-        <mask-layer />
+        <mask-layer :clickable="closeOnClickMask" />
     </div>
 </template>
 
@@ -19,6 +19,10 @@
             transition: {
                 type: String,
                 default: 'slide-up',
+            },
+            closeOnClickMask: {
+                type: Boolean,
+                default: true,
             },
         },
         watch: {
