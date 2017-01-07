@@ -55,6 +55,8 @@
 
                 if(items.length) {
                     this.itemHeight = items[0].offsetHeight;
+
+                    return this.itemHeight;
                 }
 
                 return 36;

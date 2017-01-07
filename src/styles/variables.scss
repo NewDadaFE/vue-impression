@@ -33,8 +33,6 @@ $z-index-sidelip: 1020 !default;
 $z-index-toast: 1030 !default;
 $z-index-alert: 1030 !default;
 
-// animation
-
 // Base
 $font-family-base: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
 $line-height-base: 1.43 !default;
@@ -42,7 +40,7 @@ $body-color: #333 !default;
 $body-bg: #f0eff5 !default;
 $text-muted: $gray-light !default;
 
-$font-size-root: 12px !default;
+$font-size-root: 14px !default;
 $font-size-base: 1rem !default;
 $font-size-lg: 1.4rem !default;
 $font-size-sm: .875rem !default;
@@ -209,11 +207,11 @@ $checkbox-bg-color-disabled: #dfdfdf !default;
 $checkbox-border-color-disabled: $checkbox-border-color !default;
 
 
-$checkbox-addon-font-size: 18px !default;
+$checkbox-addon-font-size: round(1.5 * $font-size-root) !default;
 $checkbox-addon-padding-top: 0 !default;
-$radio-addon-width: 10px !default;
+$radio-addon-width: round(.9 * $font-size-root) !default;
 $radio-addon-height: $radio-addon-width !default;
-$radio-addon-padding: 5px !default;
+$radio-addon-padding: round(.5 * $font-size-root) !default;
 
 $checkbox-label-gap: 2px !default;
 
@@ -222,13 +220,13 @@ $checkbox-square-border-radius: $border-radius !default;
 $checkbox-gap: 1rem !default;
 
 // Toggle
-$toggle-addon-size: 16px !default;
+$toggle-addon-size: round(1.34 * $font-size-root) !default;
 $toggle-addon-bg-color: $brand-pure !default;
 $toggle-addon-bg-color-checked: $brand-primary !default;
 $toggle-addon-opacity-disabled: $opacity-disabled !default;
 
 $toggle-bg-color: #e7eaec !default;
-$toggle-width: 46px !default;
+$toggle-width: round(3.84 * $font-size-root) !default;
 $toggle-padding: 3px !default;
 $toggle-border-radius: $toggle-addon-size !default;
 $toggle-transition: all .2s ease !default;
@@ -236,7 +234,7 @@ $toggle-transition: all .2s ease !default;
 // Number
 $number-border-color: $brand-primary !default;
 
-$number-btn-size: 22px !default;
+$number-btn-size: round(1.84 * $font-size-root) !default;
 $number-btn-line-height: $number-btn-size - 2 !default;
 
 $number-plus-color: $brand-pure !default;
