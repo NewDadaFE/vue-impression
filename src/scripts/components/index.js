@@ -121,13 +121,6 @@ const impression = {
 const install = Vue => {
     if(install.installed) return;
 
-    // 视网膜屏
-    let userAgent = navigator.userAgent.toLowerCase();
-
-    if(/iphone|ipad|ipod/.test(userAgent)) {
-        document.documentElement.style.fontSize = '14px';
-    }
-
     // components
     Object.keys(impression).forEach(key => {
         Vue.component(impression[key].name, impression[key]);

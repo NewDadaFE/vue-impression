@@ -50,16 +50,12 @@
             getOptionHeight() {
                 if(this.itemHeight) return this.itemHeight;
 
-                let { pickerList } = this.$refs,
-                    items = pickerList.children;
+                let style = document.body.currentStyle ||
+                document.defaultView.getComputedStyle(document.body, '');
 
-                if(items.length) {
-                    this.itemHeight = items[0].offsetHeight;
+                this.itemHeight = 3 * parseInt(style.fontSize, 10);
 
-                    return this.itemHeight;
-                }
-
-                return 36;
+                return this.itemHeight;
             },
             // 选择Option
             pickOption() {
