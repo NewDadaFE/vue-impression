@@ -1,6 +1,6 @@
 {
   "name": "vue-impression",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "A Vue.js 2.0 UI elements for mobile.",
   "main": "dist/scripts/components/index.js",
   "scripts": {
@@ -72,6 +72,7 @@
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.7",
+    "vue-router": "^2.1.1",
     "webpack": "^1.13.3",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.8.4",
@@ -84,7 +85,6 @@
     "vue-template-compiler": "^2.1.7"
   },
   "dependencies": {
-    "vue": "^2.1.7",
-    "vue-router": "^2.1.1"
+    "vue": "^2.1.7"
   }
 }
