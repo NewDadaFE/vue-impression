@@ -61,8 +61,8 @@
 
                 return 36;
             },
-            // 初始化
-            init() {
+            // 选择Option
+            pickOption() {
                 let pickIndex = 0;
 
                 this.$children.forEach((option, index) => {
@@ -130,9 +130,12 @@
             pickedIndex(val) {
                 this.currentValue = this.$children[val].value;
             },
+            value() {
+                this.pickOption();
+            },
         },
         mounted() {
-            this.init();
+            this.pickOption();
             this.initDrag();
         },
     };

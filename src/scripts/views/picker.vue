@@ -51,5 +51,10 @@
                 defaultCity: '杭州',
             };
         },
+        mounted() {
+            setTimeout(() => {
+                this.defaultCity = '武汉';
+            }, 3000);
+        },
     };
 </script>
