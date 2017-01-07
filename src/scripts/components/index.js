@@ -121,6 +121,11 @@ const impression = {
 const install = Vue => {
     if(install.installed) return;
 
+    // 视网膜屏
+    if(window.devicePixelRatio && window.devicePixelRatio >= 2) {
+        document.documentElement.style.fontSize = '14px';
+    }
+
     // components
     Object.keys(impression).forEach(key => {
         Vue.component(impression[key].name, impression[key]);
