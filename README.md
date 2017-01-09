@@ -26,6 +26,10 @@ styles:
     <btn theme="primary" size="sm" @click="doSomething">按钮</btn>
 ```
 
+## Download
+
+- https://newdadafe.github.io/resources/vue-impression.js
+- https://newdadafe.github.io/resources/vue-impression.css
 
 ## Demo
 

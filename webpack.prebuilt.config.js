@@ -2,10 +2,10 @@ var path = require('path'),
     webpack = require('webpack');
 
 module.exports = {
-    entry: './src/scripts/index',
+    entry: './src/scripts/components/index',
     output: {
         path: path.join(__dirname, 'build', 'scripts'),
-        filename: 'app.js',
+        filename: 'vue-impression.js',
         publicPath: '/',
     },
     plugins: [
@@ -21,7 +21,7 @@ module.exports = {
                 except: ['$super', '$', 'exports', 'require', 'module'],
             },
         }),
-        new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 51200 }),
+        new webpack.optimize.MinChunkSizePlugin({minChunkSize: 51200}),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
     ],

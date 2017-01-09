@@ -4,8 +4,10 @@
   "description": "A Vue.js 2.0 UI elements for mobile.",
   "main": "dist/scripts/components/index.js",
   "scripts": {
-    "start": "gulp build && webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --colors --port 9008",
+    "start": "gulp build && webpack -p --config webpack.prebuilt.config.js",
+    "poststart": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --colors --port 9008",
     "build:site": "gulp build && webpack -p --config webpack.prod.config.js",
+    "build:prebuilt": "gulp build && webpack -p --config webpack.prebuilt.config.js",
     "eslint": "eslint ./src/scripts/",
     "pre-commit": "eslint",
     "scsslint": "scss-lint src/styles/**/*.scss",
