@@ -1,8 +1,62 @@
 <template>
     <div class="input-text" v-disfavor="blur">
         <input
+            type="number"
+            v-if="type === 'number'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
             type="tel"
-            v-if="type === 'tel'"
+            v-else-if="type === 'tel'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="date"
+            v-else-if="type === 'date'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="datetime"
+            v-else-if="type === 'datetime'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="time"
+            v-else-if="type === 'time'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="password"
+            v-else-if="type === 'password'"
+            ref="input"
+            v-model="currentValue"
+            :disabled="currentDisabled"
+            :placeholder="placeholder"
+            @focus="focus = true"
+            class="input-text-input">
+        <input
+            type="email"
+            v-else-if="type === 'email'"
             ref="input"
             v-model="currentValue"
             :disabled="currentDisabled"
@@ -45,7 +99,7 @@
                 type: String,
                 default: 'text',
                 validator(value) {
-                    return ['text', 'tel'].indexOf(value) > -1;
+                    return ['text', 'number', 'tel', 'date', 'datetime', 'time', 'password', 'email'].indexOf(value) > -1;
                 },
             },
             state: {
