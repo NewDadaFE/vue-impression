@@ -75,18 +75,39 @@
             },
             // 事件初始化
             initDrag() {
-                let { picker, pickerList } = this.$refs;
+                let { picker, pickerList } = this.$refs,
+                    prevTranslateY;
 
                 draggable(picker, {
                     effectEl: pickerList,
-                    onDragStart: (dragState, event) => {
+                    onDragStart: ({ translateY }, event) => {
                         event.preventDefault();
+                        prevTranslateY = translateY;
                     },
                     onDrag: ({ dragging, effectEl, translateY }, event) => {
                         event.preventDefault();
                         this.dragging = dragging;
 
-                        setTranslate(effectEl, null, translateY);
+                        let maxTranslateY = this.getOptionHeight() * 3;
+                        let currentTranslateY = translateY;
+                        let pickerHeight = this.$children.length * this.getOptionHeight();
+
+                        if(translateY > 0) {
+                            let rate = (maxTranslateY - translateY) / maxTranslateY;
+
+                            rate = rate >= 0 ? rate : 0.1;
+
+                            currentTranslateY = prevTranslateY + rate * (translateY - prevTranslateY);
+                        } else if(translateY < -pickerHeight) {
+                            let rate = ((translateY - pickerHeight) - maxTranslateY) / maxTranslateY;
+
+                            rate = rate >= 0 ? rate : 0.1;
+
+                            currentTranslateY = prevTranslateY + rate * (translateY - prevTranslateY);
+                        }
+
+                        prevTranslateY = currentTranslateY;
+                        setTranslate(effectEl, null, currentTranslateY);
                     },
                     onDragEnd: ({ dragging, startTimestamp, velocityTranslateY }, event) => {
                         event.preventDefault();
