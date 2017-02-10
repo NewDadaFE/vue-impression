@@ -58,8 +58,6 @@ import { alert, confirm } from '../utils/alert';
 import loading from '../utils/loading';
 // directives
 import disfavor from '../directives/disfavor';
-// config
-import pkg from '../../../package.json';
 
 const impression = {
     Button,
@@ -141,7 +139,6 @@ if(typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-    version: pkg.version,
     install,
     ...impression,
 };
