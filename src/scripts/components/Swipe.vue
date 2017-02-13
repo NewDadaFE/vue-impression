@@ -169,12 +169,12 @@
                     currentIndex = this.negative ? this.getNextIndex() : this.getPrevIndex(),
                     currentItem = this.$children[currentIndex];
 
-                // 重置
-                this.$children.forEach((child, activeIndex) => {
-                    if(activeIndex !== currentIndex) {
-                        child.reset(this.negative);
-                    }
-                });
+                // 重置()
+                // this.$children.forEach((child, activeIndex) => {
+                //     if(activeIndex !== currentIndex) {
+                //         child.reset(this.negative);
+                //     }
+                // });
 
                 if(!this.negative) {
                     currentItem.swipeToLeft();

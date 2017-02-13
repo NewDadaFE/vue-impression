@@ -1,12 +1,12 @@
 <template>
     <div class="swipe-item"
-        @webkitTransitionEnd="$el.style.transition = ''">
+        @webkitTransitionEnd="resetByTranslateX()">
         <slot></slot>
     </div>
 </template>
 
 <script>
-    import { setTranslate } from '../utils/translate';
+    import { getTranslate, setTranslate } from '../utils/translate';
 
     export default {
         name: 'swipe-item',
@@ -17,8 +17,16 @@
             };
         },
         methods: {
-            // 重置
-            reset(negative) {
+            // 根据位移重置
+            resetByTranslateX() {
+                this.$el.style.transition = '';
+
+                let translateX = getTranslate(this.$el).x;
+
+                translateX < 0 && setTranslate(this.$el, this.width, 0);
+            },
+            // 根据是否active重置
+            resetByNegative(negative) {
                 this.$el.style.transition = '';
                 if(this.index !== this.$parent.activeIndex) {
                     setTranslate(this.$el, negative ? -this.width : this.width, 0);
