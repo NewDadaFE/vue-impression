@@ -7,6 +7,7 @@
 
 <script>
     import { getTranslate, setTranslate } from '../utils/translate';
+    import { getPrefixStyle } from '../utils/cssPrefix';
 
     export default {
         name: 'swipe-item',
@@ -74,7 +75,7 @@
             swipeToLeft(translateX) {
                 // 轮播
                 if(!translateX) {
-                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.easing}`;
+                    this.$el.style.transition = getPrefixStyle('transform', `${this.$parent.speed}ms ${this.$parent.easing}`);
 
                     let translate = -this.width;
 
@@ -104,7 +105,7 @@
             swipeToRight(translateX) {
                 // 轮播
                 if(!translateX) {
-                    this.$el.style.transition = `transform ${this.$parent.speed}ms ${this.$parent.easing}`;
+                    this.$el.style.transition = getPrefixStyle('transform', `${this.$parent.speed}ms ${this.$parent.easing}`);
 
                     let translate = this.width;
 

@@ -1,15 +1,5 @@
-let engine;
-let docStyle = document.documentElement.style;
+import { vendorPrefix } from './cssPrefix';
 
-if('MozAppearance' in docStyle) {
-    engine = 'gecko';
-} else if('WebkitAppearance' in docStyle) {
-    engine = 'webkit';
-} else if(typeof navigator.cpuClass === 'string') {
-    engine = 'trident';
-}
-
-let vendorPrefix = { trident: 'ms', gecko: 'Moz', webkit: 'Webkit' }[engine];
 let transformProperty = `${vendorPrefix}Transform`;
 
 // 获取位移
