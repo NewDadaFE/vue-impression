@@ -1,4 +1,18 @@
+let engine;
+let docStyle = document.documentElement.style;
 
+if('MozAppearance' in docStyle) {
+    engine = 'gecko';
+} else if('WebkitAppearance' in docStyle) {
+    engine = 'webkit';
+} else if(typeof navigator.cpuClass === 'string') {
+    engine = 'trident';
+}
+
+let vendorPrefix = { trident: 'ms', gecko: 'Moz', webkit: 'Webkit' }[engine];
+let transformProperty = `${vendorPrefix}Transform`;
+
+// 获取位移
 export const getTranslate = el => {
     let result = {
         x: 0,
@@ -7,7 +21,7 @@ export const getTranslate = el => {
 
     if(el === null || el.style === null) return result;
 
-    let transform = el.style.transform;
+    let transform = el.style[transformProperty];
     let matches = /translate\(\s*(-?\d+(\.?\d+?)?)px,\s*(-?\d+(\.\d+)?)px\)\s*(translateZ\(0px\))?/g.exec(transform);
 
     if(matches) {
@@ -18,17 +32,19 @@ export const getTranslate = el => {
     return result;
 };
 
+// 取消位移
 export const cancelTranslate = el => {
     if(el === null || el.style === null) return;
 
-    let transform = el.style.transform;
+    let transform = el.style[transformProperty];
 
     if(transform) {
         transform = transform.replace(/translate\(\s*(-?\d+(\.?\d+?)?)px,\s*(-?\d+(\.\d+)?)px\)\s*(translateZ\(0px\))?/g, '');
-        el.style.transform = transform;
+        el.style[transformProperty] = transform;
     }
 };
 
+// 设置位移
 export const setTranslate = (el, x, y) => {
     if(!el) return;
     if(x === null && y === null) return;
@@ -43,6 +59,6 @@ export const setTranslate = (el, x, y) => {
 
     cancelTranslate(el);
 
-    el.style.transform += ` translate(${currentX ? `${currentX}px` : '0px'}, ${currentY ? `${currentY}px` : '0px'})`;
+    el.style[transformProperty] += ` translate(${currentX ? `${currentX}px` : '0px'}, ${currentY ? `${currentY}px` : '0px'})`;
 };
 
