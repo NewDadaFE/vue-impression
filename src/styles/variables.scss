@@ -463,3 +463,22 @@ $swipe-indicator-border-color: $brand-pure !default;
 $swipe-indicator-bg-color-active: $brand-pure !default;
 $swipe-indicator-transition-duration: .3s !default;
 $swipe-indicator-transition-function: ease-in-out !default;
+
+// Progressbar
+$progressbar-height: 20px !default;
+$progressbar-border-radius: $progressbar-height !default;
+$progressbar-bg-color: $gray-lightest !default;
+$progressbar-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !default;
+
+$progressbar-primary-bg: $brand-primary !default;
+$progressbar-success-bg: $brand-success !default;
+$progressbar-warning-bg: $brand-warning !default;
+$progressbar-danger-bg: $brand-danger !default;
+
+$progressbar-indicator-color: $brand-pure !default;
+$progressbar-indicator-font-size: $font-size-sm !default;
+$progressbar-indicator-transition: width .6s ease !default;
+$progressbar-indicator-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15) !default;
+
+$progressbar-height-sm: 10px !default;
+

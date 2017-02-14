@@ -1,0 +1,43 @@
+.progressbar {
+    height: $progressbar-height;
+    overflow: hidden;
+    background-color: $progressbar-bg-color;
+    border-radius: $progressbar-border-radius;
+    box-shadow: $progressbar-box-shadow;
+}
+
+.progressbar-indicator {
+    float: left;
+    width: 0;
+    height: 100%;
+    text-align: center;
+    line-height: $progressbar-height;
+    font-size: $progressbar-indicator-font-size;
+    color: $progressbar-indicator-color;
+    box-shadow: $progressbar-indicator-box-shadow;
+    transition: $progressbar-indicator-transition;
+}
+
+.progressbar-sm {
+    height: $progressbar-height-sm;
+
+    .progressbar-indicator {
+        font-size: 0;
+    }
+}
+
+.progressbar-primary {
+    @include progressbar-variant($progressbar-primary-bg);
+}
+
+.progressbar-success {
+    @include progressbar-variant($progressbar-success-bg);
+}
+
+.progressbar-warning {
+    @include progressbar-variant($progressbar-warning-bg);
+}
+
+.progressbar-danger {
+    @include progressbar-variant($progressbar-danger-bg);
+}

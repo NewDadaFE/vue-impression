@@ -143,6 +143,11 @@
                 "icon": "spinner"
             },
             {
+                "path": "/progressbar",
+                "name": "Progressbar",
+                "icon": "battery-three-quarters"
+            },
+            {
                 "path": "/back-to-top",
                 "name": "BackToTop",
                 "icon": "arrow-circle-up"
