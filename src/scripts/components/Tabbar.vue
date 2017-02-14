@@ -46,6 +46,7 @@
         },
         updated() {
             this.setIndicatorWidth();
+            this.initSelectedIndicator();
         },
     };
 </script>
