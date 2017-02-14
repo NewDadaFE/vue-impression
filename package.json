@@ -73,7 +73,7 @@
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.1.7",
+    "vue-template-compiler": "^2.1.10",
     "vue-router": "^2.1.1",
     "webpack": "^1.13.3",
     "webpack-dashboard": "^0.2.0",
@@ -83,10 +83,10 @@
     "webpack-merge": "^0.17.0"
   },
   "peerDependencies": {
-    "vue": "^2.1.7",
-    "vue-template-compiler": "^2.1.7"
+    "vue": "^2.1.10",
+    "vue-template-compiler": "^2.1.10"
   },
   "dependencies": {
-    "vue": "^2.1.7"
+    "vue": "^2.1.10"
   }
 }

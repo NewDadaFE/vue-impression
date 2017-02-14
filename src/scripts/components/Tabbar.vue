@@ -35,13 +35,17 @@
                 });
             },
         },
+        watch: {
+            currentActiveKey() {
+                this.initSelectedIndicator();
+            },
+        },
         mounted() {
             this.setIndicatorWidth();
             this.initSelectedIndicator();
         },
         updated() {
             this.setIndicatorWidth();
-            this.initSelectedIndicator();
         },
     };
 </script>
