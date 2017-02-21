@@ -4,8 +4,7 @@
             @after-leave="afterLeave">
             <div class="alert" v-show="currentValue">
                 <div class="alert-modal">
-                    <div class="alert-title">
-                        {{title}}
+                    <div class="alert-title"  v-html="title">
                     </div>
                     <div class="alert-message" v-html="message"></div>
                     <div class="alert-footer">

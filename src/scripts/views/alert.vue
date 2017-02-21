@@ -15,6 +15,7 @@
         methods: {
             showHandle() {
                 this.$alert({
+                    title: '<h5 class="text-success">提示</h5>',
                     message: '这是Vue 2.0组件库！',
                 });
             },
