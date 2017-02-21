@@ -133,11 +133,6 @@
                 "icon": "bullhorn"
             },
             {
-                "path": "/confirm",
-                "name": "Confirm",
-                "icon": "question-circle-o"
-            },
-            {
                 "path": "/loading",
                 "name": "loading",
                 "icon": "spinner"

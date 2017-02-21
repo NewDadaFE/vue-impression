@@ -28,3 +28,7 @@
     background-repeat: no-repeat;
     background-position: left top;
 }
+
+@mixin no-border {
+    background-size: 0;
+}

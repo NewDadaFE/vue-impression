@@ -55,7 +55,7 @@ import SwipeItem from './SwipeItem';
 import Progressbar from './Progressbar';
 // global utils
 import toast from '../utils/toast';
-import { alert, confirm } from '../utils/alert';
+import { alert } from '../utils/alert';
 import loading from '../utils/loading';
 // directives
 import disfavor from '../directives/disfavor';
@@ -129,7 +129,6 @@ const install = Vue => {
     // global component utils
     Vue.$toast = Vue.prototype.$toast = toast;
     Vue.$alert = Vue.prototype.$alert = alert;
-    Vue.$confirm = Vue.prototype.$confirm = confirm;
     Vue.$loading = Vue.prototype.$loading = loading;
 
     // directives

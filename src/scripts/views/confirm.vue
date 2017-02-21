@@ -18,7 +18,7 @@
     export default {
         methods: {
             showHandle(inverseBtn) {
-                this.$confirm({
+                this.$alert({
                     inverseBtn,
                     message: '这是Vue 2.0组件库！',
                 });

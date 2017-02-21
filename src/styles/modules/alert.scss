@@ -36,6 +36,7 @@
     @include border-top;
 }
 
+
 .alert-btn {
     flex: 1;
     text-align: center;
@@ -48,8 +49,18 @@
     }
 }
 
-.alert-btn-secondary {
-    color: $alert-btn-secondary-color;
+.alert-footer-vertical {
+    flex-direction: column;
+
+    .alert-btn {
+        &:not(:first-child) {
+            @include no-border;
+        }
+
+        &:not(:last-child) {
+            @include border-bottom;
+        }
+    }
 }
 
 .zoom-enter {
