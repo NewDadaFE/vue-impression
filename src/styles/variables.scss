@@ -528,9 +528,9 @@ $timeline-item-addon-dot-size-active: round(.7 * $font-size-root) !default;
 $timeline-item-addon-dot-bg: #cbcccd !default;
 $timeline-item-addon-dot-bg-active: $brand-primary !default;
 
-$timeline-item-line-color: $text-muted !default;
 $timeline-item-line-width: 1px !default;
 $timeline-item-line-color: $timeline-item-addon-dot-bg !default;
 
+$timeline-item-body-color: $text-muted !default;
 $timeline-item-body-padding-left: ($timeline-item-addon-size-active + .7 * $font-size-root) !default;
 $timeline-item-body-line-height: $timeline-item-addon-size-active !default;
