@@ -482,3 +482,35 @@ $progressbar-height-sm: 8px !default;
 $progressbar-border-radius-sm: $progressbar-height-sm !default;
 
 
+// Stepbar
+$stepbar-gap: 2px !default;
+
+
+$stepbar-item-addon-size: 1.5rem !default;
+$stepbar-item-addon-color: $text-muted !default;
+
+$stepbar-item-addon-color-active: $brand-pure !default;
+$stepbar-item-addon-bg-active: $brand-primary !default;
+$stepbar-item-addon-border-color-active: $brand-primary !default;
+$stepbar-item-addon-border-width: 1px !default;
+$stepbar-item-addon-border-color: $border-color !default;
+$stepbar-item-addon-icon-font-size: 1rem !default;
+$stepbar-item-addon-transition: all .2s ease-in !default;
+
+
+$stepbar-item-addon-color-finished: $brand-primary !default;
+$stepbar-item-addon-border-color-finished: $brand-primary !default;
+
+
+$stepbar-item-addon-title-color: $text-muted !default;
+$stepbar-item-addon-title-color-active: $body-color !default;
+$stepbar-item-addon-title-font-weight-active: bold !default;
+
+
+$stepbar-line-height: 1px !default;
+$stepbar-line-color: $border-color !default;
+$stepbar-line-border-color: $stepbar-line-color !default;
+$stepbar-line-border-color-active: $brand-primary !default;
+$stepbar-line-transition: all .2s ease-in !default;
+
+

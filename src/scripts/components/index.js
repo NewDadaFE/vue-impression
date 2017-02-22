@@ -53,6 +53,8 @@ import Alert from './Alert';
 import Swipe from './Swipe';
 import SwipeItem from './SwipeItem';
 import Progressbar from './Progressbar';
+import Stepbar from './Stepbar';
+import StepbarItem from './StepbarItem';
 // global utils
 import toast from '../utils/toast';
 import { alert } from '../utils/alert';
@@ -116,6 +118,8 @@ const impression = {
     InlineSelectorOption,
     DatePicker,
     Progressbar,
+    Stepbar,
+    StepbarItem,
 };
 
 const install = Vue => {

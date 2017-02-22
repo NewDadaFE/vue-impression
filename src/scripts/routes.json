@@ -103,6 +103,11 @@
                 "icon": "search"
             },
             {
+                "path": "/stepbar",
+                "name": "Stepbar",
+                "icon": "flag-checkered"
+            },
+            {
                 "path": "/picker",
                 "name": "Picker",
                 "icon": "building-o"
