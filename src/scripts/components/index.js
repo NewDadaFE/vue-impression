@@ -55,6 +55,8 @@ import SwipeItem from './SwipeItem';
 import Progressbar from './Progressbar';
 import Stepbar from './Stepbar';
 import StepbarItem from './StepbarItem';
+import Timeline from './Timeline';
+import TimelineItem from './TimelineItem';
 // global utils
 import toast from '../utils/toast';
 import { alert } from '../utils/alert';
@@ -120,6 +122,8 @@ const impression = {
     Progressbar,
     Stepbar,
     StepbarItem,
+    Timeline,
+    TimelineItem,
 };
 
 const install = Vue => {

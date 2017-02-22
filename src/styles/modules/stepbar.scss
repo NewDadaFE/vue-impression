@@ -39,8 +39,8 @@
     width: $stepbar-item-addon-size;
     height: $stepbar-item-addon-size;
     line-height: $stepbar-item-addon-size;
-    border-radius: 50%;
     border: $stepbar-item-addon-border-width solid $stepbar-item-addon-border-color;
+    border-radius: 50%;
     transition: $stepbar-item-addon-transition;
 
     &.active {

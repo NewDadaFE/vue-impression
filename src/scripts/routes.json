@@ -108,6 +108,11 @@
                 "icon": "flag-checkered"
             },
             {
+                "path": "/timeline",
+                "name": "Timeline",
+                "icon": "flag-o"
+            },
+            {
                 "path": "/picker",
                 "name": "Picker",
                 "icon": "building-o"

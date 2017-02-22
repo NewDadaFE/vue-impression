@@ -78,6 +78,8 @@ https://newdadafe.github.io/impression_vue/#/button
  - [x] Pull up
  - [x] Sideslip
  - [x] Progressbar
+ - [x] Stepbar
+ - [x] Timeline
  - [ ] Sticky
 
 ## Quickly build web app
