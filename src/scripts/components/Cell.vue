@@ -3,7 +3,10 @@
         v-if="to"
         :to="to"
         class="cell cell-link"
-        :class="{'cell-disabled': disabled}">
+        :class="{
+            'cell-disabled': disabled,
+            'cell-no-gap': hasGap,
+        }">
         <div class="cell-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -21,7 +24,11 @@
         :href="href"
         @click="$emit('click')"
         class="cell"
-        :class="{'cell-link': clickable, 'cell-disabled': disabled}" >
+        :class="{
+            'cell-link': clickable,
+            'cell-disabled': disabled,
+            'cell-no-gap': hasGap,
+        }" >
         <div class="cell-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -42,6 +49,10 @@
             to: [String, Object],
             href: String,
             disabled: Boolean,
+            hasGap: {
+                type: Boolean,
+                default: true,
+            },
         },
         computed: {
             clickable() {

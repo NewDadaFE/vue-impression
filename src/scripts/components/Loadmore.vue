@@ -6,14 +6,14 @@
             :style="{ transform: `translate3d(0, ${translate}px, 0)` }">
             <slot name="top">
                 <div class="loadmore-hint loadmore-hint-top" v-if="topMethod">
-                    <loading v-if="topStatus === 'loading'"></loading>
+                    <loading v-if="showLoading && topStatus === 'loading'"></loading>
                     <span class="loadmore-text">{{ topText }}</span>
                 </div>
             </slot>
             <slot></slot>
             <slot name="bottom">
                 <div class="loadmore-hint loadmore-hint-bottom" v-if="bottomMethod">
-                    <loading v-if="bottomStatus === 'loading'"></loading>
+                    <loading v-if="showLoading && bottomStatus === 'loading'" ></loading>
                     <span class="loadmore-text">{{ bottomText }}</span>
                 </div>
             </slot>
@@ -68,6 +68,10 @@
                 type: Function,
             },
             bottomAllLoaded: {
+                type: Boolean,
+                default: false,
+            },
+            showLoading: {
                 type: Boolean,
                 default: false,
             },

@@ -12,6 +12,7 @@
 
 .alert-modal {
     width: $alert-width;
+    max-width: $alert-max-width;
     padding: $alert-padding;
     background-color: $alert-bg-color;
     border-radius: $alert-border-radius;
@@ -24,7 +25,7 @@
 }
 
 .alert-message {
-    text-align: center;
+    text-align: $alert-message-text-align;
     color: $alert-message-color;
     font-size: $alert-message-font-size;
     padding: $alert-message-padding;

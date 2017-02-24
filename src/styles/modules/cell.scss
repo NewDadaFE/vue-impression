@@ -10,6 +10,10 @@
     background-color: $cell-bg-color;
 }
 
+.cell-no-gap {
+    background-position: 0 100%;
+}
+
 .cell-link {
     &:focus {
         outline: 0;

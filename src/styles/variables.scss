@@ -173,6 +173,7 @@ $toast-loading-margin: 1rem 0 !default;
 
 // Alert
 $alert-width: 20rem !default;
+$alert-max-width: 27rem !default;
 $alert-padding: 1.5rem 0 0 0 !default;
 $alert-bg-color: $brand-pure !default;
 $alert-border-radius: $border-radius-lg !default;
@@ -187,6 +188,7 @@ $alert-message-color: $gray-light !default;
 $alert-message-font-size: 14px !default;
 $alert-message-padding: 1rem 1.5rem 1.5rem !default;
 $alert-message-line-height: 2 !default;
+$alert-message-text-align: center !default;
 
 $alert-btn-color: $brand-primary !default;
 $alert-btn-font-size: 14px !default;
