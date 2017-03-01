@@ -2,7 +2,7 @@
     <div>
         <transition name="zoom"
             @after-leave="afterLeave">
-            <div class="alert" v-show="currentValue">
+            <div class="alert" v-show="currentValue" @click.self="maskClosable && (currentValue = false)">
                 <div class="alert-modal">
                     <div class="alert-title"  v-html="title">
                     </div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </transition>
-        <mask-layer :clickable="maskClosable" />
+        <mask-layer :clickable="false" />
     </div>
 </template>
 <script>

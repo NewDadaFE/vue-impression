@@ -27,6 +27,7 @@
             // alert
             alertClickHandle() {
                 this.$alert({
+                    maskClosable: true,
                     btns: [{
                         text: '关闭',
                         click() {
