@@ -1,7 +1,10 @@
 <template>
     <div>
         <group-title>base</group-title>
-        <swipe>
+        <swipe
+            :onDragStart="onDragStart"
+            :onDrag="onDrag"
+            :onDragEnd="onDragEnd">
             <swipe-item>
                 <div class="page-swipe-item bg-primary">1</div>
             </swipe-item>
@@ -56,6 +59,28 @@
         </swipe>
     </div>
 </template>
+
+<script>
+    export default {
+        methods: {
+            onDragStart(index) {
+                this.$toast({
+                    message: `onDragStart${index}`,
+                });
+            },
+            onDrag(index) {
+                this.$toast({
+                    message: `onDrag${index}`,
+                });
+            },
+            onDragEnd(index) {
+                this.$toast({
+                    message: `onDragEnd${index}`,
+                });
+            },
+        },
+    };
+</script>
 
 
 <style>

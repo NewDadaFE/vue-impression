@@ -5,7 +5,7 @@
         class="cell cell-link"
         :class="{
             'cell-disabled': disabled,
-            'cell-no-gap': hasGap,
+            'cell-no-gap': !hasGap,
         }">
         <div class="cell-header" v-if="$slots.header">
             <slot name="header"></slot>
@@ -27,7 +27,7 @@
         :class="{
             'cell-link': clickable,
             'cell-disabled': disabled,
-            'cell-no-gap': hasGap,
+            'cell-no-gap': !hasGap,
         }" >
         <div class="cell-header" v-if="$slots.header">
             <slot name="header"></slot>

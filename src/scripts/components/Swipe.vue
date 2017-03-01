@@ -48,6 +48,9 @@
                 type: Number,
                 default: 0.2,
             },
+            onDragStart: Function,
+            onDrag: Function,
+            onDragEnd: Function,
             // 过渡效果
             easing: {
                 type: String,
@@ -88,6 +91,8 @@
 
                 draggable(swipe, {
                     onDragStart: () => {
+                        this.onDragStart && this.onDragStart(this.activeIndex);
+
                         if(this.transitioning) return;
 
                         dragStartTime = new Date();
@@ -95,6 +100,8 @@
                         clearInterval(this.swipeInterval);
                     },
                     onDrag: option => {
+                        this.onDrag && this.onDrag(this.activeIndex);
+
                         if(this.transitioning) return;
 
                         translateX = option.translateX;
@@ -121,6 +128,8 @@
                         }
                     },
                     onDragEnd: () => {
+                        this.onDragEnd && this.onDragEnd(this.activeIndex);
+
                         if(this.transitioning) return;
 
                         this.dragging = false;
