@@ -3,7 +3,7 @@
         <div class="swipe-items">
             <slot></slot>
         </div>
-        <div class="swipe-indicators" v-if="dots">
+        <div class="swipe-indicators" v-show="dots">
             <div class="swipe-indicator" :class="{active: index - 1 === activeIndex}" v-for="index in length"></div>
         </div>
     </div>
@@ -100,11 +100,10 @@
                         clearInterval(this.swipeInterval);
                     },
                     onDrag: option => {
-                        this.onDrag && this.onDrag(this.activeIndex);
-
                         if(this.transitioning) return;
 
                         translateX = option.translateX;
+                        this.onDrag && this.onDrag(this.activeIndex, translateX);
 
                         if(translateX === 0) return;
                         // 往左
