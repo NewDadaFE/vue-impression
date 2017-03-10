@@ -193,13 +193,21 @@
                     this.negative = false;
                 }
             },
+            // 异步swipeItem
+            length() {
+                if(this.length) {
+                    this.initDrag();
+                    this.play();
+                }
+            },
         },
         mounted() {
             this.init();
-            this.initDrag();
-            this.play();
         },
         updated() {
+            this.$nextTick(() => {
+                this.init();
+            });
             setTimeout(() => {
                 this.transitioning = false;
             }, this.speed);
