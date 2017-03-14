@@ -1,6 +1,6 @@
 {
   "name": "vue-impression",
-  "version": "0.13.13",
+  "version": "0.13.15",
   "description": "A Vue.js 2.0 UI elements for mobile.",
   "main": "dist/scripts/components/index.js",
   "scripts": {

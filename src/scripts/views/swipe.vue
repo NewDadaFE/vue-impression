@@ -10,15 +10,9 @@
             </swipe-item>
         </swipe>
         <group-title>defaultIndex=1</group-title>
-        <swipe :defaultIndex="1">
+        <swipe :defaultIndex="0">
             <swipe-item>
                 <div class="page-swipe-item bg-primary">1</div>
-            </swipe-item>
-            <swipe-item>
-                <div class="page-swipe-item bg-secondary">2</div>
-            </swipe-item>
-            <swipe-item>
-                <div class="page-swipe-item bg-success">3</div>
             </swipe-item>
         </swipe>
         <group-title>dots=false</group-title>

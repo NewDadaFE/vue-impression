@@ -84,6 +84,10 @@
             },
             // 初始化拖拽
             initDrag() {
+                if(this.length <= 1) {
+                    return;
+                }
+
                 let { swipe } = this.$refs,
                     translateX,
                     newIndex,
@@ -103,7 +107,6 @@
                         if(this.transitioning) return;
 
                         translateX = option.translateX;
-                        this.onDrag && this.onDrag(this.activeIndex, translateX);
 
                         if(translateX === 0) return;
                         // 往左
@@ -125,6 +128,8 @@
                             this.negative = true;
                             newIndex = prevIndex;
                         }
+
+                        this.onDrag && this.onDrag(newIndex, translateX);
                     },
                     onDragEnd: () => {
                         this.onDragEnd && this.onDragEnd(this.activeIndex);
