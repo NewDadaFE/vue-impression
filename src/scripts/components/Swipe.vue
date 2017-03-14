@@ -107,6 +107,7 @@
                         if(this.transitioning) return;
 
                         translateX = option.translateX;
+                        this.onDrag && this.onDrag(this.activeIndex, translateX);
 
                         if(translateX === 0) return;
                         // 往左
@@ -128,12 +129,8 @@
                             this.negative = true;
                             newIndex = prevIndex;
                         }
-
-                        this.onDrag && this.onDrag(newIndex, translateX);
                     },
                     onDragEnd: () => {
-                        this.onDragEnd && this.onDragEnd(this.activeIndex);
-
                         if(this.transitioning) return;
 
                         this.dragging = false;
@@ -143,17 +140,23 @@
 
                         if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
                             this.activeIndex = newIndex;
+
+                            this.onDragEnd && this.onDragEnd(newIndex);
                         } else if(this.negative) {
                             let prevIndex = this.getPrevIndex();
 
                             this.$children[this.activeIndex].swipeToLeft(0);
                             this.$children[prevIndex].swipeToLeft(0);
+
+                            this.onDragEnd && this.onDragEnd(prevIndex);
                         } else {
                             // 往左
                             let nextIndex = this.getNextIndex();
 
                             this.$children[this.activeIndex].swipeToRight(0);
                             this.$children[nextIndex].swipeToRight(0);
+
+                            this.onDragEnd && this.onDragEnd(nextIndex);
                         }
 
                         setTimeout(() => {

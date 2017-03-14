@@ -51,16 +51,19 @@
         },
         methods: {
             onDragStart(index) {
+                console.log('onDragStart');
                 this.$toast({
                     message: `onDragStart${index}`,
                 });
             },
             onDrag(index) {
+                console.log('onDrag');
                 this.$toast({
                     message: `onDrag${index}`,
                 });
             },
             onDragEnd(index) {
+                console.log(`onDragEnd:${index}`);
                 this.$toast({
                     message: `onDragEnd${index}`,
                 });
