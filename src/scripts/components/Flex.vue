@@ -2,11 +2,10 @@
     <div
         class="flex"
         :class="[
-            getAlignClass(),
-            getJustifyClass(),
-            {
-                'flex-vertical': direction === 'column',
-            }]">
+            {[`flex-align-${align}`]: align},
+            {[`flex-justify-${justify}`]: justify},
+            {'flex-vertical': direction === 'column'}
+            ]">
         <slot></slot>
     </div>
 </template>
@@ -34,34 +33,8 @@
             align: {
                 type: String,
                 validator(value) {
-                    return ['top', 'bottom', 'center'].indexOf(value) > -1;
+                    return ['top', 'bottom', 'middle'].indexOf(value) > -1;
                 },
-            },
-        },
-        methods: {
-            // 对齐方式
-            getAlignClass() {
-                let align = this.align;
-
-                if(this.direction === 'row') {
-                    !align && (align = 'center');
-                }
-
-                return {
-                    top: 'flex-align-top',
-                    center: 'flex-align-middle',
-                    bottom: 'flex-align-bottom',
-                }[align];
-            },
-            // 内容排版
-            getJustifyClass() {
-                return {
-                    start: 'flex-justify-start',
-                    end: 'flex-justify-end',
-                    center: 'flex-justify-center',
-                    between: 'flex-justify-between',
-                    around: 'flex-justify-around',
-                }[this.justify];
             },
         },
     };
