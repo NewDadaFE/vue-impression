@@ -3,13 +3,13 @@
         @click="$emit('click')"
         class="fa"
         :class="[
-            'fa-' + name,
+            `fa-${name}`,
             {
-                ['fa-' + size]: size,
+                [`fa-${size}`]: size,
                 'gap-left': left,
                 'gap-right': right,
             }
-        ]"></i>
+        ]" />
 </template>
 
 <script>
