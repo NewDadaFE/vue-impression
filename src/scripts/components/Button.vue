@@ -9,7 +9,7 @@
             [`btn-${theme}-outline`]: hollow,
             ['btn-block']: block,
             ['btn-loading']: loading,
-            [`border-${shape}`]: shape === 'pill',
+            [`border-${shape}`]: shape,
         }"
         :disabled="disabled || loading">
         <slot></slot>
