@@ -7,7 +7,7 @@
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell :click="clickHandle">
+            <cell @click="clickHandle" hasArrow>
                 Settings
             </cell>
             <cell href="https://github.com/">
@@ -26,7 +26,7 @@
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell :click="clickHandle">
+            <cell @click="clickHandle" hasArrow>
                 <icon class="fa-fw" name="cog" size="lg"></icon>
                 Settings
             </cell>
@@ -42,7 +42,7 @@
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell :click="clickHandle">
+            <cell @click="clickHandle" hasArrow>
                 Settings
             </cell>
             <cell href="https://github.com/">

@@ -16,7 +16,7 @@
         <div class="cell-footer" v-if="$slots.footer">
             <slot name="footer"></slot>
         </div>
-        <i class="fa fa-angle-right cell-arrow" v-if="hasArrow" />
+        <i v-if="hasArrow" class="fa fa-angle-right cell-arrow" />
     </router-link>
 
     <a
@@ -38,7 +38,7 @@
         <div class="cell-footer" v-if="$slots.footer">
             <slot name="footer"></slot>
         </div>
-        <i v-if="clickable && hasArrow" class="fa fa-angle-right cell-arrow" />
+        <i v-if="hasArrow" class="fa fa-angle-right cell-arrow" />
     </a>
 </template>
 
@@ -53,10 +53,7 @@
                 type: Boolean,
                 default: true,
             },
-            hasArrow: {
-                type: Boolean,
-                default: true,
-            },
+            hasArrow: Boolean,
         },
         computed: {
             clickable() {
