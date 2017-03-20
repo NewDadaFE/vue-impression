@@ -2,7 +2,7 @@
     <div
         @click="$emit('click')"
         class="media"
-        :class="[getAlignClass()]">
+        :class="`flex-align-${align}`">
         <slot></slot>
     </div>
 </template>
@@ -16,17 +16,8 @@
                 type: String,
                 default: 'top',
                 validator(value) {
-                    return ['top', 'bottom', 'center'].indexOf(value) > -1;
+                    return ['top', 'bottom', 'middle'].indexOf(value) > -1;
                 },
-            },
-        },
-        methods: {
-            getAlignClass() {
-                return {
-                    top: 'flex-align-top',
-                    center: 'flex-align-middle',
-                    bottom: 'flex-align-bottom',
-                }[this.align];
             },
         },
     };
