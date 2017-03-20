@@ -3,10 +3,10 @@
         @click="$emit('click')"
         class="tag"
         :class="{
-            ['tag-' + theme]: !hollow,
-            ['tag-outline-' + theme]: hollow,
-            ['tag-' + size]: size,
-            [`border-${shape}`]: shape === 'pill',
+            [`tag-${theme}`]: !hollow,
+            [`tag-outline-${theme}`]: hollow,
+            [`tag-${size}`]: size,
+            [`border-${shape}`]: shape,
         }">
         <slot></slot>
     </span>
