@@ -3,7 +3,7 @@
         @click="$emit('click')"
         class="badge"
         :class="{'badge-gap': $slots.default}">
-        <div class="badge-addon" :class="'bg-' + theme">{{content}}</div>
+        <div class="badge-addon" :class="`bg-${theme}`">{{content}}</div>
         <slot></slot>
     </div>
 </template>
