@@ -24,8 +24,28 @@ html {
     box-sizing: border-box;
     font-size: $font-size-root;
     -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color:rgba(255,255,255,0);
+    -webkit-tap-highlight-color:rgba(255, 255, 255, 0);
 }
+
+
+// iphone 4/5/6/7
+@media only screen
+and (min-device-width : 320px)
+and (min-resolution: 2dppx) {
+    html {
+        font-size: $font-size-root-lg;
+    }
+}
+
+// iphone 6/7 plus
+@media only screen
+and (min-device-width : 414px)
+and (min-resolution: 3dppx) {
+    html {
+        font-size: $font-size-root-lgest;
+    }
+}
+
 
 *,
 *::before,

@@ -41,6 +41,8 @@ $body-bg: #f0eff5 !default;
 $text-muted: $gray-light !default;
 
 $font-size-root: 12px !default;
+$font-size-root-lg: 14px !default;
+$font-size-root-lgest: 16px !default;
 $font-size-base: 1rem !default;
 $font-size-lg: 1.4rem !default;
 $font-size-sm: .875rem !default;
@@ -184,14 +186,14 @@ $alert-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
 $alert-title-font-size: 16px !default;
 $alert-title-font-weight: bold !default;
 
-$alert-message-color: $gray-light !default;
-$alert-message-font-size: 14px !default;
+$alert-message-color: #666 !default;
+$alert-message-font-size: $font-size-root !default;
 $alert-message-padding: 1rem 1.5rem 1.5rem !default;
 $alert-message-line-height: 2 !default;
 $alert-message-text-align: center !default;
 
 $alert-btn-color: $brand-primary !default;
-$alert-btn-font-size: 14px !default;
+$alert-btn-font-size: $font-size-root !default;
 $alert-btn-padding: 1rem 0 !default;
 
 // Checkbox
