@@ -1,6 +1,6 @@
 <template>
     <router-link
-        v-if="to"
+        v-if="!disabled && to"
         :to="to"
         class="cell cell-link"
         :class="{
@@ -21,8 +21,8 @@
 
     <a
         v-else
-        :href="href"
-        @click="$emit('click')"
+        :href="!disabled && href"
+        @click="!disabled && $emit('click')"
         class="cell"
         :class="{
             'cell-link': clickable,
@@ -53,11 +53,17 @@
                 type: Boolean,
                 default: true,
             },
-            hasArrow: Boolean,
+            hasArrow: {
+                type: Boolean,
+                default() {
+                    // 有href和to时默认为true
+                    return !!(this.href || this.to);
+                },
+            },
         },
         computed: {
             clickable() {
-                return this.href || (this._events.click);
+                return !this.disabled && (this.href || this._events.click);
             },
         },
     };
