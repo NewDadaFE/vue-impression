@@ -7,7 +7,7 @@
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell @click="clickHandle" hasArrow>
+            <cell @click="clickHandle">
                 Settings
             </cell>
             <cell href="https://github.com/">
@@ -26,7 +26,7 @@
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell @click="clickHandle" hasArrow>
+            <cell @click="clickHandle">
                 <icon class="fa-fw" name="cog" size="lg"></icon>
                 Settings
             </cell>
@@ -37,15 +37,15 @@
             </cell>
         </group>
         <group>
-            <cell>Home</cell>
+            <cell hasArrow>Home</cell>
             <cell>
                 Library
                 <span slot="footer" class="text-primary">3</span>
             </cell>
-            <cell @click="clickHandle" hasArrow>
+            <cell @click="clickHandle">
                 Settings
             </cell>
-            <cell href="https://github.com/">
+            <cell href="https://github.com/" disabled>
                 Github
                 <span slot="footer">go</span>
             </cell>
