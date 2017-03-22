@@ -1,9 +1,9 @@
 <template>
     <div>
-        <group-title>base</group-title>
+        <group-title>base:{{search}}</group-title>
         <group>
             <cell>
-                <searchbar>
+                <searchbar v-model="search">
                     <searchbar-placeholder>
                         <icon name="search" left size="lg"></icon>搜索
                     </searchbar-placeholder>
@@ -28,3 +28,18 @@
         </group>
     </div>
 </template>
+
+<script>
+    export default {
+        data() {
+            return {
+                search: '123',
+            };
+        },
+        watch: {
+            search(value) {
+                console.log('search', value);
+            },
+        },
+    };
+</script>
