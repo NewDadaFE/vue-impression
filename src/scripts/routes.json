@@ -126,6 +126,11 @@
                 "path": "/pull-up",
                 "name": "Pull up",
                 "icon": "long-arrow-up"
+            },
+            {
+                "path": "/sticky",
+                "name": "Sticky Affix",
+                "icon": "thumb-tack"
             }
         ]
     },

@@ -63,6 +63,7 @@
             },
         },
         mounted() {
+            console.log('mounted');
             window.addEventListener('scroll', this.handleScroll, false);
             window.addEventListener('resize', this.handleScroll, false);
         },
@@ -72,6 +73,7 @@
         },
         methods: {
             handleScroll() {
+                console.log('滚动');
                 const affix = this.affix;
                 const scrollTop = getScroll(window, true);
                 const elOffset = getOffset(this.$el);
