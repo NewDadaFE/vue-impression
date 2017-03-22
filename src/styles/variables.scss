@@ -239,7 +239,7 @@ $toggle-transition: all .2s ease !default;
 $number-border-color: $brand-primary !default;
 
 $number-btn-size: 1.84rem !default;
-$number-btn-line-height: $number-btn-size - 2 !default;
+$number-btn-line-height: $number-btn-size - 0.167 !default;
 
 $number-plus-color: $brand-pure !default;
 $number-plus-bg-color: $brand-primary !default;
@@ -460,7 +460,7 @@ $picker-list-transition: all .3s ease-out !default;
 // Swipe
 $swipe-indicators-bottom: .5rem !default;
 
-$swipe-indicator-size: .667rem !default;
+$swipe-indicator-size: 10px !default;
 $swipe-indicator-margin: 0 1px !default;
 $swipe-indicator-opacity: 1 !default;
 $swipe-indicator-border-color: $brand-pure !default;
