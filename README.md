@@ -80,7 +80,7 @@ https://newdadafe.github.io/impression_vue/#/button
  - [x] Progressbar
  - [x] Stepbar
  - [x] Timeline
- - [ ] Sticky
+ - [x] Sticky
 
 ## Quickly build web app
 
