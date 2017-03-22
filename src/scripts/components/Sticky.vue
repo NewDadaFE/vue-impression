@@ -8,15 +8,19 @@
 
 <script>
     const prefixCls = 'sticky-affix';
+
     function getScroll(target, top) {
         const prop = top ? 'pageYOffset' : 'pageXOffset';
         const method = top ? 'scrollTop' : 'scrollLeft';
         let ret = target[prop];
+
         if(typeof ret !== 'number') {
             ret = window.document.documentElement[method];
         }
+
         return ret;
     }
+
     function getOffset(element) {
         const rect = element.getBoundingClientRect();
         const scrollTop = getScroll(window, true);
@@ -24,11 +28,13 @@
         const docEl = window.document.body;
         const clientTop = docEl.clientTop || 0;
         const clientLeft = docEl.clientLeft || 0;
+
         return {
             top: rect.top + scrollTop - clientTop,
             left: rect.left + scrollLeft - clientLeft,
         };
     }
+
     export default {
         name: 'sticky',
         props: {
@@ -49,9 +55,11 @@
         computed: {
             offsetType() {
                 let type = 'top';
+
                 if(this.offsetBottom >= 0) {
                     type = 'bottom';
                 }
+
                 return type;
             },
             classes() {
@@ -77,6 +85,7 @@
                 const elOffset = getOffset(this.$el);
                 const windowHeight = window.innerHeight;
                 const elHeight = this.$el.getElementsByTagName('div')[0].offsetHeight;
+
                 // Fixed Top
                 if((elOffset.top - this.offsetTop) < scrollTop && this.offsetType === 'top' && !affix) {
                     this.affix = true;
