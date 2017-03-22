@@ -2,7 +2,7 @@
     <sidelip v-model="currentValue">
         <flex direction="column" :style="{backgroundColor: '#f0eff5'}">
             <navbar theme="primary">
-                <h5>Impression</h5>
+                <h3>Impression</h3>
             </navbar>
             <flex-item>
                 <div v-for="group in groups">

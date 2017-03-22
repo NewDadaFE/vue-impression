@@ -99,7 +99,7 @@
     }
 
     .prod-info {
-        height: 34px;
+        height: 2.8rem;
         overflow: hidden;
         display: -webkit-box;
         text-overflow: ellipsis;
