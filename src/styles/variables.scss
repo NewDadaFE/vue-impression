@@ -1,10 +1,10 @@
 // Colors
-$brand-primary: #2196f3 !default;
-$brand-secondary: #f86c2e !default;
-$brand-success: #4cb452 !default;
+$brand-primary: #1C89EA !default;
+$brand-secondary: #FF7043 !default;
+$brand-success: #30BE71 !default;
 $brand-info: #2b71b5 !default;
 $brand-warning: #fab83a !default;
-$brand-danger: #f97964 !default;
+$brand-danger: #EA413A !default;
 $brand-pure: #fff !default;
 
 $gray-dark: #373a3c !default;
@@ -176,27 +176,31 @@ $toast-icon-margin-bottom: .5rem !default;
 $toast-loading-margin: 1rem 0 !default;
 
 // Alert
-$alert-width: 20rem !default;
-$alert-max-width: 27rem !default;
-$alert-padding: 1.5rem 0 0 0 !default;
+$alert-width: 22.5rem !default;
+$alert-max-width: 22.5rem !default;
+$alert-padding: 2.145rem 0 0 0 !default;
 $alert-bg-color: $brand-pure !default;
 $alert-border-radius: $border-radius-lg !default;
 $alert-animation-duration: .2s !default;
 $alert-animation-enter-function: cubic-bezier(.08, .82, .167, 1) !default;
 $alert-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
 
-$alert-title-font-size: 1rem !default;
+$alert-title-font-size: 1.43rem !default;
 $alert-title-font-weight: bold !default;
+$alert-title-color: #333333 !default;
 
-$alert-message-color: #666 !default;
-$alert-message-font-size: 1rem !default;
-$alert-message-padding: 1rem 1.5rem 1.5rem !default;
-$alert-message-line-height: 2 !default;
+$alert-message-color: #666666 !default;
+$alert-message-font-size: 1.07rem !default;
+$alert-message-padding: 1.785rem 1.43rem !default;
+$alert-message-line-height: 1.43 !default;
 $alert-message-text-align: center !default;
 
 $alert-btn-color: $brand-primary !default;
-$alert-btn-font-size: 1rem !default;
+$alert-btn-font-size: 1.215rem !default;
 $alert-btn-padding: 1rem 0 !default;
+
+$alert-box-h-shadow: 0 0 0.85rem 0 rgba(0, 0, 0, 0.22) !default;
+$alert-box-v-shadow: 0 0.85rem 0.85rem 0 rgba(0, 0, 0, 0.30) !default;
 
 // Checkbox
 $checkbox-padding: .25rem !default;

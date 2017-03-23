@@ -34,7 +34,7 @@
                             console.log('close!!!');
                         },
                     }],
-                    title: '<h5 class="text-success">提示</h5>',
+                    title: '<span class="text-default">提示</span>',
                     message: '这是Vue 2.0组件库！',
                 });
             },
@@ -52,7 +52,7 @@
                             console.log('cancel!!!');
                         },
                     }],
-                    title: '<h5 class="text-success">提示</h5>',
+                    title: '<span class="text-success">提示</span>',
                     message: '这是Vue 2.0组件库！',
                 });
             },
@@ -71,7 +71,7 @@
                             console.log('start!!!');
                         },
                     }],
-                    title: '<h3 class="text-success">恭喜你</h3>',
+                    title: '<span class="text-success">恭喜你</span>',
                     message: '通过考试，你已完成初级培训！',
                 });
             },

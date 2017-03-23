@@ -16,12 +16,14 @@
     padding: $alert-padding;
     background-color: $alert-bg-color;
     border-radius: $alert-border-radius;
+    box-shadow: $alert-box-h-shadow, $alert-box-v-shadow;
 }
 
 .alert-title {
     text-align: center;
     font-size: $alert-title-font-size;
     font-weight: $alert-title-font-weight;
+    color: $alert-title-color;
 }
 
 .alert-message {
