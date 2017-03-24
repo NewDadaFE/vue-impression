@@ -1,10 +1,10 @@
 // Colors
-$brand-primary: #2196f3 !default;
-$brand-secondary: #f86c2e !default;
-$brand-success: #4cb452 !default;
+$brand-primary: #1C89EA !default;
+$brand-secondary: #FF7043 !default;
+$brand-success: #30BE71 !default;
 $brand-info: #2b71b5 !default;
 $brand-warning: #fab83a !default;
-$brand-danger: #f97964 !default;
+$brand-danger: #EA413A !default;
 $brand-pure: #fff !default;
 
 $gray-dark: #373a3c !default;
@@ -43,6 +43,8 @@ $text-muted: $gray-light !default;
 $font-size-root: 12px !default;
 $font-size-root-lg: 14px !default;
 $font-size-root-lgest: 16px !default;
+$font-size-root-lg-max: 20px !default;
+
 $font-size-base: 1rem !default;
 $font-size-lg: 1.4rem !default;
 $font-size-sm: .875rem !default;
@@ -103,7 +105,7 @@ $btn-default-color: $gray;
 $btn-default-bg: #fff !default;
 $btn-default-border: $border-color !default;
 
-$btn-loading-gap: 3px !default;
+$btn-loading-gap: .25rem !default;
 
 // Group/Cell
 $group-bg-color: $brand-pure !default;
@@ -124,7 +126,7 @@ $cell-arrow-color: #818a91 !default;
 $cell-arrow-margin: 0 0 0 $spacer-gap !default;
 
 // Navbar
-$navbar-height: 44px !default;
+$navbar-height: 3.67rem !default;
 $navbar-line-height: $navbar-height !default;
 $navbar-padding: 0 !default;
 
@@ -149,7 +151,7 @@ $tabbar-line-height: $tabbar-height !default;
 $tabbar-transition: all .3s cubic-bezier(.86, 0, .07, 1) !default;
 $tabbar-opacity-disabled: $opacity-disabled !default;
 
-$tabbar-item-border-width: 2px !default;
+$tabbar-item-border-width: .167rem !default;
 $tabbar-item-color-active: $brand-primary !default;
 $tabbar-item-border-color-active: $brand-primary !default;
 
@@ -157,8 +159,8 @@ $tabbar-item-border-color-active: $brand-primary !default;
 $toast-bg: rgba(0, 0, 0, .6) !default;
 $toast-color: $brand-pure !default;
 $toast-font-size: 1.1rem !default;
-$toast-border-radius: 4px !default;
-$toast-border-radius-lg: 6px !default;
+$toast-border-radius: .333rem !default;
+$toast-border-radius-lg: .5rem !default;
 $toast-padding: 1rem 1.2rem !default;
 $toast-padding-lg: 1rem 3.5rem 1.5rem !default;
 $toast-position-gap: 4rem !default;
@@ -174,30 +176,34 @@ $toast-icon-margin-bottom: .5rem !default;
 $toast-loading-margin: 1rem 0 !default;
 
 // Alert
-$alert-width: 20rem !default;
-$alert-max-width: 27rem !default;
-$alert-padding: 1.5rem 0 0 0 !default;
+$alert-width: 22.5rem !default;
+$alert-max-width: 22.5rem !default;
+$alert-padding: 2.145rem 0 0 0 !default;
 $alert-bg-color: $brand-pure !default;
 $alert-border-radius: $border-radius-lg !default;
 $alert-animation-duration: .2s !default;
-$alert-animation-enter-function: cubic-bezier(.08, .82, .17, 1) !default;
+$alert-animation-enter-function: cubic-bezier(.08, .82, .167, 1) !default;
 $alert-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
 
-$alert-title-font-size: 1rem !default;
+$alert-title-font-size: 1.43rem !default;
 $alert-title-font-weight: bold !default;
+$alert-title-color: #333333 !default;
 
-$alert-message-color: #666 !default;
-$alert-message-font-size: 1rem !default;
-$alert-message-padding: 1rem 1.5rem 1.5rem !default;
-$alert-message-line-height: 2 !default;
+$alert-message-color: #666666 !default;
+$alert-message-font-size: 1.07rem !default;
+$alert-message-padding: 1.785rem 1.43rem !default;
+$alert-message-line-height: 1.43 !default;
 $alert-message-text-align: center !default;
 
 $alert-btn-color: $brand-primary !default;
-$alert-btn-font-size: 1rem !default;
+$alert-btn-font-size: 1.215rem !default;
 $alert-btn-padding: 1rem 0 !default;
 
+$alert-box-h-shadow: 0 0 0.85rem 0 rgba(0, 0, 0, 0.22) !default;
+$alert-box-v-shadow: 0 0.85rem 0.85rem 0 rgba(0, 0, 0, 0.30) !default;
+
 // Checkbox
-$checkbox-padding: 3px !default;
+$checkbox-padding: .25rem !default;
 $checkbox-color: $brand-pure !default;
 $checkbox-bg-color: $brand-pure !default;
 $checkbox-border-color: #ddd !default;
@@ -209,35 +215,35 @@ $checkbox-bg-color-disabled: #dfdfdf !default;
 $checkbox-border-color-disabled: $checkbox-border-color !default;
 
 
-$checkbox-addon-font-size: round(1.5 * $font-size-root) !default;
+$checkbox-addon-font-size: 1.5rem !default;
 $checkbox-addon-padding-top: 0 !default;
-$radio-addon-width: round(.9 * $font-size-root) !default;
+$radio-addon-width: .9rem !default;
 $radio-addon-height: $radio-addon-width !default;
-$radio-addon-padding: round(.5 * $font-size-root) !default;
+$radio-addon-padding: .5rem !default;
 
-$checkbox-label-gap: 2px !default;
+$checkbox-label-gap: .167rem !default;
 
 $checkbox-square-border-radius: $border-radius !default;
 
 $checkbox-gap: 1rem !default;
 
 // Toggle
-$toggle-addon-size: round(1.34 * $font-size-root) !default;
+$toggle-addon-size: 1.34rem !default;
 $toggle-addon-bg-color: $brand-pure !default;
 $toggle-addon-bg-color-checked: $brand-primary !default;
 $toggle-addon-opacity-disabled: $opacity-disabled !default;
 
 $toggle-bg-color: #e7eaec !default;
-$toggle-width: round(3.84 * $font-size-root) !default;
-$toggle-padding: 3px !default;
+$toggle-width: 3.84rem !default;
+$toggle-padding: 0.25rem !default;
 $toggle-border-radius: $toggle-addon-size !default;
 $toggle-transition: all .2s ease !default;
 
 // Number
 $number-border-color: $brand-primary !default;
 
-$number-btn-size: round(1.84 * $font-size-root) !default;
-$number-btn-line-height: $number-btn-size - 2 !default;
+$number-btn-size: 1.84rem !default;
+$number-btn-line-height: $number-btn-size - 0.167 !default;
 
 $number-plus-color: $brand-pure !default;
 $number-plus-bg-color: $brand-primary !default;
@@ -252,7 +258,7 @@ $number-input-width: 3rem !default;
 $number-input-bg-color: $brand-pure !default;
 $number-input-border-color: #d9d9d9 !default;
 $number-input-padding: .6rem .3rem !default;
-$number-input-margin: 0 2px !default;
+$number-input-margin: 0 .167rem !default;
 $number-input-bg-color-disabled: #eee !default;
 
 // InputText
@@ -273,7 +279,7 @@ $selector-color-transition: all .2s ease-in-out !default;
 
 // InlineSelector
 $inline-selector-transition: all .2s ease-in !default;
-$inline-selector-option-min-width: 55px !default;
+$inline-selector-option-min-width: 4.583rem !default;
 $inline-selector-option-padding: .6rem .2rem !default;
 
 
@@ -293,13 +299,13 @@ $tag-default-bg: #ccc !default;
 $tag-default-color: #666 !default;
 
 // Navigation
-$navigation-height: 49px !default;
+$navigation-height: 4.0833rem !default;
 $navigation-color: #888 !default;
 $navigation-color-active: $brand-primary !default;
 $navigation-bg-color: $tabbar-bg-color !default;
 
 $navigation-label-scale: .8 !default;
-$navigation-margin: 2px 0 -.8rem 0 !default;
+$navigation-margin: .167rem 0 -.8rem 0 !default;
 
 // Tip
 $tip-padding: 1rem 4rem !default;
@@ -310,22 +316,22 @@ $tip-label-padding: 0 1rem !default;
 $tip-label-color: #888 !default;
 
 // BackToTop
-$top-right: 30px !default;
-$top-bottom: 30px !default;
+$top-right: 2.5rem !default;
+$top-bottom: 2.5rem !default;
 $top-color: $brand-pure !default;
-$top-width: 40px !default;
-$top-height: 40px !default;
-$top-line-height: 40px !default;
-$top-font-size: 20px !default;
+$top-width: 3.333rem !default;
+$top-height: 3.333rem !default;
+$top-line-height: 3.333rem !default;
+$top-font-size: 1.667rem !default;
 $top-bg-color: rgba(0, 0, 0, .3) !default;
 $top-transition: all .6s ease-in-out !default;
 
 // Badge
 $badge-color: $brand-pure !default;
-$badge-padding: 3px !default;
-$badge-min-width: 6px !default;
-$badge-min-width-not-empty: $font-size-root + $badge-padding * 2 !default;
-$badge-min-height: 6px !default;
+$badge-padding: .25rem !default;
+$badge-min-width: .5rem !default;
+$badge-min-width-not-empty: 1rem + $badge-padding * 2 !default;
+$badge-min-height: .5rem !default;
 $badge-margin-right: $badge-min-width-not-empty / 2 !default;
 $badge-scale: .8 !default;
 $badge-box-shadow: 0 0 0 1px $brand-pure !default;
@@ -333,14 +339,14 @@ $badge-box-shadow: 0 0 0 1px $brand-pure !default;
 // Drawer
 $drawer-color: #666 !default;
 $drawer-bg-color: $tabbar-bg-color !default;
-$drawer-padding: ($navbar-height - $line-height-base * $font-size-root) / 2 0 !default;
+$drawer-padding: ($navbar-height - $line-height-base * 1) / 2 0 !default;
 $drawer-transition: all .2s ease-in-out !default;
 
 $drawer-color-active: $brand-primary !default;
 $drawer-opacity-disabled: $opacity-disabled !default;
 
 $drawer-icon-color: #999 !default;
-$drawer-icon-margin-right: 2px !default;
+$drawer-icon-margin-right: .167rem !default;
 
 // mask
 $mask-bg-color: rgba(0, 0, 0, .3) !default;
@@ -353,7 +359,7 @@ $mask-animation-leave-function: ease !default;
 // Slide
 $slide-bg-color: $brand-pure !default;
 $slide-min-height: 5rem !default;
-$slide-max-height: 300px !default;
+$slide-max-height: 25rem !default;
 $slide-animation-enter-duration: .3s !default;
 $slide-animation-enter-function: ease-in-out !default;
 $slide-animation-leave-duration: .2s !default;
@@ -412,8 +418,8 @@ $searchbar-btn-padding: 0 .5rem !default;
 // Loadmore
 $loadmore-dropped-transition: .2s !default;
 
-$loadmore-hint-height: 50px !default;
-$loadmore-hint-margin: -50px !default;
+$loadmore-hint-height: 4.167rem !default;
+$loadmore-hint-margin: -4.167rem !default;
 
 // Loading
 $loading-width: 4rem !default;
@@ -458,7 +464,7 @@ $picker-list-transition: all .3s ease-out !default;
 // Swipe
 $swipe-indicators-bottom: .5rem !default;
 
-$swipe-indicator-size: 8px !default;
+$swipe-indicator-size: 10px !default;
 $swipe-indicator-margin: 0 1px !default;
 $swipe-indicator-opacity: 1 !default;
 $swipe-indicator-border-color: $brand-pure !default;
@@ -467,7 +473,7 @@ $swipe-indicator-transition-duration: .3s !default;
 $swipe-indicator-transition-function: ease-in-out !default;
 
 // Progressbar
-$progressbar-height: 20px !default;
+$progressbar-height: 1.667rem !default;
 $progressbar-border-radius: $border-radius-lg !default;
 $progressbar-bg-color: $gray-lightest !default;
 $progressbar-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !default;
@@ -482,12 +488,12 @@ $progressbar-indicator-font-size: $font-size-sm !default;
 $progressbar-indicator-transition: width .6s ease !default;
 $progressbar-indicator-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15) !default;
 
-$progressbar-height-sm: 8px !default;
+$progressbar-height-sm: .667rem !default;
 $progressbar-border-radius-sm: $progressbar-height-sm !default;
 
 
 // Stepbar
-$stepbar-gap: 2px !default;
+$stepbar-gap: .167rem !default;
 
 
 $stepbar-item-addon-size: 1.5rem !default;
@@ -521,14 +527,14 @@ $stepbar-line-transition: all .2s ease-in !default;
 $timeline-item-padding-bottom: 2rem !default;
 
 $timeline-item-addon-bg: $brand-pure !default;
-$timeline-item-addon-size: round(.8 * $font-size-root) !default;
+$timeline-item-addon-size: .8rem !default;
 $timeline-item-addon-border-width: 2px !default;
 
-$timeline-item-addon-size-active: round(1.8 * $font-size-root) !default;
+$timeline-item-addon-size-active: 1.8rem !default;
 $timeline-item-addon-border-color: $brand-primary !default;
 
-$timeline-item-addon-dot-size: round(.8 * $font-size-root) !default;
-$timeline-item-addon-dot-size-active: round(.7 * $font-size-root) !default;
+$timeline-item-addon-dot-size: .8rem !default;
+$timeline-item-addon-dot-size-active: .7rem !default;
 $timeline-item-addon-dot-bg: #cbcccd !default;
 $timeline-item-addon-dot-bg-active: $brand-primary !default;
 
@@ -536,5 +542,5 @@ $timeline-item-line-width: 1px !default;
 $timeline-item-line-color: $timeline-item-addon-dot-bg !default;
 
 $timeline-item-body-color: $text-muted !default;
-$timeline-item-body-padding-left: ($timeline-item-addon-size-active + .7 * $font-size-root) !default;
+$timeline-item-body-padding-left: ($timeline-item-addon-size-active + .7 * 1) !default;
 $timeline-item-body-line-height: $timeline-item-addon-size-active !default;

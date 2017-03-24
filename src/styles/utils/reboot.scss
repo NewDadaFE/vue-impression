@@ -27,10 +27,18 @@ html {
     -webkit-tap-highlight-color:rgba(255, 255, 255, 0);
 }
 
-
-// iphone 4/5/6/7
+// iphone 4/5
 @media only screen
-and (min-device-width : 320px)
+and (min-device-width: 320px)
+and (min-resolution: 2dppx) {
+    html {
+        font-size: $font-size-root;
+    }
+}
+
+// iphone 6/7
+@media only screen
+and (min-device-width: 375px)
 and (min-resolution: 2dppx) {
     html {
         font-size: $font-size-root-lg;
@@ -39,13 +47,34 @@ and (min-resolution: 2dppx) {
 
 // iphone 6/7 plus
 @media only screen
-and (min-device-width : 414px)
+and (min-device-width: 414px)
 and (min-resolution: 3dppx) {
     html {
         font-size: $font-size-root-lgest;
     }
 }
 
+// android
+@media only screen
+and (min-device-width: 720px) {
+    html {
+        font-size: $font-size-root-lg;
+    }
+}
+
+@media only screen
+and (min-device-width: 1080px) {
+    html {
+        font-size: $font-size-root-lgest;
+    }
+}
+
+@media only screen
+and (min-device-width: 1440px) {
+    html {
+        font-size: $font-size-root-lg-max;
+    }
+}
 
 *,
 *::before,
