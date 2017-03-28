@@ -13,8 +13,7 @@
 .swipe-indicator {
     display: inline-block;
     border-radius: 50%;
-    width: $swipe-indicator-size;
-    height: $swipe-indicator-size;
+    padding: $swipe-indicator-padding;
     border: 1px solid $swipe-indicator-border-color;
     margin: $swipe-indicator-margin;
     opacity: $swipe-indicator-opacity;

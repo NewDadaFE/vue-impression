@@ -27,7 +27,22 @@
 
     &:not(:empty) {
         min-width: $badge-min-width-not-empty;
-        transform: translateX(50%) translateY(-50%) scale($badge-scale);
+
+        // 使缩放后得到的是整数的px值
+        $width-px: $badge-min-width-not-empty * $font-size-root;
+        $scale: round($width-px * $badge-scale) / $width-px;
+        transform: translateX(50%) translateY(-50%) scale($scale);
+
+        @include respond-to(md) {
+            $width-px: $badge-min-width-not-empty * $font-size-root-md;
+            $scale: round($width-px * $badge-scale) / $width-px;
+            transform: translateX(50%) translateY(-50%) scale($scale);
+        }
+        @include respond-to(lg) {
+            $width-px: $badge-min-width-not-empty * $font-size-root-lg;
+            $scale: round($width-px * $badge-scale) / $width-px;
+            transform: translateX(50%) translateY(-50%) scale($scale);
+        }
     }
 
     &:last-child {
