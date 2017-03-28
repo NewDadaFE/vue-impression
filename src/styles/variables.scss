@@ -41,13 +41,20 @@ $body-bg: #f0eff5 !default;
 $text-muted: $gray-light !default;
 
 $font-size-root: 12px !default;
-$font-size-root-lg: 14px !default;
-$font-size-root-lgest: 16px !default;
-$font-size-root-lg-max: 20px !default;
+$font-size-root-md: 14px !default;
+$font-size-root-lg: 16px !default;
 
 $font-size-base: 1rem !default;
 $font-size-lg: 1.4rem !default;
 $font-size-sm: .875rem !default;
+
+// media query
+$all-media-query-device: (
+  'sm': '(min-width: 320px) and (min-resolution: 2dppx)',
+  'md': '(min-width: 360px) and (min-resolution: 2dppx)',
+  'lg': '(min-width: 414px) and (min-resolution: 3dppx)',
+) !default;
+
 
 $spacer:   1rem !default;
 $spacer-x: $spacer !default;
@@ -203,7 +210,7 @@ $alert-box-h-shadow: 0 0 0.85rem 0 rgba(0, 0, 0, 0.22) !default;
 $alert-box-v-shadow: 0 0.85rem 0.85rem 0 rgba(0, 0, 0, 0.30) !default;
 
 // Checkbox
-$checkbox-padding: .25rem !default;
+$checkbox-padding: 3px !default;
 $checkbox-color: $brand-pure !default;
 $checkbox-bg-color: $brand-pure !default;
 $checkbox-border-color: #ddd !default;
@@ -217,7 +224,7 @@ $checkbox-border-color-disabled: $checkbox-border-color !default;
 
 $checkbox-addon-font-size: 1.5rem !default;
 $checkbox-addon-padding-top: 0 !default;
-$radio-addon-width: .9rem !default;
+$radio-addon-width: 1.0rem !default;
 $radio-addon-height: $radio-addon-width !default;
 $radio-addon-padding: .5rem !default;
 
@@ -242,7 +249,7 @@ $toggle-transition: all .2s ease !default;
 // Number
 $number-border-color: $brand-primary !default;
 
-$number-btn-size: 1.84rem !default;
+$number-btn-size: 2.0rem !default;
 $number-btn-line-height: $number-btn-size - 0.167 !default;
 
 $number-plus-color: $brand-pure !default;
@@ -319,19 +326,19 @@ $tip-label-color: #888 !default;
 $top-right: 2.5rem !default;
 $top-bottom: 2.5rem !default;
 $top-color: $brand-pure !default;
-$top-width: 3.333rem !default;
-$top-height: 3.333rem !default;
-$top-line-height: 3.333rem !default;
+$top-width: 3.5rem !default;
+$top-height: 3.5rem !default;
+$top-line-height: 3.5rem !default;
 $top-font-size: 1.667rem !default;
 $top-bg-color: rgba(0, 0, 0, .3) !default;
 $top-transition: all .6s ease-in-out !default;
 
 // Badge
 $badge-color: $brand-pure !default;
-$badge-padding: .25rem !default;
-$badge-min-width: .5rem !default;
+$badge-padding: 0.25rem !default;
+$badge-min-width: 0.5rem !default;
 $badge-min-width-not-empty: 1rem + $badge-padding * 2 !default;
-$badge-min-height: .5rem !default;
+$badge-min-height: 0.5rem !default;
 $badge-margin-right: $badge-min-width-not-empty / 2 !default;
 $badge-scale: .8 !default;
 $badge-box-shadow: 0 0 0 1px $brand-pure !default;
@@ -408,7 +415,7 @@ $searchbar-border-radius: $border-radius !default;
 $searchbar-transition: all .3s ease !default;
 
 $searchbar-placeholder-opacity: .2 !default;
-$searchbar-placeholder-width: 1rem + .5rem !default;
+$searchbar-placeholder-width: 1rem + 0.5rem !default;
 
 $searchbar-clear-padding: 0 0 0 .5rem !default;
 $searchbar-clear-opacity: .2 !default;
@@ -464,7 +471,7 @@ $picker-list-transition: all .3s ease-out !default;
 // Swipe
 $swipe-indicators-bottom: .5rem !default;
 
-$swipe-indicator-size: 10px !default;
+$swipe-indicator-padding: 0.25rem !default;
 $swipe-indicator-margin: 0 1px !default;
 $swipe-indicator-opacity: 1 !default;
 $swipe-indicator-border-color: $brand-pure !default;
@@ -497,6 +504,7 @@ $stepbar-gap: .167rem !default;
 
 
 $stepbar-item-addon-size: 1.5rem !default;
+$stepbar-item-addon-line-height: 1.357rem !default;
 $stepbar-item-addon-color: $text-muted !default;
 
 $stepbar-item-addon-color-active: $brand-pure !default;
@@ -527,14 +535,14 @@ $stepbar-line-transition: all .2s ease-in !default;
 $timeline-item-padding-bottom: 2rem !default;
 
 $timeline-item-addon-bg: $brand-pure !default;
-$timeline-item-addon-size: .8rem !default;
+$timeline-item-addon-size: 1rem !default;
 $timeline-item-addon-border-width: 2px !default;
 
-$timeline-item-addon-size-active: 1.8rem !default;
+$timeline-item-addon-size-active: 2.0rem !default;
 $timeline-item-addon-border-color: $brand-primary !default;
 
-$timeline-item-addon-dot-size: .8rem !default;
-$timeline-item-addon-dot-size-active: .7rem !default;
+$timeline-item-addon-dot-size: 1rem !default;
+$timeline-item-addon-dot-size-active: 1rem !default;
 $timeline-item-addon-dot-bg: #cbcccd !default;
 $timeline-item-addon-dot-bg-active: $brand-primary !default;
 
