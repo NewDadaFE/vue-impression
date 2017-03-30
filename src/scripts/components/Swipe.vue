@@ -94,7 +94,8 @@
                     dragStartTime;
 
                 draggable(swipe, {
-                    onDragStart: () => {
+                    onDragStart: (state, event) => {
+                        event.preventDefault();
                         this.onDragStart && this.onDragStart(this.activeIndex);
 
                         if(this.transitioning) return;
@@ -103,7 +104,8 @@
                         this.dragging = true;
                         clearInterval(this.swipeInterval);
                     },
-                    onDrag: option => {
+                    onDrag: (option, event) => {
+                        event.preventDefault();
                         if(this.transitioning) return;
 
                         translateX = option.translateX;
@@ -130,7 +132,8 @@
                             newIndex = prevIndex;
                         }
                     },
-                    onDragEnd: () => {
+                    onDragEnd: (state, event) => {
+                        event.preventDefault();
                         if(this.transitioning) return;
 
                         this.dragging = false;
