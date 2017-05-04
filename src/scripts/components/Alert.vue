@@ -76,6 +76,9 @@
                 callback && callback();
                 this.autoClose && (this.currentValue = false);
             },
+            hide() {
+                this.autoClose && (this.currentValue = false);
+            },
             // 移除dom
             /* global document:true */
             afterLeave() {
