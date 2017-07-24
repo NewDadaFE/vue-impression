@@ -72,6 +72,8 @@ module.exports = {
         historyApiFallback: true,
         stats: {
             colors: true,
+            chunks: false,
+            children: false,
         },
         headers: {
             'Access-Control-Allow-Origin': '*',
