@@ -10,8 +10,8 @@
         <group-title>clearable</group-title>
         <group>
             <cell>
-                <span slot="header">input：</span>
-                <input-text clearable value="clearable" />
+                <span slot="header">input：{{ text }}</span>
+                <input-text clearable @change="inputHandler" type="number" v-model="text" />
             </cell>
         </group>
         <group-title>disabled</group-title>
@@ -38,3 +38,18 @@
         </group>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            text: 123,
+        };
+    },
+    methods: {
+        inputHandler(val) {
+            console.log(val);
+        },
+    },
+};
+</script>

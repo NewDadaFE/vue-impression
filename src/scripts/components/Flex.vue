@@ -2,7 +2,7 @@
     <div
         class="flex"
         :class="[
-            {[`flex-align-${align}`]: align},
+            alignClass,
             {[`flex-justify-${justify}`]: justify},
             {'flex-vertical': direction === 'column'}
             ]">
@@ -35,6 +35,17 @@
                 validator(value) {
                     return ['top', 'bottom', 'middle'].indexOf(value) > -1;
                 },
+            },
+        },
+        computed: {
+            alignClass() {
+                let align = this.align;
+
+                if(this.direction === 'row' && !align) {
+                    align = 'middle';
+                }
+
+                return `flex-align-${align}`;
             },
         },
     };

@@ -45,15 +45,12 @@ const toastUtil = (options = {}) => {
 
     document.body.appendChild(instance.$el);
 
-    Vue.nextTick(() => {
-        instance.show();
+    instance.show();
+    instance.timer = setTimeout(() => {
+        instance.hide();
 
-        instance.timer = setTimeout(() => {
-            instance.hide();
-
-            toastCache.push(instance);
-        }, duration);
-    });
+        toastCache.push(instance);
+    }, duration);
 };
 
 export default toastUtil;
