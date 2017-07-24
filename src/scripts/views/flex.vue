@@ -2,7 +2,10 @@
     <div>
         <group-title>等比</group-title>
         <flex class="row">
-            <flex-item class="bg-primary text-center item">1</flex-item>
+            <flex-item class="bg-primary text-center item">
+                <div>huang</div>
+                <div>huang</div>
+            </flex-item>
             <flex-item class="bg-primary text-center item">2</flex-item>
         </flex>
         <flex class="row">

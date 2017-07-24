@@ -5,19 +5,20 @@
                 v-show="currentValue"
                 class="toast"
                 :class="[
-                    'toast-' + position,
-                    {
-                        'toast-lg': type,
-                    }
+                    `toast-${position}`,
+                    { 'toast-lg': type }
                 ]">
                 <div class="toast-icon" v-if="icon">
-                    <icon :name="icon"></icon>
+                    <icon :name="icon" />
                 </div>
                 <loading v-else-if="type === 'loading'" />
-                <div class="toast-message" v-html="message"></div>
+                <div class="toast-message" v-html="message" />
             </div>
         </transition>
-        <mask-layer :clickable="closeOnClickMask" class="bg-transparent" v-if="!!type"/>
+        <mask-layer
+            :clickable="closeOnClickMask"
+            class="bg-transparent"
+            v-if="!!type"/>
     </div>
 </template>
 

@@ -12,11 +12,8 @@
 </template>
 
 <script>
-    import Sync from '../mixins/sync';
-
     export default {
         name: 'progressbar',
-        mixins: [Sync],
         props: {
             value: {
                 type: Number,

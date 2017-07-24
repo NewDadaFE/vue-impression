@@ -92,6 +92,7 @@
                         let currentTranslateY = translateY;
                         let pickerHeight = this.$children.length * this.getOptionHeight();
 
+                        // 拉过了
                         if(translateY > 0) {
                             let rate = (maxTranslateY - translateY) / maxTranslateY;
 
@@ -124,21 +125,21 @@
                             momentumTranslate = translateY + (velocityTranslateY * momentumRatio);
                         }
 
-                        this.$nextTick(() => {
-                            let translate;
-                            let dragRange = this.getDragRange();
+                        // this.$nextTick(() => {
+                        let translate;
+                        let dragRange = this.getDragRange();
 
-                            if(momentumTranslate) {
-                                translate = Math.round(momentumTranslate / itemHeight) * itemHeight;
-                            } else {
-                                translate = Math.round(translateY / itemHeight) * itemHeight;
-                            }
+                        if(momentumTranslate) {
+                            translate = Math.round(momentumTranslate / itemHeight) * itemHeight;
+                        } else {
+                            translate = Math.round(translateY / itemHeight) * itemHeight;
+                        }
 
-                            translate = Math.max(Math.min(translate, dragRange.max), dragRange.min);
-                            setTranslate(pickerList, null, translate);
+                        translate = Math.max(Math.min(translate, dragRange.max), dragRange.min);
+                        setTranslate(pickerList, null, translate);
 
-                            this.pickedIndex = Math.abs(translate / itemHeight);
-                        });
+                        this.pickedIndex = Math.abs(translate / itemHeight);
+                        // });
                     },
                 });
             },
