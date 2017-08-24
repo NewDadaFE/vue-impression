@@ -94,8 +94,8 @@
                     dragStartTime;
 
                 draggable(swipe, {
-                    onDragStart: (state, event) => {
-                        event.preventDefault();
+                    onDragStart: () => {
+                        // event.preventDefault();
                         this.onDragStart && this.onDragStart(this.activeIndex);
 
                         if(this.transitioning) return;
@@ -132,8 +132,8 @@
                             newIndex = prevIndex;
                         }
                     },
-                    onDragEnd: (state, event) => {
-                        event.preventDefault();
+                    onDragEnd: () => {
+                        // event.preventDefault();
                         if(this.transitioning) return;
 
                         this.dragging = false;
