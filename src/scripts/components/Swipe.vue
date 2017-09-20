@@ -4,7 +4,12 @@
             <slot></slot>
         </div>
         <div class="swipe-indicators" v-show="dots">
-            <div class="swipe-indicator" :class="{active: index - 1 === activeIndex}" v-for="index in length"></div>
+            <div
+                v-for="index in length"
+                :key="index"
+                class="swipe-indicator"
+                :class="{active: index - 1 === activeIndex}"
+                ></div>
         </div>
     </div>
 </template>
@@ -56,6 +61,11 @@
                 type: String,
                 default: 'ease-in-out',
             },
+            // 循环播放
+            cycle: {
+                type: Boolean,
+                default: true,
+            },
         },
         data() {
             return {
@@ -74,13 +84,22 @@
             getPrevIndex() {
                 let prevIndex = this.activeIndex - 1;
 
+                if(!this.cycle) {
+                    return prevIndex < 0 ? 0 : prevIndex;
+                }
+
                 return prevIndex < 0 ? this.length + prevIndex : prevIndex;
             },
             // 获取后一个索引
             getNextIndex() {
-                let nextIndex = this.activeIndex + 1;
+                const nextIndex = this.activeIndex + 1;
+                const length = this.length - 1;
 
-                return nextIndex > this.length - 1 ? nextIndex % this.length : nextIndex;
+                if(!this.cycle) {
+                    return nextIndex > length ? length : nextIndex;
+                }
+
+                return nextIndex > length ? nextIndex % this.length : nextIndex;
             },
             // 初始化拖拽
             initDrag() {
@@ -116,6 +135,9 @@
                         if(translateX < 0) {
                             let nextIndex = this.getNextIndex();
 
+                            // 禁止循环播放
+                            if(!this.cycle && nextIndex === this.activeIndex) return;
+
                             this.$children[this.activeIndex].swipeToLeft(translateX);
                             this.$children[nextIndex].swipeToLeft(translateX);
 
@@ -124,6 +146,9 @@
                         } else {
                             // 往右
                             let prevIndex = this.getPrevIndex();
+
+                            // 禁止循环播放
+                            if(!this.cycle && prevIndex === this.activeIndex) return;
 
                             this.$children[this.activeIndex].swipeToRight(translateX);
                             this.$children[prevIndex].swipeToRight(translateX);
