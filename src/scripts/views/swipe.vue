@@ -40,7 +40,7 @@
             </swipe-item>
         </swipe>
         <group-title>cycle=false</group-title>
-        <swipe :cycle="false">
+        <swipe :cycle="false" :defaultIndex="2">
             <swipe-item>
                 <div class="page-swipe-item bg-primary">1</div>
             </swipe-item>
