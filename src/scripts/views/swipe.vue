@@ -5,7 +5,7 @@
             :onDragStart="onDragStart"
             :onDrag="onDrag"
             :onDragEnd="onDragEnd">
-            <swipe-item v-for="item in swipeItems">
+            <swipe-item v-for="item in swipeItems" :key="item.text">
                 <div class="page-swipe-item" :class="item.theme">{{item.text}}</div>
             </swipe-item>
         </swipe>
@@ -29,6 +29,18 @@
         </swipe>
         <group-title>autoplay=false</group-title>
         <swipe :autoplay="false">
+            <swipe-item>
+                <div class="page-swipe-item bg-primary">1</div>
+            </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-secondary">2</div>
+            </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-success">3</div>
+            </swipe-item>
+        </swipe>
+        <group-title>cycle=false</group-title>
+        <swipe :cycle="false">
             <swipe-item>
                 <div class="page-swipe-item bg-primary">1</div>
             </swipe-item>
