@@ -74,6 +74,7 @@
                 transitioning: false,
                 negative: false,
                 activeIndex: this.defaultIndex,
+                isCycleEnd: false,
             };
         },
         methods: {
@@ -101,6 +102,14 @@
 
                 return nextIndex > length ? nextIndex % this.length : nextIndex;
             },
+            // 是禁止循环
+            isDisableCycle(nextIndex) {
+                if(!this.cycle && nextIndex === this.activeIndex) {
+                    return true;
+                }
+
+                return false;
+            },
             // 初始化拖拽
             initDrag() {
                 if(this.length <= 1) {
@@ -121,6 +130,7 @@
 
                         dragStartTime = new Date();
                         this.dragging = true;
+                        this.isCycleEnd = false;
                         clearInterval(this.swipeInterval);
                     },
                     onDrag: (option, event) => {
@@ -136,7 +146,11 @@
                             let nextIndex = this.getNextIndex();
 
                             // 禁止循环播放
-                            if(!this.cycle && nextIndex === this.activeIndex) return;
+                            if(this.isDisableCycle(nextIndex)) {
+                                this.isCycleEnd = true;
+
+                                return;
+                            }
 
                             this.$children[this.activeIndex].swipeToLeft(translateX);
                             this.$children[nextIndex].swipeToLeft(translateX);
@@ -148,7 +162,11 @@
                             let prevIndex = this.getPrevIndex();
 
                             // 禁止循环播放
-                            if(!this.cycle && prevIndex === this.activeIndex) return;
+                            if(this.isDisableCycle(prevIndex)) {
+                                this.isCycleEnd = true;
+
+                                return;
+                            }
 
                             this.$children[this.activeIndex].swipeToRight(translateX);
                             this.$children[prevIndex].swipeToRight(translateX);
@@ -163,24 +181,26 @@
 
                         this.dragging = false;
 
-                        let threshold = this.$children[this.activeIndex].width * this.dragThreshold,
-                            rate = Math.abs(translateX) / (new Date() - dragStartTime);
+                        if(!this.isCycleEnd) {
+                            let threshold = this.$children[this.activeIndex].width * this.dragThreshold,
+                                rate = Math.abs(translateX) / (new Date() - dragStartTime);
 
-                        if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
-                            this.activeIndex = newIndex;
-                        } else if(this.negative) {
-                            let prevIndex = this.getPrevIndex();
+                            if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
+                                this.activeIndex = newIndex;
+                            } else if(this.negative) {
+                                let prevIndex = this.getPrevIndex();
 
-                            this.$children[this.activeIndex].swipeToLeft(0);
-                            this.$children[prevIndex].swipeToLeft(0);
-                        } else {
-                            // 往左
-                            let nextIndex = this.getNextIndex();
+                                this.$children[this.activeIndex].swipeToLeft(0);
+                                this.$children[prevIndex].swipeToLeft(0);
+                            } else {
+                                // 往左
+                                let nextIndex = this.getNextIndex();
 
-                            this.$children[this.activeIndex].swipeToRight(0);
-                            this.$children[nextIndex].swipeToRight(0);
+                                this.$children[this.activeIndex].swipeToRight(0);
+                                this.$children[nextIndex].swipeToRight(0);
+                            }
+                            this.onDragEnd && this.onDragEnd(this.activeIndex);
                         }
-                        this.onDragEnd && this.onDragEnd(this.activeIndex);
 
                         setTimeout(() => {
                             this.play();
