@@ -15,13 +15,14 @@ const draggable = (el, options) => {
 
         let translate = getTranslate(dragState.effectEl);
 
-        Object.assign(dragState, {
+        dragState = {
+            ...dragState,
             startTimestamp: new Date(),
             pageX: event.pageX,
             pageY: event.pageY,
             translateX: translate.x,
             translateY: translate.y,
-        });
+        };
 
         document.onselectstart = () => false;
         document.ondragstart = () => false;
@@ -40,11 +41,12 @@ const draggable = (el, options) => {
 
         prevTranslateX = translateX;
         prevTranslateY = translateY;
-        Object.assign(dragState, {
+        dragState = {
+            ...dragState,
             dragging: true,
             velocityTranslateX,
             velocityTranslateY,
-        });
+        };
 
         if(options.onDrag) {
             options.onDrag({
@@ -59,9 +61,10 @@ const draggable = (el, options) => {
 
     // end
     const onTouchEndHandle = (event, sourceEvent) => {
-        Object.assign(dragState, {
+        dragState = {
+            ...dragState,
             dragging: false,
-        });
+        };
 
         document.onselectstart = null;
         document.ondragstart = null;

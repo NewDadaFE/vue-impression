@@ -66,6 +66,8 @@ module.exports = {
         new DashboardPlugin(),
     ],
     devServer: {
+        host: '0.0.0.0',
+        disableHostCheck: true,
         contentBase: './build',
         publicPath: '/scripts',
         hot: true,

@@ -14,7 +14,10 @@ export const alert = option => {
 
     document.body.appendChild(alertInstance.$el);
 
-    Object.assign(alertInstance, option);
+    alertInstance = {
+        ...alertInstance,
+        ...option,
+    };
 
     Vue.nextTick(() => {
         alertInstance.show();
