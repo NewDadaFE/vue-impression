@@ -1,6 +1,6 @@
 {
   "name": "vue-impression",
-  "version": "0.15.15",
+  "version": "0.15.16",
   "description": "A Vue.js 2.0 UI elements for mobile.",
   "main": "dist/scripts/components/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "copy:css": "cp -a src/styles dist/styles",
     "compile:js": "node_modules/babel-cli/bin/babel.js src --out-dir dist --ignore scripts/index.js,scripts/router.js && node build",
     "prebuild": "npm run eslint && npm run clean && npm run copy:css",
-    "build": "npm run compile:js && npm publish",
+    "build": "npm run compile:js && npm publish --verbose",
     "prepublish": "npm config set registry http://registry.npmjs.org",
     "postpublish": "npm config set registry https://registry.npm.taobao.org/"
   },
