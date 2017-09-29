@@ -1,4 +1,7 @@
 {
     "presets": ["vue", "es2015", "stage-1"],
-    "comments": false
+    "comments": false,
+    "plugins": [
+        "transform-object-assign"
+    ]
 }
