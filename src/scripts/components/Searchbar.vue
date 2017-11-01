@@ -21,6 +21,10 @@
                     return ['circle'].indexOf(value) > -1;
                 },
             },
+            autoBlur: {
+                type: Boolean,
+                default: true,
+            },
         },
         data() {
             return {
@@ -29,7 +33,7 @@
         },
         methods: {
             blur() {
-                this.focus = false;
+                this.autoBlur && (this.focus = false);
             },
         },
     };
