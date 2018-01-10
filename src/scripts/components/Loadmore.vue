@@ -44,6 +44,12 @@
             topMethod: {
                 type: Function,
             },
+            topCancelledMethod: {
+                type: Function,
+            },
+            topPulledMethod: {
+                type: Function,
+            },
             topAllLoaded: {
                 type: Boolean,
                 default: false,
@@ -81,6 +87,7 @@
                 topStatus: '',
                 topText: '',
                 topDropped: false,
+                topPulled: false,
                 bottomStatus: '',
                 bottomText: '',
                 bottomDropped: false,
@@ -160,6 +167,7 @@
                 if(this.topStatus !== 'loading') {
                     this.topStatus = 'pull';
                     this.topDropped = false;
+                    this.topPulled = false;
                 }
 
                 if(this.bottomStatus !== 'loading') {
@@ -195,6 +203,10 @@
                     this.translate = distance - this.startScrollTop;
                     if(this.translate < 0) this.translate = 0;
                     this.topStatus = this.translate >= this.topDistance ? 'drop' : 'pull';
+                    if (!this.topPulled) {
+                        this.topPulled = true;
+                        this.topPulledMethod && this.topPulledMethod();
+                    }
                 }
 
                 // pull up
@@ -233,6 +245,7 @@
                     } else {
                         this.translate = 0;
                         this.topStatus = 'pull';
+                        this.topCancelledMethod && this.topCancelledMethod();
                     }
                 }
 
