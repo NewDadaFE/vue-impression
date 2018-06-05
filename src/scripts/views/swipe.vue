@@ -9,6 +9,14 @@
                 <div class="page-swipe-item" :class="item.theme">{{item.text}}</div>
             </swipe-item>
         </swipe>
+        <group-title>defaultIndex=1, onlyOneDot=false</group-title>
+        <swipe
+            :defaultIndex="0"
+            :onlyOneDot="false">
+            <swipe-item>
+                <div class="page-swipe-item bg-primary">1</div>
+            </swipe-item>
+        </swipe>
         <group-title>defaultIndex=1</group-title>
         <swipe :defaultIndex="0">
             <swipe-item>

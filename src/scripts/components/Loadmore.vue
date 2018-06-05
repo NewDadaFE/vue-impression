@@ -203,7 +203,7 @@
                     this.translate = distance - this.startScrollTop;
                     if(this.translate < 0) this.translate = 0;
                     this.topStatus = this.translate >= this.topDistance ? 'drop' : 'pull';
-                    if (!this.topPulled) {
+                    if(!this.topPulled) {
                         this.topPulled = true;
                         this.topPulledMethod && this.topPulledMethod();
                     }

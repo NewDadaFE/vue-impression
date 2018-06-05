@@ -3,7 +3,7 @@
         <div class="swipe-items">
             <slot></slot>
         </div>
-        <div class="swipe-indicators" v-show="dots">
+        <div class="swipe-indicators" v-show="length > 1 ? dots : (dots && onlyOneDot)">
             <div
                 v-for="index in length"
                 :key="index"
@@ -32,6 +32,11 @@
             },
             // 是否显示指示器
             dots: {
+                type: Boolean,
+                default: true,
+            },
+            // 只有一张图片时，是否显示指示器
+            onlyOneDot: {
                 type: Boolean,
                 default: true,
             },
