@@ -1,11 +1,11 @@
 <template>
-    <div class="datepicker">
+    <div class="daterange">
 
     </div>
 </template>
 
 <script>
     export default {
-        name: 'date-picker',
+        name: 'date-range',
     };
 </script>
