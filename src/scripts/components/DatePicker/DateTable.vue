@@ -277,21 +277,24 @@
           classes.push('current');
         }
 
-
-
         if (cell.disabled) {
           classes.push('disabled');
-        } else if (cell.inRange && ((cell.type === 'normal' || cell.type === 'today') || this.selectionMode === 'week')) {
+        }
+
+        if (cell.inRange && ((cell.type === 'normal' || cell.type === 'today')) {
           classes.push('in-range');
 
           if (cell.start) {
-            debugger
             classes.push('start-date');
           }
 
           if (cell.end) {
             classes.push('end-date');
           }
+        }
+
+        if (cell.disabled) {
+          classes.push('disabled');
         }
 
         if (cell.selected) {
@@ -304,6 +307,28 @@
       getDateOfCell(row, column) {
         const offsetFromStart = row * 7 + (column - (this.showWeekNumber ? 1 : 0)) - this.offsetDay;
         return nextDate(this.startDate, offsetFromStart);
+      },
+
+      isWeekActive(cell) {
+        if (this.selectionMode !== 'week') return false;
+        const newDate = new Date(this.year, this.month, 1);
+        const year = newDate.getFullYear();
+        const month = newDate.getMonth();
+
+        if (cell.type === 'prev-month') {
+          newDate.setMonth(month === 0 ? 11 : month - 1);
+          newDate.setFullYear(month === 0 ? year - 1 : year);
+        }
+
+        if (cell.type === 'next-month') {
+          newDate.setMonth(month === 11 ? 0 : month + 1);
+          newDate.setFullYear(month === 11 ? year + 1 : year);
+        }
+
+        newDate.setDate(parseInt(cell.text, 10));
+
+        const valueYear = isDate(this.value) ? this.value.getFullYear() : null;
+        return year === valueYear && getWeekNumber(newDate) === getWeekNumber(this.value);
       },
 
       markRange(maxDate) {
@@ -377,12 +402,7 @@
         }
 
         if (target.tagName !== 'TD') return;
-        if (hasClass(target, 'disabled')) {
-          if (this.minDate && this.maxDate) {
-
-          }
-          return;
-        }
+        if (hasClass(target, 'disabled') || hasClass(target, 'week')) return;
 
         const selectionMode = this.selectionMode;
 

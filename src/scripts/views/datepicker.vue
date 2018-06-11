@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="date-wrapper">
         <date-picker
             type="daterange"
@@ -8,6 +9,10 @@
             :nextPickedDisableDays=30
         >
         </date-picker>
+=======
+    <div>
+   		<date-picker></date-picker>
+>>>>>>> 5b79b49654974ce0482677eaf667a5032eea900b
     </div>
 </template>
 

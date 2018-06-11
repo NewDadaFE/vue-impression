@@ -26,6 +26,7 @@ module.exports = {
         fallback: [path.join(__dirname, 'node_modules')],
     },
     module: {
+<<<<<<< HEAD
         // preLoaders: [{
         //     test: /\.vue$/,
         //     loader: 'eslint',
@@ -37,6 +38,19 @@ module.exports = {
         //     include: path.join(__dirname, 'src'),
         //     exclude: /node_modules/,
         // }],
+=======
+        preLoaders: [{
+            test: /\.vue$/,
+            loader: 'vue',
+            include: path.join(__dirname, 'src'),
+            exclude: /node_modules/,
+        }, {
+            test: /\.js$/,
+            loader: 'babel',
+            include: path.join(__dirname, 'src'),
+            exclude: /node_modules/,
+        }],
+>>>>>>> 5b79b49654974ce0482677eaf667a5032eea900b
         loaders: [{
             test: /\.vue$/,
             loader: 'vue',

@@ -42,7 +42,6 @@ import MediaObject from './MediaObject';
 import MediaBody from './MediaBody';
 import Card from './Card';
 import CardBody from './CardBody';
-import DatePicker from './DatePicker';
 import Searchbar from './Searchbar';
 import SearchbarBtn from './SearchbarBtn';
 import SearchbarPlaceholder from './SearchbarPlaceholder';
@@ -64,6 +63,8 @@ import { alert } from '../utils/alert';
 import loading from '../utils/loading';
 // directives
 import disfavor from '../directives/disfavor';
+
+import DatePicker from './DatePicker';
 
 const impression = {
     Button,
@@ -119,7 +120,6 @@ const impression = {
     SelectorOption,
     InlineSelector,
     InlineSelectorOption,
-    DatePicker,
     Progressbar,
     Stepbar,
     StepbarItem,

@@ -15,6 +15,7 @@
 		        v-for="shortcut in shortcuts"
 		        @click="handleShortcutClick(shortcut)">{{shortcut.text}}</button>
 		    </div>
+<<<<<<< HEAD
         
         <div class="header">
           <div class="header-cnt">
@@ -65,6 +66,7 @@
   import DateTable from './DateTable';
 
   const DayMilliseconds = 24 * 60 * 60 * 1000;
+
   const advanceDate = (date, amount) => {
     return new Date(new Date(date).getTime() + amount);
   };
@@ -80,7 +82,6 @@
   };
 
   export default {
-
     computed: {
       btnDisabled() {
         return !(this.minDate && this.maxDate && !this.selecting);
@@ -103,7 +104,6 @@
         return this.dateLabel.getDate();
       },
 
-
       minVisibleDate() {
         return this.minDate ? formatDate(this.minDate, this.dateFormat) : '';
       },
@@ -111,7 +111,6 @@
       maxVisibleDate() {
         return (this.maxDate || this.minDate) ? formatDate(this.maxDate || this.minDate, this.dateFormat) : '';
       },
-
 
       timeFormat() {
         if (this.format) {
@@ -159,12 +158,8 @@
         showTime: false,
         shortcuts: '',
         visible: '',
-        firstDayOfWeek: 7,
-        minTimePickerVisible: false,
-        maxTimePickerVisible: false,
+        firstDayOfWeek: 1,
         format: '',
-        arrowControl: false,
-        unlinkPanels: false,
 
         prePickedDisable: false,
         nextPickedDisableDays: 0
@@ -282,7 +277,6 @@
         this.rangeState = val.rangeState;
       },
 
-
       handleDateChange(event, type) {
         const value = event.target.value;
         const parsedValue = parseDate(value, this.dateFormat);
@@ -297,28 +291,6 @@
             if (this.maxDate < this.minDate) {
               this.minDate = this.maxDate;
             }
-          }
-        }
-      },
-
-      handleTimeChange(event, type) {
-        const value = event.target.value;
-        const parsedValue = parseDate(value, this.timeFormat);
-        if (parsedValue) {
-          if (type === 'min') {
-            this.minDate = modifyTime(this.minDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
-            if (this.minDate > this.maxDate) {
-              this.maxDate = this.minDate;
-            }
-            this.$refs.minTimePicker.value = this.minDate;
-            this.minTimePickerVisible = false;
-          } else {
-            this.maxDate = modifyTime(this.maxDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
-            if (this.maxDate < this.minDate) {
-              this.minDate = this.maxDate;
-            }
-            this.$refs.maxTimePicker.value = this.minDate;
-            this.maxTimePickerVisible = false;
           }
         }
       },
@@ -347,35 +319,6 @@
       handleShortcutClick(shortcut) {
         if (shortcut.onClick) {
           shortcut.onClick(this);
-        }
-      },
-
-      handleMinTimePick(value, visible, first) {
-        this.minDate = this.minDate || new Date();
-        if (value) {
-          this.minDate = modifyTime(this.minDate, value.getHours(), value.getMinutes(), value.getSeconds());
-        }
-
-        if (!first) {
-          this.minTimePickerVisible = visible;
-        }
-
-        if (!this.maxDate || this.maxDate && this.maxDate.getTime() < this.minDate.getTime()) {
-          this.maxDate = new Date(this.minDate);
-        }
-      },
-
-      handleMaxTimePick(value, visible, first) {
-        if (this.maxDate && value) {
-          this.maxDate = modifyTime(this.maxDate, value.getHours(), value.getMinutes(), value.getSeconds());
-        }
-
-        if (!first) {
-          this.maxTimePickerVisible = visible;
-        }
-
-        if (this.maxDate && this.minDate && this.minDate.getTime() > this.maxDate.getTime()) {
-          this.minDate = new Date(this.maxDate);
         }
       },
 

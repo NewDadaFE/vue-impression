@@ -1,11 +1,11 @@
 <template>
-<div
-  class="date-picker"
-  :class="{
-    [`date-picker-${size}`]: size,
-    [`date-picker-${theme}`]: theme,
-  }">
-</div>
+  <div
+    class="date-picker"
+    :class="{
+      [`date-picker-${size}`]: size,
+      [`date-picker-${theme}`]: theme,
+    }">
+  </div>
 </template>
 
 <script>
@@ -18,8 +18,6 @@ const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   daterange: 'yyyy年MM月dd日',
 };
-
-
 /*
  * Considers:
  *   1. Date object
@@ -107,7 +105,6 @@ export default {
       default: '-'
     },
     pickerOptions: {},
-    unlinkPanels: Boolean,
     pickerAlwaysShow: {
       type: Boolean,
       default: true
@@ -155,6 +152,7 @@ export default {
     },
 
 
+
     valueIsEmpty() {
       const val = this.value;
       if (Array.isArray(val)) {
@@ -189,7 +187,6 @@ export default {
       return 'day';
     },
 
-
     displayValue() {
       const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
       if (Array.isArray(this.userInput)) {
@@ -216,8 +213,6 @@ export default {
         return this.value;
       }
     },
-
-
 
     pickerSize() {
       return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
@@ -255,7 +250,6 @@ export default {
   },
 
   methods: {
-
     // {parse, formatTo} Value deals maps component value with internal Date
     parseValue(value) {
       const isParsed = isDateObject(value) || (Array.isArray(value) && value.every(isDateObject));
@@ -286,9 +280,6 @@ export default {
       return formatAsFormatAndType(value, this.format, type);
     },
 
- 
-
-
     hidePicker() {
       if (this.picker) {
         this.picker.resetView && this.picker.resetView();
@@ -304,8 +295,6 @@ export default {
       }
       this.pickerVisible = this.picker.visible = true;
 
-      // this.updatePopper();
-
       this.picker.value = this.parsedValue;
       this.picker.resetView && this.picker.resetView();
 
@@ -320,6 +309,7 @@ export default {
       this.picker.defaultTime = this.defaultTime;
       this.picker.popperClass = this.popperClass;
       this.popperElm = this.picker.$el;
+
       this.picker.showTime = this.type === 'datetime' || this.type === 'datetimerange';
       this.picker.selectionMode = this.selectionMode;
       this.picker.unlinkPanels = this.unlinkPanels;
