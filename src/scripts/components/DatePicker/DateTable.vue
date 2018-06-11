@@ -281,7 +281,7 @@
           classes.push('disabled');
         }
 
-        if (cell.inRange && ((cell.type === 'normal' || cell.type === 'today')) {
+        if (cell.inRange && ((cell.type === 'normal' || cell.type === 'today'))) {
           classes.push('in-range');
 
           if (cell.start) {
