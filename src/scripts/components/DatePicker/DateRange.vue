@@ -1,30 +1,17 @@
 <template>
 		<div
 		  v-show="visible"
-		  class="date-range-picker"
-		  :class="[{
-		    'has-sidebar': $slots.sidebar || shortcuts,
-		    'has-time': showTime
-		  }, popperClass]">
-		  <div class="el-picker-panel__body-wrapper">
-		    <slot name="sidebar" class="el-picker-panel__sidebar"></slot>
-		    <div class="el-picker-panel__sidebar" v-if="shortcuts">
-		      <button
-		        type="button"
-		        class="el-picker-panel__shortcut"
-		        v-for="shortcut in shortcuts"
-		        @click="handleShortcutClick(shortcut)">{{shortcut.text}}</button>
-		    </div>
+		  class="date-range-picker">
         
         <div class="header">
           <div class="header-cnt">
             <btn
               class="btn btn-left"
-              @click="leftPrevMonth">
+              @click="prevMonth">
               <icon name="angle-left" left/>
             </btn>
             <btn
-              @click="leftNextMonth"
+              @click="nextMonth"
               class="btn btn-right">
               <icon name="angle-right" right/>
             </btn>
@@ -43,7 +30,6 @@
           :first-day-of-week="firstDayOfWeek"
           @pick="handleRangePick">
         </date-table>
-      </div>
 		</div>
 </template>
 
@@ -82,10 +68,6 @@
   export default {
 
     computed: {
-      btnDisabled() {
-        return !(this.minDate && this.maxDate && !this.selecting);
-      },
-
       dateLabel() {
         // return this.leftDate.getFullYear() + ' ' + this.t('el.datepicker.year') + ' ' + this.t(`el.datepicker.month${ this.leftDate.getMonth() + 1 }`);
         return this.leftDate.getFullYear() + '年' + (this.leftDate.getMonth() + 1) + '月';
@@ -103,40 +85,12 @@
         return this.dateLabel.getDate();
       },
 
-
-      minVisibleDate() {
-        return this.minDate ? formatDate(this.minDate, this.dateFormat) : '';
-      },
-
-      maxVisibleDate() {
-        return (this.maxDate || this.minDate) ? formatDate(this.maxDate || this.minDate, this.dateFormat) : '';
-      },
-
-
-      timeFormat() {
-        if (this.format) {
-          return extractTimeFormat(this.format);
-        } else {
-          return 'HH:mm:ss';
-        }
-      },
-
       dateFormat() {
         if (this.format) {
           return extractDateFormat(this.format);
         } else {
           return 'yyyy-MM-dd';
         }
-      },
-
-      enableMonthArrow() {
-        const nextMonth = (this.leftMonth + 1) % 12;
-        const yearOffset = this.leftMonth + 1 >= 12 ? 1 : 0;
-        return this.unlinkPanels && new Date(this.leftYear + yearOffset, nextMonth) < new Date(this.rightYear, this.rightMonth);
-      },
-
-      enableYearArrow() {
-        return this.unlinkPanels && this.rightYear * 12 + this.rightMonth - (this.leftYear * 12 + this.leftMonth + 1) >= 12;
       }
     },
 
@@ -156,10 +110,8 @@
           row: null,
           column: null
         },
-        showTime: false,
-        shortcuts: '',
         visible: '',
-        firstDayOfWeek: 7,
+        firstDayOfWeek: 1,
         minTimePickerVisible: false,
         maxTimePickerVisible: false,
         format: '',
@@ -259,6 +211,10 @@
 
     methods: {
       disabledDate(time) {
+        if (this.maxDate) {
+          return false;
+        }
+
         if (this.minDate) {
           let prePickedDisable = this.prePickedDisable ? time.getTime() < new Date(this.minDate).getTime() : false;
           let nextPickedDisabled = time.getTime() > (new Date(this.minDate).getTime() + this.nextPickedDisableDays * DayMilliseconds)
@@ -301,27 +257,6 @@
         }
       },
 
-      handleTimeChange(event, type) {
-        const value = event.target.value;
-        const parsedValue = parseDate(value, this.timeFormat);
-        if (parsedValue) {
-          if (type === 'min') {
-            this.minDate = modifyTime(this.minDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
-            if (this.minDate > this.maxDate) {
-              this.maxDate = this.minDate;
-            }
-            this.$refs.minTimePicker.value = this.minDate;
-            this.minTimePickerVisible = false;
-          } else {
-            this.maxDate = modifyTime(this.maxDate, parsedValue.getHours(), parsedValue.getMinutes(), parsedValue.getSeconds());
-            if (this.maxDate < this.minDate) {
-              this.minDate = this.maxDate;
-            }
-            this.$refs.maxTimePicker.value = this.minDate;
-            this.maxTimePickerVisible = false;
-          }
-        }
-      },
 
       handleRangePick(val, close = true) {
         const defaultTime = this.defaultTime || [];
@@ -340,93 +275,17 @@
           this.maxDate = maxDate;
           this.minDate = minDate;
         }, 10);
-        if (!close || this.showTime) return;
+        if (!close ) return;
         this.handleConfirm();
       },
 
-      handleShortcutClick(shortcut) {
-        if (shortcut.onClick) {
-          shortcut.onClick(this);
-        }
-      },
 
-      handleMinTimePick(value, visible, first) {
-        this.minDate = this.minDate || new Date();
-        if (value) {
-          this.minDate = modifyTime(this.minDate, value.getHours(), value.getMinutes(), value.getSeconds());
-        }
-
-        if (!first) {
-          this.minTimePickerVisible = visible;
-        }
-
-        if (!this.maxDate || this.maxDate && this.maxDate.getTime() < this.minDate.getTime()) {
-          this.maxDate = new Date(this.minDate);
-        }
-      },
-
-      handleMaxTimePick(value, visible, first) {
-        if (this.maxDate && value) {
-          this.maxDate = modifyTime(this.maxDate, value.getHours(), value.getMinutes(), value.getSeconds());
-        }
-
-        if (!first) {
-          this.maxTimePickerVisible = visible;
-        }
-
-        if (this.maxDate && this.minDate && this.minDate.getTime() > this.maxDate.getTime()) {
-          this.minDate = new Date(this.maxDate);
-        }
-      },
-
-      // leftPrev*, rightNext* need to take care of `unlinkPanels`
-      leftPrevYear() {
-        this.leftDate = prevYear(this.leftDate);
-        if (!this.unlinkPanels) {
-          this.rightDate = nextMonth(this.leftDate);
-        }
-      },
-
-      leftPrevMonth() {
+      prevMonth() {
         this.leftDate = prevMonth(this.leftDate);
-        if (!this.unlinkPanels) {
-          this.rightDate = nextMonth(this.leftDate);
-        }
       },
 
-      rightNextYear() {
-        if (!this.unlinkPanels) {
-          this.leftDate = nextYear(this.leftDate);
-          this.rightDate = nextMonth(this.leftDate);
-        } else {
-          this.rightDate = nextYear(this.rightDate);
-        }
-      },
-
-      rightNextMonth() {
-        if (!this.unlinkPanels) {
-          this.leftDate = nextMonth(this.leftDate);
-          this.rightDate = nextMonth(this.leftDate);
-        } else {
-          this.rightDate = nextMonth(this.rightDate);
-        }
-      },
-
-      // leftNext*, rightPrev* are called when `unlinkPanels` is true
-      leftNextYear() {
-        this.leftDate = nextYear(this.leftDate);
-      },
-
-      leftNextMonth() {
+      nextMonth() {
         this.leftDate = nextMonth(this.leftDate);
-      },
-
-      rightPrevYear() {
-        this.rightDate = prevYear(this.rightDate);
-      },
-
-      rightPrevMonth() {
-        this.rightDate = prevMonth(this.rightDate);
       },
 
       handleConfirm() {

@@ -4,8 +4,7 @@
     cellpadding="0"
     class="date-table"
     @click="handleClick"
-    @mousemove="handleMouseMove"
-    :class="{ 'is-week-mode': selectionMode === 'week' }">
+    @mousemove="handleMouseMove"">
     <tbody>
     <tr>
       <th v-if="showWeekNumber"></th>
@@ -44,6 +43,7 @@
     mixins: [],
 
     props: {
+      // 一周的第一天
       firstDayOfWeek: {
         default: 7,
         type: Number,
@@ -62,14 +62,16 @@
       date: {},
 
       selectionMode: {
+        type: String,
         default: 'day'
       },
-
+      // 是否展示周
       showWeekNumber: {
         type: Boolean,
         default: false
       },
 
+      // 禁选日期
       disabledDate: {},
 
       selectedDate: {
@@ -80,6 +82,7 @@
 
       maxDate: {},
 
+      // 日期区间
       rangeState: {
         default() {
           return {
@@ -270,11 +273,10 @@
 
         if (cell.disabled) {
           classes.push('disabled');
-        } else if (cell.inRange && ((cell.type === 'normal' || cell.type === 'today') || this.selectionMode === 'week')) {
+        } else if (cell.inRange && (cell.type === 'normal' || cell.type === 'today')) {
           classes.push('in-range');
 
           if (cell.start) {
-            debugger
             classes.push('start-date');
           }
 
@@ -375,10 +377,6 @@
 
         const selectionMode = this.selectionMode;
 
-        if (selectionMode === 'week') {
-          target = target.parentNode.cells[1];
-        }
-
         let year = Number(this.year);
         let month = Number(this.month);
 
@@ -436,6 +434,7 @@
                 minDate: this.minDate,
                 maxDate
               });
+
             } else {
               const minDate = new Date(newDate.getTime());
               this.rangeState.selecting = false;
@@ -453,30 +452,6 @@
           }
         } else if (selectionMode === 'day') {
           this.$emit('pick', newDate);
-        } else if (selectionMode === 'week') {
-          const weekNumber = getWeekNumber(newDate);
-
-          const value = newDate.getFullYear() + 'w' + weekNumber;
-          this.$emit('pick', {
-            year: newDate.getFullYear(),
-            week: weekNumber,
-            value: value,
-            date: newDate
-          });
-        } else if (selectionMode === 'dates') {
-          let selectedDate = this.selectedDate;
-
-          if (!cell.selected) {
-            selectedDate.push(newDate);
-          } else {
-            selectedDate.forEach((date, index) => {
-              if (date.toString() === newDate.toString()) {
-                selectedDate.splice(index, 1);
-              }
-            });
-          }
-
-          this.$emit('select', selectedDate);
         }
       }
     }

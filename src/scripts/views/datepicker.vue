@@ -6,6 +6,7 @@
             theme="default"
             :prePickedDisable=true
             :nextPickedDisableDays=30
+            :onPick="onPick"
         >
         </date-picker>
     </div>
@@ -13,13 +14,11 @@
 
 <script>
 export default {
-    data() {
-        return {
-            disabledDate(time) {
-                return time.getTime() < Date.now();
-            },
+    methods: {
+        onPick: function (val) {
+            console.log(val);
         }
-    },
+    }
 };
 </script>
 

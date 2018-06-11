@@ -106,12 +106,11 @@ export default {
     rangeSeparator: {
       default: '-'
     },
-    pickerOptions: {},
-    unlinkPanels: Boolean,
     pickerAlwaysShow: {
       type: Boolean,
       default: true
     },
+    onPick: {}
   },
 
   data() {
@@ -119,7 +118,6 @@ export default {
       pickerVisible: false,
       showClose: false,
       userInput: null,
-      valueOnOpen: null, // value when picker opens, used to determine whether to emit change
       unwatchPickerOptions: null
     };
   },
@@ -150,31 +148,6 @@ export default {
   },
 
   computed: {
-    ranged() {
-      return this.type.indexOf('range') > -1;
-    },
-
-
-    valueIsEmpty() {
-      const val = this.value;
-      if (Array.isArray(val)) {
-        for (let i = 0, len = val.length; i < len; i++) {
-          if (val[i]) {
-            return false;
-          }
-        }
-      } else {
-        if (val) {
-          return false;
-        }
-      }
-      return true;
-    },
-
-    triggerClass() {
-      return this.prefixIcon || (this.type.indexOf('time') !== -1 ? 'el-icon-time' : 'el-icon-date');
-    },
-
     selectionMode() {
       if (this.type === 'week') {
         return 'week';
@@ -189,24 +162,6 @@ export default {
       return 'day';
     },
 
-
-    displayValue() {
-      const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
-      if (Array.isArray(this.userInput)) {
-        return [
-          this.userInput[0] || (formattedValue && formattedValue[0]) || '',
-          this.userInput[1] || (formattedValue && formattedValue[1]) || ''
-        ];
-      } else if (this.userInput !== null) {
-        return this.userInput;
-      } else if (formattedValue) {
-        return this.type === 'dates'
-          ? formattedValue.join(', ')
-          : formattedValue;
-      } else {
-        return '';
-      }
-    },
 
     parsedValue() {
       const isParsed = isDateObject(this.value) || (Array.isArray(this.value) && this.value.every(isDateObject));
@@ -227,27 +182,7 @@ export default {
       return this.disabled || {}.disabled;
     },
 
-    firstInputId() {
-      const obj = {};
-      let id;
-      if (this.ranged) {
-        id = this.id && this.id[0];
-      } else {
-        id = this.id;
-      }
-      if (id) obj.id = id;
-      return obj;
-    },
-
-    secondInputId() {
-      const obj = {};
-      let id;
-      if (this.ranged) {
-        id = this.id && this.id[1];
-      }
-      if (id) obj.id = id;
-      return obj;
-    }
+  
   },
 
   created() {
@@ -255,45 +190,10 @@ export default {
   },
 
   methods: {
-
-    // {parse, formatTo} Value deals maps component value with internal Date
-    parseValue(value) {
-      const isParsed = isDateObject(value) || (Array.isArray(value) && value.every(isDateObject));
-      if (this.valueFormat && !isParsed) {
-        return parseAsFormatAndType(value, this.valueFormat, this.type, this.rangeSeparator) || value;
-      } else {
-        return value;
-      }
-    },
-
-    formatToValue(date) {
-      const isFormattable = isDateObject(date) || (Array.isArray(date) && date.every(isDateObject));
-      if (this.valueFormat && isFormattable) {
-        return formatAsFormatAndType(date, this.valueFormat, this.type, this.rangeSeparator);
-      } else {
-        return date;
-      }
-    },
-
-    // {parse, formatTo} String deals with user input
-    parseString(value) {
-      const type = Array.isArray(value) ? this.type : this.type.replace('range', '');
-      return parseAsFormatAndType(value, this.format, type);
-    },
-
-    formatToString(value) {
-      const type = Array.isArray(value) ? this.type : this.type.replace('range', '');
-      return formatAsFormatAndType(value, this.format, type);
-    },
-
- 
-
-
     hidePicker() {
       if (this.picker) {
         this.picker.resetView && this.picker.resetView();
         this.pickerVisible = this.picker.visible = false;
-        this.destroyPopper();
       }
     },
 
@@ -303,8 +203,6 @@ export default {
         this.mountPicker();
       }
       this.pickerVisible = this.picker.visible = true;
-
-      // this.updatePopper();
 
       this.picker.value = this.parsedValue;
       this.picker.resetView && this.picker.resetView();
@@ -318,12 +216,7 @@ export default {
       this.picker = new Vue(this.view).$mount();
       this.picker.defaultValue = this.defaultValue;
       this.picker.defaultTime = this.defaultTime;
-      this.picker.popperClass = this.popperClass;
-      this.popperElm = this.picker.$el;
-      this.picker.showTime = this.type === 'datetime' || this.type === 'datetimerange';
-      this.picker.selectionMode = this.selectionMode;
-      this.picker.unlinkPanels = this.unlinkPanels;
-      this.picker.arrowControl = this.arrowControl || this.timeArrowControl || false;
+
       this.picker.selectedDate = Array.isArray(this.value) && this.value || [];
       this.$watch('format', (format) => {
         this.picker.format = format;
@@ -334,6 +227,8 @@ export default {
 
       this.$el.appendChild(this.picker.$el);
       this.picker.resetView && this.picker.resetView();
+
+      this.picker.onPick = this.onPick;
 
       this.picker.$on('dodestroy', this.doDestroy);
       this.picker.$on('pick', (date = '', visible = this.pickerAlwaysShow) => {
