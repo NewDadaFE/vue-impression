@@ -51,6 +51,7 @@
   import DateTable from './DateTable';
 
   const DayMilliseconds = 24 * 60 * 60 * 1000;
+
   const advanceDate = (date, amount) => {
     return new Date(new Date(date).getTime() + amount);
   };
@@ -66,7 +67,6 @@
   };
 
   export default {
-
     computed: {
       dateLabel() {
         // return this.leftDate.getFullYear() + ' ' + this.t('el.datepicker.year') + ' ' + this.t(`el.datepicker.month${ this.leftDate.getMonth() + 1 }`);
@@ -112,11 +112,7 @@
         },
         visible: '',
         firstDayOfWeek: 1,
-        minTimePickerVisible: false,
-        maxTimePickerVisible: false,
         format: '',
-        arrowControl: false,
-        unlinkPanels: false,
 
         prePickedDisable: false,
         nextPickedDisableDays: 0
@@ -146,26 +142,6 @@
         if (val && this.$refs.maxTimePicker) {
           this.$refs.maxTimePicker.date = val;
           this.$refs.maxTimePicker.value = val;
-        }
-      },
-
-      minTimePickerVisible(val) {
-        if (val) {
-          this.$nextTick(() => {
-            this.$refs.minTimePicker.date = this.minDate;
-            this.$refs.minTimePicker.value = this.minDate;
-            this.$refs.minTimePicker.adjustSpinners();
-          });
-        }
-      },
-
-      maxTimePickerVisible(val) {
-        if (val) {
-          this.$nextTick(() => {
-            this.$refs.maxTimePicker.date = this.maxDate;
-            this.$refs.maxTimePicker.value = this.maxDate;
-            this.$refs.maxTimePicker.adjustSpinners();
-          });
         }
       },
 
@@ -238,7 +214,6 @@
         this.rangeState = val.rangeState;
       },
 
-
       handleDateChange(event, type) {
         const value = event.target.value;
         const parsedValue = parseDate(value, this.dateFormat);
@@ -256,7 +231,6 @@
           }
         }
       },
-
 
       handleRangePick(val, close = true) {
         const defaultTime = this.defaultTime || [];
@@ -278,7 +252,6 @@
         if (!close ) return;
         this.handleConfirm();
       },
-
 
       prevMonth() {
         this.leftDate = prevMonth(this.leftDate);

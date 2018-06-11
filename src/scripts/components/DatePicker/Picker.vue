@@ -1,11 +1,11 @@
 <template>
-<div
-  class="date-picker"
-  :class="{
-    [`date-picker-${size}`]: size,
-    [`date-picker-${theme}`]: theme,
-  }">
-</div>
+  <div
+    class="date-picker"
+    :class="{
+      [`date-picker-${size}`]: size,
+      [`date-picker-${theme}`]: theme,
+    }">
+  </div>
 </template>
 
 <script>
@@ -18,8 +18,6 @@ const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   daterange: 'yyyy年MM月dd日',
 };
-
-
 /*
  * Considers:
  *   1. Date object
@@ -162,7 +160,6 @@ export default {
       return 'day';
     },
 
-
     parsedValue() {
       const isParsed = isDateObject(this.value) || (Array.isArray(this.value) && this.value.every(isDateObject));
       if (this.valueFormat && !isParsed) {
@@ -171,8 +168,6 @@ export default {
         return this.value;
       }
     },
-
-
 
     pickerSize() {
       return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;

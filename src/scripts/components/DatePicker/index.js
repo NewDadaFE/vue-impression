@@ -35,7 +35,7 @@ const DatePicker = {
 
   created() {
     this.view = getView(this.type);
-  },
+  }
 };
 
 // DatePicker.install = function install(Vue) {
