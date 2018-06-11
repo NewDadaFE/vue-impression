@@ -13,8 +13,7 @@
     </tr>
     <tr
       class="date-table__row"
-      v-for="row in rows"
-      :class="{ current: isWeekActive(row[1]) }">
+      v-for="row in rows">
       <td
         v-for="cell in row"
         :class="getCellClasses(cell)">
@@ -194,16 +193,6 @@
             this.$set(row, this.showWeekNumber ? j + 1 : j, cell);
           }
 
-          if (this.selectionMode === 'week') {
-            const start = this.showWeekNumber ? 1 : 0;
-            const end = this.showWeekNumber ? 7 : 6;
-            const isWeekActive = this.isWeekActive(row[start + 1]);
-
-            row[start].inRange = isWeekActive;
-            row[start].start = isWeekActive;
-            row[end].inRange = isWeekActive;
-            row[end].end = isWeekActive;
-          }
         }
 
         rows.firstDayPosition = firstDayPosition;
