@@ -4,8 +4,9 @@
             type="daterange"
             size="base"
             theme="default"
-            :prePickedDisable=true
+            :dateDisable=true
             :nextPickedDisableDays=30
+            :prevPickedDisableDays=30
             :onPick="onPick"
         >
         </date-picker>

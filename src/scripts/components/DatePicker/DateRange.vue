@@ -113,7 +113,8 @@
         visible: '',
         firstDayOfWeek: 1,
         format: '',
-        prePickedDisable: false,
+        dateDisable: false,
+        prevPickedDisableDays: 0,
         nextPickedDisableDays: 0
       };
     },
@@ -190,10 +191,10 @@
           return false;
         }
 
-        if (this.minDate) {
-          let prePickedDisable = this.prePickedDisable ? time.getTime() < new Date(this.minDate).getTime() : false;
-          let nextPickedDisabled = time.getTime() > (new Date(this.minDate).getTime() + this.nextPickedDisableDays * DayMilliseconds)
-          return prePickedDisable || nextPickedDisabled;
+        if (this.dateDisable && this.minDate) {
+          let prePickedDisabled = time.getTime() < (new Date(this.minDate).getTime() - this.prevPickedDisableDays * DayMilliseconds);
+          let nextPickedDisabled = time.getTime() > (new Date(this.minDate).getTime() + this.nextPickedDisableDays * DayMilliseconds);
+          return prePickedDisabled || nextPickedDisabled;
         }
 
         return false;

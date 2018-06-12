@@ -88,9 +88,13 @@ export default {
         },
     },
 
-    prePickedDisable: {
+    dateDisable: {
       type: Boolean,
       default: false
+    },
+    prevPickedDisableDays: {
+      type: Number,
+      default: 0
     },
     nextPickedDisableDays: {
       type: Number,
@@ -216,7 +220,8 @@ export default {
         this.picker.format = format;
       });
 
-      this.picker.prePickedDisable = this.prePickedDisable;
+      this.picker.dateDisable = this.dateDisable;
+      this.picker.prevPickedDisableDays = this.prevPickedDisableDays;
       this.picker.nextPickedDisableDays = this.nextPickedDisableDays;
 
       this.$el.appendChild(this.picker.$el);
