@@ -112,12 +112,7 @@
         },
         visible: '',
         firstDayOfWeek: 1,
-        minTimePickerVisible: false,
-        maxTimePickerVisible: false,
         format: '',
-        arrowControl: false,
-        unlinkPanels: false,
-
         prePickedDisable: false,
         nextPickedDisableDays: 0
       };
@@ -146,26 +141,6 @@
         if (val && this.$refs.maxTimePicker) {
           this.$refs.maxTimePicker.date = val;
           this.$refs.maxTimePicker.value = val;
-        }
-      },
-
-      minTimePickerVisible(val) {
-        if (val) {
-          this.$nextTick(() => {
-            this.$refs.minTimePicker.date = this.minDate;
-            this.$refs.minTimePicker.value = this.minDate;
-            this.$refs.minTimePicker.adjustSpinners();
-          });
-        }
-      },
-
-      maxTimePickerVisible(val) {
-        if (val) {
-          this.$nextTick(() => {
-            this.$refs.maxTimePicker.date = this.maxDate;
-            this.$refs.maxTimePicker.value = this.maxDate;
-            this.$refs.maxTimePicker.adjustSpinners();
-          });
         }
       },
 

@@ -4,7 +4,7 @@
     cellpadding="0"
     class="date-table"
     @click="handleClick"
-    @mousemove="handleMouseMove"">
+    @mousemove="handleMouseMove">
     <tbody>
     <tr>
       <th v-if="showWeekNumber"></th>
