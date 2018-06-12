@@ -1,460 +1,496 @@
 <template>
-  <table
-    cellspacing="0"
-    cellpadding="0"
-    class="date-table"
-    @click="handleClick"
-    @mousemove="handleMouseMove">
-    <tbody>
-    <tr>
-      <th v-if="showWeekNumber"></th>
-      <th v-for="week in WEEKS">{{week}}</th>
-    </tr>
-    <tr
-      class="date-table__row"
-      v-for="row in rows">
-      <td
-        v-for="cell in row"
-        :class="getCellClasses(cell)">
-        <div>
-          <span>
-            {{ cell.text }}
-          </span>
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <table
+        cellspacing="0"
+        cellpadding="0"
+        class="date-table"
+        @click="handleClick"
+        @mousemove="handleMouseMove">
+        <tbody>
+            <tr>
+                <th v-if="showWeekNumber"></th>
+                <th v-for="week in WEEKS">{{week}}</th>
+            </tr>
+            <tr
+                class="date-table__row"
+                v-for="row in rows">
+                <td
+                    v-for="cell in row"
+                    :class="getCellClasses(cell)">
+                    <div>
+                        <span>
+                            {{ cell.text }}
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 
 <script>
-  import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, nextDate, isDate } from '../../utils/date';
-  import { hasClass } from '../../utils/dom';
+    import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, nextDate, isDate } from '../../utils/date';
+    import { hasClass } from '../../utils/dom';
 
-  const WEEKS = ['日', '一', '二', '三', '四', '五', '六'];
-  const clearHours = function(time) {
-    const cloneDate = new Date(time);
-    cloneDate.setHours(0, 0, 0, 0);
-    return cloneDate.getTime();
-  };
+    const WEEKS = ['日', '一', '二', '三', '四', '五', '六'];
+    const clearHours = function(time) {
+        const cloneDate = new Date(time);
 
-  export default {
-    name: 'date-table',
-    mixins: [],
+        cloneDate.setHours(0, 0, 0, 0);
 
-    props: {
-      // 一周的第一天
-      firstDayOfWeek: {
-        default: 7,
-        type: Number,
-        validator: val => val >= 1 && val <= 7
-      },
+        return cloneDate.getTime();
+    };
 
-      value: {},
+    export default {
+        name: 'date-table',
 
-      defaultValue: {
-        validator(val) {
-          // either: null, valid Date object, Array of valid Date objects
-          return val === null || isDate(val) || (Array.isArray(val) && val.every(isDate));
-        }
-      },
+        props: {
+            // 一周的第一天
+            firstDayOfWeek: {
+                default: 7,
+                type: Number,
+                validator: val => val >= 1 && val <= 7,
+            },
 
-      date: {},
+            value: {},
 
-      selectionMode: {
-        type: String,
-        default: 'day'
-      },
-      // 是否展示周
-      showWeekNumber: {
-        type: Boolean,
-        default: false
-      },
+            defaultValue: {
+                validator(val) {
+                    // either: null, valid Date object, Array of valid Date objects
 
-      // 禁选日期
-      disabledDate: {},
+                    return val === null || isDate(val) || (Array.isArray(val) && val.every(isDate));
+                },
+            },
 
-      selectedDate: {
-        type: Array
-      },
+            date: {},
 
-      minDate: {},
+            selectionMode: {
+                type: String,
+                default: 'day',
+            },
+            // 是否展示周
+            showWeekNumber: {
+                type: Boolean,
+                default: false,
+            },
 
-      maxDate: {},
+            // 禁选日期
+            disabledDate: {},
 
-      // 日期区间
-      rangeState: {
-        default() {
-          return {
-            endDate: null,
-            selecting: false,
-            row: null,
-            column: null
-          };
-        }
-      }
-    },
+            selectedDate: {
+                type: Array,
+            },
 
-    computed: {
-      offsetDay() {
-        const week = this.firstDayOfWeek;
-        // 周日为界限，左右偏移的天数，3217654 例如周一就是 -1，目的是调整前两行日期的位置
-        return week > 3 ? 7 - week : -week;
-      },
+            minDate: {},
 
-      WEEKS() {
-        const week = this.firstDayOfWeek;
-        return WEEKS.concat(WEEKS).slice(week, week + 7);
-      },
+            maxDate: {},
 
-      year() {
-        return this.date.getFullYear();
-      },
+            // 日期区间
+            rangeState: {
+                default() {
+                    return {
+                        endDate: null,
+                        selecting: false,
+                        row: null,
+                        column: null,
+                    };
+                },
+            },
+        },
 
-      month() {
-        return this.date.getMonth();
-      },
+        computed: {
+            offsetDay() {
+                const week = this.firstDayOfWeek;
 
-      startDate() {
-        return getStartDateOfMonth(this.year, this.month);
-      },
+                // 周日为界限，左右偏移的天数，3217654 例如周一就是 -1，目的是调整前两行日期的位置
 
-      rows() {
-        // TODO: refactory rows / getCellClasses
-        const date = new Date(this.year, this.month, 1);
-        let day = getFirstDayOfMonth(date); // day of first day
-        const dateCountOfMonth = getDayCountOfMonth(date.getFullYear(), date.getMonth());
-        const dateCountOfLastMonth = getDayCountOfMonth(date.getFullYear(), (date.getMonth() === 0 ? 11 : date.getMonth() - 1));
+                return week > 3 ? 7 - week : -week;
+            },
 
-        day = (day === 0 ? 7 : day);
+            WEEKS() {
+                const week = this.firstDayOfWeek;
 
-        const offset = this.offsetDay;
-        const rows = this.tableRows;
-        let count = 1;
-        let firstDayPosition;
+                return WEEKS.concat(WEEKS).slice(week, week + 7);
+            },
 
-        const startDate = this.startDate;
-        const disabledDate = this.disabledDate;
-        const selectedDate = this.selectedDate || this.value;
-        const now = clearHours(new Date());
+            year() {
+                return this.date.getFullYear();
+            },
 
-        for (let i = 0; i < 6; i++) {
-          const row = rows[i];
+            month() {
+                return this.date.getMonth();
+            },
 
-          if (this.showWeekNumber) {
-            if (!row[0]) {
-              row[0] = { type: 'week', text: getWeekNumber(nextDate(startDate, i * 7 + 1)) };
-            }
-          }
+            startDate() {
+                return getStartDateOfMonth(this.year, this.month);
+            },
 
-          for (let j = 0; j < 7; j++) {
-            let cell = row[this.showWeekNumber ? j + 1 : j];
-            if (!cell) {
-              cell = { row: i, column: j, type: 'normal', inRange: false, start: false, end: false };
-            }
+            rows() {
+                // TODO: refactory rows / getCellClasses
+                const date = new Date(this.year, this.month, 1);
+                let day = getFirstDayOfMonth(date); // day of first day
+                const dateCountOfMonth = getDayCountOfMonth(date.getFullYear(), date.getMonth());
+                const dateCountOfLastMonth = getDayCountOfMonth(
+                                                date.getFullYear(),
+                                                (date.getMonth() === 0 ? 11 : date.getMonth() - 1));
 
-            cell.type = 'normal';
+                day = (day === 0 ? 7 : day);
 
-            const index = i * 7 + j;
-            const time = nextDate(startDate, index - offset).getTime();
-            cell.inRange = time >= clearHours(this.minDate) && time <= clearHours(this.maxDate);
-            cell.start = this.minDate && time === clearHours(this.minDate);
-            cell.end = this.maxDate && time === clearHours(this.maxDate);
-            const isToday = time === now;
+                const offset = this.offsetDay;
+                const rows = this.tableRows;
+                let count = 1;
+                let firstDayPosition;
 
-            if (isToday) {
-              cell.type = 'today';
-            }
+                const startDate = this.startDate;
+                const disabledDate = this.disabledDate;
+                const selectedDate = this.selectedDate || this.value;
+                const now = clearHours(new Date());
 
-            if (i >= 0 && i <= 1) {
-              if (j + i * 7 >= (day + offset)) {
-                cell.text = count++;
-                if (count === 2) {
-                  firstDayPosition = i * 7 + j;
+                for (let i = 0; i < 6; i++) {
+                    const row = rows[i];
+
+                    if(this.showWeekNumber) {
+                        if(!row[0]) {
+                            row[0] = { type: 'week', text: getWeekNumber(nextDate(startDate, i * 7 + 1)) };
+                        }
+                    }
+
+                    for (let j = 0; j < 7; j++) {
+                        let cell = row[this.showWeekNumber ? j + 1 : j];
+
+                        if(!cell) {
+                            cell = { row: i, column: j, type: 'normal', inRange: false, start: false, end: false };
+                        }
+
+                        cell.type = 'normal';
+
+                        const index = i * 7 + j;
+                        const time = nextDate(startDate, index - offset).getTime();
+
+                        cell.inRange = time >= clearHours(this.minDate) &&
+                                        time <= clearHours(this.maxDate);
+                        cell.start = this.minDate && time === clearHours(this.minDate);
+                        cell.end = this.maxDate && time === clearHours(this.maxDate);
+                        const isToday = time === now;
+
+                        if(isToday) {
+                            cell.type = 'today';
+                        }
+
+                        if(i >= 0 && i <= 1) {
+                            if(j + i * 7 >= (day + offset)) {
+                                cell.text = count++;
+                                if(count === 2) {
+                                    firstDayPosition = i * 7 + j;
+                                }
+                            } else {
+                                cell.text = dateCountOfLastMonth - (day + offset - j % 7) + 1 + i * 7;
+                                cell.type = 'prev-month';
+                            }
+                        } else if(count <= dateCountOfMonth) {
+                            cell.text = count++;
+                            if(count === 2) {
+                                firstDayPosition = i * 7 + j;
+                            }
+                        } else {
+                            cell.text = count++ - dateCountOfMonth;
+                            cell.type = 'next-month';
+                        }
+
+                        let newDate = new Date(time);
+
+                        cell.disabled = typeof disabledDate === 'function' && disabledDate(newDate);
+                        /*eslint-disable*/
+                        cell.selected = Array.isArray(selectedDate) &&
+                          selectedDate.filter(date => date.toString() === newDate.toString())[0];
+                        /*eslint-disable*/
+
+                        this.$set(row, this.showWeekNumber ? j + 1 : j, cell);
+                    }
                 }
-              } else {
-                cell.text = dateCountOfLastMonth - (day + offset - j % 7) + 1 + i * 7;
-                cell.type = 'prev-month';
-              }
-            } else {
-              if (count <= dateCountOfMonth) {
-                cell.text = count++;
-                if (count === 2) {
-                  firstDayPosition = i * 7 + j;
+
+                rows.firstDayPosition = firstDayPosition;
+
+                return rows;
+            },
+        },
+
+        watch: {
+            'rangeState.endDate'(newVal) {
+                this.markRange(newVal);
+            },
+
+            minDate(newVal, oldVal) {
+                if(newVal && !oldVal) {
+                    this.rangeState.selecting = true;
+                    this.markRange(newVal);
+                } else if(!newVal) {
+                    this.rangeState.selecting = false;
+                    this.markRange(newVal);
+                } else {
+                    this.markRange();
                 }
-              } else {
-                cell.text = count++ - dateCountOfMonth;
-                cell.type = 'next-month';
-              }
-            }
+            },
 
-            let newDate = new Date(time);
-            cell.disabled = typeof disabledDate === 'function' && disabledDate(newDate);
-            cell.selected = Array.isArray(selectedDate) &&
-              selectedDate.filter(date => date.toString() === newDate.toString())[0];
+            maxDate(newVal, oldVal) {
+                if(newVal && !oldVal) {
+                    this.rangeState.selecting = false;
+                    this.markRange(newVal);
+                    this.$emit('pick', {
+                        minDate: this.minDate,
+                        maxDate: this.maxDate,
+                    });
+                }
+            },
+        },
 
-            this.$set(row, this.showWeekNumber ? j + 1 : j, cell);
-          }
+        data() {
+            return {
+                tableRows: [[], [], [], [], [], []],
+            };
+        },
 
-        }
+        methods: {
+            cellMatchesDate(cell, date) {
+                const value = new Date(date);
 
-        rows.firstDayPosition = firstDayPosition;
+                return this.year === value.getFullYear() &&
+                    this.month === value.getMonth() &&
+                    Number(cell.text) === value.getDate();
+            },
 
-        return rows;
-      }
-    },
+            getCellClasses(cell) {
+                const selectionMode = this.selectionMode;
+                let defaultValue = null;
 
-    watch: {
-      'rangeState.endDate'(newVal) {
-        this.markRange(newVal);
-      },
+                if(this.defaultValue) {
+                    if(Array.isArray(this.defaultValue)) {
+                        defaultValue = this.defaultValue;
+                    } else {
+                        defaultValue = [this.defaultValue];
+                    }
+                } else {
+                    defaultValue = [];
+                }
 
-      minDate(newVal, oldVal) {
-        if (newVal && !oldVal) {
-          this.rangeState.selecting = true;
-          this.markRange(newVal);
-        } else if (!newVal) {
-          this.rangeState.selecting = false;
-          this.markRange(newVal);
-        } else {
-          this.markRange();
-        }
-      },
+                let classes = [];
 
-      maxDate(newVal, oldVal) {
-        if (newVal && !oldVal) {
-          this.rangeState.selecting = false;
-          this.markRange(newVal);
-          this.$emit('pick', {
-            minDate: this.minDate,
-            maxDate: this.maxDate
-          });
-        }
-      }
-    },
+                if((cell.type === 'normal' || cell.type === 'today') && !cell.disabled) {
+                    classes.push('available');
+                    if(cell.type === 'today') {
+                        classes.push('today');
+                    }
+                } else {
+                    classes.push(cell.type);
+                }
 
-    data() {
-      return {
-        tableRows: [ [], [], [], [], [], [] ]
-      };
-    },
+                if(cell.type === 'normal' && defaultValue.some(date => this.cellMatchesDate(cell, date))) {
+                    classes.push('default');
+                }
 
-    methods: {
-      cellMatchesDate(cell, date) {
-        const value = new Date(date);
-        return this.year === value.getFullYear() &&
-          this.month === value.getMonth() &&
-          Number(cell.text) === value.getDate();
-      },
+                if(selectionMode === 'day' && (cell.type === 'normal' || cell.type === 'today') && this.cellMatchesDate(cell, this.value)) {
+                    classes.push('current');
+                }
 
-      getCellClasses(cell) {
-        const selectionMode = this.selectionMode;
-        const defaultValue = this.defaultValue ? Array.isArray(this.defaultValue) ? this.defaultValue : [this.defaultValue] : [];
+                if(cell.disabled) {
+                    classes.push('disabled');
+                } else if(cell.inRange && (cell.type === 'normal' || cell.type === 'today')) {
+                    classes.push('in-range');
 
-        let classes = [];
-        if ((cell.type === 'normal' || cell.type === 'today') && !cell.disabled) {
-          classes.push('available');
-          if (cell.type === 'today') {
-            classes.push('today');
-          }
-        } else {
-          classes.push(cell.type);
-        }
+                    if(cell.start) {
+                        classes.push('start-date');
+                    }
 
-        if (cell.type === 'normal' && defaultValue.some(date => this.cellMatchesDate(cell, date))) {
-          classes.push('default');
-        }
+                    if(cell.end) {
+                        classes.push('end-date');
+                    }
+                }
 
-        if (selectionMode === 'day' && (cell.type === 'normal' || cell.type === 'today') && this.cellMatchesDate(cell, this.value)) {
-          classes.push('current');
-        }
+                if(cell.selected) {
+                    classes.push('selected');
+                }
 
+                return classes.join(' ');
+            },
 
+            getDateOfCell(row, column) {
+                const offsetFromStart = row * 7
+                                        + (column - (this.showWeekNumber ? 1 : 0))
+                                        - this.offsetDay;
 
-        if (cell.disabled) {
-          classes.push('disabled');
-        } else if (cell.inRange && (cell.type === 'normal' || cell.type === 'today')) {
-          classes.push('in-range');
+                return nextDate(this.startDate, offsetFromStart);
+            },
 
-          if (cell.start) {
-            classes.push('start-date');
-          }
+            markRange(maxDate) {
+                const startDate = this.startDate;
 
-          if (cell.end) {
-            classes.push('end-date');
-          }
-        }
+                if(!maxDate) {
+                    maxDate = this.maxDate;
+                }
 
-        if (cell.selected) {
-          classes.push('selected');
-        }
+                const rows = this.rows;
+                const minDate = this.minDate;
 
-        return classes.join(' ');
-      },
+                for (let i = 0, k = rows.length; i < k; i++) {
+                    const row = rows[i];
 
-      getDateOfCell(row, column) {
-        const offsetFromStart = row * 7 + (column - (this.showWeekNumber ? 1 : 0)) - this.offsetDay;
-        return nextDate(this.startDate, offsetFromStart);
-      },
+                    for (let j = 0, l = row.length; j < l; j++) {
+                        /*eslint-disable*/
+                        if(this.showWeekNumber && j === 0) continue;
+                        /*eslint-disable*/
 
-      markRange(maxDate) {
-        const startDate = this.startDate;
-        if (!maxDate) {
-          maxDate = this.maxDate;
-        }
+                        const cell = row[j];
+                        const index = i * 7 + j + (this.showWeekNumber ? -1 : 0);
+                        const time = nextDate(startDate, index - this.offsetDay).getTime();
 
-        const rows = this.rows;
-        const minDate = this.minDate;
-        for (let i = 0, k = rows.length; i < k; i++) {
-          const row = rows[i];
-          for (let j = 0, l = row.length; j < l; j++) {
-            if (this.showWeekNumber && j === 0) continue;
+                        if(maxDate && maxDate < minDate) {
+                            cell.inRange = minDate &&
+                                            time >= clearHours(maxDate) &&
+                                            time <= clearHours(minDate);
+                            cell.start = maxDate && time === clearHours(maxDate.getTime());
+                            cell.end = minDate && time === clearHours(minDate.getTime());
+                        } else {
+                            cell.inRange = minDate &&
+                                            time >= clearHours(minDate) &&
+                                            time <= clearHours(maxDate);
+                            cell.start = minDate && time === clearHours(minDate.getTime());
+                            cell.end = maxDate && time === clearHours(maxDate.getTime());
+                        }
+                    }
+                }
+            },
 
-            const cell = row[j];
-            const index = i * 7 + j + (this.showWeekNumber ? -1 : 0);
-            const time = nextDate(startDate, index - this.offsetDay).getTime();
+            handleMouseMove(event) {
+                if(!this.rangeState.selecting) {
+                    return;
+                }
 
-            if (maxDate && maxDate < minDate) {
-              cell.inRange = minDate && time >= clearHours(maxDate) && time <= clearHours(minDate);
-              cell.start = maxDate && time === clearHours(maxDate.getTime());
-              cell.end = minDate && time === clearHours(minDate.getTime());
-            } else {
-              cell.inRange = minDate && time >= clearHours(minDate) && time <= clearHours(maxDate);
-              cell.start = minDate && time === clearHours(minDate.getTime());
-              cell.end = maxDate && time === clearHours(maxDate.getTime());
-            }
-          }
-        }
-      },
+                this.$emit('changerange', {
+                    minDate: this.minDate,
+                    maxDate: this.maxDate,
+                    rangeState: this.rangeState,
+                });
 
-      handleMouseMove(event) {
-        if (!this.rangeState.selecting) return;
+                let target = event.target;
 
-        this.$emit('changerange', {
-          minDate: this.minDate,
-          maxDate: this.maxDate,
-          rangeState: this.rangeState
-        });
+                if(target.tagName === 'SPAN') {
+                    target = target.parentNode.parentNode;
+                }
+                if(target.tagName === 'DIV') {
+                    target = target.parentNode;
+                }
+                if(target.tagName !== 'TD') return;
+                else if(hasClass(target, 'disabled')) return;
 
-        let target = event.target;
-        if (target.tagName === 'SPAN') {
-          target = target.parentNode.parentNode;
-        }
-        if (target.tagName === 'DIV') {
-          target = target.parentNode;
-        }
-        if (target.tagName !== 'TD') return;
-        else if (hasClass(target, 'disabled')) return;
+                const column = target.cellIndex;
+                const row = target.parentNode.rowIndex - 1;
+                const { row: oldRow, column: oldColumn } = this.rangeState;
 
-        const column = target.cellIndex;
-        const row = target.parentNode.rowIndex - 1;
-        const { row: oldRow, column: oldColumn } = this.rangeState;
+                if(oldRow !== row || oldColumn !== column) {
+                    this.rangeState.row = row;
+                    this.rangeState.column = column;
 
-        if (oldRow !== row || oldColumn !== column) {
-          this.rangeState.row = row;
-          this.rangeState.column = column;
+                    this.rangeState.endDate = this.getDateOfCell(row, column);
+                }
+            },
 
-          this.rangeState.endDate = this.getDateOfCell(row, column);
-        }
-      },
+            handleClick(event) {
+                let target = event.target;
 
-      handleClick(event) {
-        let target = event.target;
-        if (target.tagName === 'SPAN') {
-          target = target.parentNode.parentNode;
-        }
-        if (target.tagName === 'DIV') {
-          target = target.parentNode;
-        }
+                if(target.tagName === 'SPAN') {
+                    target = target.parentNode.parentNode;
+                }
+                if(target.tagName === 'DIV') {
+                    target = target.parentNode;
+                }
 
-        if (target.tagName !== 'TD') return;
-        if (hasClass(target, 'disabled')) {
-          if (this.minDate && this.maxDate) {
+                if(target.tagName !== 'TD') return;
+                if(hasClass(target, 'disabled')) {
+                    // if(this.minDate && this.maxDate) {
 
-          }
-          return;
-        }
+                    // }
 
-        const selectionMode = this.selectionMode;
+                    return;
+                }
 
-        let year = Number(this.year);
-        let month = Number(this.month);
+                const selectionMode = this.selectionMode;
 
-        const cellIndex = target.cellIndex;
-        const rowIndex = target.parentNode.rowIndex;
+                let year = Number(this.year);
+                let month = Number(this.month);
 
-        const cell = this.rows[rowIndex - 1][cellIndex];
-        const text = cell.text;
-        const className = target.className;
+                const cellIndex = target.cellIndex;
+                const rowIndex = target.parentNode.rowIndex;
+                const cell = this.rows[rowIndex - 1][cellIndex];
+                const text = cell.text;
+                const className = target.className;
 
-        const newDate = new Date(year, month, 1);
+                const newDate = new Date(year, month, 1);
 
-        if (className.indexOf('prev') !== -1) {
-          if (month === 0) {
-            year = year - 1;
-            month = 11;
-          } else {
-            month = month - 1;
-          }
-          newDate.setFullYear(year);
-          newDate.setMonth(month);
-        } else if (className.indexOf('next') !== -1) {
-          if (month === 11) {
-            year = year + 1;
-            month = 0;
-          } else {
-            month = month + 1;
-          }
-          newDate.setFullYear(year);
-          newDate.setMonth(month);
-        }
+                if(className.indexOf('prev') !== -1) {
+                    if(month === 0) {
+                        year -= 1;
+                        month = 11;
+                    } else {
+                        month -= 1;
+                    }
+                    newDate.setFullYear(year);
+                    newDate.setMonth(month);
+                } else if(className.indexOf('next') !== -1) {
+                    if(month === 11) {
+                        year += 1;
+                        month = 0;
+                    } else {
+                        month += 1;
+                    }
+                    newDate.setFullYear(year);
+                    newDate.setMonth(month);
+                }
 
-        newDate.setDate(parseInt(text, 10));
+                newDate.setDate(parseInt(text, 10));
 
-        if (this.selectionMode === 'range') {
-          // 最小，最大日期独有
-          if (this.minDate && this.maxDate) {
-            const minDate = new Date(newDate.getTime());
-            const maxDate = null;
+                if(this.selectionMode === 'range') {
+                    if(this.minDate && this.maxDate) {
+                        // 最小，最大日期独有
 
-            this.$emit('pick', { minDate, maxDate }, false);
-            this.rangeState.selecting = true;
-            this.markRange(this.minDate);
-            this.$nextTick(() => {
-              this.handleMouseMove(event);
-            });
-          }
-          // 有最小日期 无最大日期
-          else if (this.minDate && !this.maxDate) {
-            if (newDate >= this.minDate) {
-              const maxDate = new Date(newDate.getTime());
-              this.rangeState.selecting = false;
+                        const minDate = new Date(newDate.getTime());
+                        const maxDate = null;
 
-              this.$emit('pick', {
-                minDate: this.minDate,
-                maxDate
-              });
+                        this.$emit('pick', { minDate, maxDate }, false);
+                        this.rangeState.selecting = true;
+                        this.markRange(this.minDate);
+                        this.$nextTick(() => {
+                            this.handleMouseMove(event);
+                        });
+                    } else if(this.minDate && !this.maxDate) {
+                        // 有最小日期 无最大日期
 
-            } else {
-              const minDate = new Date(newDate.getTime());
-              this.rangeState.selecting = false;
+                        if(newDate >= this.minDate) {
+                            const maxDate = new Date(newDate.getTime());
 
-              this.$emit('pick', { minDate, maxDate: this.minDate });
-            }
-          }
-          // 无最小日期
-          else if (!this.minDate) {
-            const minDate = new Date(newDate.getTime());
+                            this.rangeState.selecting = false;
+                            this.$emit('pick', {
+                                minDate: this.minDate,
+                                maxDate,
+                            });
+                        } else {
+                            const minDate = new Date(newDate.getTime());
 
-            this.$emit('pick', { minDate, maxDate: this.maxDate }, false);
-            this.rangeState.selecting = true;
-            this.markRange(this.minDate);
-          }
-        } else if (selectionMode === 'day') {
-          this.$emit('pick', newDate);
-        }
-      }
-    }
-  };
+                            this.rangeState.selecting = false;
+                            this.$emit('pick', { minDate, maxDate: this.minDate });
+                        }
+                    } else if(!this.minDate) {
+                        // 无最小日期
+
+                        const minDate = new Date(newDate.getTime());
+
+                        this.$emit('pick', { minDate, maxDate: this.maxDate }, false);
+                        this.rangeState.selecting = true;
+                        this.markRange(this.minDate);
+                    }
+                } else if(selectionMode === 'day') {
+                    this.$emit('pick', newDate);
+                }
+            },
+        },
+    };
 </script>
 

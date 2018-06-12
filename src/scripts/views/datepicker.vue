@@ -14,13 +14,13 @@
 </template>
 
 <script>
-export default {
-    methods: {
-        onPick: function (val) {
-            console.log(val);
-        }
-    }
-};
+    export default {
+        methods: {
+            onPick(val) {
+                console.log(val);
+            },
+        },
+    };
 </script>
 
 <style>
