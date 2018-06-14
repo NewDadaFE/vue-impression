@@ -118,7 +118,7 @@ function build (name, _path) {
 
 
 
-/**********    支持查找带层级的vue     ***********/
+/**********    支持查找带层级的vue 以及js文件打包     ***********/
 
 /**
 *@param pathStr 资源路径
@@ -155,7 +155,8 @@ function newBuild (pathStr, name, _path) {
 *@param file 带后缀文件/文件夹
 */
 function findVueFilePath (filePath, file) {
-    if (file.indexOf('.vue') < 0) {
+    // 文件夹
+    if ((file.indexOf('.vue') < 0) && (file.indexOf('.js') < 0)) {
         filePath = path.resolve(__dirname, filePath, file);
         fs.readdir(filePath, function (err, files) {
             if (files && files.length > 0) {
@@ -166,13 +167,23 @@ function findVueFilePath (filePath, file) {
 
             return;
         });
-    } else {
+    }
+    // vue文件
+    else if (file.indexOf('.vue') > 0){
         const name = file.replace('.vue', '');
 
         newBuild(filePath, name);
 
         return;
     }
+    // js文件
+    else if (file.indexOf('.js') > 0){
+        const name = file.replace('.js', '');
+
+        newBuild(filePath, name);
+
+        return;
+    } else return;
 }
 
 findVueFilePath('./src/scripts/components/', '');
