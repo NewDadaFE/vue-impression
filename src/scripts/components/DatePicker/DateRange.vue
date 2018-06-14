@@ -21,7 +21,6 @@
         <date-table
             selection-mode="range"
             :date="date"
-            :default-value="defaultValue"
             :min-date="minDate"
             :max-date="maxDate"
             :range-state="rangeState"
@@ -57,6 +56,7 @@
         data() {
             return {
                 popperClass: '',
+                defaultTime: null,
                 minDate: '',
                 maxDate: '',
                 date: new Date(),
@@ -103,6 +103,9 @@
             },
 
             handleRangePick(val, close = true) {
+                const minDate = val.minDate;
+                const maxDate = val.maxDate;
+
                 if(this.maxDate === maxDate && this.minDate === minDate) {
                     return;
                 }
