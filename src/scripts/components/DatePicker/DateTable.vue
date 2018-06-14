@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, nextDate, isDate } from '../../utils/date';
+    import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, nextDate } from '../../utils/date';
     import { hasClass } from '../../utils/dom';
 
     const WEEKS = ['日', '一', '二', '三', '四', '五', '六'];
@@ -52,14 +52,6 @@
             },
 
             value: {},
-
-            defaultValue: {
-                validator(val) {
-                    // either: null, valid Date object, Array of valid Date objects
-
-                    return val === null || isDate(val) || (Array.isArray(val) && val.every(isDate));
-                },
-            },
 
             date: {},
 
@@ -166,11 +158,28 @@
                         const index = i * 7 + j;
                         const time = nextDate(startDate, index - offset).getTime();
 
-                        cell.inRange = time >= clearHours(this.minDate) &&
+                        /**     仅选择一次时 选择状态不可保持     **/
+                        if(!this.maxDate) {
+                            // cell.inRange = time >= clearHours(this.minDate);
+                            cell.inRange = cell.end = cell.start = this.minDate &&
+                                                                    time === clearHours(this.minDate);
+                        } else {
+                            cell.inRange = time >= clearHours(this.minDate) &&
                                         time <= clearHours(this.maxDate);
-                        cell.start = this.minDate && time === clearHours(this.minDate);
-                        cell.end = this.maxDate && time === clearHours(this.maxDate);
+                            cell.start = this.minDate && time === clearHours(this.minDate);
+                            cell.end = this.maxDate && time === clearHours(this.maxDate);
+                        }
+
+                        // cell.inRange = time >= clearHours(this.minDate) &&
+                        //                 time <= clearHours(this.maxDate);
+                        // cell.start = this.minDate && time === clearHours(this.minDate);
+                        // cell.end = this.maxDate && time === clearHours(this.maxDate);
+                        /***********************************/
+
                         const isToday = time === now;
+
+                        console.log(this.minDate);
+                        console.log(this.maxDate);
 
                         if(isToday) {
                             cell.type = 'today';
@@ -250,28 +259,8 @@
         },
 
         methods: {
-            cellMatchesDate(cell, date) {
-                const value = new Date(date);
-
-                return this.year === value.getFullYear() &&
-                    this.month === value.getMonth() &&
-                    Number(cell.text) === value.getDate();
-            },
-
             getCellClasses(cell) {
                 const selectionMode = this.selectionMode;
-                let defaultValue = null;
-
-                if(this.defaultValue) {
-                    if(Array.isArray(this.defaultValue)) {
-                        defaultValue = this.defaultValue;
-                    } else {
-                        defaultValue = [this.defaultValue];
-                    }
-                } else {
-                    defaultValue = [];
-                }
-
                 let classes = [];
 
                 if((cell.type === 'normal' || cell.type === 'today') && !cell.disabled) {
@@ -283,17 +272,9 @@
                     classes.push(cell.type);
                 }
 
-                if(cell.type === 'normal' && defaultValue.some(date => this.cellMatchesDate(cell, date))) {
-                    classes.push('default');
-                }
-
-                if(selectionMode === 'day' && (cell.type === 'normal' || cell.type === 'today') && this.cellMatchesDate(cell, this.value)) {
-                    classes.push('current');
-                }
-
                 if(cell.disabled) {
                     classes.push('disabled');
-                } else if(cell.inRange && (cell.type === 'normal' || cell.type === 'today')) {
+                } else if(cell.inRange) {
                     classes.push('in-range');
 
                     if(cell.start) {
@@ -405,10 +386,6 @@
 
                 if(target.tagName !== 'TD') return;
                 if(hasClass(target, 'disabled')) {
-                    // if(this.minDate && this.maxDate) {
-
-                    // }
-
                     return;
                 }
 

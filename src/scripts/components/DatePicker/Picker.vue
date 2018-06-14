@@ -13,63 +13,6 @@
     // import { formatDate } from '../../utils/date';
     import Emitter from '../../mixins/emitter';
 
-    /*eslint-disable*/
-    /*
-     * Considers:
-     *   1. Date object
-     *   2. date string
-     *   3. array of 1 or 2
-     */
-    const valueEquals = function(a, b) {
-        // considers Date object and string
-        const dateEquals = function(a, b) {
-            const aIsDate = a instanceof Date;
-            const bIsDate = b instanceof Date;
-
-            if(aIsDate && bIsDate) {
-                return a.getTime() === b.getTime();
-            }
-            if(!aIsDate && !bIsDate) {
-                return a === b;
-            }
-
-            return false;
-        };
-
-        const aIsArray = a instanceof Array;
-        const bIsArray = b instanceof Array;
-
-        if(aIsArray && bIsArray) {
-            if(a.length !== b.length) {
-                return false;
-            }
-
-            return a.every((item, index) => dateEquals(item, b[index]));
-        }
-        if(!aIsArray && !bIsArray) {
-            return dateEquals(a, b);
-        }
-
-        return false;
-    };
-    /*eslint-disable*/
-
-    const isString = function(val) {
-        return typeof val === 'string' || val instanceof String;
-    };
-
-    /*eslint-disable*/
-    const validator = function(val) {
-        // either: String, Array of String, null / undefined
-        return (
-            val === null ||
-            val === undefined ||
-            isString(val) ||
-            (Array.isArray(val) && val.length === 2 && val.every(isString))
-        );
-    };
-    /*eslint-disable*/
-
     export default {
         mixins: [Emitter],
 
@@ -105,8 +48,6 @@
             },
 
             value: {},
-            defaultValue: {},
-            defaultTime: {},
             rangeSeparator: {
                 default: '-',
             },
@@ -142,12 +83,6 @@
                         this.picker.selectedDate = Array.isArray(val) ? val : [];
                     }
                 },
-            },
-            defaultValue(val) {
-                // NOTE: should eventually move to jsx style picker + view ?
-                if(this.picker) {
-                    this.picker.defaultValue = val;
-                }
             },
         },
 
@@ -204,8 +139,6 @@
 
             mountPicker() {
                 this.picker = new Vue(this.view).$mount();
-                this.picker.defaultValue = this.defaultValue;
-                this.picker.defaultTime = this.defaultTime;
 
                 this.picker.selectedDate = Array.isArray(this.value) && this.value || [];
                 this.$watch('format', format => {

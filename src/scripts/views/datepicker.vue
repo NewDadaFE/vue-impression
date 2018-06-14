@@ -16,9 +16,17 @@
 <script>
     export default {
         methods: {
-            onPick(val) {
+            // 获取格式化时间数据
+            onPick(val, formatDate) {
+                val.minDate = formatDate(val.minDate, 'yyyy/MM/DD');
+                val.maxDate = formatDate(val.maxDate, 'yyyy/MM/DD');
                 console.log(val);
             },
+
+            // 获取时间元数据
+            // onPick(val) {
+            //     console.log(val);
+            // },
         },
     };
 </script>
