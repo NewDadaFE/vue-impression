@@ -34,6 +34,8 @@
 
 <script type="text/babel">
     import DateTable from './DateTable';
+    import Btn from '../Button';
+    import Icon from '../Icon';
     import {
         formatDate,
         isDate,
@@ -149,6 +151,6 @@
             },
         },
 
-        components: { DateTable },
+        components: { DateTable, Btn, Icon },
     };
 </script>

@@ -177,13 +177,14 @@ function findVueFilePath (filePath, file) {
         return;
     }
     // js文件
-    else if (file.indexOf('.js') > 0){
-        const name = file.replace('.js', '');
+    // else if (file.indexOf('.js') > 0){
+    //     const name = file.replace('.js', '');
 
-        newBuild(filePath, name);
+    //     newBuild(filePath, name);
 
-        return;
-    } else return;
+    //     return;
+    // } 
+    else return;
 }
 
 findVueFilePath('./src/scripts/components/', '');
