@@ -178,9 +178,6 @@
 
                         const isToday = time === now;
 
-                        console.log(this.minDate);
-                        console.log(this.maxDate);
-
                         if(isToday) {
                             cell.type = 'today';
                         }

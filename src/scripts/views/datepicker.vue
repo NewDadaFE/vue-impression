@@ -18,8 +18,9 @@
         methods: {
             // 获取格式化时间数据
             onPick(val, formatDate) {
-                val.minDate = formatDate(val.minDate, 'yyyy/MM/DD');
-                val.maxDate = formatDate(val.maxDate, 'yyyy/MM/DD');
+                console.log(val);
+                val.minDate = formatDate(val.minDate, 'yyyy/MM/dd');
+                val.maxDate = formatDate(val.maxDate, 'yyyy/MM/dd');
                 console.log(val);
             },
 
