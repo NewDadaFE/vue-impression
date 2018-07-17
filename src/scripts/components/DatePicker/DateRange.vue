@@ -84,7 +84,6 @@
                     }
 
                     if(this.minDate) {
-                        debugger;
                         let prePickedDisabled = time.getTime()
                                                 <=
                                                 (new Date(this.minDate).getTime() - this.prevPickedDisableDays * DayMilliseconds);

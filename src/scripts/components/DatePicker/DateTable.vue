@@ -18,7 +18,7 @@
                     :class="getCellClasses(cell)">
                     <div>
                         <span>
-                            {{ cell.text }}
+                            {{ cell.type==='today' ? '今' : cell.text }}
                         </span>
                     </div>
                 </td>
