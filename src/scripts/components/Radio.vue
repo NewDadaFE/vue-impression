@@ -10,8 +10,6 @@
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
             <i :class="type==='square' ? 'fa fa-check' : ''"></i>
-            <!-- <i v-if="type ==== square" class="fa fa-check"></i>
-            <i v-else></i> -->
         </span>
         <span class="radio-label">
             <slot></slot>

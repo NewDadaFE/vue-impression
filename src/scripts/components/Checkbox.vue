@@ -18,6 +18,7 @@
 
 <script>
     import Sync from '../mixins/sync';
+    
     export default {
         name: 'checkbox',
         mixins: [Sync],
@@ -32,12 +33,14 @@
         },
         data() {
             let currentValue;
+
             if(this.isGroupChildComponent) {
                 currentValue = this.$parent.currentValue &&
                     this.$parent.currentValue.indexOf(this.value) > -1;
             } else {
                 currentValue = this.value;
             }
+
             return { currentValue };
         },
         watch: {
