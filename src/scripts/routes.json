@@ -56,7 +56,13 @@
                 "path": "/swipe",
                 "name": "Swipe",
                 "icon": "newspaper-o"
+            },
+            {
+                "path": "/datepicker",
+                "name": "DatePicker",
+                "icon": "newspaper-o"
             }
+            
         ]
     },
     {

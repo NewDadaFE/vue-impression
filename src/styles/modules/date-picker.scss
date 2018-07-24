@@ -1,0 +1,189 @@
+$ColorBlue: #1287FF;
+$ColorGrey: #BCC1CC;
+
+.date-picker {
+	width: 18.75em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    .header {
+        width: 100%;
+        .header-cnt {
+            width: 9em;
+            padding: .5em 0;
+            margin: 0 auto;
+        
+
+            .btn {
+                width: 2.5em;
+                height: 2.5em;
+                line-height: 2.5em;
+                border: none;
+                border-radius: 2.5em;
+                padding: 0;
+                font-size: .6em;
+
+                &.btn-left {
+                    float: left;
+                }
+                &.btn-right {
+                    float: right;
+                }
+            }
+
+        	// font-size: .8em; 改元素其他属性基于此综合计算
+        	div {
+                height: 1.875em;
+                line-height: 1.875em;
+        		font-size: .8em; // 32px
+    		    font-weight: 500;
+                text-align: center;
+        	}
+        }
+    }
+
+    table {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+
+    // font-size: .7em; 其子元素属性基于此综合计算
+    .date-table {
+        font-size: .7em; // 28px
+        user-select: none;
+
+        td {
+            height: 3.9em;
+            padding: .25em 0;
+            box-sizing: border-box;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+
+            &.prev-month,
+            &.next-month {
+            }
+
+            &.disabled div {
+                cursor: not-allowed;
+            }
+
+            div {
+                height: 2.2em;
+                box-sizing: border-box;
+            }
+
+            span {
+                width: 2.2em;
+                height: 2.2em;
+                line-height: 2.2em;
+                display: block;
+                margin: 0 auto;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 50%;
+            }
+
+            &.today {
+                position: relative;
+            }
+
+            &.in-range div,
+            &.in-range div:hover {
+            }
+
+            &.start-date div {
+                border-top-left-radius: 1em;
+                border-bottom-left-radius: 1em;
+            }
+            &.end-date div {
+                border-top-right-radius: 1em;
+                border-bottom-right-radius: 1em;
+            }
+
+            &.end-date div,
+            &.start-date div {
+            }
+
+            &.end-date span,
+            &.start-date span {
+            }
+        }
+
+        th {
+            padding-top: .3em;
+            font-weight: 400;
+            text-align: center;
+        }
+
+
+    }
+}
+
+
+// Size
+.date-picker-base {
+    font-size: $datepicker-font-size-base;
+}
+
+// Theme
+.date-picker-default {
+    .header {
+        background-color: #FFF;
+
+        .btn {
+            background-color: #f5f5f9;
+            color: #737A89;
+        }
+    }
+
+    table {
+        background-color: #f5f5f9;
+    }
+
+    .date-table {
+        td {
+            color: #22252A;
+
+            &.prev-month,
+            &.next-month {
+                color: $ColorGrey;
+            }
+
+            &.disabled div {
+                    background-color: #EEF1F6;
+                    color: #FFF;
+            }
+
+            &.today {
+                span {
+                    border: 1px solid #22252A;
+                }
+            }
+
+            &.in-range div,
+            &.in-range div:hover {
+                background-color: $ColorBlue;
+                color: #FFF;
+            }
+
+            &.end-date div,
+            &.start-date div {
+                color: #FFF;
+            }
+
+            &.end-date span,
+            &.start-date span {
+                background-color: $ColorBlue;
+            }
+        }
+
+        th {
+            color: $ColorGrey;
+        }
+    }
+}
