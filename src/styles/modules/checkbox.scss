@@ -68,7 +68,7 @@
     }
 }
 
-.radio-circle .radio-addon {
+.radio-default .radio-addon {
     border-radius: 50%;
     padding: $radio-addon-padding;
     line-height: 1;
@@ -89,6 +89,13 @@
 
 .radio-square .radio-addon {
     border-radius: $checkbox-square-border-radius;
+}
+.radio-circle .radio-addon {
+    border-radius: 50%;
+}
+
+.radio-square .radio-addon,
+.radio-circle .radio-addon {
     line-height: 1;
 
     i {

@@ -9,7 +9,7 @@
             :value="isGroupChildComponent ? value : val"
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
-            <i :class="type==='square' ? 'fa fa-check' : ''"></i>
+            <i :class="type==='default' ? '' : 'fa fa-check'"></i>
         </span>
         <span class="radio-label">
             <slot></slot>
@@ -26,9 +26,9 @@
             disabled: Boolean,
             type: {
                 type: String,
-                default: 'circle',
+                default: 'default',
                 validator(value) {
-                    return ['square', 'circle'].indexOf(value) > -1;
+                    return ['square', 'circle', 'default'].indexOf(value) > -1;
                 },
             },
         },
