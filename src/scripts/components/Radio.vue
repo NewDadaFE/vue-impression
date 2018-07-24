@@ -1,5 +1,7 @@
 <template>
-    <label class="radio">
+    <label
+        class="radio"
+        :class="'radio-' + type">
         <input
             type="radio"
             class="radio-input"
@@ -7,7 +9,9 @@
             :value="isGroupChildComponent ? value : val"
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
-            <i></i>
+            <i :class="type==='square' ? 'fa fa-check' : ''"></i>
+            <!-- <i v-if="type ==== square" class="fa fa-check"></i>
+            <i v-else></i> -->
         </span>
         <span class="radio-label">
             <slot></slot>
@@ -22,6 +26,13 @@
             value: {},
             val: {},
             disabled: Boolean,
+            type: {
+                type: String,
+                default: 'circle',
+                validator(value) {
+                    return ['square', 'circle'].indexOf(value) > -1;
+                },
+            },
         },
         computed: {
             model: {

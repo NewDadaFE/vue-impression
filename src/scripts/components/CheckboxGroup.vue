@@ -6,7 +6,6 @@
 
 <script>
     import Sync from '../mixins/sync';
-
     export default {
         name: 'checkbox-group',
         mixins: [Sync],
@@ -19,7 +18,6 @@
             optionCheckedHandle(option) {
                 this.currentValue = this.currentValue || [];
                 const index = this.currentValue.indexOf(option);
-
                 if(index === -1) {
                     this.currentValue.push(option);
                 } else {

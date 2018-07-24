@@ -24,6 +24,16 @@
                 </radio-group>
             </cell>
         </group>
+
+        <group>
+            <cell>
+                <radio-group v-model="group" @change="changeHandle">
+                    <radio type="square" value="red">red</radio>
+                    <radio type="square" value="green">green</radio>
+                    <radio type="square" value="yellow">yellow</radio>
+                </radio-group>
+            </cell>
+        </group>
     </div>
 </template>
 
