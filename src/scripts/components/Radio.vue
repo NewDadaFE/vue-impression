@@ -9,7 +9,8 @@
             :value="isGroupChildComponent ? value : val"
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
-            <i :class="type==='default' ? '' : 'fa fa-check'"></i>
+            <i v-if="type==='default'" />
+            <i v-else class="fa fa-check" />
         </span>
         <span class="radio-label">
             <slot></slot>
