@@ -9,9 +9,8 @@
             :value="isGroupChildComponent ? value : val"
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
-            <!-- <i v-if="type==='default'" />
-            <i v-else class="fa fa-check" /> -->
-            <i class="fa fa-check" />
+            <i v-if="type==='default'" />
+            <i v-else class="fa fa-check" />
         </span>
         <span class="radio-label">
             <slot></slot>
@@ -23,15 +22,18 @@
     export default {
         name: 'radio',
         props: {
-            value: {},
-            val: {},
-            disabled: Boolean,
             type: {
                 type: String,
                 default: 'default',
                 validator(value) {
                     return ['square', 'circle', 'default'].indexOf(value) > -1;
                 },
+            },
+            value: {},
+            val: {},
+            disabled: {
+                type: Boolean,
+                default: false,
             },
         },
         computed: {
