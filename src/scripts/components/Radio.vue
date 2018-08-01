@@ -1,7 +1,7 @@
 <template>
     <label
         class="radio"
-        :class="'radio-' + type">
+        :class="'radio-' + shape">
         <input
             type="radio"
             class="radio-input"
@@ -9,7 +9,7 @@
             :value="isGroupChildComponent ? value : val"
             :disabled="disabled || $parent.disabled">
         <span class="radio-addon">
-            <i v-if="type==='default'" />
+            <i v-if="shape==='default'" />
             <i v-else class="fa fa-check" />
         </span>
         <span class="radio-label">
@@ -22,7 +22,7 @@
     export default {
         name: 'radio',
         props: {
-            type: {
+            shape: {
                 type: String,
                 default: 'default',
                 validator(value) {
