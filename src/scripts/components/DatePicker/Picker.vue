@@ -33,24 +33,24 @@
                     return ['base', 'sm', 'lg'].indexOf(value) > -1;
                 },
             },
-
+            // 是否开启日期不可选
             dateDisable: {
                 type: Boolean,
                 default: false,
             },
+            // 相较于当前时间，往前不可选择的天数
             prevPickedDisableDays: {
                 type: Number,
                 default: 0,
             },
+            // 相较于当前时间，往后不可选择的天数
             nextPickedDisableDays: {
                 type: Number,
                 default: 0,
             },
 
             value: {},
-            rangeSeparator: {
-                default: '-',
-            },
+            // 是否总是展示日期组件
             pickerAlwaysShow: {
                 type: Boolean,
                 default: true,
@@ -61,9 +61,6 @@
         data() {
             return {
                 pickerVisible: false,
-                showClose: false,
-                userInput: null,
-                unwatchPickerOptions: null,
             };
         },
 
@@ -88,29 +85,29 @@
 
         computed: {
             selectionMode() {
-                if(this.type === 'week') {
-                    return 'week';
-                } else if(this.type === 'month') {
-                    return 'month';
-                } else if(this.type === 'year') {
-                    return 'year';
-                } else if(this.type === 'dates') {
-                    return 'dates';
-                }
-
-                return 'day';
+                // todo
+                // if(this.type === 'week') {
+                //     return 'week';
+                // } else if(this.type === 'month') {
+                //     return 'month';
+                // } else if(this.type === 'year') {
+                //     return 'year';
+                // } else if(this.type === 'dates') {
+                //     return 'dates';
+                // }
+                //
+                // return 'day';
+                return this.type;
             },
 
+            // todo
             pickerSize() {
-                return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
-            },
-
-            pickerDisabled() {
-                return this.disabled || {}.disabled;
+                return this.size;
             },
         },
 
         created() {
+            // 默认展示日期选择框
             this.pickerVisible = true;
         },
 
@@ -176,9 +173,6 @@
                 if(this.picker) {
                     this.picker.$destroy();
                     this.picker.$off();
-                    if(typeof this.unwatchPickerOptions === 'function') {
-                        this.unwatchPickerOptions();
-                    }
                     this.picker.$el.parentNode.removeChild(this.picker.$el);
                 }
             },
