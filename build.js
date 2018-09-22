@@ -183,7 +183,7 @@ function findVueFilePath (filePath, file) {
     //     newBuild(filePath, name);
 
     //     return;
-    // } 
+    // }
     else return;
 }
 
