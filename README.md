@@ -1,45 +1,61 @@
 # vue-impression
 
-A Vue.js 2.0 UI elements for mobile.[Demo](https://newdadafe.github.io/impression_vue/#/button)
+A Vue.js 2.0 UI elements for mobile.
+
+## Demo
+
+https://newdadafe.github.io/impression_vue/#/button
 
 ## Installation
 
-```shell
-    npm i vue-impression -S
+```sh
+yarn add vue-impression
 ```
 
 ## Usage
 
-scripts:
-
-```javascript
-import Vue from 'vue';
-import Impression from 'vue-impression';
-
-Vue.use(Impression);
-```
-
 styles:
 
 ```scss
-@import '../../node_modules/vue-impression/dist/styles/index';
-@import 'myProjectCss';
+@import '~vue-impression/dist/styles/index.scss';
+```
+
+scripts:
+
+```js
+import Vue from 'vue';
+import VueImpression from 'vue-impression';
+
+Vue.use(VueImpression);
+```
+
+tree-shaking:
+
+```sh
+yarn add babel-plugin-transform-imports -D
+```
+
+```json
+{
+    "plugins": [
+        [
+            "transform-imports",
+            {
+                "vue-impression": {
+                    "transform": "vue-impression/dist/scripts/components/${member}",
+                    "preventFullImport": true
+                }
+            }
+        ]
+    ]
+}
 ```
 
 ## Example
 
 ```html
-    <btn theme="primary" size="sm" @click="doSomething">按钮</btn>
+<btn theme="primary" size="sm" @click="doSomething">按钮</btn>
 ```
-
-## Download
-
--   https://newdadafe.github.io/resources/vue-impression.js
--   https://newdadafe.github.io/resources/vue-impression.css
-
-## Demo
-
-https://newdadafe.github.io/impression_vue/#/button
 
 ## Components
 
@@ -88,6 +104,6 @@ https://newdadafe.github.io/impression_vue/#/button
 -   [x] Timeline
 -   [x] Sticky
 
-## Quickly build web app
+## Quick start
 
-[yeoman generator](https://github.com/NewDadaFE/generator-vue-impression)
+[generator-vue-impression](https://github.com/NewDadaFE/generator/tree/master/packages/generator-vue-impression)
