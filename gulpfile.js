@@ -1,75 +1,61 @@
-var gulp = require('gulp'),
-    clean = require('gulp-clean'),
-    sass = require('gulp-sass'),
-    watch = require('gulp-watch'),
-    rename = require('gulp-rename'),
-    imagemin = require('gulp-imagemin'),
-    cssmin = require('gulp-minify-css'),
-    sequence = require('gulp-run-sequence'),
-    autoprefixer = require('gulp-autoprefixer');
+const fs = require('fs-extra');
+const gulp = require('gulp');
+const minimist = require('minimist');
+const plugin = require('gulp-load-plugins')();
+const replaceExt = require('replace-ext');
+const through = require('through2');
+const { createDefaultCompiler, assemble } = require('@vue/component-compiler');
 
+const options = minimist(process.argv.slice(2));
 
-// 清空
-gulp.task('clean', function(){
-    return gulp.src('build',  {read: false})
-    .pipe(clean({force: true}));
-});
+process.env.NODE_ENV = options.env || 'production';
 
-//复制图片
-gulp.task('copy:image', function(){
-    return gulp.src('src/images/*.*')
-    // .pipe(imagemin({verbose: true}))
-    .pipe(gulp.dest('build/images'));
-});
+const clean = () => Promise.all([fs.emptyDir('dist'), fs.emptyDir('build')]);
 
-//复制字体
-gulp.task('copy:font', function(){
-    return gulp.src('src/styles/font-awesome/fonts/**')
-    .pipe(gulp.dest('build/styles/fonts'));
-});
+const copyHTML = () => fs.copy('index.html', 'build/index.html');
 
-//复制HTML
-gulp.task('copy:html', function(){
-    return gulp.src('index.html')
-    .pipe(gulp.dest('build'));
-});
+const copyImage = () => fs.copy('src/images', 'build/images');
 
-//项目样式
-gulp.task('sass:index', function(){
-    return gulp.src('src/styles/index.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({browsers: ['last 30 version', '> 90%']}))
-    .pipe(cssmin())
-    .pipe(gulp.dest('build/styles'));
-});
+const style = () => fs.copy('src/styles', 'dist/styles');
 
-//组件样式
-gulp.task('sass:impression', function(){
-    return gulp.src('src/styles/impression/index.scss')
-    .pipe(rename('impression.scss'))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({browsers: ['last 30 version', '> 90%']}))
-    .pipe(cssmin())
-    .pipe(gulp.dest('build/styles'));
-});
+const sass = () => {
+    return gulp
+        .src('src/styles/index.scss')
+        .pipe(plugin.sass().on('error', plugin.sass.logError))
+        .pipe(plugin.autoprefixer({ browsers: ['last 30 version', '> 90%'] }))
+        .pipe(plugin.cssmin())
+        .pipe(gulp.dest('build/styles'));
+};
 
-//font awesome
-gulp.task('sass:font-awesome', function(){
-    return gulp.src('src/styles/font-awesome/font-awesome.scss')
-    .pipe(rename('font-awesome.scss'))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({browsers: ['last 30 version', '> 90%']}))
-    .pipe(cssmin())
-    .pipe(gulp.dest('build/styles'));
-});
+const script = () => {
+    const directory = ['components', 'directives', 'mixins', 'utils'];
+    const compiler = createDefaultCompiler();
 
-//监听
-gulp.task('watch', function(){
-    gulp.watch('src/styles/**/*.scss', ['sass:index', 'sass:font-awesome']);
-});
+    return gulp
+        .src(`src/scripts/?(${directory.join('|')})/**/*.{js,vue}`)
+        .pipe(
+            through.obj((file, encoding, callback) => {
+                if(file.extname === '.vue') {
+                    const result = compiler.compileToDescriptor(
+                        file.basename,
+                        file.contents.toString()
+                    );
+                    const output = assemble(compiler, file.basename, result);
 
+                    file.contents = new Buffer(output.code);
+                    file.path = replaceExt(file.path, '.js');
+                }
+                callback(null, file);
+            })
+        )
+        .pipe(plugin.babel())
+        .pipe(gulp.dest('dist/scripts'));
+};
 
-//本地启动
-gulp.task('build', function(cb) {
-    sequence('clean', ['copy:html', 'copy:image', 'copy:font'], ['sass:index', 'sass:impression', 'sass:font-awesome'], cb);
-});
+const watch = () => gulp.watch('src/styles/**/*.scss', sass);
+
+const build = gulp.series(clean, gulp.parallel(copyHTML, copyImage, sass));
+
+const release = gulp.series(clean, gulp.parallel(style, script));
+
+module.exports = { watch, build, release };
