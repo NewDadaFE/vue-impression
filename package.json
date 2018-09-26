@@ -8,10 +8,9 @@
     "start": "gulp build && webpack -p --config webpack.prebuilt.config.js",
     "poststart": "webpack-dev-server --config webpack.dev.config.js --colors --port 9008",
     "build:site": "gulp build && webpack -p --config webpack.prod.config.js",
-    "build:prebuilt": "gulp build && webpack -p --config webpack.prebuilt.config.js",
     "scsslint": "scss-lint src/styles/**/*.scss",
     "eslint": "eslint ./src/scripts/",
-    "build": "npm run eslint && gulp release && npm publish --verbose"
+    "build": "npm run eslint && gulp release"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
   "homepage": "https://github.com/NewDadaFE/vue-impression#readme",
   "devDependencies": {
     "@vue/component-compiler": "^3.6.0",
+    "ajv": "5.5.2",
     "autoprefixer": "^6.5.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.18.2",
@@ -52,7 +52,7 @@
     "eslint-import-resolver-webpack": "^0.7.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "^0.9.0",
     "fs-extra": "^7.0.0",
     "gulp": "^4.0.0",
@@ -63,11 +63,11 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "4.0.1",
     "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
     "minimist": "^1.2.0",
-    "node-sass": "^4.9.3",
+    "postcss": "6.0.23",
     "replace-ext": "^1.0.0",
     "through2": "^2.0.3",
     "url-loader": "^0.5.7",
@@ -76,18 +76,15 @@
     "vue-router": "^2.1.1",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.10",
-    "webpack": "^1.13.3",
+    "webpack": "2.7.0",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-merge": "^0.17.0"
   },
-  "peerDependencies": {
-    "vue": "^2.1.10",
-    "vue-template-compiler": "^2.1.10"
-  },
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "vue": "^2.1.10"
   }
 }

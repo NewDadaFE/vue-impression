@@ -22,30 +22,29 @@ module.exports = {
             },
         }),
         new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 51200 }),
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
     ],
     resolve: {
-        extensions: ['', '.js', '.vue'],
-        fallback: [path.join(__dirname, 'node_modules')],
+        extensions: ['.js', '.vue'],
+        modules: [path.join(__dirname, 'node_modules')],
         alias: {
             vue$: 'vue/dist/vue',
         },
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.vue$/,
-            loader: 'vue',
+            loader: 'vue-loader',
         }, {
             test: /\.js$/,
-            loaders: ['babel'],
+            loader: 'babel-loader',
             exclude: /node_modules/,
         }, {
             test: /\.(jpe?g|png|gif|svg)$/i,
-            loader: 'url',
+            loader: 'url-loader',
         }, {
             test: /\.json$/,
-            loader: 'json',
+            loader: 'json-loader',
         }],
     },
 };

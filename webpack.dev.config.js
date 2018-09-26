@@ -16,53 +16,41 @@ module.exports = {
         publicPath: '/scripts',
     },
     resolve: {
-        extensions: ['', '.js', '.vue'],
-        fallback: [path.join(__dirname, 'node_modules')],
+        extensions: ['.js', '.vue'],
+        modules: [path.join(__dirname, 'node_modules')],
         alias: {
             vue$: 'vue/dist/vue',
         },
     },
-    resolveLoader: {
-        fallback: [path.join(__dirname, 'node_modules')],
-    },
     module: {
-        preLoaders: [{
-            test: /\.vue$/,
-            loader: 'eslint',
+        rules: [
+        {
+            test: /\.js$/,
+            enforce: 'pre',
+            loader: 'eslint-loader',
             include: path.join(__dirname, 'src'),
             exclude: /node_modules/,
-        }, {
-            test: /\.js$/,
-            loader: 'eslint',
-            include: path.join(__dirname, 'src'),
-            exclude: /node_modules/,
-        }],
-        loaders: [{
+        },{
             test: /\.vue$/,
-            loader: 'vue',
+            loader: 'vue-loader',
         }, {
             test: /\.js$/,
-            loader: 'babel',
+            loader: 'babel-loader',
             include: path.join(__dirname, 'src'),
             exclude: /node_modules/,
         }, {
             test: /\.scss$/,
-            loaders: ['style', 'css', 'scss'],
+            use: ['style-loader', 'css-loader', 'scss-loader'],
         }, {
             test: /\.(jpe?g|png|gif|svg)$/i,
-            loader: 'url',
+            loader: 'url-loader',
         }, {
             test: /\.json$/,
-            loader: 'json',
+            loader: 'json-loader',
         }],
     },
-    eslint: {
-        formatter: require('eslint-friendly-formatter'),
-    },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
         new DashboardPlugin(),
     ],
     devServer: {
