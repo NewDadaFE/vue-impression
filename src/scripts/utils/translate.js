@@ -51,4 +51,3 @@ export const setTranslate = (el, x, y) => {
 
     el.style[transformProperty] += ` translate(${currentX ? `${currentX}px` : '0px'}, ${currentY ? `${currentY}px` : '0px'})`;
 };
-

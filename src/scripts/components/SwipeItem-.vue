@@ -7,10 +7,7 @@
 
 <script>
     import { getTranslate, setTranslate } from '../utils/translate';
-    import { getPosition, setPosition } from '../utils/position'
     import { getPrefixStyle } from '../utils/cssPrefix';
-
-    const separation = 10;
 
     export default {
         name: 'swipe-item',
@@ -46,8 +43,7 @@
                     translate = 0;
                 }
 
-                // setTranslate(this.$el, translate, 0);
-                setPosition(this.$el, translate, 0);
+                setTranslate(this.$el, translate, 0);
             },
             // 是否在可编译范围内
             isInTheLimitRange(translate, negative = false) {
@@ -81,14 +77,13 @@
                 if(!translateX) {
                     this.$el.style.transition = getPrefixStyle('transform', `${this.$parent.speed}ms ${this.$parent.easing}`);
 
-                    let translate = - (this.width + separation);
+                    let translate = -this.width;
 
                     if(this.index === this.$parent.activeIndex) {
                         translate = 0;
                     }
 
-                    // setTranslate(this.$el, translate, 0);
-                    setPosition(this.$el, translate, 0);
+                    setTranslate(this.$el, translate, 0);
                     console.log(translate)
 
                     return;
@@ -104,8 +99,7 @@
                 let finalTranslateX = initTranslate + translateX;
 
                 if(this.isInTheLimitRange(finalTranslateX)) {
-                    // setTranslate(this.$el, finalTranslateX, 0);
-                    setPosition(this.$el, translate, 0);
+                    setTranslate(this.$el, finalTranslateX, 0);
                 }
             },
             // 向右滑动
@@ -121,7 +115,6 @@
                     }
 
                     setTranslate(this.$el, translate, 0);
-
 
                     return;
                 }
