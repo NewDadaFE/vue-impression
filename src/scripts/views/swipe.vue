@@ -59,6 +59,18 @@
                 <div class="page-swipe-item bg-success">3</div>
             </swipe-item>
         </swipe>
+        <group-title>isIndicatorOutside=true</group-title>
+        <swipe :isIndicatorOutside="true">
+            <swipe-item>
+                <div class="page-swipe-item bg-primary">1</div>
+            </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-secondary">2</div>
+            </swipe-item>
+            <swipe-item>
+                <div class="page-swipe-item bg-success">3</div>
+            </swipe-item>
+        </swipe>
     </div>
 </template>
 

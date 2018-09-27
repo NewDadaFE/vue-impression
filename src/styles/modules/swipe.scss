@@ -4,10 +4,16 @@
 }
 
 .swipe-indicators {
-    position: absolute;
-    left: 50%;
-    bottom: $swipe-indicators-bottom;
-    transform: translateX(-50%);
+    &.inside {
+        position: absolute;
+        left: 50%;
+        bottom: $swipe-indicators-bottom;
+        transform: translateX(-50%);
+    }
+    &.outside {
+        text-align: center;
+        margin-top: .5rem;
+    }
 }
 
 .swipe-indicator {
