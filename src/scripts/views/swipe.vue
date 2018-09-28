@@ -1,19 +1,6 @@
 <template>
     <div>
-
-        <div style="width: 100px; height: 100px; margin: 0 auto;">
-            <group-title>test</group-title>
-            <swipe
-                :onDragStart="onDragStart"
-                :onDrag="onDrag"
-                :onDragEnd="onDragEnd">
-                <swipe-item v-for="item in swipeItems" :key="item.text">
-                    <div class="page-swipe-item" :class="item.theme">{{item.text}}</div>
-                </swipe-item>
-            </swipe>
-        </div>
-
-        <!-- <group-title>base</group-title>
+        <group-title>base</group-title>
         <swipe
             :onDragStart="onDragStart"
             :onDrag="onDrag"
@@ -83,7 +70,7 @@
             <swipe-item>
                 <div class="page-swipe-item bg-success">3</div>
             </swipe-item>
-        </swipe> -->
+        </swipe>
     </div>
 </template>
 
@@ -142,10 +129,9 @@
     .swipe {
         height: 200px;
     }
-
     .page-swipe-item {
         color: #fff;
-        /* height: 100px; */
+        height: 100%;
         line-height: 200px;
         text-align: center;
         font-size: 30px;

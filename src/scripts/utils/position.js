@@ -7,13 +7,23 @@ export const getPosition = el => {
 
     if(el === null || el.style === null) return result;
 
-    // let leftProperty = el.style[left];
-    // let matches = /(\s*(-?\d+(\.?\d+?)?)px?/g.exec(left);
-    //
-    // if(matches) {
-        // result.x = +matches[1];
-        // result.y = +matches[3];
-    // }
+    /* eslint-disable */
+    // debugger
+
+    const leftProperty = el.style.left,
+        topProperty = el.style.top,
+        matchesLeft = /(\d+(\.?\d+?)?)px/g.exec(leftProperty),
+        matchesTop = /(\d+(\.?\d+?)?)px/g.exec(topProperty);
+
+    // /* eslint-disable */
+    // debugger
+    if(matchesLeft) {
+        result.x = matchesLeft[1];
+    }
+
+    if(matchesTop) {
+        result.y = matchesTop[1];
+    }
 
     return result;
 };
@@ -23,17 +33,15 @@ export const setPosition = (el, x, y) => {
     if(!el) return;
     if(x === null && y === null) return;
 
-    // let translate = getPosition(el),
-    let currentX = x,
-        currentY = y;
+    const currentPosition = getPosition(el),
+        rollX = x,
+        rollY = y;
 
-    // if(x === null) currentX = translate.x;
-    // if(y === null) currentY = translate.y;
-    //
+    console.log(currentPosition);
     // cancelPosition(el);
     /* eslint-disable */
-    debugger
+    // debugger
 
-    el.style.left = currentX ? `${currentX}px` : '0px';
-    el.style.top = currentY ? `${currentY}px` : '0px';
+    el.style.left = rollX ? `${Number(currentPosition.x) + Number(rollX)}px` : '0px';
+    el.style.top = rollY ? `${Number(currentPosition.y) + Number(rollY)}px` : '0px';
 };

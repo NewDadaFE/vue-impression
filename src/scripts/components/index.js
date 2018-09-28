@@ -58,6 +58,8 @@ import StepbarItem from './StepbarItem';
 import Timeline from './Timeline';
 import TimelineItem from './TimelineItem';
 import Sticky from './Sticky';
+import Roll from './Roll';
+import RollItem from './RollItem';
 // global utils
 import toast from '../utils/toast';
 import { alert } from '../utils/alert';
@@ -126,6 +128,8 @@ const impression = {
     Timeline,
     TimelineItem,
     Sticky,
+    Roll,
+    RollItem,
 };
 
 const install = Vue => {

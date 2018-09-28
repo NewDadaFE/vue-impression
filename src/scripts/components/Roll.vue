@@ -1,25 +1,9 @@
 <template>
     <div>
-        <div class="swipe" ref="swipe">
+        <div class="swipe-roll" ref="swipe">
             <div class="swipe-items">
                 <slot></slot>
             </div>
-            <div v-if="!isIndicatorOutside" class="swipe-indicators inside" v-show="length > 1 ? dots : (dots && onlyOneDot)">
-                <div
-                    v-for="index in length"
-                    :key="index"
-                    class="swipe-indicator"
-                    :class="{active: index - 1 === activeIndex}"
-                    ></div>
-            </div>
-        </div>
-        <div v-if="isIndicatorOutside" class="swipe-indicators outside" v-show="length > 1 ? dots : (dots && onlyOneDot)">
-            <div
-                v-for="index in length"
-                :key="index"
-                class="swipe-indicator"
-                :class="{active: index - 1 === activeIndex}"
-                ></div>
         </div>
     </div>
 </template>
@@ -28,7 +12,7 @@
     import draggable from '../utils/draggable';
 
     export default {
-        name: 'swipe',
+        name: 'roll',
         props: {
             // 自动播放
             autoplay: {
@@ -171,9 +155,9 @@
                                 return;
                             }
 
-                            console.log(translateX)
-                            this.$children[this.activeIndex].swipeToLeft(translateX);
-                            this.$children[nextIndex].swipeToLeft(translateX);
+                            // this.$children[this.activeIndex].swipeToLeft(translateX);
+                            // this.$children[nextIndex].swipeToLeft(translateX);
+                            this.$children[this.activeIndex].rollToLeft();
 
                             this.negative = false;
                             newIndex = nextIndex;
@@ -188,8 +172,9 @@
                                 return;
                             }
 
-                            this.$children[this.activeIndex].swipeToRight(translateX);
-                            this.$children[prevIndex].swipeToRight(translateX);
+                            // this.$children[this.activeIndex].swipeToRight(translateX);
+                            // this.$children[prevIndex].swipeToRight(translateX);
+                            this.$children[this.activeIndex].rollToRight();
 
                             this.negative = true;
                             newIndex = prevIndex;
@@ -208,16 +193,18 @@
                             if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
                                 this.activeIndex = newIndex;
                             } else if(this.negative) {
-                                let prevIndex = this.getPrevIndex();
+                                // let prevIndex = this.getPrevIndex();
 
-                                this.$children[this.activeIndex].swipeToLeft(0);
-                                this.$children[prevIndex].swipeToLeft(0);
+                                // this.$children[this.activeIndex].swipeToLeft(0);
+                                // this.$children[prevIndex].swipeToLeft(0);
+                                this.$children[this.activeIndex].rollToLeft();
                             } else {
                                 // 往左
-                                let nextIndex = this.getNextIndex();
+                                // let nextIndex = this.getNextIndex();
 
-                                this.$children[this.activeIndex].swipeToRight(0);
-                                this.$children[nextIndex].swipeToRight(0);
+                                // this.$children[this.activeIndex].swipeToRight(0);
+                                // this.$children[nextIndex].swipeToRight(0);
+                                this.$children[this.activeIndex].rollToRight();
                             }
                             this.onDragEnd && this.onDragEnd(this.activeIndex);
                         }
@@ -256,8 +243,11 @@
                 // });
 
                 if(!this.negative) {
-                    currentItem.swipeToLeft();
-                    nextItem.swipeToLeft();
+                    this.$children.forEach(function (child) {
+                        child.swipeToLeft();
+                    })
+                    // currentItem.swipeToLeft();
+                    // nextItem.swipeToLeft();
                 } else {
                     currentItem.swipeToRight();
                     nextItem.swipeToRight();

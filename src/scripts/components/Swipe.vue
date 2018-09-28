@@ -1,9 +1,25 @@
 <template>
     <div>
-        <div class="swipe-roll" ref="swipe">
+        <div class="swipe" ref="swipe">
             <div class="swipe-items">
                 <slot></slot>
             </div>
+            <div v-if="!isIndicatorOutside" class="swipe-indicators inside" v-show="length > 1 ? dots : (dots && onlyOneDot)">
+                <div
+                    v-for="index in length"
+                    :key="index"
+                    class="swipe-indicator"
+                    :class="{active: index - 1 === activeIndex}"
+                    ></div>
+            </div>
+        </div>
+        <div v-if="isIndicatorOutside" class="swipe-indicators outside" v-show="length > 1 ? dots : (dots && onlyOneDot)">
+            <div
+                v-for="index in length"
+                :key="index"
+                class="swipe-indicator"
+                :class="{active: index - 1 === activeIndex}"
+                ></div>
         </div>
     </div>
 </template>

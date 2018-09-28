@@ -7,14 +7,20 @@
 
 <script>
     import { getTranslate, setTranslate } from '../utils/translate';
+    import { getPosition, setPosition } from '../utils/position'
     import { getPrefixStyle } from '../utils/cssPrefix';
 
+    const separation = 10;
+    // const activePositionType = 'left';
+
     export default {
-        name: 'swipe-item',
+        name: 'roll-item',
         data() {
             return {
                 width: 0,
                 translate: 0,
+                baseX: 0,
+                activePositionType: 'left',
             };
         },
         methods: {
@@ -43,7 +49,22 @@
                     translate = 0;
                 }
 
-                setTranslate(this.$el, translate, 0);
+                // setTranslate(this.$el, translate, 0);
+                //
+                /* eslint-disable */
+                // debugger
+                const roolx = (this.width + separation) * (this.index - this.$parent.activeIndex);
+                setPosition(this.$el, roolx, 0);
+                // initPosition(this.width);
+            },
+            // 获取基准计算位置
+            getBaseX() {
+                if(this.activePositionType === 'left') {
+                    this.baseX = 0;
+                }
+                else if(this.activePositionType === 'center') {
+                    this.baseX = 0.5 - this.width / 2;
+                }
             },
             // 是否在可编译范围内
             isInTheLimitRange(translate, negative = false) {
@@ -84,7 +105,6 @@
                     }
 
                     setTranslate(this.$el, translate, 0);
-                    console.log(translate)
 
                     return;
                 }
@@ -116,6 +136,7 @@
 
                     setTranslate(this.$el, translate, 0);
 
+
                     return;
                 }
 
@@ -132,6 +153,15 @@
                     setTranslate(this.$el, finalTranslateX, 0);
                 }
             },
+            rollToLeft() {
+                /* eslint-disable */
+                debugger
+                for(var i = 0; i < this.$parent.length; i++) {
+                    const roolx = - (this.width + separation);
+                    setPosition(this.$parent.$children[i].$el, roolx, 0);
+                }
+            },
+            rollToRight() {},
         },
         mounted() {
             this.init();
