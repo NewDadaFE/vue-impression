@@ -50,21 +50,23 @@
     font-size: 20px;
 
     .circle {
-        width: .5em;
-        height: .5em;
-        border-radius: .25em;
-        background-color: #DEE0E8;
+        width: .8em;
+        height: .8em;
+        -webkit-border-radius: .5em;
+        border-radius: .5em;
         position: absolute;
-        top: 0;
+        top: -.15em;
         z-index: 3;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: .25em solid;
+        background-color: #FFF;
 
         &.active {
-            background-color: #6974A0;
+            // background-color: #6974A0;
         }
-        &.current-grade {
-            box-sizing: border-box;
-            border: 1px solid #6974A0;
-            background-color: #FFF;
+        &.current-dot {
+            
         }
 
 
@@ -78,6 +80,7 @@
         background-color: #DEE0E8;
 
         .line-progress {
+            height: 100%;
             background-color: #6974A0;
         }
     }
@@ -85,6 +88,9 @@
     &.progressbars-sm {
         .line-bg {
             height: .5em;
+            border-radius: .25em;
+        }
+        .line-progress {
             border-radius: .25em;
         }
     }

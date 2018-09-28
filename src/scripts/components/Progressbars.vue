@@ -5,8 +5,8 @@
             [`progressbars-${size}`]: size,
             [`progressbars-${theme}`]: theme,
         }">
-        <div class="line-bg">
-            <div class="line-progress" :style="`width: ${progressWidth}`"></div>
+        <div class="line-bg" :style="`background-color: ${backgroundColor};`">
+            <div class="line-progress" :style="`width: ${progressWidth}; background-color: ${foregroundColor};`"></div>
         </div>
         <div
             v-for="(score, index) in dotDataList"
@@ -49,7 +49,7 @@
                     return ['sm', 'lg'].indexOf(value) > -1;
                 },
             },
-            // 尺寸
+            // 节点形状
             dotShape: {
                 type: String,
                 default: 'radio',
@@ -57,11 +57,23 @@
                     return ['radio'].indexOf(value) > -1;
                 },
             },
+            // 进度条背景色
+            backgroundColor: {
+                type: String,
+                default: '#DEE0E8',
+            },
+            // 进度条前景色
+            foregroundColor: {
+                type: String,
+                default: '#6974A0',
+            },
         },
         computed: {
             progressWidth: function () {
+                /* eslint-disable */
+                // debugger
                 // 最高等级
-                if (this.currentDotIndex === 4) {
+                if (this.currentDotIndex === this.dotDataList.length - 1) {
                     return '100%'
                 }
                 // 总体进度
@@ -111,13 +123,27 @@
               return classStr
             },
             getCircleStyle(index) {
-                let circleWidth = ''
-
-                if(this.size === 'sm') {
-                    circleWidth = '0.5em'
+                let bgColor = ''
+                
+                if (index <= this.currentDotIndex) {
+                    bgColor = `border-color: ${this.foregroundColor};`
+                } else {
+                    bgColor = `border-color: ${this.backgroundColor};`
                 }
 
-                return `left: calc(100%/${this.dotDataList.length-1}*${index} - circleWidth/${this.dotDataList.length-1}*${index})`
+                return `${this.getCirclePosition(index)} ${bgColor}`
+            },
+            getCirclePosition(index) {
+                let circleWidth = 0
+
+                if (this.size === 'sm') {
+                    circleWidth = 0.5
+                } else if (this.size === 'lg') {
+                    circleWidth = 1
+                }
+
+
+                return `left: calc(100%/${this.dotDataList.length-1}*${index} - ${circleWidth / (this.dotDataList.length -1 ) * index}em);`
             },
         },
     };
