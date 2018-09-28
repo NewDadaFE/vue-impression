@@ -53,6 +53,7 @@ import Alert from './Alert';
 import Swipe from './Swipe';
 import SwipeItem from './SwipeItem';
 import Progressbar from './Progressbar';
+import Progressbars from './Progressbars';
 import Stepbar from './Stepbar';
 import StepbarItem from './StepbarItem';
 import Timeline from './Timeline';
@@ -121,6 +122,7 @@ const impression = {
     InlineSelectorOption,
     DatePicker,
     Progressbar,
+    Progressbars,
     Stepbar,
     StepbarItem,
     Timeline,

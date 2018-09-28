@@ -42,3 +42,53 @@
 .progressbar-danger {
     @include progressbar-variant($progressbar-danger-bg);
 }
+
+
+.progressbars {
+    width: 100%;
+    position: relative;
+    font-size: 20px;
+
+    .circle {
+        width: .5em;
+        height: .5em;
+        border-radius: .25em;
+        background-color: #DEE0E8;
+        position: absolute;
+        top: 0;
+        z-index: 3;
+
+        &.active {
+            background-color: #6974A0;
+        }
+        &.current-grade {
+            box-sizing: border-box;
+            border: 1px solid #6974A0;
+            background-color: #FFF;
+        }
+
+
+    }
+
+    .line-bg {
+        width: 100%;
+        position: absolute;
+        // top: 1.5px;
+        z-index: 1;
+        background-color: #DEE0E8;
+
+        .line-progress {
+            background-color: #6974A0;
+        }
+    }
+
+    &.progressbars-sm {
+        .line-bg {
+            height: .5em;
+            border-radius: .25em;
+        }
+    }
+    &.progressbars-lg {
+
+    }
+}

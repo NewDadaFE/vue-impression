@@ -3,6 +3,12 @@
         <group-title>base</group-title>
         <group>
             <cell>
+                <progressbars
+                    :dotDataList="dotDataList"
+                    :currentData="currentData">
+                </progressbars>
+            </cell>
+            <cell>
                 <progressbar :value="progress">
                     60%
                 </progressbar>
@@ -54,6 +60,8 @@
         data() {
             return {
                 progress: 0.6,
+                dotDataList: [0, 10, 50, 100, 200],
+                currentData: 20,
             };
         },
     };
