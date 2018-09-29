@@ -46,55 +46,97 @@
 
 .progressbars {
     width: 100%;
+    height: 1.5em;
     position: relative;
-    font-size: 20px;
 
-    .circle {
+    .node {
+        position: absolute;
+        z-index: 3;
+        top: .35em;
         width: .8em;
         height: .8em;
-        -webkit-border-radius: .5em;
-        border-radius: .5em;
-        position: absolute;
-        top: -.15em;
-        z-index: 3;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        border: .25em solid;
-        background-color: #FFF;
 
-        &.active {
-            // background-color: #6974A0;
-        }
-        &.current-dot {
-            
+        &.dot {
+            background-color: #FFF;
+            -webkit-border-radius: .4em;
+            border-radius: .4em;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: .25em solid;
+
+            &.active {
+                // background-color: #6974A0;
+            }
+            &.current {
+
+            }
         }
 
+        &.circle {
+            border-radius: .4em;
+        }
+
+        &.check-circle {
+            border-radius: .4em;
+
+            &::after {
+                content: '';
+                width: .24em;
+                height: .4em;
+                border-bottom: 1px solid #FFF;
+                border-right: 1px solid #FFF;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                transform: rotate(45deg);
+                position: absolute;
+                left: .26em;
+                top: .15em;
+            }
+        }
 
     }
 
     .line-bg {
         width: 100%;
+        height: .5em;
+        border-radius: .25em;
         position: absolute;
-        // top: 1.5px;
         z-index: 1;
+        top: .5em;
         background-color: #DEE0E8;
 
         .line-progress {
             height: 100%;
             background-color: #6974A0;
+            border-radius: .25em;
         }
     }
 
-    &.progressbars-sm {
-        .line-bg {
-            height: .5em;
-            border-radius: .25em;
-        }
-        .line-progress {
-            border-radius: .25em;
-        }
+    .info {
+        text-align: center;
+        font-size: 1em;
     }
+
     &.progressbars-lg {
+        font-size: $progressbars-font-size-lg;
+    }
+    &.progressbars-sm {
+        font-size: $progressbars-font-size-sm;
+    }
+    &.progressbars-xsm {
+        font-size: $progressbars-font-size-sm;
 
+        .line-bg {
+            height: .2em;
+            border-radius: .1em;
+
+            .line-progress {
+                border-radius: .1em;
+                height: 100%;
+            }
+        }
+        .node {
+            top: .15em;
+        }
     }
 }
