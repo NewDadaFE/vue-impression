@@ -115,6 +115,10 @@
     .info {
         text-align: center;
         font-size: 1em;
+        position: absolute;
+        top: 1em;
+        left: -1em;
+        width: 2em;
     }
 
     &.progressbars-lg {

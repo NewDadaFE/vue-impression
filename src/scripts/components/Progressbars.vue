@@ -9,18 +9,14 @@
             <div class="line-progress" :style="`width: ${this.progressWidth}; background-color: ${this.foregroundColor};`"></div>
         </div>
         <div
-            v-for="(score, index) in nodeDataList"
+            v-for="(nodeData, index) in nodeDataList"
             :key="index"
             :class="getNodeClass(index)"
             :style="getNodeStyle(index)"
             >
-            <!-- <slot :name="`infoSlot${index}`" class="abc"></slot> -->
-        </div>
-        <div v-for="(info, index) in nodeInfoList"
-            :key="index"
-            class="info"
-            :style="getInfoStyle(index)">
-            {{info}}
+            <div class="info">
+                <slot :name="`infoSlot${index}`" />
+            </div>
         </div>
     </div>
 </template>
@@ -211,9 +207,10 @@
             getInfoStyle(index) {
                 const widthPercent = 1 / (this.nodesLength - 1)
                 const width = `${widthPercent * 100}%`
-                const left = `${widthPercent * (-1 + 2 * index) * 100}%`
+                const left = `${widthPercent * (-1 + 2 * index) / 2 * 100}%`
 
-                return `with: ${width}; left: ${left};`
+                console.log(`width: ${width}; left: ${left};`);
+                return `width: ${width}; left: ${left};`
             },
         },
     };
