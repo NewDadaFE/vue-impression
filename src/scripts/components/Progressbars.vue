@@ -204,14 +204,6 @@
                 // return `left: calc(100%/${this.nodesLength-1}*${index} - ${this.circleWidth / (this.nodesLength -1 ) * index}em);`
                 return `left: calc((100% - ${this.circleWidth}em) / ${this.nodesLength - 1} * ${index});`
             },
-            getInfoStyle(index) {
-                const widthPercent = 1 / (this.nodesLength - 1)
-                const width = `${widthPercent * 100}%`
-                const left = `${widthPercent * (-1 + 2 * index) / 2 * 100}%`
-
-                console.log(`width: ${width}; left: ${left};`);
-                return `width: ${width}; left: ${left};`
-            },
         },
     };
 </script>
