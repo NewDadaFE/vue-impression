@@ -21,7 +21,7 @@
                 console.log(val);
                 val.minDate = formatDate(val.minDate, 'yyyy/MM/dd');
                 val.maxDate = formatDate(val.maxDate, 'yyyy/MM/dd');
-                console.log(val);
+                // console.log(val);
             },
 
             // 获取时间元数据
