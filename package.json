@@ -1,8 +1,9 @@
 {
   "name": "vue-impression",
-  "version": "0.21.4",
+  "version": "0.21.6",
   "description": "A Vue.js 2.0 UI elements for mobile.",
   "sass": "dist/styles/index.scss",
+  "main": "dist/scripts/components/index.js",
   "module": "dist/scripts/components/index.js",
   "scripts": {
     "start": "gulp build && webpack -p --config webpack.prebuilt.config.js",
