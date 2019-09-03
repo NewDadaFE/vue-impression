@@ -1,0 +1,38 @@
+// shape
+.border-circle {
+    border-radius: $border-radius-circle !important;
+}
+
+.border-pill {
+    border-radius: $border-radius-circle !important;
+}
+
+// style
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+// Theme
+.border-primary {
+    border-color: $brand-primary !important;
+}
+
+.border-secondary {
+    border-color: $brand-secondary !important;
+}
+
+.border-danger {
+    border-color: $brand-danger !important;
+}
+
+.border-success {
+    border-color: $brand-success !important;
+}
+
+.border-warning {
+    border-color: $brand-warning !important;
+}

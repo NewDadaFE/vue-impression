@@ -1,0 +1,25 @@
+.segmented-control {
+    font-size: 0;
+    display: inline-block;
+    border: 1px solid $segmented-control-border-color;
+    border-radius: $segmented-control-border-radius;
+    background-color: $segmented-control-bg-color;
+}
+
+.segmented-control-item {
+    display: inline-block;
+    color: $segmented-control-color;
+    font-size: $segmented-control-item-font-size;
+    padding: $segmented-control-item-padding;
+    transition: $segmented-control-transition;
+
+    &.active {
+        color: $segmented-control-color-active;
+        background-color: $segmented-control-bg-color-active;
+    }
+
+    &.disabled {
+        opacity: $segmented-control-opacity-disabled;
+    }
+}
+

@@ -1,0 +1,10 @@
+.hr {
+    border-width: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: $hr-color;
+    transform: scaleY(.5);
+    transform-origin: 0 0;
+    margin: $hr-margin;
+}
+

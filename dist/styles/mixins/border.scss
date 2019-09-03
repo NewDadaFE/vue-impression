@@ -1,0 +1,34 @@
+// 上边框
+@mixin border-top {
+    background-image: $border-image-top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+// 下边框
+@mixin border-bottom {
+    background-image: $border-image-bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+// 上下边框
+@mixin border-vertical {
+    background-image: $border-image-top, $border-image-bottom;
+    background-size: 100% 1px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, left bottom;
+}
+
+@mixin border-left {
+    background-image: $border-image-left;
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+@mixin no-border {
+    background-size: 0;
+}

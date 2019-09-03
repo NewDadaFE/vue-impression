@@ -1,0 +1,52 @@
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+    border-radius: $border-radius;
+}
+
+// Button variant
+@mixin button-variant($color, $bg-color, $border-color) {
+    $active-background: darken($bg-color, 6%);
+    $active-border: darken($border-color, 6%);
+
+    color: $color;
+    background-color: $bg-color;
+    border-color: $border-color;
+
+    &:active,
+    &.active {
+        color: $color;
+        background-color: $active-background;
+        border-color: $active-border;
+    }
+
+    &.disabled,
+    &:disabled {
+        &:hover {
+            background-color: $bg-color;
+            border-color: $border-color;
+        }
+    }
+}
+
+// Button outline variant
+@mixin button-outline-variant($color) {
+    color: $color;
+    border-color: $color;
+    background-color: transparent;
+
+    &:active,
+    &.active {
+        color: $brand-pure;
+        background-color: $color;
+    }
+
+    &.disabled,
+    &:disabled {
+        &:hover {
+            background-color: transparent;
+            border-color: $color;
+        }
+    }
+}

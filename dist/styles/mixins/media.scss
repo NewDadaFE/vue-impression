@@ -1,0 +1,11 @@
+@mixin respond-to($size) {
+    $query: map-get($all-media-query-device, $size);
+
+    @if not $query {
+        @error 'No value found for `#{$size}`. Please make sure it is defined in `$allMediaDevice` map.';
+    }
+
+    @media only screen and #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+        @content;
+    }
+}

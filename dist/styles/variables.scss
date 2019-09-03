@@ -1,0 +1,561 @@
+// Colors
+$brand-primary: #1C89EA !default;
+$brand-secondary: #FF7043 !default;
+$brand-success: #30BE71 !default;
+$brand-info: #2b71b5 !default;
+$brand-warning: #fab83a !default;
+$brand-danger: #EA413A !default;
+$brand-pure: #fff !default;
+
+$gray-dark: #373a3c !default;
+$gray: #55595c !default;
+$gray-light: #999 !default;
+$gray-lighter: #eceeef !default;
+$gray-lightest: #f4f4f4 !default;
+
+// Border radius
+$border-radius: 2px !default;
+$border-radius-lg: 4px !default;
+$border-radius-sm: 1px !default;
+$border-radius-circle: 10rem !default;
+
+// Cursor
+$cursor-pointer: pointer !default;
+
+// Opacity
+$opacity-disabled: .65 !default;
+
+// z-index
+$z-index-top: 1000 !default;
+$z-index-mask: 1010 !default;
+$z-index-slide: 1020 !default;
+$z-index-sidelip: 1020 !default;
+$z-index-toast: 1030 !default;
+$z-index-alert: 1030 !default;
+
+// Base
+$font-family-base: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "WenQuanYi Micro Hei", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !default;
+$line-height-base: 1.43 !default;
+$body-color: #333 !default;
+$body-bg: #f0eff5 !default;
+$text-muted: $gray-light !default;
+
+$font-size-root: 12px !default;
+$font-size-root-md: 14px !default;
+$font-size-root-lg: 16px !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg: 1.4rem !default;
+$font-size-sm: .875rem !default;
+
+// media query
+$all-media-query-device: (
+  'sm': '(min-width: 320px) and (min-resolution: 2dppx)',
+  'md': '(min-width: 360px) and (min-resolution: 2dppx)',
+  'lg': '(min-width: 414px) and (min-resolution: 3dppx)',
+) !default;
+
+
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$spacer-gap: $spacer / 2 !default;
+
+// Border
+$border-color: #e0e0e0 !default;
+$border-image-top: linear-gradient(to bottom, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-bottom: linear-gradient(to top, $border-color, $border-color 50%, transparent 0) !default;
+$border-image-left: linear-gradient(to right, $border-color, $border-color 50%, transparent 0) !default;
+
+// Hr
+$hr-color: $border-color !default;
+$hr-margin: 1rem 0 !default;
+
+// Links
+$link-color: $brand-primary !default;
+$link-decoration: none !default;
+$link-active-color: darken($link-color, 15%) !default;
+
+// Tables
+$table-bg: $brand-pure !default;
+$table-cell-padding: .75rem !default;
+$table-sm-cell-padding: .3rem !default;
+
+// Buttons
+$btn-opacity-disabled: $opacity-disabled !default;
+$btn-loading-opacity-disabled: .9 !default;
+
+$btn-font-size: $font-size-base !default;
+$btn-padding-x: 1.6rem !default;
+$btn-padding-y: .7rem !default;
+$btn-border-radius: $border-radius !default;
+
+$btn-font-size-sm: $font-size-sm !default;
+$btn-padding-x-sm: .6rem !default;
+$btn-padding-y-sm: .2rem !default;
+$btn-border-radius-sm: $border-radius-sm !default;
+
+$btn-font-size-lg: $font-size-lg !default;
+$btn-padding-x-lg: 2rem !default;
+$btn-padding-y-lg: 1rem !default;
+$btn-border-radius-lg: $border-radius-lg !default;
+
+$btn-primary-color: $brand-pure;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: $brand-primary !default;
+
+$btn-secondary-color: $brand-pure;
+$btn-secondary-bg: $brand-secondary !default;
+$btn-secondary-border: $brand-secondary !default;
+
+$btn-default-color: $gray;
+$btn-default-bg: #fff !default;
+$btn-default-border: $border-color !default;
+
+$btn-loading-gap: .25rem !default;
+
+// Group/Cell
+$group-bg-color: $brand-pure !default;
+$group-margin: 1rem 0 0 0 !default;
+
+$group-title-padding: .5rem 1rem !default;
+
+$cell-color: $body-color !default;
+$cell-bg-color: $brand-pure !default;
+$cell-padding: 1.2rem 1rem !default;
+$cell-gap-left: 1rem !default;
+$cell-children-gap: 1rem !default;
+
+$cell-bg-color-active: $gray-lightest !default;
+$cell-bg-color-disabled: $border-color !default;
+
+$cell-arrow-color: #818a91 !default;
+$cell-arrow-margin: 0 0 0 $spacer-gap !default;
+
+// Navbar
+$navbar-height: 3.67rem !default;
+$navbar-line-height: $navbar-height !default;
+$navbar-padding: 0 !default;
+
+$navbar-header-flex: .5 !default;
+$navbar-header-padding: 0 1rem !default;
+$navbar-body-flex: 1 !default;
+$navbar-body-padding: 0 1rem !default;
+$navbar-footer-flex: .5 !default;
+$navbar-footer-padding: 0 1rem !default;
+
+$navbar-primary-color: $brand-pure !default;
+$navbar-primary-bg-color: $brand-primary !default;
+
+$navbar-default-color: #666 !default;
+$navbar-default-bg-color: $brand-pure !default;
+
+// Tabbar
+$tabbar-bg-color: $brand-pure !default;
+$tabbar-margin-bottom: 1rem !default;
+$tabbar-height: $navbar-height !default;
+$tabbar-line-height: $tabbar-height !default;
+$tabbar-transition: all .3s cubic-bezier(.86, 0, .07, 1) !default;
+$tabbar-opacity-disabled: $opacity-disabled !default;
+
+$tabbar-item-border-width: .167rem !default;
+$tabbar-item-color-active: $brand-primary !default;
+$tabbar-item-border-color-active: $brand-primary !default;
+
+// Toast
+$toast-bg: rgba(0, 0, 0, .6) !default;
+$toast-color: $brand-pure !default;
+$toast-font-size: 1.1rem !default;
+$toast-border-radius: .333rem !default;
+$toast-border-radius-lg: .5rem !default;
+$toast-padding: 1rem 1.2rem !default;
+$toast-padding-lg: 1rem 3.5rem 1.5rem !default;
+$toast-position-gap: 4rem !default;
+$toast-max-width: 80% !default;
+$toast-animation-enter-duration: .6s !default;
+$toast-animation-enter-function: ease-in !default;
+$toast-animation-leave-duration: .3s !default;
+$toast-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
+
+$toast-icon-font-size: 4rem !default;
+$toast-icon-margin-bottom: .5rem !default;
+
+$toast-loading-margin: 1rem 0 !default;
+
+// Alert
+$alert-width: 22.5rem !default;
+$alert-max-width: 22.5rem !default;
+$alert-padding: 2.145rem 0 0 0 !default;
+$alert-bg-color: $brand-pure !default;
+$alert-border-radius: $border-radius-lg !default;
+$alert-animation-duration: .2s !default;
+$alert-animation-enter-function: cubic-bezier(.08, .82, .167, 1) !default;
+$alert-animation-leave-function: cubic-bezier(.6, .04, .98, .34) !default;
+
+$alert-title-font-size: 1.43rem !default;
+$alert-title-font-weight: bold !default;
+$alert-title-color: #333333 !default;
+
+$alert-message-color: #666666 !default;
+$alert-message-font-size: 1.07rem !default;
+$alert-message-padding: 1.785rem 1.43rem !default;
+$alert-message-line-height: 1.43 !default;
+$alert-message-text-align: center !default;
+
+$alert-btn-color: $brand-primary !default;
+$alert-btn-font-size: 1.215rem !default;
+$alert-btn-padding: 1rem 0 !default;
+
+$alert-box-h-shadow: 0 0 0.85rem 0 rgba(0, 0, 0, 0.22) !default;
+$alert-box-v-shadow: 0 0.85rem 0.85rem 0 rgba(0, 0, 0, 0.30) !default;
+
+// Checkbox
+$checkbox-padding: 3px !default;
+$checkbox-color: $brand-pure !default;
+$checkbox-bg-color: $brand-pure !default;
+$checkbox-border-color: #ddd !default;
+$checkbox-transition: all .2s ease-in !default;
+
+$checkbox-bg-color-checked: $brand-primary !default;
+$checkbox-border-color-checked: $brand-primary !default;
+$checkbox-bg-color-disabled: #dfdfdf !default;
+$checkbox-border-color-disabled: $checkbox-border-color !default;
+
+
+$checkbox-addon-font-size: 1.5rem !default;
+$checkbox-addon-padding-top: 0 !default;
+$radio-addon-width: 1.0rem !default;
+$radio-addon-height: $radio-addon-width !default;
+$radio-addon-padding: .5rem !default;
+
+$checkbox-label-gap: .167rem !default;
+
+$checkbox-square-border-radius: $border-radius !default;
+
+$checkbox-gap: 1rem !default;
+
+// Toggle
+$toggle-addon-size: 1.34rem !default;
+$toggle-addon-bg-color: $brand-pure !default;
+$toggle-addon-bg-color-checked: $brand-primary !default;
+$toggle-addon-opacity-disabled: $opacity-disabled !default;
+
+$toggle-bg-color: #e7eaec !default;
+$toggle-width: 3.84rem !default;
+$toggle-padding: 0.25rem !default;
+$toggle-border-radius: $toggle-addon-size !default;
+$toggle-transition: all .2s ease !default;
+
+// Number
+$number-border-color: $brand-primary !default;
+
+$number-btn-size: 2.0rem !default;
+$number-btn-line-height: $number-btn-size - 0.167 !default;
+
+$number-plus-color: $brand-pure !default;
+$number-plus-bg-color: $brand-primary !default;
+$number-plus-bg-color-active: darken($number-plus-bg-color, 6%) !default;
+
+$number-minus-color: $brand-primary !default;
+$number-minus-bg-color: $brand-pure !default;
+$number-minus-color-active: $brand-pure !default;
+$number-minus-bg-color-active: $brand-primary !default;
+
+$number-input-width: 3rem !default;
+$number-input-bg-color: $brand-pure !default;
+$number-input-border-color: #d9d9d9 !default;
+$number-input-padding: .6rem .3rem !default;
+$number-input-margin: 0 .167rem !default;
+$number-input-bg-color-disabled: #eee !default;
+
+// InputText
+$input-font-size: 1rem !default;
+$input-text-icon-gap: 1rem !default;
+
+// InputTeaxtarea
+$textarea-padding: .6rem !default;
+
+$textarea-counter-scale: .8 !default;
+$textarea-counter-color: $text-muted !default;
+$textarea-counter-padding: 0 $textarea-padding / $textarea-counter-scale .2rem 0 !default;
+
+// Selector
+$selector-color-active: $brand-primary !default;
+$selector-icon-color: $brand-primary !default;
+$selector-color-transition: all .2s ease-in-out !default;
+
+// InlineSelector
+$inline-selector-transition: all .2s ease-in !default;
+$inline-selector-option-min-width: 4.583rem !default;
+$inline-selector-option-padding: .6rem .2rem !default;
+
+
+// Tag
+$tag-padding: .4em .6em !default;
+$tag-color: $brand-pure !default;
+$tag-border-radius: $border-radius !default;
+
+$tag-padding-sm: .2em .4em !default;
+$tag-scale-sm: .85 !default;
+
+$tag-primary-bg: $brand-primary !default;
+$tag-success-bg: $brand-success !default;
+$tag-warning-bg: $brand-warning !default;
+$tag-danger-bg: $brand-danger !default;
+$tag-default-bg: #ccc !default;
+$tag-default-color: #666 !default;
+
+// Navigation
+$navigation-height: 4.0833rem !default;
+$navigation-color: #888 !default;
+$navigation-color-active: $brand-primary !default;
+$navigation-bg-color: $tabbar-bg-color !default;
+
+$navigation-label-scale: .8 !default;
+$navigation-margin: .167rem 0 -.8rem 0 !default;
+
+// Tip
+$tip-padding: 1rem 4rem !default;
+
+$tip-line-height: 1px !default;
+
+$tip-label-padding: 0 1rem !default;
+$tip-label-color: #888 !default;
+
+// BackToTop
+$top-right: 2.5rem !default;
+$top-bottom: 2.5rem !default;
+$top-color: $brand-pure !default;
+$top-width: 3.5rem !default;
+$top-height: 3.5rem !default;
+$top-line-height: 3.5rem !default;
+$top-font-size: 1.667rem !default;
+$top-bg-color: rgba(0, 0, 0, .3) !default;
+$top-transition: all .6s ease-in-out !default;
+
+// Badge
+$badge-color: $brand-pure !default;
+$badge-padding: 0.25rem !default;
+$badge-min-width: 0.5rem !default;
+$badge-min-width-not-empty: 1rem + $badge-padding * 2 !default;
+$badge-min-height: 0.5rem !default;
+$badge-margin-right: $badge-min-width-not-empty / 2 !default;
+$badge-scale: .8 !default;
+$badge-box-shadow: 0 0 0 1px $brand-pure !default;
+
+// Drawer
+$drawer-color: #666 !default;
+$drawer-bg-color: $tabbar-bg-color !default;
+$drawer-padding: ($navbar-height - $line-height-base * 1) / 2 0 !default;
+$drawer-transition: all .2s ease-in-out !default;
+
+$drawer-color-active: $brand-primary !default;
+$drawer-opacity-disabled: $opacity-disabled !default;
+
+$drawer-icon-color: #999 !default;
+$drawer-icon-margin-right: .167rem !default;
+
+// mask
+$mask-bg-color: rgba(0, 0, 0, .3) !default;
+$mask-animation-enter-duration: .3s !default;
+$mask-animation-enter-function: ease !default;
+$mask-animation-leave-duration: .2s !default;
+$mask-animation-leave-function: ease !default;
+
+
+// Slide
+$slide-bg-color: $brand-pure !default;
+$slide-min-height: 5rem !default;
+$slide-max-height: 25rem !default;
+$slide-animation-enter-duration: .3s !default;
+$slide-animation-enter-function: ease-in-out !default;
+$slide-animation-leave-duration: .2s !default;
+$slide-animation-leave-function: ease-in-out !default;
+
+$slide-header-padding: 1rem !default;
+
+$slide-body-padding: 1rem !default;
+
+// Sidelip
+$sidelip-width: 65% !default;
+$sidelip-bg-color: $brand-pure !default;
+$sidelip-animation-enter-duration: .3s !default;
+$sidelip-animation-enter-function: ease !default;
+$sidelip-animation-leave-duration: .2s !default;
+$sidelip-animation-leave-function: ease-in-out !default;
+
+// SegmentedControl
+$segmented-control-color: $brand-primary !default;
+$segmented-control-bg-color: $brand-pure !default;
+$segmented-control-border-color: $brand-primary !default;
+$segmented-control-border-radius: $border-radius-lg !default;
+$segmented-control-transition: all .3s ease-in-out !default;
+
+$segmented-control-opacity-disabled: $opacity-disabled !default;
+
+$segmented-control-color-active: $brand-pure !default;
+$segmented-control-bg-color-active: $brand-primary !default;
+
+$segmented-control-item-padding: .4rem .6rem !default;
+$segmented-control-item-font-size: $font-size-base !default;
+
+
+// Meida
+$media-bg-color: $brand-pure !default;
+$media-object-gap: 1rem !default;
+
+// Card
+$card-bg-color: $brand-pure !default;
+$card-body-padding: .6rem 1rem !default;
+
+//  Searchbar
+$searchbar-padding: .5rem !default;
+$searchbar-border-color: $border-color !default;
+$searchbar-border-radius: $border-radius !default;
+$searchbar-transition: all .3s ease !default;
+
+$searchbar-placeholder-opacity: .2 !default;
+$searchbar-placeholder-width: 1rem + 0.5rem !default;
+
+$searchbar-clear-padding: 0 0 0 .5rem !default;
+$searchbar-clear-opacity: .2 !default;
+
+$searchbar-btn-padding: 0 .5rem !default;
+
+// Loadmore
+$loadmore-dropped-transition: .2s !default;
+
+$loadmore-hint-height: 4.167rem !default;
+$loadmore-hint-margin: -4.167rem !default;
+
+// Loading
+$loading-width: 4rem !default;
+$loading-animation-duration: 2s !default;
+
+$loading-path-stroke: $border-color !default;
+$loading-path-stroke-width: 3 !default;
+$loading-path-animation-duration: 1.5s !default;
+
+$loading-path-stroke-primary: $brand-primary !default;
+$loading-path-stroke-secondary: $brand-secondary !default;
+
+$loading-width-sm: 1rem !default;
+
+// Picker
+$picker-bg-color: $brand-pure !default;
+$picker-items-count: 5 !default;
+$picker-items-count-sm: 3 !default;
+$picker-items-count-lg: 7 !default;
+
+$picker-item-font-size: 1.2rem !default;
+$picker-item-height: 3rem !default;
+$picker-item-line-height: $picker-item-height !default;
+$picker-item-padding: 0 1rem !default;
+$picker-item-transition: all .2s ease !default;
+
+$picker-item-font-size-active: 1.3rem !default;
+$picker-item-font-weight-active: bold !default;
+
+$picker-mask-bg-size: 100% $picker-item-height * 2 !default;
+$picker-mask-leve-1: hsla(0, 0%, 100%, .95) !default;
+$picker-mask-leve-2: hsla(0, 0%, 100%, .6) !default;
+$picker-mask-leve-3: hsla(0, 0%, 100%, .3) !default;
+$picker-mask-bg-image: linear-gradient(180deg, $picker-mask-leve-1, $picker-mask-leve-2), linear-gradient(0deg, $picker-mask-leve-1, $picker-mask-leve-2) !default;
+$picker-mask-bg-image-sm: linear-gradient(180deg, $picker-mask-leve-3), linear-gradient(0deg, $picker-mask-leve-3) !default;
+$picker-mask-bg-image-lg: linear-gradient(180deg, $picker-mask-leve-1, $picker-mask-leve-2, $picker-mask-leve-3), linear-gradient(0deg, $picker-mask-leve-1, $picker-mask-leve-2, $picker-mask-leve-3) !default;
+
+$picker-tap-height: $picker-item-height !default;
+
+$picker-list-transition: all .3s ease-out !default;
+
+// Swipe
+$swipe-indicators-bottom: .5rem !default;
+
+$swipe-indicator-padding: 0.25rem !default;
+$swipe-indicator-margin: 0 1px !default;
+$swipe-indicator-opacity: 1 !default;
+$swipe-indicator-border-color: $brand-pure !default;
+$swipe-indicator-bg-color-active: $brand-pure !default;
+$swipe-indicator-transition-duration: .3s !default;
+$swipe-indicator-transition-function: ease-in-out !default;
+
+// Progressbar
+$progressbar-height: 1.667rem !default;
+$progressbar-border-radius: $border-radius-lg !default;
+$progressbar-bg-color: $gray-lightest !default;
+$progressbar-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !default;
+
+$progressbar-primary-bg: $brand-primary !default;
+$progressbar-success-bg: $brand-success !default;
+$progressbar-warning-bg: $brand-warning !default;
+$progressbar-danger-bg: $brand-danger !default;
+
+$progressbar-indicator-color: $brand-pure !default;
+$progressbar-indicator-font-size: $font-size-sm !default;
+$progressbar-indicator-transition: width .6s ease !default;
+$progressbar-indicator-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15) !default;
+
+$progressbar-height-sm: .667rem !default;
+$progressbar-border-radius-sm: $progressbar-height-sm !default;
+
+
+// Stepbar
+$stepbar-gap: .167rem !default;
+
+
+$stepbar-item-addon-size: 1.5rem !default;
+$stepbar-item-addon-line-height: 1.357rem !default;
+$stepbar-item-addon-color: $text-muted !default;
+
+$stepbar-item-addon-color-active: $brand-pure !default;
+$stepbar-item-addon-bg-active: $brand-primary !default;
+$stepbar-item-addon-border-color-active: $brand-primary !default;
+$stepbar-item-addon-border-width: 1px !default;
+$stepbar-item-addon-border-color: $border-color !default;
+$stepbar-item-addon-icon-font-size: 1rem !default;
+$stepbar-item-addon-transition: all .2s ease-in !default;
+
+
+$stepbar-item-addon-color-finished: $brand-primary !default;
+$stepbar-item-addon-border-color-finished: $brand-primary !default;
+
+
+$stepbar-item-addon-title-color: $text-muted !default;
+$stepbar-item-addon-title-color-active: $body-color !default;
+$stepbar-item-addon-title-font-weight-active: bold !default;
+
+
+$stepbar-line-height: 1px !default;
+$stepbar-line-color: $border-color !default;
+$stepbar-line-border-color: $stepbar-line-color !default;
+$stepbar-line-border-color-active: $brand-primary !default;
+$stepbar-line-transition: all .2s ease-in !default;
+
+// Timeline
+$timeline-item-padding-bottom: 2rem !default;
+
+$timeline-item-addon-bg: $brand-pure !default;
+$timeline-item-addon-size: 1rem !default;
+$timeline-item-addon-border-width: 2px !default;
+
+$timeline-item-addon-size-active: 2.0rem !default;
+$timeline-item-addon-border-color: $brand-primary !default;
+
+$timeline-item-addon-dot-size: 1rem !default;
+$timeline-item-addon-dot-size-active: 1rem !default;
+$timeline-item-addon-dot-bg: #cbcccd !default;
+$timeline-item-addon-dot-bg-active: $brand-primary !default;
+
+$timeline-item-line-width: 1px !default;
+$timeline-item-line-color: $timeline-item-addon-dot-bg !default;
+
+$timeline-item-body-color: $text-muted !default;
+$timeline-item-body-padding-left: ($timeline-item-addon-size-active + .7 * 1) !default;
+$timeline-item-body-line-height: $timeline-item-addon-size-active !default;
+
+
+// date-picker
+$datepicker-font-size-base: 20px !default;
+// progressbars
+$progressbars-font-size-lg: 20px !default;
+$progressbars-font-size-sm: 15px !default;

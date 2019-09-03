@@ -1,0 +1,14 @@
+.tip {
+    display: flex;
+    align-items: center;
+    padding: $tip-padding;
+
+    .hr {
+        flex: 1;
+    }
+}
+
+.tip-label {
+    color: $tip-label-color;
+    padding: $tip-label-padding;
+}

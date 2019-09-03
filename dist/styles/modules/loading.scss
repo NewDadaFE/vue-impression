@@ -1,0 +1,54 @@
+.loading {
+    width: $loading-width;
+    animation: rotate $loading-animation-duration linear infinite;
+}
+
+.loading-path {
+    stroke-dasharray: 1,100;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke: $loading-path-stroke;
+    stroke-width: $loading-path-stroke-width;
+    animation: dash $loading-path-animation-duration ease-in-out infinite;
+}
+
+.loading-primary {
+    .loading-path {
+        stroke: $loading-path-stroke-primary;
+    }
+}
+
+.loading-secondary {
+    .loading-path {
+        stroke: $loading-path-stroke-secondary;
+    }
+}
+
+.loading-sm {
+    width: $loading-width-sm;
+}
+
+
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1,150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90,150;
+        stroke-dashoffset: -124;
+    }
+}

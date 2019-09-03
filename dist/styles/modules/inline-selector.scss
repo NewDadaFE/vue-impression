@@ -1,0 +1,14 @@
+.inline-selector {
+    display: block;
+}
+
+.inline-selector-option {
+    line-height: 1;
+    padding: $inline-selector-option-padding;
+    transition: $inline-selector-transition;
+    min-width: $inline-selector-option-min-width;
+
+    &.disabled {
+        border-style: dashed;
+    }
+}

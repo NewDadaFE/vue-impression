@@ -1,0 +1,36 @@
+.swipe {
+    overflow: hidden;
+    position: relative;
+}
+
+.swipe-indicators {
+    position: absolute;
+    left: 50%;
+    bottom: $swipe-indicators-bottom;
+    transform: translateX(-50%);
+}
+
+.swipe-indicator {
+    display: inline-block;
+    border-radius: 50%;
+    padding: $swipe-indicator-padding;
+    border: 1px solid $swipe-indicator-border-color;
+    margin: $swipe-indicator-margin;
+    opacity: $swipe-indicator-opacity;
+    transition: background-color $swipe-indicator-transition-duration $swipe-indicator-transition-function;
+
+    &.active {
+        background-color: $swipe-indicator-bg-color-active;
+    }
+}
+
+.swipe-items {
+    height: 100%;
+}
+
+.swipe-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+}

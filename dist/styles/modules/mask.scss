@@ -1,0 +1,22 @@
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $mask-bg-color;
+    z-index: $z-index-mask;
+}
+
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    animation: fadeIn $mask-animation-enter-duration $mask-animation-enter-function;
+}
+
+.fade-leave-active {
+    animation: fadeOut $mask-animation-leave-duration $mask-animation-leave-function;
+}

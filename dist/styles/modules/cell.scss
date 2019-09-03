@@ -1,0 +1,50 @@
+.cell {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    color: $cell-color;
+    padding: $cell-padding;
+    @include border-bottom();
+    background-position: $cell-gap-left 100%;
+    background-color: $cell-bg-color;
+}
+
+.cell-no-gap {
+    background-position: 0 100%;
+}
+
+.cell-link {
+    &:focus {
+        outline: 0;
+        background-image: none;
+        color: $cell-color;
+    }
+
+    &:active {
+        background-color: $cell-bg-color-active;
+    }
+}
+
+.cell-disabled {
+    opacity: .6;
+    // background-color: $cell-bg-color-disabled;
+}
+
+.cell-header {
+    padding-right: $cell-children-gap;
+}
+
+.cell-body {
+    flex: 1;
+    display: block;
+}
+
+.cell-footer {
+    padding-left: $cell-children-gap;
+}
+
+.cell-arrow {
+    color: $cell-arrow-color;
+    margin: $cell-arrow-margin;
+}

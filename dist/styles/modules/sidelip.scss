@@ -1,0 +1,24 @@
+.sidelip {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling : touch;
+    width: $sidelip-width;
+    z-index: $z-index-sidelip;
+    background-color: $sidelip-bg-color;
+}
+
+.slide-left-enter {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.slide-left-enter-active {
+    animation: slideInLeft $sidelip-animation-enter-duration $sidelip-animation-enter-function;
+}
+
+.slide-left-leave-active {
+    animation: slideOutLeft $sidelip-animation-leave-duration $sidelip-animation-leave-function;
+}

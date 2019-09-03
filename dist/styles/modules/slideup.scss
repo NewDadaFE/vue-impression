@@ -1,0 +1,33 @@
+.slideup {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $slide-bg-color;
+    z-index: $z-index-slide;
+}
+
+.slideup-header {
+    padding: $slide-header-padding;
+    @include border-bottom;
+}
+
+.slideup-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling : touch;
+    padding: $slide-body-padding;
+    min-height: $slide-min-height;
+    max-height: $slide-max-height;
+}
+
+.slide-up-enter {
+    transform: translate3d(0, 100%, 0);
+}
+
+.slide-up-enter-active {
+    animation: slideInUp $slide-animation-enter-duration $slide-animation-enter-function;
+}
+
+.slide-up-leave-active {
+    animation: slideOutDown $slide-animation-leave-duration $slide-animation-leave-function;
+}
