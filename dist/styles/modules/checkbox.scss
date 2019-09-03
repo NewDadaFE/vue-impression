@@ -1,0 +1,124 @@
+.checkbox,
+.radio {
+    user-select: none;
+    display: inline-block;
+}
+
+// shape
+.checkbox-square {
+    .checkbox-addon {
+        border-radius: $checkbox-square-border-radius;
+    }
+}
+
+.checkbox-circle {
+    .checkbox-addon {
+        border-radius: 50%;
+    }
+}
+
+// checkbox
+.checkbox-input,
+.radio-input {
+    display: none;
+
+    &:checked + .checkbox-addon,
+    &:checked + .radio-addon {
+        border-color: $checkbox-border-color-checked;
+        background-color: $checkbox-bg-color-checked;
+
+        i {
+            transform: scale(1);
+        }
+    }
+
+    &:disabled + .checkbox-addon,
+    &:disabled + .radio-addon, {
+        border-color: $checkbox-border-color-disabled;
+        background-color: $checkbox-bg-color-disabled;
+    }
+}
+
+// addon
+.checkbox-addon,
+.radio-addon {
+    font-size: 0;
+    vertical-align: middle;
+    display: inline-block;
+    color: $checkbox-color;
+    padding: $checkbox-padding;
+    background-color: $checkbox-bg-color;
+    border: 1px solid $checkbox-border-color;
+    transition: $checkbox-transition;
+}
+
+.checkbox-addon {
+    line-height: 1;
+
+    i {
+        vertical-align: middle;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
+        font-size: $checkbox-addon-font-size;
+        width: $checkbox-addon-font-size;
+        height: $checkbox-addon-font-size;
+        line-height: $checkbox-addon-font-size;
+        padding-top: $checkbox-addon-padding-top;
+    }
+}
+
+.radio-default .radio-addon {
+    border-radius: 50%;
+    padding: $radio-addon-padding;
+    line-height: 1;
+
+    i {
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        width: $radio-addon-width;
+        height: $radio-addon-height;
+        background: $checkbox-color;
+        border-radius: 50%;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
+    }
+}
+
+.radio-square .radio-addon {
+    border-radius: $checkbox-square-border-radius;
+}
+.radio-circle .radio-addon {
+    border-radius: 50%;
+}
+
+.radio-square .radio-addon,
+.radio-circle .radio-addon {
+    line-height: 1;
+
+    i {
+        vertical-align: middle;
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: $checkbox-transition;
+        font-size: $checkbox-addon-font-size;
+        width: $checkbox-addon-font-size;
+        height: $checkbox-addon-font-size;
+        line-height: $checkbox-addon-font-size;
+        padding-top: $checkbox-addon-padding-top;
+    }
+}
+
+// text
+.checkbox-label,
+.radios-label {
+    display: inline-block;
+    margin-left: $checkbox-label-gap;
+}
+
+.checkbox + .checkbox,
+.radio + .radio {
+    margin-left: $checkbox-gap;
+}

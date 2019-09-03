@@ -1,0 +1,17 @@
+// Navbar variant
+@mixin navbar-variant($background-color, $color, $has-border) {
+    background-color: $background-color;
+    color: $color;
+
+    @if $has-border {
+        @include border-bottom();
+    }
+
+    a {
+        &,
+        &:active,
+        &:focus {
+            color: $color;
+        }
+    }
+}

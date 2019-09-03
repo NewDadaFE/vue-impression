@@ -1,0 +1,60 @@
+.toast {
+    position: fixed;
+    text-align: center;
+    color: $toast-color;
+    z-index: $z-index-toast;
+    max-width: $toast-max-width;
+    background: $toast-bg;
+    padding: $toast-padding;
+    font-size: $toast-font-size;
+    border-radius: $toast-border-radius;
+
+    .loading {
+        margin: $toast-loading-margin;
+    }
+}
+
+.toast-top {
+    left: 50%;
+    top: $toast-position-gap;
+    transform: translate(-50%, 0);
+}
+
+.toast-bottom {
+    left: 50%;
+    bottom: $toast-position-gap;
+    transform: translate(-50%, 0);
+}
+
+.toast-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toast-lg {
+    padding: $toast-padding-lg;
+    border-radius: $toast-border-radius-lg;
+}
+
+
+.toast-icon {
+    font-size: $toast-icon-font-size;
+    margin-bottom: $toast-icon-margin-bottom;
+}
+
+.toast-message {
+    line-height: 1;
+}
+
+.toast-fade-enter {
+    opacity: 0;
+}
+
+.toast-fade-enter-active {
+    animation: fadeIn $toast-animation-enter-duration $toast-animation-enter-function;
+}
+
+.toast-fade-leave-active {
+    animation: fadeOut $toast-animation-leave-duration $toast-animation-leave-function;
+}

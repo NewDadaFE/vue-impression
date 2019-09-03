@@ -1,0 +1,90 @@
+.input-number {
+    display: inline-block;
+}
+
+.input-number-disabled {
+    opacity: .6;
+
+    .input-number-input {
+        background-color: $number-input-bg-color-disabled;
+    }
+}
+
+.input-number-minus,
+.input-number-plus {
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    appearance: none;
+    overflow: hidden;
+    outline: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    font-weight: bold;
+    height: $number-btn-size;
+    width: $number-btn-size;
+    line-height: $number-btn-line-height;
+    border: 1px solid $number-border-color;
+
+    &,
+    &:active,
+    &.active {
+        &:focus {
+            outline: 0;
+            background-image: none;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    &.disabled {
+        opacity: $btn-opacity-disabled;
+    }
+}
+
+.input-number-plus:not([href]) {
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        color: $number-plus-color;
+        background-color: $number-plus-bg-color;
+    }
+
+    &:active:not(.disabled) {
+        background-color: $number-plus-bg-color-active;
+    }
+}
+
+.input-number-minus:not([href]) {
+    &,
+    &:focus,
+    &:hover {
+        color: $number-minus-color;
+        background-color: $number-minus-bg-color;
+    }
+
+    &:active:not(.disabled) {
+        color: $number-minus-color-active;
+        background-color: $number-minus-bg-color-active;
+    }
+}
+
+.input-number-input {
+    text-align: center;
+    vertical-align: middle;
+    width: $number-input-width;
+    padding: $number-input-padding;
+    margin: $number-input-margin;
+    background: $number-input-bg-color;
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    outline: none;
+    line-height: 1;
+    background-image: none;
+    border: 1px solid $number-input-border-color;
+}

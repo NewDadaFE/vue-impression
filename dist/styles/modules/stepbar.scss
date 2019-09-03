@@ -1,0 +1,70 @@
+.stepbar {
+    display: flex;
+    align-items: center;
+}
+
+.stepbar-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .fa {
+        font-size: $stepbar-item-addon-icon-font-size;
+        line-height: $stepbar-item-addon-size;
+    }
+}
+
+.stepbar-line {
+    flex: 1;
+    height: $stepbar-line-height;
+    border-top: $stepbar-line-height solid $stepbar-line-border-color;
+    transition: $stepbar-line-transition;
+
+    &:first-child {
+        margin-right: $stepbar-gap;
+    }
+
+    &:last-child {
+        margin-left: $stepbar-gap;
+    }
+
+    &.active {
+        border-color: $stepbar-line-border-color-active;
+    }
+}
+
+.stepbar-item-addon {
+    text-align: center;
+    color: $stepbar-item-addon-color;
+    width: $stepbar-item-addon-size;
+    height: $stepbar-item-addon-size;
+    line-height: $stepbar-item-addon-line-height;
+    border: $stepbar-item-addon-border-width solid $stepbar-item-addon-border-color;
+    border-radius: 50%;
+    transition: $stepbar-item-addon-transition;
+
+    &.active {
+        color: $stepbar-item-addon-color-active;
+        background: $stepbar-item-addon-bg-active;
+        border-color: $stepbar-item-addon-border-color-active;
+    }
+
+    &.finished {
+        color: $stepbar-item-addon-color-finished;
+        border-color: $stepbar-item-addon-border-color-finished;
+    }
+}
+
+.stepbar-item-title {
+    color: $stepbar-item-addon-title-color;
+    margin: 0 $stepbar-gap;
+
+    &.active {
+        color: $stepbar-item-addon-title-color-active;
+        font-weight: $stepbar-item-addon-title-font-weight-active;
+    }
+
+    &.finished {
+        color: $stepbar-item-addon-title-color-active;
+    }
+}

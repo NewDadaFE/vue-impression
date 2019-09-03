@@ -1,0 +1,37 @@
+.drawer {
+    display: flex;
+    color: $drawer-color;
+    background-color: $drawer-bg-color;
+    padding: $drawer-padding;
+    @include border-bottom();
+}
+
+.drawer-item {
+    flex: 1;
+    text-align: center;
+    transition: $drawer-transition;
+
+    &:not(:first-child) {
+        @include border-left;
+    }
+
+    &.active {
+        color: $drawer-color-active;
+
+        .drawer-item-icon {
+            color: $drawer-color-active;
+            transform-origin: 50% 50%;
+            transform: rotate(180deg);
+        }
+    }
+
+    &.disabled {
+        opacity: $drawer-opacity-disabled;
+    }
+}
+
+.drawer-item-icon {
+    color: $drawer-icon-color;
+    margin-left: $drawer-icon-margin-right;
+    transition: $drawer-transition;
+}

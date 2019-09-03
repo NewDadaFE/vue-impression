@@ -1,0 +1,35 @@
+.tabbar {
+    position: relative;
+    display: flex;
+    height: $tabbar-height;
+    margin-bottom: $tabbar-margin-bottom;
+    background-color: $tabbar-bg-color;
+    @include border-bottom();
+}
+
+.tabbar-item {
+    flex: 1;
+    height: $tabbar-height;
+    line-height: $tabbar-line-height;
+    text-align: center;
+    transition: $tabbar-transition;
+
+    &.active {
+        color: $tabbar-item-color-active;
+        border-bottom-color: $tabbar-item-border-color-active;
+    }
+
+    &.disabled {
+        opacity: $tabbar-opacity-disabled;
+    }
+}
+
+.tabbar-indicator {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $brand-primary;
+    height: $tabbar-item-border-width;
+    transition: $tabbar-transition;
+}

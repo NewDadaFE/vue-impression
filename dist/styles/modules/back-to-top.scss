@@ -1,0 +1,29 @@
+.back-to-top {
+    position: fixed;
+    right: $top-right;
+    bottom: -1.5 * $top-height;
+    z-index: $z-index-top;
+    text-align: center;
+    border-radius: 50%;
+    color: $top-color;
+    background-color: $top-bg-color;
+
+    &.active {
+        bottom: $top-bottom;
+        transition: $top-transition;
+
+        .back-to-top-icon {
+            transform: rotate(0deg);
+            transition: $top-transition;
+        }
+    }
+}
+
+i.back-to-top-icon {
+    width: $top-width;
+    height: $top-height;
+    font-size: $top-font-size;
+    line-height: $top-line-height;
+    transform: rotate(360deg);
+    transform-origin: center center;
+}

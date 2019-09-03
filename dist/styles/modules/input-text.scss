@@ -1,0 +1,26 @@
+.input-text {
+    display: flex;
+    align-items: center;
+}
+
+.input-text-input {
+    flex: 1;
+    border: 0;
+    padding: 0;
+    height: 100%;
+    font-size: $input-font-size;
+    background-color: transparent;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+i.input-text-clear {
+    opacity: .2;
+    transition: all .2s ease;
+
+    + i {
+        margin-left: $input-text-icon-gap;
+    }
+}

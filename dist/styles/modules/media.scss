@@ -1,0 +1,22 @@
+.media {
+    display: flex;
+    background-color: $media-bg-color;
+}
+
+
+.media-object {
+    display: block;
+
+    &:first-child {
+        padding-right: $media-object-gap;
+    }
+
+    &:last-child {
+        padding-left: $media-object-gap;
+    }
+}
+
+.media-body {
+    flex: 1;
+    display: block;
+}
