@@ -145,7 +145,7 @@
                         translateX = option.translateX;
                         this.onDrag && this.onDrag(this.activeIndex, translateX);
 
-                        if(translateX === 0) return;
+                        if(translateX === 0 || !this.$children[this.activeIndex]) return;
                         // 往左
                         if(translateX < 0) {
                             let nextIndex = this.getNextIndex();
@@ -186,12 +186,12 @@
 
                         this.dragging = false;
 
-                        if(!this.isCycleEnd) {
+                        if(!this.isCycleEnd && this.$children[this.activeIndex]) {
                             let threshold = this.$children[this.activeIndex].width * this.dragThreshold,
                                 rate = Math.abs(translateX) / (new Date() - dragStartTime);
 
                             if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
-                                this.activeIndex = newIndex;
+                                this.activeIndex = newIndex || this.activeIndex;
                             } else if(this.negative) {
                                 let prevIndex = this.getPrevIndex();
 
