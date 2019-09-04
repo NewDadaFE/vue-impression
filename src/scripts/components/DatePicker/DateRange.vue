@@ -8,12 +8,12 @@
                 <btn
                     @click="prevMonth"
                     class="btn btn-left">
-                    <icon name="angle-left" left/>
+                    <icon name="angle-left" size="lg"/>
                 </btn>
                 <btn
                     @click="nextMonth"
                     class="btn btn-right">
-                    <icon name="angle-right" right/>
+                    <icon name="angle-right" size="lg"/>
                 </btn>
                 <div>{{ dateLabel }}</div>
             </div>

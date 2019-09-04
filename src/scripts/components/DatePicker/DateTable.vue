@@ -226,7 +226,7 @@
             },
 
             minDate(newVal, oldVal) {
-                if(newVal && !oldVal) {
+                if(newVal && newVal !== oldVal) {
                     this.rangeState.selecting = true;
                     this.markRange(newVal);
                 } else if(!newVal) {
@@ -238,7 +238,7 @@
             },
 
             maxDate(newVal, oldVal) {
-                if(newVal && !oldVal) {
+                if(newVal && newVal !== oldVal) {
                     this.rangeState.selecting = false;
                     this.markRange(newVal);
                     this.$emit('pick', {
