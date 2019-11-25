@@ -16,19 +16,21 @@ $ColorGrey: #BCC1CC;
         
 
             .btn {
-                width: 2.5em;
-                height: 2.5em;
-                line-height: 2.5em;
+                // width: 2.5em;
+                // height: 2.5em;
+                // line-height: 2.5em;
                 border: none;
-                border-radius: 2.5em;
-                padding: 0;
+                border-radius: 1.5em;
+                // padding: .35rem .7rem;
                 font-size: .6em;
 
                 &.btn-left {
                     float: left;
+                    padding: .35em .9em .4em .7em;
                 }
                 &.btn-right {
                     float: right;
+                    padding: .35em .7em .4em .9em;
                 }
             }
 
