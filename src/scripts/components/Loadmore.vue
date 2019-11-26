@@ -275,7 +275,7 @@
             isBottomReached() {
                 if(this.scrollElement === window) {
                     return (
-                        document.documentElement.clientHeight + document.body.scrollTop
+                        document.documentElement.clientHeight + (document.body.scrollTop || window.pageYOffset)
                         === document.body.scrollHeight
                     );
                 }
