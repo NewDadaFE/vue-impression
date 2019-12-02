@@ -191,7 +191,7 @@
                                 rate = Math.abs(translateX) / (new Date() - dragStartTime);
 
                             if(Math.abs(translateX) >= threshold || rate > this.dragRate) {
-                                this.activeIndex = newIndex || this.activeIndex;
+                                this.activeIndex = newIndex;
                             } else if(this.negative) {
                                 let prevIndex = this.getPrevIndex();
 
