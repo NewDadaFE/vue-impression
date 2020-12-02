@@ -274,15 +274,20 @@
             },
             isBottomReached() {
                 if(this.scrollElement === window) {
+                    // alert('window')
+                    // alert(`document.documentElement.clientHeight=${document.documentElement.clientHeight}---document.body.scrollTop=${document.body.scrollTop}---window.pageYOffset=${window.pageYOffset}---document.body.scrollHeight${document.body.scrollHeight}`)
                     return (
                         document.documentElement.clientHeight + (document.body.scrollTop || window.pageYOffset)
                         === document.body.scrollHeight
                     );
                 }
 
+                // alert('!window')
+                // alert(`this.scrollElement.getBoundingClientRect().bottom=${this.scrollElement.getBoundingClientRect().bottom}---this.$el.getBoundingClientRect().bottom=${this.$el.getBoundingClientRect().bottom}`)
+
                 return (
                     this.scrollElement.getBoundingClientRect().bottom
-                    >= this.$el.getBoundingClientRect().bottom
+                    >= parseInt(this.$el.getBoundingClientRect().bottom)
                 );
             },
             onTopLoaded() {

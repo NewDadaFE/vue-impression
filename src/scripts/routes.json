@@ -214,5 +214,15 @@
                 "icon": "th-large"
             }
         ]
+    },
+    {
+        "title": "分页加载",
+        "children": [
+            {
+                "path": "/loadMore",
+                "name": "Load More",
+                "icon": "th-large"
+            }
+        ]
     }
 ]
