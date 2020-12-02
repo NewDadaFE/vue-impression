@@ -277,8 +277,8 @@
                     // alert('window')
                     // alert(`document.documentElement.clientHeight=${document.documentElement.clientHeight}---document.body.scrollTop=${document.body.scrollTop}---window.pageYOffset=${window.pageYOffset}---document.body.scrollHeight${document.body.scrollHeight}`)
                     return (
-                        document.documentElement.clientHeight + (document.body.scrollTop || window.pageYOffset)
-                        === document.body.scrollHeight
+                        document.documentElement.clientHeight + (document.body.scrollTop || document.documentElement.scrollTop)
+                            >= document.body.scrollHeight
                     );
                 }
 
