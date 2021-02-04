@@ -17,15 +17,35 @@
         vertical-align: middle;
     }
 }
-
+// 下拉刷新
 .loadmore-hint-top {
-    margin-top: $loadmore-hint-margin;
+    height: 0;
+}
+.loadmore-hint-top-reset {
+    -webkit-transition: height 300ms;
+    transition: height 300ms;
 }
 
+// 上拉加载
 .loadmore-hint-bottom {
-    margin-bottom: $loadmore-hint-margin;
+
 }
+
+// .loadmore-hint-top {
+//     margin-top: $loadmore-hint-margin;
+// }
+
+// .loadmore-hint-bottom {
+//     margin-bottom: $loadmore-hint-margin;
+// }
 
 .loadmore-text {
     vertical-align: middle;
+}
+
+.hard-ware {
+    webkit-transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
 }

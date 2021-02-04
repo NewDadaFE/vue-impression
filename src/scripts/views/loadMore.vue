@@ -1,13 +1,14 @@
 <template>
-    <div>
+    <div style="overflow-y: auto;height:100%;">
         <loadmore
-            v-if="list.length"
             ref="loadmore"
+            :top-method="getList"
             :bottom-method="getList"
             :bottom-all-loaded="allLoaded"
+            :showLoading="showLoading"
             bottom-loading-text="加载中..."
-            bottom-pull-text="上拉加载更多"
-            bottom-drop-text="上拉加载更多"
+            top-loading-text="加载中..."
+            top-drop-text="释放刷新"
         >
             <div
             v-for="(item, index) in list"
@@ -39,28 +40,47 @@
         text: '已加载内容8'
     },{
         text: '已加载内容9'
-    },{
-        text: '已加载内容10'
     }]
 
     export default{
         data() {
             return {
                 list: [],
-                allLoaded: false
+                allLoaded: false,
+                showLoading: true,
+                count: 0,
             }
         },
         created() {
-            this.getList()
+            // this.getList()
         },
         methods: {
-            getList() {
+            async getList() {
                 if (this.list.length > 100) {
                     this.allLoaded = true
                     return
                 }
+                console.log(++this.count)
+
+                this.showLoading = true
+                const list = await this.getListApi()
+                this.showLoading = false
                 this.list = [...this.list, ...list]
             },
+            getListApi() {
+                return new Promise((resolve, reject)=>{
+                    //延时一秒,模拟联网
+                    setTimeout(function() {
+                        try {
+                            //模拟接口请求成功
+                            resolve(list);
+                        } catch (e) {
+                            //模拟接口请求失败
+                            reject(e);
+                        }
+                    }, 1000)
+                })
+            }
         },
     };
 </script>
@@ -68,8 +88,11 @@
     .item {
         font-size: 1.6em;
         width: 100%;
-        height: 20em;
-        line-height: 5em;
+        height: 3em;
+        line-height: 3em;
+        text-align: center;
+    }
+    .no-more {
         text-align: center;
     }
 </style>

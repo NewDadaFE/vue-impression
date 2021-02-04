@@ -17,7 +17,7 @@
             size: {
                 type: String,
                 validator(value) {
-                    return ['sm', 'lg'].indexOf(value) > -1;
+                    return ['sm', 'md', 'lg'].indexOf(value) > -1;
                 },
             },
             theme: {
