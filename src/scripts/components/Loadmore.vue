@@ -1,6 +1,7 @@
 <template>
+    <!-- 注意：当loadmore组件的父元素 未设置高度时 loadmore组件的clientHeight是整个内容的高度 而非可视区高度 -->
     <!-- 滚动模块 固定为node-loadmore -->
-    <div class="loadmore" style="overflow-y: auto;height:100%;">
+    <div class="loadmore" style="overflow-y: scroll;height:100%;">
         <div
             class="loadmore-content"
             :class="{ dropped: topDropped || bottomDropped }"
@@ -13,7 +14,7 @@
             </slot>
             <slot></slot>
             <slot name="bottom">
-                <div class="loadmore-hint loadmore-hint-bottom" v-if="bottomMethod && direction === 'up' && !bottomAllLoaded">
+                <div class="loadmore-hint loadmore-hint-bottom" v-if="bottomMethod">
                     <loading size="md" v-if="showLoading" />
                     <span class="loadmore-text">{{ showLoading && bottomLoadingText || bottomText }}</span>
                 </div>
@@ -65,15 +66,20 @@
             },
             bottomLoadingText: {
                 type: String,
-                default: 'loading...',
+                default: '加载中',
+            },
+            bottomAllLoadedText: {
+                type: String,
+                default: '没有更多了',
             },
             bottomDistance: {
                 type: Number,
                 default: 70,
             },
+            // 距离底部bottomOffset 就认为到达底部
             bottomOffset: {
                 type: Number,
-                default: 0,
+                default: 10,
             },
             bottomMethod: {
                 type: Function,
@@ -146,10 +152,16 @@
                     case 'loading':
                         this.bottomText = this.bottomLoadingText;
                         break;
+                    case 'allLoaded':
+                        this.bottomText = this.bottomAllLoadedText
                     default:
                         break;
                 }
                 this.$emit('bottomStatusChanged', status);
+            },
+            // 初始化 / 滑动过程过 度可能全部加载完成
+            bottomAllLoaded(allLoaded) {
+                allLoaded && (this.bottomStatus = 'allLoaded')
             },
         },
         methods: {
@@ -166,6 +178,7 @@
             },
             // 初始化下拉刷新
             async initDownContent() {
+                // todo 回弹阻尼
                 await this.handlePullDownRefresh()
                 this.topText = this.topLoadingText;
                 this.topStatus = 'pull';
@@ -202,12 +215,12 @@
                 this.topStatus = 'pull';
             },
             async handleScroll(event) {
-                console.log('111wwwwwwwwwwwwww')
+                console.log('scrollscroll11')
                 this.direction = (this.getScrollTop(this.scrollElement) - this.previousScrollY > 0) ? 'up' : 'down'
-
                 // pull up
                 if(this.direction === 'up') {
                     this.bottomReached = this.bottomReached || this.isBottomReached();
+                    console.log('scroll11222')
                 }
 
                 if(
@@ -218,7 +231,7 @@
                     !this.bottomAllLoaded
                 ) {
                     event.stopPropagation();
-                    console.log('wwwwwwwwwwwwww')
+                    console.log('scroll1133')
                     this.bottomStatus = 'loading';
                     await this.bottomMethod()
                     this.bottomStatus = 'pull';
@@ -228,6 +241,7 @@
                 // pull down
             },
             handleTouchStart(event) {
+                console.log('wwwww22')
                 this.startY = event.touches[0].clientY;
                 this.startScrollTop = this.getScrollTop(this.scrollElement);
                 this.bottomReached = false;
@@ -244,6 +258,7 @@
                 }
             },
             handleTouchMove(event) {
+                console.log('wwwww33')
                 // outside element
                 const rect = this.$el.getBoundingClientRect();
 
@@ -300,6 +315,7 @@
                 // }
             },
             async handleTouchEnd() {
+                console.log('wwwww444')
                 // pull down
                 if(this.direction === 'down' &&
                     this.getScrollTop(this.scrollElement) === 0 &&
@@ -375,6 +391,15 @@
                     this.translate = 0;
                 });
             },
+            setParentHeight() {
+                let parentElement = this.scrollElement.parentElement
+                while (parentElement.tagName !== 'HTML') {
+                    if (parentElement.style.height) break
+
+                    parentElement.style.height = '100%'
+                    parentElement = parentElement.parentElement
+                }
+            },
         },
         created() {
             if (this.topMethod && this.bottomMethod) {
@@ -387,18 +412,21 @@
         },
         mounted() {
             this.scrollElement = this.getScrollElement(this.$el);
-            // this.scrollElement = this.$el
 
-            console.log(this.scrollElement)
+            // 针对老版本向上兼容
+            this.setParentHeight()
+
 
             if(
                 typeof this.topMethod === 'function' ||
                 typeof this.bottomMethod === 'function'
             ) {
-                this.$el.addEventListener('touchstart', this.handleTouchStart);
-                this.$el.addEventListener('touchmove', this.handleTouchMove);
-                this.$el.addEventListener('touchend', this.handleTouchEnd);
-                this.$el.addEventListener('scroll', this.handleScroll)
+                console.log('kkkkk')
+                this.scrollElement.addEventListener('touchstart', this.handleTouchStart);
+                this.scrollElement.addEventListener('touchmove', this.handleTouchMove);
+                this.scrollElement.addEventListener('touchend', this.handleTouchEnd);
+                this.scrollElement.addEventListener('scroll', this.handleScroll, true)
+                // window.addEventListener('scroll', this.handleScroll)
             }
         },
         beforeDestroy() {
