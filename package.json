@@ -29,7 +29,7 @@
   "homepage": "https://github.com/NewDadaFE/vue-impression#readme",
   "devDependencies": {
     "@vue/component-compiler": "^3.6.0",
-    "ajv": "5.5.2",
+    "ajv": "6.12.3",
     "autoprefixer": "^6.5.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.18.2",
